@@ -53,7 +53,7 @@ import { ServiceProviderFormComponent } from './pages/service-provider-managemen
 import { CustomerFormComponent } from './pages/customer-management/customer-form/customer-form.component';
 import {MultiSelectModule} from 'primeng/multiselect';
 import { PetlistComponent } from './pages/customer-management/petlist/petlist.component';
-
+import {ChartModule} from 'primeng/chart';
 @NgModule({
   declarations: [AdminHeaderComponent,
     AdminSidebarComponent,
@@ -97,7 +97,8 @@ import { PetlistComponent } from './pages/customer-management/petlist/petlist.co
     TableModule,
     FileUploadModule,
     TooltipModule,
-    MultiSelectModule],
+    MultiSelectModule,
+  ChartModule],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
     NO_ERRORS_SCHEMA

@@ -18,11 +18,11 @@
 }
 
 .mat-drawer {
-    background: #019377;
+    background: #313131;
 }
 
 .active {
-    background:#005f4d !important
+    background:#262626 !important
 }
 
 :host::ng-deep .mat-list-base {
