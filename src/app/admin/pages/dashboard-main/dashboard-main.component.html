@@ -1,0 +1,148 @@
+<section class="head-tool ">
+    <div class="row" style="margin: 0px !important;">
+        <div class="col-md-6">
+            <div class="logo-img">
+                <img class="logo-dark" src="assets/images/logo/logo.png" alt="Logo" style="width: 50px;">
+              </div>
+        </div>
+
+        <div class="col-md-6">
+            <div style="text-align: right;">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" style="margin-right: 20px;">
+                <mat-icon>apps</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                  <mat-icon>keyboard_arrow_right</mat-icon>
+                  <span>Administrator </span>
+                </button>
+                <button mat-menu-item >
+                  <mat-icon>keyboard_arrow_right</mat-icon>
+                  <span>Configurator </span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>keyboard_arrow_right</mat-icon>
+                  <span>Designer </span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>keyboard_arrow_right</mat-icon>
+                    <span>Transaction  </span>
+                  </button>
+              </mat-menu>
+            <button mat-icon-button [matMenuTriggerFor]="menu1" aria-label="Example icon-button with a menu">
+                <!-- <mat-icon>apps</mat-icon>-->
+                 <div class="card-box-i">
+                    <img src="assets/images/005.png" alt="">
+                     Vignesh
+                </div>
+              </button>
+              <mat-menu #menu1="matMenu">
+                <button mat-menu-item>
+                  <mat-icon>person</mat-icon>
+                  <span>Profile </span>
+                </button>
+                <button mat-menu-item >
+                    <mat-icon>power_settings_new</mat-icon>
+                  <span>Logout </span>
+                </button>
+              </mat-menu>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section style="margin-top: 150px;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-xl-4">
+                <div class="card bg-c-blue order-card" (click)="dash()">
+                    <div class="card-block">
+                        <h6 class="m-b-20">Orders Received</h6>
+                        <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span>486</span></h2>
+                        <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-xl-4">
+                <div class="card bg-c-green order-card" (click)="dash()">
+                    <div class="card-block">
+                        <h6 class="m-b-20">Orders Received</h6>
+                        <h2 class="text-right"><i class="fa fa-rocket f-left"></i><span>486</span></h2>
+                        <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-xl-4">
+                <div class="card bg-c-yellow order-card" (click)="dash()">
+                    <div class="card-block">
+                        <h6 class="m-b-20">Orders Received</h6>
+                        <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>486</span></h2>
+                        <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-xl-4">
+                <div class="card bg-c-pink order-card" (click)="dash()">
+                    <div class="card-block">
+                        <h6 class="m-b-20">Orders Received</h6>
+                        <h2 class="text-right"><i class="fa fa-credit-card f-left"></i><span>486</span></h2>
+                        <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-xl-4">
+                <div class="card bg-c-yellow order-card" (click)="dash()">
+                    <div class="card-block">
+                        <h6 class="m-b-20">Orders Received</h6>
+                        <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>486</span></h2>
+                        <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-xl-4">
+                <div class="card bg-c-pink order-card" (click)="dash()">
+                    <div class="card-block">
+                        <h6 class="m-b-20">Orders Received</h6>
+                        <h2 class="text-right"><i class="fa fa-credit-card f-left"></i><span>486</span></h2>
+                        <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-xl-4">
+                <div class="card bg-c-blue order-card" (click)="dash()">
+                    <div class="card-block">
+                        <h6 class="m-b-20">Orders Received</h6>
+                        <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span>486</span></h2>
+                        <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-xl-4">
+                <div class="card bg-c-green order-card" (click)="dash()">
+                    <div class="card-block">
+                        <h6 class="m-b-20">Orders Received</h6>
+                        <h2 class="text-right"><i class="fa fa-rocket f-left"></i><span>486</span></h2>
+                        <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-xl-4">
+                <div class="card bg-c-yellow order-card" (click)="dash()">
+                    <div class="card-block">
+                        <h6 class="m-b-20">Orders Received</h6>
+                        <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>486</span></h2>
+                        <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

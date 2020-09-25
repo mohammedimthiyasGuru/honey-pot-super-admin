@@ -5,10 +5,11 @@ import { HomepageComponent } from './homepage/homepage.component';
 
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
-
+import { DashboardMainComponent } from './admin/pages/dashboard-main/dashboard-main.component';
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'admin_panel', },
-  { path: 'admin', component:LoginComponent, },
+  { path: '', pathMatch: 'full', redirectTo: 'login', },
+  { path: 'login', component:LoginComponent, },
+  { path: 'Dashboard_Main', component:DashboardMainComponent, },
   {
     path: 'admin_panel', component: AdminComponent,
     children: [

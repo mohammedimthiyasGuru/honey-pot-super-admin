@@ -95,7 +95,7 @@
     font-weight: 500;
     margin-bottom: 5px;
     /* padding-left: 10px; */
-    color:#3F51B5;
+    color:#0e69dd;
 }
 
 .head-text span {
@@ -122,7 +122,7 @@
     background: #019377 !important;
 }
 .bg-blue{
-    background: #3F51B5 !important;;
+    background: #0e69dd !important;;
 }
 .chart-box{
     border: 1px solid #cacaca;
@@ -134,7 +134,7 @@ padding: 10px 10px 10px 10px;
     margin-bottom: 0px;
     color: #ffffff;
     padding: 10px;
-    background: #3f51b5;
+    background: #0e69dd;
 }
 
 /* :host::ng-deep .mat-list-base::-webkit-scrollbar-thumb {

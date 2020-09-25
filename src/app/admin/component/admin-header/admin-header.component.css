@@ -15,11 +15,11 @@
     position: fixed;
     top: 0px;
     z-index: 9;
-    background-color: #fff;
+    background: #0e69dd;
 }
 
 .fa {
-    color: #019278;
+    /* color: #019278; */
     font-size: 21px;
     /* position: absolute;
     padding-left: 5px; */
@@ -43,8 +43,8 @@
   .ad-user h5{
     font-size: 14px;
     z-index: 999;
-    color: #3e3e3e;
-    font-weight: 600;
+    color: #ffffff;
+    font-weight: 500;
     margin-bottom: 3px;
     line-height: 0;
     margin-top: 17px;
@@ -53,8 +53,8 @@
       
     font-size: 12px;
     z-index: 999;
-    color: #777777;
-    font-weight: 600;
+    color: #afafaf;
+    font-weight: 400;
 margin-bottom: 3px;
   }
   :host::ng-deep .ui-dialog .ui-dialog-titlebar {

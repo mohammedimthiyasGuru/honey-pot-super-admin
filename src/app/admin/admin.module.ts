@@ -15,10 +15,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
-
-
-
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { DatePipe } from '@angular/common';
@@ -31,49 +27,33 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
-import { PettypeComponent } from './pages/pettype/pettype.component';
-import { PetBreedTypeComponent } from './pages/pet-breed-type/pet-breed-type.component';
-import { PetHealthCheckupComponent } from './pages/pet-health-checkup/pet-health-checkup.component';
-import { ServiceTypeComponent } from './pages/service-type/service-type.component';
-import { CustomerManagementComponent } from './pages/customer-management/customer-management.component';
-import { VendorManagementComponent } from './pages/vendor-management/vendor-management.component';
-import { ServiceProviderManagementComponent } from './pages/service-provider-management/service-provider-management.component';
-import { CategoryManagementComponent } from './pages/category-management/category-management.component';
-import { SubCategoryManagementComponent } from './pages/sub-category-management/sub-category-management.component';
-import { ProductManagementComponent } from './pages/product-management/product-management.component';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { TableModule } from 'primeng/table';
 import { FileUploadModule } from 'primeng/fileupload';
 import { TooltipModule } from 'primeng/tooltip';
-import { DoctorComponent } from './pages/doctor/doctor.component';
-import { DoctorFormComponent } from './pages/doctor/doctor-form/doctor-form.component';
-import { VendorFormComponent } from './pages/vendor-management/vendor-form/vendor-form.component';
-import { ServiceProviderFormComponent } from './pages/service-provider-management/service-provider-form/service-provider-form.component';
-import { CustomerFormComponent } from './pages/customer-management/customer-form/customer-form.component';
 import {MultiSelectModule} from 'primeng/multiselect';
-import { PetlistComponent } from './pages/customer-management/petlist/petlist.component';
 import {ChartModule} from 'primeng/chart';
+import { HoneyPotClientDetailComponent } from './pages/honey-pot-client-detail/honey-pot-client-detail.component';
+import { HoneyPotClientDetailFormComponent } from './pages/honey-pot-client-detail/honey-pot-client-detail-form/honey-pot-client-detail-form.component';
+import { ClientProfileComponent } from './pages/honey-pot-client-detail/client-profile/client-profile.component';
+import { CountryComponent } from './pages/country/country.component';
+import { LicenseComponent } from './pages/license/license.component';
+import { LicenseFormComponent } from './pages/license/license-form/license-form.component';
+
+
 @NgModule({
   declarations: [AdminHeaderComponent,
     AdminSidebarComponent,
     DashboardComponent,
-    PettypeComponent,
-    PetBreedTypeComponent,
-    PetHealthCheckupComponent,
-    ServiceTypeComponent,
-    CustomerManagementComponent,
-    VendorManagementComponent,
-    ServiceProviderManagementComponent,
-    CategoryManagementComponent,
-    SubCategoryManagementComponent,
-    ProductManagementComponent,
-    DoctorComponent,
-    DoctorFormComponent,
-    VendorFormComponent,
-    ServiceProviderFormComponent,
-    CustomerFormComponent,
-    PetlistComponent
+    HoneyPotClientDetailComponent,
+    HoneyPotClientDetailFormComponent,
+    ClientProfileComponent,
+    CountryComponent,
+    LicenseComponent,
+    LicenseFormComponent,
+    
+    
   ],
   imports: [
     CommonModule,

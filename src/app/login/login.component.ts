@@ -6,21 +6,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  showPassword :boolean =false;
+  showPassword: boolean = false;
   isLoading: boolean = false;
-  name:any;
-  password:any;
+  name: any;
+  password: any;
+  forget: boolean = false;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-login(){
-  // if(this.name == 'salveo@gmail.com' && this.password == '123456'){
-  //   this.router.navigate(['admin_panel']);
-  // }
-  // else{
-  //   alert('Invalid Login Details')
-  // }
-  this.router.navigate(['admin_panel']);
-}
+  login() {
+    // if(this.name == 'salveo@gmail.com' && this.password == '123456'){
+    //   this.router.navigate(['admin_panel']);
+    // }
+    // else{
+    //   alert('Invalid Login Details')
+    // }
+    this.router.navigate(['admin_panel']);
+  }
+
+  forgot() {
+    this.forget = true;
+  }
+  backtologin(){
+    this.forget = false;
+  }
 }

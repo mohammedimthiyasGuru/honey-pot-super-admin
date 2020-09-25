@@ -12,7 +12,7 @@
                     <h5 class="lead">Dashboard</h5>
                 </div>
             </mat-list-item>
-            <mat-list-item routerLinkActive="active">
+            <!-- <mat-list-item routerLinkActive="active">
                 <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-sitemap" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 20px;"></i></mat-icon>
                 <div fxFlex="10"></div>
@@ -29,20 +29,41 @@
                     <h5 class="lead">Subscription management
                     </h5>
                 </div>
-            </mat-list-item>
+            </mat-list-item> -->
 
-            
-            <mat-list-item routerLinkActive="active">
+            <mat-list-item routerLink="Clients" routerLinkActive="active">
+                <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-users" aria-hidden="true"
+                        style="position: absolute;color: #fff !important;font-size: 20px;"></i></mat-icon>
+                <div fxFlex="10"></div>
+                <div class="sidenav-item">
+                    <h5 class="lead">Client Management
+                    </h5>
+                </div>
+            </mat-list-item> 
+            <mat-list-item routerLink="License" routerLinkActive="active">
+                <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-id-card-o" aria-hidden="true"
+                        style="position: absolute;color: #fff !important;font-size: 20px;"></i></mat-icon>
+                <div fxFlex="10"></div>
+                <div class="sidenav-item">
+                    <h5 class="lead">License management
+                    </h5>
+                </div>
+            </mat-list-item> 
+
+        
+
+
+            <!-- <mat-list-item routerLinkActive="active">
                 <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-users" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 20px;"></i></mat-icon>
                 <div fxFlex="10"></div>
                 <div class="sidenav-item">
                     <h5 class="lead">Customer Management</h5>
                 </div>
-            </mat-list-item>
+            </mat-list-item> -->
 
 
-            <mat-list-item routerLinkActive="active">
+            <!-- <mat-list-item routerLinkActive="active">
                 <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-id-card-o" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 20px;"></i></mat-icon>
                 <div fxFlex="10"></div>
@@ -50,10 +71,11 @@
                     <h5 class="lead">Product license Management </h5>
                 </div>
             </mat-list-item>
- 
-            <mat-list-item  routerLinkActive="active">
-                <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-credit-card-alt" aria-hidden="true"
-                        style="position: absolute;color: #fff !important;font-size: 20px;"></i></mat-icon>
+
+            <mat-list-item routerLinkActive="active">
+                <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-credit-card-alt"
+                        aria-hidden="true" style="position: absolute;color: #fff !important;font-size: 20px;"></i>
+                </mat-icon>
                 <div fxFlex="10"></div>
                 <div class="sidenav-item">
                     <h5 class="lead">Payments Management </h5>
@@ -61,8 +83,8 @@
             </mat-list-item>
 
             <mat-list-item routerLinkActive="active">
-                <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-bell-o"
-                        aria-hidden="true" style="position: absolute;color: #fff !important;font-size: 20px;"></i>
+                <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-bell-o" aria-hidden="true"
+                        style="position: absolute;color: #fff !important;font-size: 20px;"></i>
                 </mat-icon>
                 <div fxFlex="10"></div>
                 <div class="sidenav-item">
@@ -71,47 +93,7 @@
                 </div>
             </mat-list-item>
 
-            <!-- <mat-list-item routerLinkActive="active" (click)="expand = !expand">
-                <mat-icon style="color: #fff !important;" mat-list-icon>
-                    <i class="fa fa-cog" aria-hidden="true"
-                        style="position: absolute;color: #fff !important;font-size: 20px;"></i></mat-icon>
-                <div fxFlex="10"></div>
-                <div class="sidenav-item">
-                    <h5 class="lead">Service Appointments</h5>
-                </div>
-                <div class="sb-sidenav-collapse-arrow">
-                    <i *ngIf="!expand" class="fa fa-chevron-down" aria-hidden="true"></i>
-                    <i *ngIf="expand" class="fa fa-chevron-up" aria-hidden="true"></i>
-                </div>
-            </mat-list-item>
-            <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand">
-                <div class="sub-menu">
-                    <mat-list-item routerLink="" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-medkit"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 20px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Pet Care</h5>
-                        </div>
-                    </mat-list-item>
-                    <mat-list-item routerLink="" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-wrench"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 20px;"></i>
-                        </mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Pet Services</h5>
-                        </div>
-                    </mat-list-item>
-                </div>
-            </mat-nav-list> -->
-
-
-
-            
-            <mat-list-item routerLinkActive="active">
+         <mat-list-item routerLinkActive="active">
                 <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-check-circle" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 20px;"></i></mat-icon>
                 <div fxFlex="10"></div>
@@ -130,15 +112,151 @@
                 <div class="sidenav-item">
                     <h5 class="lead">Reports</h5>
                 </div>
+            </mat-list-item> -->
+
+
+            <mat-list-item routerLinkActive="active" (click)="expand1 = !expand1">
+                <mat-icon style="color: #fff !important;" mat-list-icon>
+                    <i class="fa fa-database" aria-hidden="true"
+                        style="position: absolute;color: #fff !important;font-size: 20px;"></i></mat-icon>
+                <div fxFlex="10"></div>
+                <div class="sidenav-item">
+                    <h5 class="lead">Master</h5>
+                </div>
+                <div class="sb-sidenav-collapse-arrow">
+                    <i *ngIf="!expand1" class="fa fa-chevron-down" aria-hidden="true"></i>
+                    <i *ngIf="expand1" class="fa fa-chevron-up" aria-hidden="true"></i>
+                </div>
+            </mat-list-item>
+            <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand1">
+                <div class="sub-menu">
+                    <mat-list-item routerLink="Country" routerLinkActive="active">
+                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                aria-hidden="true"
+                                style="position: absolute;color: #fff !important;font-size: 20px;"></i></mat-icon>
+                        <div fxFlex="10"></div>
+                        <div class="sidenav-item">
+                            <h5 class="lead">Country & Currency Management</h5>
+                        </div>
+                    </mat-list-item>
+                </div>
+            </mat-nav-list>
+
+
+            <!-- 
+            <mat-list-item routerLinkActive="active">
+
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"
+                    style="margin-right: 20px;">
+                    <mat-icon>view_module</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Administrator </span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Configurator </span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Designer </span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Transaction </span>
+                    </button>
+                </mat-menu>
+
+
             </mat-list-item>
 
+            <mat-list-item routerLinkActive="active">
+
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"
+                    style="margin-right: 20px;">
+                    <mat-icon>today</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Administrator </span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Configurator </span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Designer </span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Transaction </span>
+                    </button>
+                </mat-menu>
 
 
-           
-           
+            </mat-list-item>
+
+            <mat-list-item routerLinkActive="active">
+
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"
+                    style="margin-right: 20px;">
+                    <mat-icon> rate_review</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Administrator </span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Configurator </span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Designer </span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Transaction </span>
+                    </button>
+                </mat-menu>
 
 
+            </mat-list-item>
 
+            <mat-list-item routerLinkActive="active">
+
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"
+                    style="margin-right: 20px;">
+                    <mat-icon>clear</mat-icon>
+
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Administrator </span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Configurator </span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Designer </span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                        <span>Transaction </span>
+                    </button>
+                </mat-menu>
+
+
+            </mat-list-item>
+ -->
 
 
 

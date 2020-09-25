@@ -18,7 +18,7 @@
 }
 
 .mat-drawer {
-    background: #313131;
+    background: #3f4e63;
 }
 
 .active {
@@ -82,4 +82,18 @@
     border-radius: 4px;
     background-color: rgba(0,0,0,.5);
     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+button{
+    outline: none !important;
+}
+.mat-icon-button {
+    padding: 0;
+    min-width: 0;
+    width: 28px !important;
+    color: #fff;
+}
+
+.mat-menu-panel {
+    background: #313131;
+    margin-left: 38px;
 }

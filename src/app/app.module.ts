@@ -16,13 +16,19 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { MatButtonModule } from '@angular/material/button';
 import {RadioButtonModule} from 'primeng/radiobutton';
+import { DashboardMainComponent } from './admin/pages/dashboard-main/dashboard-main.component';
+import {ToolbarModule} from 'primeng/toolbar';
+import {MegaMenuModule} from 'primeng/megamenu';
+import {MatMenuModule} from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
 
     AdminComponent,
     HomepageComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardMainComponent,
    ],
   imports: [
     BrowserModule,
@@ -33,7 +39,11 @@ import {RadioButtonModule} from 'primeng/radiobutton';
     HomepageModule,
     FormsModule,
     MatButtonModule,
-    RadioButtonModule],
+    RadioButtonModule,
+    ToolbarModule,
+    MegaMenuModule,
+    MatMenuModule,
+    MatIconModule],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
