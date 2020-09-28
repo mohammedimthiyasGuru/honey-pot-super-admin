@@ -39,7 +39,7 @@
                     <h5 class="lead">Client Management
                     </h5>
                 </div>
-            </mat-list-item> 
+            </mat-list-item>
             <mat-list-item routerLink="License" routerLinkActive="active">
                 <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-id-card-o" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 20px;"></i></mat-icon>
@@ -48,9 +48,9 @@
                     <h5 class="lead">License management
                     </h5>
                 </div>
-            </mat-list-item> 
+            </mat-list-item>
 
-        
+
 
 
             <!-- <mat-list-item routerLinkActive="active">
@@ -143,7 +143,63 @@
             </mat-nav-list>
 
 
-            <!-- 
+
+            <mat-list-item routerLinkActive="active" (click)="expand2 = !expand2">
+              <mat-icon style="color: #fff !important;" mat-list-icon>
+                  <i class="fa fa-database" aria-hidden="true"
+                      style="position: absolute;color: #fff !important;font-size: 20px;"></i></mat-icon>
+              <div fxFlex="10"></div>
+              <div class="sidenav-item">
+                  <h5 class="lead">Accounts</h5>
+              </div>
+              <div class="sb-sidenav-collapse-arrow">
+                  <i *ngIf="!expand2" class="fa fa-chevron-down" aria-hidden="true"></i>
+                  <i *ngIf="expand2" class="fa fa-chevron-up" aria-hidden="true"></i>
+              </div>
+          </mat-list-item>
+          <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand2">
+              <div class="sub-menu">
+                  <mat-list-item routerLink="accounts/accounts" routerLinkActive="active">
+                      <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                              aria-hidden="true"
+                              style="position: absolute;color: #fff !important;font-size: 20px;"></i></mat-icon>
+                      <div fxFlex="10"></div>
+                      <div class="sidenav-item">
+                          <h5 class="lead">Accounts</h5>
+                      </div>
+                  </mat-list-item>
+              </div>
+          </mat-nav-list>
+
+          <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand2">
+            <div class="sub-menu">
+                <mat-list-item routerLink="accounts/legal" routerLinkActive="active">
+                    <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                            aria-hidden="true"
+                            style="position: absolute;color: #fff !important;font-size: 20px;"></i></mat-icon>
+                    <div fxFlex="10"></div>
+                    <div class="sidenav-item">
+                        <h5 class="lead">Legal</h5>
+                    </div>
+                </mat-list-item>
+            </div>
+        </mat-nav-list>
+
+        <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand2">
+          <div class="sub-menu">
+              <mat-list-item routerLink="accounts/authorization" routerLinkActive="active">
+                  <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                          aria-hidden="true"
+                          style="position: absolute;color: #fff !important;font-size: 20px;"></i></mat-icon>
+                  <div fxFlex="10"></div>
+                  <div class="sidenav-item">
+                      <h5 class="lead">Authorizations</h5>
+                  </div>
+              </mat-list-item>
+          </div>
+      </mat-nav-list>
+
+            <!--
             <mat-list-item routerLinkActive="active">
 
                 <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"

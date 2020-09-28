@@ -7,6 +7,12 @@ import { ClientProfileComponent } from './pages/honey-pot-client-detail/client-p
 import { CountryComponent } from './pages/country/country.component';
 import { LicenseComponent } from './pages/license/license.component';
 import { LicenseFormComponent } from './pages/license/license-form/license-form.component';
+import { AccAccountlistComponent } from './Pages/accounts/acc-accountlist/acc-accountlist.component';
+import { AccLegalComponent } from './Pages/accounts/acc-legal/acc-legal.component';
+import { AccAuthorizationComponent } from './Pages/accounts/acc-authorization/acc-authorization.component';
+
+
+
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' ,pathMatch:'full'},
   { path: 'dashboard', component: DashboardComponent },
@@ -16,6 +22,15 @@ const routes: Routes = [
   { path: 'Country', component: CountryComponent },
   { path: 'License', component: LicenseComponent },
   { path: 'License_Form', component: LicenseFormComponent },
+
+
+  //////Accounts//////
+  { path: 'accounts/accounts', component: AccAccountlistComponent },
+  { path: 'accounts/legal', component: AccLegalComponent },
+  { path: 'accounts/authorization', component: AccAuthorizationComponent },
+
+
+
 ];
 
 @NgModule({

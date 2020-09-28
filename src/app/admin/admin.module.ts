@@ -40,6 +40,9 @@ import { ClientProfileComponent } from './pages/honey-pot-client-detail/client-p
 import { CountryComponent } from './pages/country/country.component';
 import { LicenseComponent } from './pages/license/license.component';
 import { LicenseFormComponent } from './pages/license/license-form/license-form.component';
+import { AccAccountlistComponent } from './Pages/accounts/acc-accountlist/acc-accountlist.component';
+import { AccLegalComponent } from './Pages/accounts/acc-legal/acc-legal.component';
+import { AccAuthorizationComponent } from './Pages/accounts/acc-authorization/acc-authorization.component';
 
 
 @NgModule({
@@ -52,6 +55,9 @@ import { LicenseFormComponent } from './pages/license/license-form/license-form.
     CountryComponent,
     LicenseComponent,
     LicenseFormComponent,
+    AccAccountlistComponent,
+    AccLegalComponent,
+    AccAuthorizationComponent,
     
     
   ],
