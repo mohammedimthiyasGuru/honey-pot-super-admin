@@ -1,4 +1,4 @@
-<h4 class="title">Client List</h4>
+<h4 class="title">Account List</h4>
 <div class="row">
     <div class="col-md-4">
         <div class="search-hero">
@@ -10,6 +10,29 @@
         <button type="button" class="btn btn-primary mr-0" (click)="client_form()" >Add</button>
     </div>
 </div>
+
+<div class="row" style="padding: 20px;">
+  <div class="col-md-12">
+    <div class="col-md-2">
+     <input type="text" placeholder="Account Search"><button>S</button>
+    </div>
+    <div class="col-md-2">
+      <input type="text" placeholder="Full Search"><button>S</button>
+     </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary mr-0">Personal Loan</button>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary mr-0">Auto Loan</button>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary mr-0">Credit Cards</button>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary mr-0">Sales Finance</button>
+    </div>
+  </div>
+</div>
 <div class="doc-table">
 
 <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="5"
@@ -17,33 +40,37 @@
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
 
     <ng-template pTemplate="header">
-        <tr class="thhead">
-            <th class="th-1">
-                S.No
-            </th>
-            <th>
-                Client Type
-            </th>
-            <th>
-                Client Name
-            </th>
-            <th>
-                Client Address
-            </th>
-            <th>Client representative/contact persons</th>
-            <!-- <th>Created by</th>
-            <th>Modified by</th>
-            <th>Created at</th>
-            <th>Modified at</th> -->
-            <th style="width: 110px;text-align:center">
-                Action
-            </th>
-        </tr>
+
+            <tr style="text-align: center;"  class="thhead">
+                <th rowspan="2">S.No</th>
+                <th colspan="3">Status</th>
+                <th rowspan="2">Account No</th>
+                <th rowspan="2">Customer No</th>
+                <th rowspan="2">Name</th>
+                <th rowspan="2">Portfolio</th>
+                <th colspan="3">Deliquency</th>
+                <th rowspan="2">Action</th>
+            </tr>
+              <tr class="thhead">
+                <th>Telephone:</th>
+                <th>Telephone:</th>
+                <th>Telephone:</th>
+                <th>Bucket:</th>
+                <th>OS Amount:</th>
+                <th>OD Amount:</th>
+              </tr>
+
     </ng-template>
     <ng-template pTemplate="body" let-item let-i="rowIndex">
         <tr class="tdrow">
             <td>{{i+1}}</td>
             <td>Type-1</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
             <td>Lorem ipsum.</td>
             <td>Lorem ipsum.</td>
             <td>Lorem ipsum.</td>
