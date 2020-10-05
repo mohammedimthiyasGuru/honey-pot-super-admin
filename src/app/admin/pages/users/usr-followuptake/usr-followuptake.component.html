@@ -1,0 +1,114 @@
+<h4 class="title">Follow up Save</h4>
+<div class="doc-table">
+  <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
+      [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
+      <ng-template pTemplate="header">
+  <tr style="text-align: center;">
+    <th>Action Date *</th>
+    <th>Action Start Time</th>
+    <th>Action Code</th>
+    <th>Contact Mode</th>
+    <th>Person Contacted</th>
+    <th>Place Contacted</th>
+    <th>Currency</th>
+
+  </tr>
+  <tr style="text-align: center;">
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+  </tr>
+
+  <tr style="text-align: center;">
+    <th>Action Amt.</th>
+    <th>Action Amt. In Base Currency</th>
+    <th>Next Action Date </th>
+    <th>Next Action Time</th>
+    <th>Reminder Mode</th>
+    <th>Contacted By</th>
+    <th></th>
+  </tr>
+
+  <tr style="text-align: center;">
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+  </tr>
+  <tr style="text-align: center;">
+    <th>Remmarks</th>
+    <td colspan="6"><input type=""></td>
+  </tr>
+      </ng-template>
+  </p-table>
+  </div>
+  <br>
+
+
+  <h4 class="title">Customer Memo Line</h4>
+<div class="doc-table">
+  <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
+      [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
+      <ng-template pTemplate="header">
+  <tr style="text-align: center;">
+    <th><input type=""></th>
+    <th> <button>Save Memoline Remarks</button> </th>
+  </tr>
+      </ng-template>
+  </p-table>
+  </div>
+
+<br>
+
+<h4 class="title">Follow up Trails</h4>
+<div class="doc-table">
+  <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
+      [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
+      <ng-template pTemplate="header">
+  <tr style="text-align: center;">
+    <th>Loan Number *</th>
+    <th>Product </th>
+    <th>Bucket</th>
+    <th>Action Date</th>
+    <th>Action Time</th>
+    <th>Contact Mode</th>
+    <th>Place Contacted</th>
+    <th>Person Contacted</th>
+    <th>Action Code</th>
+    <th>Action Amount</th>
+    <th>Remarks</th>
+    <th>Review Date</th>
+    <th>Review Time</th>
+    <th>Created by</th>
+  </tr>
+  <tr style="text-align: center;">
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+    <td><input type=""></td>
+  </tr>
+      </ng-template>
+  </p-table>
+  </div>
+  <br>
+
