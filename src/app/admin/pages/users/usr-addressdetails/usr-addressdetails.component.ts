@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-
+import { MatDialog } from '@angular/material/dialog';
+import { UsrAddnewaddressComponent } from '../usr-addnewaddress/usr-addnewaddress.component';
 @Component({
   selector: 'app-usr-addressdetails',
   templateUrl: './usr-addressdetails.component.html',
@@ -12,7 +13,8 @@ export class UsrAddressdetailsComponent implements OnInit {
   searchQR: any;
   value1: any;
   constructor(
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) { }
 
 
@@ -37,6 +39,26 @@ export class UsrAddressdetailsComponent implements OnInit {
   }
   profile() {
     this.router.navigateByUrl('/admin_panel/Client_profile')
+  }
+
+  show1() {
+    const dialogRef = this.dialog.open(UsrAddressdetailsComponent, {
+      height: '600px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  show2() {
+    const dialogRef = this.dialog.open(UsrAddnewaddressComponent, {
+      height: '600px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }
 

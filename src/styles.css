@@ -11,3 +11,8 @@ body {
     margin: 0;
     font-family: 'Roboto', sans-serif !important;
 }
+
+:host::ng-deep  .mat-dialog-container {
+    padding: 30px !important;
+    height: 600px !important;
+  }

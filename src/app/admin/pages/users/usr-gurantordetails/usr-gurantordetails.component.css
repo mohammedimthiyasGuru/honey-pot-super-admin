@@ -11,9 +11,10 @@ overflow-x: scroll;
 
 
 table, th, td {
-  border: 1px solid black;
+  border: 1px solid #c8c8c8;
   border-collapse: collapse;
   background-color: white;
+  padding: 8px;
 }
 
 .add-icon{

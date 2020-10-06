@@ -32,8 +32,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { TableModule } from 'primeng/table';
 import { FileUploadModule } from 'primeng/fileupload';
 import { TooltipModule } from 'primeng/tooltip';
-import {MultiSelectModule} from 'primeng/multiselect';
-import {ChartModule} from 'primeng/chart';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { ChartModule } from 'primeng/chart';
 import { HoneyPotClientDetailComponent } from './pages/honey-pot-client-detail/honey-pot-client-detail.component';
 import { HoneyPotClientDetailFormComponent } from './pages/honey-pot-client-detail/honey-pot-client-detail-form/honey-pot-client-detail-form.component';
 import { ClientProfileComponent } from './pages/honey-pot-client-detail/client-profile/client-profile.component';
@@ -77,8 +77,7 @@ import { UsrScreenaccesscontroloneComponent } from './Pages/users/usr-screenacce
 import { UsrScreenaccesscontroltwoComponent } from './Pages/users/usr-screenaccesscontroltwo/usr-screenaccesscontroltwo.component';
 import { UsrScreenaccesscontrolthreeComponent } from './Pages/users/usr-screenaccesscontrolthree/usr-screenaccesscontrolthree.component';
 import { UsrUserdetailsComponent } from './Pages/users/usr-userdetails/usr-userdetails.component';
-
-
+import { MatTabsModule } from '@angular/material/tabs';
 @NgModule({
   declarations: [AdminHeaderComponent,
     AdminSidebarComponent,
@@ -126,8 +125,6 @@ import { UsrUserdetailsComponent } from './Pages/users/usr-userdetails/usr-userd
     UsrScreenaccesscontroltwoComponent,
     UsrScreenaccesscontrolthreeComponent,
     UsrUserdetailsComponent,
-    
-    
   ],
   imports: [
     CommonModule,
@@ -152,7 +149,8 @@ import { UsrUserdetailsComponent } from './Pages/users/usr-userdetails/usr-userd
     FileUploadModule,
     TooltipModule,
     MultiSelectModule,
-  ChartModule],
+    ChartModule,
+    MatTabsModule],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
     NO_ERRORS_SCHEMA
@@ -162,8 +160,40 @@ import { UsrUserdetailsComponent } from './Pages/users/usr-userdetails/usr-userd
   ],
   exports: [
     AdminHeaderComponent,
-    AdminSidebarComponent
+    AdminSidebarComponent,
+    UsrContactrecordingComponent,
+    UsrActioncodeComponent,
+    UsrAddnewaddressComponent,
+    UsrAddressdetailsComponent,
+    UsrAdhocscreenComponent,
+    UsrAllocationhistoryComponent,
+    UsrCustomerdetailsComponent,
+    UsrCustomerleaccountComponent,
+    UsrDocumnetretrievalComponent,
+    UsrExcelexportComponent,
+    UsrFollowupsaveComponent,
+    UsrFollowuptakeComponent,
+    UsrFollowuptakeoneComponent,
+    UsrFollowuptrailsComponent,
+    UsrGurantordetailsComponent,
+    UsrLoandetailsComponent,
+    UsrLogoffusersComponent,
+    UsrOverduedetailsoneComponent,
+    UsrOverduedetailstwoComponent,
+    UsrPaymentdetailsComponent,
+    UsrPaymentdetailsoneComponent,
+    UsrPhonedetailsComponent,
+    UsrReferaccountComponent,
+    UsrReportComponent,
+    UsrRpoComponent,
+    UsrScreenaccessoneComponent,
+    UsrScreenaccesstwoComponent,
+    UsrScreenaccessthreeComponent,
+    UsrScreenaccesscontrolComponent,
+    UsrScreenaccesscontroloneComponent,
+    UsrScreenaccesscontroltwoComponent,
+    UsrScreenaccesscontrolthreeComponent,
+    UsrUserdetailsComponent,
   ]
 })
 export class AdminModule { }
- 

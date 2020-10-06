@@ -105,6 +105,8 @@
 
 :host::ng-deep  .ui-table .ui-table-thead > tr > th {
     padding: 15px 8px !important;
+    color: #ffffff !important;
+    background-color: #0e69dd !important;
 }
 /* table */
 
@@ -118,11 +120,11 @@
     padding: 20px 30px 0px 30px;
     background: #fff;
     border-radius: 10px;
-    box-shadow:0px 3px 3px 0px #01937726;
+    box-shadow: 0px 1px 3px 1px #3f4e6340;
     margin-bottom: 35px;
 }
 .form-lable{
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     color: #1b1b1b !important;
     margin-bottom: 5px;
@@ -226,4 +228,37 @@ textarea {
     padding: 0.429em;
     padding-right: 2em;
     margin-bottom: 0px;
+}
+:host::ng-deep  .mat-dialog-container {
+    height: 600px !important;
+  }
+
+  :host::ng-deep .ui-table-thead > tr > th {
+    padding: 8px 8px !important;
+    font-size: 10px;
+    /* background-color: #3f4e631f !important; */
+}
+.btn{
+    font-size: 10px !important;
+    font-weight: 600;
+}
+.title-f {
+    font-size: 15px;
+    font-weight: 500;
+    color: #2196F3;
+}
+
+
+:host::ng-deep .ui-inputtext {
+    margin-bottom: 10px !important;
+}
+
+h5 span{
+    color: #0e69dd;
+}
+:host::ng-deep .mat-dialog-container {
+    padding: 15px !important;
+}
+input {
+    width: 100%;
 }

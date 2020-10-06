@@ -1,21 +1,31 @@
-<h4 class="title">Address Details</h4>
-<div class="doc-table">
-  <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
-      [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
-      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
-      <ng-template pTemplate="header">
-  <tr style="text-align: center;">
-    <th>Loan Number</th>
-    <td>1234568908765432</td>
-    <th>Customer Name</th>
-    <td>Mohammed Imthiyas</td>
-  </tr>
-      </ng-template>
-  </p-table>
-  </div>
+<!-- <h4 class="title-f">Address Details</h4> -->
+    <div class="row" style="padding: 0px 0px 23px 10px;">
+      
+<!--        
+        <div class="col-md-12 mt-20">
+            <button type="button" class="btn btn-primary">Add</button>
+         </div> -->
 
+    </div>
 
-
+<div class="row">
+    <!-- <div class="col-md-4">
+        <div class="search-hero">
+            <input class="form-control" type="text" name="search2" style="font-family: FontAwesome;"
+                [(ngModel)]="searchQR" autocomplete="off" placeholder="&#xf002; Search...">
+        </div>
+    </div> -->
+    <div class="col-md-5">
+        <h5 class="form-lable">Loan Number: <span>1234568908765432</span></h5>
+    </div>
+    <div class="col-md-5">
+        <h5 class="form-lable">Customer Name: <span>Mohammed Imthiyas</span></h5>
+    </div>
+    <div class="col-md-2 text-right">
+        <button type="button" class="btn btn-primary mr-0" (click)="show2()">Add</button>
+    </div>
+</div>
+<br>
 <div class="doc-table">
     <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="5"
         [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
@@ -110,7 +120,7 @@
 
 </div>
 
-<div class="doc-table">
+<!-- <div class="doc-table">
   <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
       [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
       currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
@@ -125,4 +135,4 @@
   </tr>
       </ng-template>
   </p-table>
-</div>
+</div> -->

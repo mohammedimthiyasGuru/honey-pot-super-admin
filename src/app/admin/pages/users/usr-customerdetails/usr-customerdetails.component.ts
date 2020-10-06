@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { UsrAddressdetailsComponent } from '../usr-addressdetails/usr-addressdetails.component';
+import { MatDialog } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-usr-customerdetails',
@@ -12,7 +15,8 @@ export class UsrCustomerdetailsComponent implements OnInit {
   searchQR: any;
   value1: any;
   constructor(
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) { }
 
 
@@ -38,5 +42,7 @@ export class UsrCustomerdetailsComponent implements OnInit {
   profile() {
     this.router.navigateByUrl('/admin_panel/Client_profile')
   }
+
+ 
 }
 
