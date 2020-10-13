@@ -55,6 +55,42 @@ table, th, td {
     height: 600px !important;
   }
 
+  :host::ng-deep  .tab-info .mat-tab-label {
+    height: 35px !important;
+    padding: 5px 5px !important;
+    min-width: 31px !important;
+    width: 31px !important;
+}
+
+:host::ng-deep .tab-info .mat-tab-labels {
+  background: #253f64  !important;
+}
+
+
+:host::ng-deep .tab-info  .mat-tab-label-active{
+  background: #fff !important;
+}
+
+
+:host::ng-deep .tab-info .mat-icon  {
+  background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    height: 18px;
+    width: 24px;;
+    font-size: 16px;
+  color: #fff !important;
+}
+
+:host::ng-deep .tab-info .mat-tab-label-active .mat-icon  {
+  background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    height: 18px;
+    width: 24px;
+    color: #0e69dd !important;
+    font-size: 16px;
+}
 
 
 

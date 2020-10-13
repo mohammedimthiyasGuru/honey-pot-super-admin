@@ -78,6 +78,9 @@ import { UsrScreenaccesscontroltwoComponent } from './Pages/users/usr-screenacce
 import { UsrScreenaccesscontrolthreeComponent } from './Pages/users/usr-screenaccesscontrolthree/usr-screenaccesscontrolthree.component';
 import { UsrUserdetailsComponent } from './Pages/users/usr-userdetails/usr-userdetails.component';
 import { MatTabsModule } from '@angular/material/tabs';
+// import { FlexLayoutModule } from "@angular/flex-layout";
+
+import {MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   declarations: [AdminHeaderComponent,
     AdminSidebarComponent,
@@ -150,7 +153,10 @@ import { MatTabsModule } from '@angular/material/tabs';
     TooltipModule,
     MultiSelectModule,
     ChartModule,
-    MatTabsModule],
+    MatTabsModule,
+    // FlexLayoutModule,
+    MatTooltipModule
+  ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
     NO_ERRORS_SCHEMA

@@ -32,7 +32,8 @@ import { UsrScreenaccesscontroloneComponent } from '../usr-screenaccesscontrolon
 import { UsrScreenaccesscontroltwoComponent } from '../usr-screenaccesscontroltwo/usr-screenaccesscontroltwo.component';
 import { UsrScreenaccesscontrolthreeComponent } from '../usr-screenaccesscontrolthree/usr-screenaccesscontrolthree.component';
 import { UsrUserdetailsComponent } from '../usr-userdetails/usr-userdetails.component';
-
+import {FormControl} from '@angular/forms';
+import {TooltipPosition} from '@angular/material/tooltip';
 
 
 @Component({
@@ -41,7 +42,8 @@ import { UsrUserdetailsComponent } from '../usr-userdetails/usr-userdetails.comp
   styleUrls: ['./usr-contactrecording.component.css']
 })
 export class UsrContactrecordingComponent implements OnInit {
-
+  positionOptions: TooltipPosition[] = ['below', 'above', 'left', 'right'];
+  position = new FormControl(this.positionOptions[0]);
   rows = [];
   searchQR: any;
   value1: any;
@@ -153,6 +155,33 @@ export class UsrContactrecordingComponent implements OnInit {
   }
   show9() {
     const dialogRef = this.dialog.open(UsrDocumnetretrievalComponent, {
+      height: '600px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  show10() {
+    const dialogRef = this.dialog.open(UsrPaymentdetailsComponent, {
+      height: '600px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  show11() {
+    const dialogRef = this.dialog.open(UsrPhonedetailsComponent, {
+      height: '600px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  show12() {
+    const dialogRef = this.dialog.open(UsrOverduedetailstwoComponent, {
       height: '600px'
     });
 

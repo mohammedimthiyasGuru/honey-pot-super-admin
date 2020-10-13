@@ -9,7 +9,7 @@
         <div class="col-lg-3">
             <div class="card-box">
                 <div class="card-i">
-                    <img src="assets/images/004.png" alt="" style="width: 100%; max-width: 100px;">
+                    <img src="assets/images/004.png" alt="" style="width: 100%; max-width: 40px;margin-top: -2px;">
                 </div>
                 <div class="card-text">
                     <p>Users</p>
@@ -20,7 +20,7 @@
         <div class="col-lg-3">
             <div class="card-box">
                 <div class="card-i bg-org">
-                    <img src="assets/images/001.png" alt="" style="width: 100%; max-width: 100px;">
+                    <img src="assets/images/001.png" alt="" style="width: 100%; max-width: 40px;margin-top: -2px;">
                 </div>
                 <div class="card-text">
                     <p>Clients</p>
@@ -31,7 +31,7 @@
         <div class="col-lg-3">
             <div class="card-box">
                 <div class="card-i bg-green">
-                    <img src="assets/images/003.png" alt="" style="width: 100%; max-width: 100px;">
+                    <img src="assets/images/003.png" alt="" style="width: 100%; max-width: 40px;margin-top: -2px;">
                 </div>
                 <div class="card-text">
                     <p>Organizations</p>
@@ -42,7 +42,7 @@
         <div class="col-lg-3">
             <div class="card-box">
                 <div class="card-i bg-blue">
-                    <img src="assets/images/002.png" alt="" style="width: 100%; max-width: 100px;">
+                    <img src="assets/images/002.png" alt="" style="width: 100%; max-width: 40px;margin-top: -2px;">
                 </div>
                 <div class="card-text">
                     <p>Subscription</p>
@@ -61,7 +61,7 @@
         <div class="col-lg-3">
             <div class="card-box">
                 <div class="card-i bg-blue">
-                    <img src="assets/images/006.png" alt="" style="width: 100%; max-width: 100px;">
+                    <img src="assets/images/006.png" alt="" style="width: 100%; max-width: 40px;margin-top: -2px;">
                 </div>
                 <div class="card-text">
                     <p>Credit Card</p>
@@ -72,7 +72,7 @@
         <div class="col-lg-3">
             <div class="card-box">
                 <div class="card-i bg-green">
-                    <img src="assets/images/007.png" alt="" style="width: 100%; max-width: 100px;">
+                    <img src="assets/images/007.png" alt="" style="width: 100%; max-width: 40px;margin-top: -2px;">
                 </div>
                 <div class="card-text">
                     <p>Vehicle Loan</p>
@@ -83,7 +83,7 @@
         <div class="col-lg-3">
             <div class="card-box">
                 <div class="card-i bg-org">
-                    <img src="assets/images/008.png" alt="" style="width: 100%; max-width: 100px;">
+                    <img src="assets/images/008.png" alt="" style="width: 100%; max-width: 40px;margin-top: -2px;">
                 </div>
                 <div class="card-text">
                     <p>Personal Loan</p>
@@ -94,7 +94,7 @@
         <div class="col-lg-3">
             <div class="card-box">
                 <div class="card-i">
-                    <img src="assets/images/009.png" alt="" style="width: 100%; max-width: 100px;">
+                    <img src="assets/images/009.png" alt="" style="width: 100%; max-width: 40px;margin-top: -2px;">
                 </div>
                 <div class="card-text">
                     <p>Home Loan</p>
@@ -114,20 +114,28 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <h4 class="head-chart">Doughnut Chart</h4>
         <div class="chart-box">
             
             <p-chart type="doughnut" [data]="data"></p-chart>
         </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <h4 class="head-chart">Bar Chart</h4>
            <div class="chart-box">
             
             <p-chart type="bar" [data]="data1"></p-chart>
            </div>
         </div>
+        <div class="col-lg-4">
+            <h4 class="head-chart">Bar Chart</h4>
+           <div class="chart-box">
+            
+            <p-chart type="pie" [data]="data2"></p-chart>
+           </div>
+        </div>
+        
         <!-- <div class="col-lg-12">
             <div class="row">
                 <div class="col-lg-12">

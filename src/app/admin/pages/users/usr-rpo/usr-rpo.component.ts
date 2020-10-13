@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-usr-rpo',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./usr-rpo.component.css']
 })
 export class UsrRpoComponent implements OnInit {
+  rows = [];
+  searchQR: any;
+  value1: any;
+  constructor(
+    private router: Router
+  ) { }
 
-  constructor() { }
+
 
   ngOnInit(): void {
+  
   }
-
+  client_form() {
+    this.router.navigateByUrl('/admin_panel/client-form')
+  }
+  profile() {
+    this.router.navigateByUrl('/admin_panel/Client_profile')
+  }
 }
