@@ -43,6 +43,7 @@ import { UsrScreenaccesscontroltwoComponent } from './Pages/users/usr-screenacce
 import { UsrScreenaccessoneComponent } from './Pages/users/usr-screenaccessone/usr-screenaccessone.component';
 import { UsrScreenaccesstwoComponent } from './Pages/users/usr-screenaccesstwo/usr-screenaccesstwo.component';
 import { UsrUserdetailsComponent } from './Pages/users/usr-userdetails/usr-userdetails.component';
+import { UsrCollateralDetailsComponent } from './pages/users/usr-collateral-details/usr-collateral-details.component';
 
 
 
@@ -99,6 +100,7 @@ const routes: Routes = [
   { path: 'user/screen2', component: UsrContactrecordingComponent },
   { path: 'user/screen3', component: UsrContactrecordingComponent },
   { path: 'user/userdetails', component: UsrUserdetailsComponent },
+  { path: 'user/usercollateraldetails', component: UsrCollateralDetailsComponent },
 
 
 

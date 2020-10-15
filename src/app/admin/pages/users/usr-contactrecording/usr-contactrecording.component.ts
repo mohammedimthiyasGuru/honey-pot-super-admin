@@ -34,6 +34,8 @@ import { UsrScreenaccesscontrolthreeComponent } from '../usr-screenaccesscontrol
 import { UsrUserdetailsComponent } from '../usr-userdetails/usr-userdetails.component';
 import {FormControl} from '@angular/forms';
 import {TooltipPosition} from '@angular/material/tooltip';
+import { UsrCollateralDetailsComponent } from '../usr-collateral-details/usr-collateral-details.component';
+import { UsrAllocationDetailComponent } from '../usr-allocation-detail/usr-allocation-detail.component';
 
 
 @Component({

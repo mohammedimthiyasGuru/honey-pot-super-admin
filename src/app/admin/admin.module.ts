@@ -81,6 +81,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 // import { FlexLayoutModule } from "@angular/flex-layout";
 
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { UsrCollateralDetailsComponent } from './pages/users/usr-collateral-details/usr-collateral-details.component';
+import { UsrAllocationDetailComponent } from './pages/users/usr-allocation-detail/usr-allocation-detail.component';
+
 @NgModule({
   declarations: [AdminHeaderComponent,
     AdminSidebarComponent,
@@ -128,6 +131,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     UsrScreenaccesscontroltwoComponent,
     UsrScreenaccesscontrolthreeComponent,
     UsrUserdetailsComponent,
+    UsrCollateralDetailsComponent,
+    UsrAllocationDetailComponent,
   ],
   imports: [
     CommonModule,
@@ -200,6 +205,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     UsrScreenaccesscontroltwoComponent,
     UsrScreenaccesscontrolthreeComponent,
     UsrUserdetailsComponent,
+    UsrCollateralDetailsComponent
   ]
 })
 export class AdminModule { }
