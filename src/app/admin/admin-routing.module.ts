@@ -11,40 +11,40 @@ import { AccAccountlistComponent } from './Pages/accounts/acc-accountlist/acc-ac
 import { AccLegalComponent } from './Pages/accounts/acc-legal/acc-legal.component';
 import { AccAuthorizationComponent } from './Pages/accounts/acc-authorization/acc-authorization.component';
 import { AccAuthorViewComponent } from './Pages/accounts/acc-author-view/acc-author-view.component';
-import { UsrContactrecordingComponent } from './Pages/users/usr-contactrecording/usr-contactrecording.component';
-import { UsrActioncodeComponent } from './Pages/users/usr-actioncode/usr-actioncode.component';
-import { UsrAddnewaddressComponent } from './Pages/users/usr-addnewaddress/usr-addnewaddress.component';
-import { UsrAddressdetailsComponent } from './Pages/users/usr-addressdetails/usr-addressdetails.component';
-import { UsrAdhocscreenComponent } from './Pages/users/usr-adhocscreen/usr-adhocscreen.component';
-import { UsrAllocationhistoryComponent } from './Pages/users/usr-allocationhistory/usr-allocationhistory.component';
-import { UsrCustomerdetailsComponent } from './Pages/users/usr-customerdetails/usr-customerdetails.component';
-import { UsrCustomerleaccountComponent } from './Pages/users/usr-customerleaccount/usr-customerleaccount.component';
-import { UsrDocumnetretrievalComponent } from './Pages/users/usr-documnetretrieval/usr-documnetretrieval.component';
-import { UsrExcelexportComponent } from './Pages/users/usr-excelexport/usr-excelexport.component';
-import { UsrFollowupsaveComponent } from './Pages/users/usr-followupsave/usr-followupsave.component';
-import { UsrFollowuptakeComponent } from './Pages/users/usr-followuptake/usr-followuptake.component';
-import { UsrFollowuptakeoneComponent } from './Pages/users/usr-followuptakeone/usr-followuptakeone.component';
-import { UsrFollowuptrailsComponent } from './Pages/users/usr-followuptrails/usr-followuptrails.component';
-import { UsrGurantordetailsComponent } from './Pages/users/usr-gurantordetails/usr-gurantordetails.component';
-import { UsrLoandetailsComponent } from './Pages/users/usr-loandetails/usr-loandetails.component';
-import { UsrLogoffusersComponent } from './Pages/users/usr-logoffusers/usr-logoffusers.component';
-import { UsrOverduedetailsoneComponent } from './Pages/users/usr-overduedetailsone/usr-overduedetailsone.component';
-import { UsrOverduedetailstwoComponent } from './Pages/users/usr-overduedetailstwo/usr-overduedetailstwo.component';
-import { UsrPaymentdetailsComponent } from './Pages/users/usr-paymentdetails/usr-paymentdetails.component';
-import { UsrPaymentdetailsoneComponent } from './Pages/users/usr-paymentdetailsone/usr-paymentdetailsone.component';
-import { UsrPhonedetailsComponent } from './Pages/users/usr-phonedetails/usr-phonedetails.component';
-import { UsrReferaccountComponent } from './Pages/users/usr-referaccount/usr-referaccount.component';
-import { UsrReportComponent } from './Pages/users/usr-report/usr-report.component';
-import { UsrRpoComponent } from './Pages/users/usr-rpo/usr-rpo.component';
-import { UsrScreenaccesscontrolComponent } from './Pages/users/usr-screenaccesscontrol/usr-screenaccesscontrol.component';
-import { UsrScreenaccesscontroloneComponent } from './Pages/users/usr-screenaccesscontrolone/usr-screenaccesscontrolone.component';
-import { UsrScreenaccesscontrolthreeComponent } from './Pages/users/usr-screenaccesscontrolthree/usr-screenaccesscontrolthree.component';
-import { UsrScreenaccesscontroltwoComponent } from './Pages/users/usr-screenaccesscontroltwo/usr-screenaccesscontroltwo.component';
-import { UsrScreenaccessoneComponent } from './Pages/users/usr-screenaccessone/usr-screenaccessone.component';
-import { UsrScreenaccesstwoComponent } from './Pages/users/usr-screenaccesstwo/usr-screenaccesstwo.component';
-import { UsrUserdetailsComponent } from './Pages/users/usr-userdetails/usr-userdetails.component';
-import { UsrCollateralDetailsComponent } from './pages/users/usr-collateral-details/usr-collateral-details.component';
-
+import { UsrContactrecordingComponent } from './pages/users//usr-contactrecording/usr-contactrecording.component';
+import { UsrActioncodeComponent } from './pages/users//usr-actioncode/usr-actioncode.component';
+import { UsrAddnewaddressComponent } from './pages/users//usr-addnewaddress/usr-addnewaddress.component';
+import { UsrAddressdetailsComponent } from './pages/users//usr-addressdetails/usr-addressdetails.component';
+import { UsrAdhocscreenComponent } from './pages/users//usr-adhocscreen/usr-adhocscreen.component';
+import { UsrAllocationhistoryComponent } from './pages/users//usr-allocationhistory/usr-allocationhistory.component';
+import { UsrCustomerdetailsComponent } from './pages/users//usr-customerdetails/usr-customerdetails.component';
+import { UsrCustomerleaccountComponent } from './pages/users//usr-customerleaccount/usr-customerleaccount.component';
+import { UsrDocumnetretrievalComponent } from './pages/users//usr-documnetretrieval/usr-documnetretrieval.component';
+import { UsrExcelexportComponent } from './pages/users//usr-excelexport/usr-excelexport.component';
+import { UsrFollowupsaveComponent } from './pages/users//usr-followupsave/usr-followupsave.component';
+import { UsrFollowuptakeComponent } from './pages/users//usr-followuptake/usr-followuptake.component';
+import { UsrFollowuptakeoneComponent } from './pages/users//usr-followuptakeone/usr-followuptakeone.component';
+import { UsrFollowuptrailsComponent } from './pages/users//usr-followuptrails/usr-followuptrails.component';
+import { UsrGurantordetailsComponent } from './pages/users//usr-gurantordetails/usr-gurantordetails.component';
+import { UsrLoandetailsComponent } from './pages/users//usr-loandetails/usr-loandetails.component';
+import { UsrLogoffusersComponent } from './pages/users//usr-logoffusers/usr-logoffusers.component';
+import { UsrOverduedetailsoneComponent } from './pages/users//usr-overduedetailsone/usr-overduedetailsone.component';
+import { UsrOverduedetailstwoComponent } from './pages/users//usr-overduedetailstwo/usr-overduedetailstwo.component';
+import { UsrPaymentdetailsComponent } from './pages/users//usr-paymentdetails/usr-paymentdetails.component';
+import { UsrPaymentdetailsoneComponent } from './pages/users//usr-paymentdetailsone/usr-paymentdetailsone.component';
+import { UsrPhonedetailsComponent } from './pages/users//usr-phonedetails/usr-phonedetails.component';
+import { UsrReferaccountComponent } from './pages/users//usr-referaccount/usr-referaccount.component';
+import { UsrReportComponent } from './pages/users//usr-report/usr-report.component';
+import { UsrRpoComponent } from './pages/users//usr-rpo/usr-rpo.component';
+import { UsrScreenaccesscontrolComponent } from './pages/users//usr-screenaccesscontrol/usr-screenaccesscontrol.component';
+import { UsrScreenaccesscontroloneComponent } from './pages/users//usr-screenaccesscontrolone/usr-screenaccesscontrolone.component';
+import { UsrScreenaccesscontrolthreeComponent } from './pages/users//usr-screenaccesscontrolthree/usr-screenaccesscontrolthree.component';
+import { UsrScreenaccesscontroltwoComponent } from './pages/users//usr-screenaccesscontroltwo/usr-screenaccesscontroltwo.component';
+import { UsrScreenaccessoneComponent } from './pages/users//usr-screenaccessone/usr-screenaccessone.component';
+import { UsrScreenaccesstwoComponent } from './pages/users//usr-screenaccesstwo/usr-screenaccesstwo.component';
+import { UsrUserdetailsComponent } from './pages/users//usr-userdetails/usr-userdetails.component';
+import { UsrAllocationdetailComponent } from './pages/users//usr-allocationdetail/usr-allocationdetail.component';
+import { UsrCollateraldetailssComponent } from './pages/users//usr-collateraldetailss/usr-collateraldetailss.component';
 
 
 const routes: Routes = [
@@ -100,7 +100,7 @@ const routes: Routes = [
   { path: 'user/screen2', component: UsrContactrecordingComponent },
   { path: 'user/screen3', component: UsrContactrecordingComponent },
   { path: 'user/userdetails', component: UsrUserdetailsComponent },
-  { path: 'user/usercollateraldetails', component: UsrCollateralDetailsComponent },
+  { path: 'user/usercollateraldetails', component: UsrCollateraldetailssComponent },
 
 
 

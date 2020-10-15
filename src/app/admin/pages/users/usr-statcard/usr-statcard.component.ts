@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-usr-allocation-detail',
-  templateUrl: './usr-allocation-detail.component.html',
-  styleUrls: ['./usr-allocation-detail.component.css']
+  selector: 'app-usr-statcard',
+  templateUrl: './usr-statcard.component.html',
+  styleUrls: ['./usr-statcard.component.css']
 })
-export class UsrAllocationDetailComponent implements OnInit {
+export class UsrStatcardComponent implements OnInit {
+
 
   rows = [];
   searchQR: any;
@@ -27,5 +28,4 @@ export class UsrAllocationDetailComponent implements OnInit {
   { type: "Cat", name: "cat1" }]
 
   }
-
 }

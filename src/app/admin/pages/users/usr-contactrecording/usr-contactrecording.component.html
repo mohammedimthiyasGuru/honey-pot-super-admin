@@ -115,7 +115,7 @@
               </div>
               <div class="col-md-4">
                 <h5 class="form-lable">Agreement ID:</h5>
-                <input type="text" pInputText placeholder="">
+                <input type="text" pInputText placeholder="" value="125987">
               </div>
               <div class="col-md-4">
                 <h5 class="form-lable">PTP Status:</h5>
@@ -277,7 +277,7 @@
           </div>
         </div>
         </div>
-        <h4 class="title">Delinquency String</h4>
+        <h4 class="title-f">Delinquency String</h4>
         <div class="doc-table">
           <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
             [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
@@ -341,7 +341,7 @@
           </p-table>
         </div>
         <br>
-        <h4 class="title">Multiple Account Information</h4>
+        <h4 class="title-f">Multiple Account Information</h4>
         <div class="doc-table">
           <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
             [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
@@ -401,7 +401,7 @@
         <mat-icon matTooltip="Collateral Details">attach_money</mat-icon>
       </ng-template>
        <br>
-       <app-usr-collateral-details></app-usr-collateral-details>
+       <app-usr-collateraldetailss></app-usr-collateraldetailss>
     </mat-tab>
     <mat-tab>
       <ng-template mat-tab-label>
@@ -415,7 +415,7 @@
         <mat-icon matTooltip="Statcard">card_membership</mat-icon>
       </ng-template>
        <br>
-      Content 1
+      <app-usr-statcard></app-usr-statcard>
     </mat-tab>
     <mat-tab>
       <ng-template mat-tab-label>
@@ -493,14 +493,14 @@
         <mat-icon matTooltip="Allocation Details">ballot</mat-icon>
       </ng-template>
        <br>
-      <app-usr-allocation-detail></app-usr-allocation-detail>
+      <app-usr-allocationdetail></app-usr-allocationdetail>
     </mat-tab>
     <mat-tab>
       <ng-template mat-tab-label>
         <mat-icon matTooltip="Delinquency flow">merge_type</mat-icon>
       </ng-template>
        <br>
-      Content 1
+     <app-usr-delinquencyflow></app-usr-delinquencyflow>
     </mat-tab>
     <mat-tab>
       <ng-template mat-tab-label>
@@ -521,7 +521,7 @@
         <mat-icon matTooltip="Account Summary">event_note</mat-icon>
       </ng-template>
        <br>
-      Content 1
+      <app-usr-accountsummery></app-usr-accountsummery>
     </mat-tab>
     <mat-tab>
       <ng-template mat-tab-label>

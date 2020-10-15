@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-usr-collateral-details',
-  templateUrl: './usr-collateral-details.component.html',
-  styleUrls: ['./usr-collateral-details.component.css']
+  selector: 'app-usr-allocationdetail',
+  templateUrl: './usr-allocationdetail.component.html',
+  styleUrls: ['./usr-allocationdetail.component.css']
 })
-export class UsrCollateralDetailsComponent implements OnInit {
+export class UsrAllocationdetailComponent implements OnInit {
 
   rows = [];
   searchQR: any;
