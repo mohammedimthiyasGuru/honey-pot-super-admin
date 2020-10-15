@@ -86,6 +86,11 @@ import { UsrCollateraldetailssComponent } from './pages/users//usr-collateraldet
 import { UsrAccountsummeryComponent } from './pages/users/usr-accountsummery/usr-accountsummery.component';
 import { UsrDelinquencyflowComponent } from './pages/users/usr-delinquencyflow/usr-delinquencyflow.component';
 import { UsrStatcardComponent } from './pages/users/usr-statcard/usr-statcard.component';
+import { UsrAssetDetailComponent } from './pages/users/usr-asset-detail/usr-asset-detail.component';
+import { UsrRepaymentComponent } from './pages/users/usr-repayment/usr-repayment.component';
+import { UsrBouncesComponent } from './pages/users/usr-bounces/usr-bounces.component';
+import { UsrPaymentHistoryComponent } from './pages/users/usr-payment-history/usr-payment-history.component';
+import { UsrForeclosureComponent } from './pages/users/usr-foreclosure/usr-foreclosure.component';
 
 @NgModule({
   declarations: [AdminHeaderComponent,
@@ -139,6 +144,11 @@ import { UsrStatcardComponent } from './pages/users/usr-statcard/usr-statcard.co
     UsrAccountsummeryComponent,
     UsrDelinquencyflowComponent,
     UsrStatcardComponent,
+    UsrAssetDetailComponent,
+    UsrRepaymentComponent,
+    UsrBouncesComponent,
+    UsrPaymentHistoryComponent,
+    UsrForeclosureComponent,
   ],
   imports: [
     CommonModule,
@@ -214,7 +224,12 @@ import { UsrStatcardComponent } from './pages/users/usr-statcard/usr-statcard.co
     UsrCollateraldetailssComponent,
     UsrAccountsummeryComponent,
     UsrDelinquencyflowComponent,
-    UsrStatcardComponent
+    UsrStatcardComponent,
+    UsrAssetDetailComponent,
+    UsrRepaymentComponent,
+    UsrBouncesComponent,
+    UsrPaymentHistoryComponent,
+    UsrForeclosureComponent
   ]
 })
 export class AdminModule { }
