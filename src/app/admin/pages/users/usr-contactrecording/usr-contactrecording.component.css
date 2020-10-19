@@ -94,3 +94,33 @@ table, th, td {
 
 
 
+.ht-img img{
+  width: 33px;
+  float: left;
+  padding: 3px;
+  border-radius: 50%;
+  margin-top: 6px;
+  margin-right: 10px;
+
+}
+.pr-t th, .pr-t td{
+  border: none;
+
+}
+.follow{
+  position: fixed;
+    right: 0;
+    top: 50px;
+  background: #253f64;
+}
+.follow .mat-icon {
+    color: #fff;
+    padding: 6px 6px;
+    width: auto;
+    height: auto;
+    font-size: 17px !important;
+}
+.active-i .mat-icon{
+  background-color: #a8b2c1;
+  color: #1758ad;
+}

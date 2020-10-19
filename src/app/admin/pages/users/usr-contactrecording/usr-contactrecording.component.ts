@@ -37,7 +37,6 @@ import {TooltipPosition} from '@angular/material/tooltip';
 import { UsrAllocationdetailComponent } from '../usr-allocationdetail/usr-allocationdetail.component';
 import { UsrCollateraldetailssComponent } from './../usr-collateraldetailss/usr-collateraldetailss.component';
 
-
 @Component({
   selector: 'app-usr-contactrecording',
   templateUrl: './usr-contactrecording.component.html',
@@ -49,6 +48,7 @@ export class UsrContactrecordingComponent implements OnInit {
   rows = [];
   searchQR: any;
   value1: any;
+  del:boolean = false;
   constructor(
     private router: Router,
     public dialog: MatDialog) { }
@@ -78,7 +78,7 @@ export class UsrContactrecordingComponent implements OnInit {
   }
 
   show1() {
-    const dialogRef = this.dialog.open(UsrCustomerdetailsComponent, {
+    const dialogRef = this.dialog.open(UsrFollowuptakeComponent, {
       height: '600px',
       width:'90%'
     });

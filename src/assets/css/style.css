@@ -241,7 +241,7 @@ textarea {
 }
 .btn{
     font-size: 10px !important;
-    font-weight: 600;
+    font-weight: 400;
 }
 .title-f {
     font-size: 13px;
@@ -263,4 +263,23 @@ h5 span{
 }
 input {
     width: 100%;
+}
+
+.p-input-icon-left > i:first-of-type {
+    left: 20px;
+    color: #6c757d;
+    top: 15px;
+    font-size: 12px;
+}
+.p-input-icon-left>i, .p-input-icon-right>i {
+    position: absolute;
+    top: 50%;
+    margin-top: -.5rem;
+}
+.p-inputtext:enabled:hover {
+    border-color: #2196F3;
+}
+.p-input-icon-left > .ui-inputtext {
+    padding-left: 2rem;
+    height: auto !important;
 }

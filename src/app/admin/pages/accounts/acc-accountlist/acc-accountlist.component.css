@@ -38,3 +38,46 @@ overflow-x: scroll;
     background-color: #0e69dd;
     color: white;
   }
+  .details li {
+    list-style: none;
+  }
+  li {
+      margin-bottom:10px;
+      
+  }
+  .pr-img img{
+    width: 30px;
+    border-radius: 50%;
+  }
+  .pr-det th, .pr-det td {
+    font-size: 12px;
+    padding: 10px 5px;
+  }
+  .pr-det {
+    /* width: 50%; */
+  }
+  .pr-det tr{
+    border-bottom: 1px solid #dadada;
+  }
+  .pr-hd{
+    padding: 10px;
+    background: #0e69dd;
+    color: #fff;
+  }
+  :host::ng-deep .ui-dialog .ui-dialog-content {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #c8c8c8;
+    padding: 0px 10px;
+  }
+  .pr-v{
+    margin-right: 0px;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: underline;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    cursor: pointer;
+  }
+  
