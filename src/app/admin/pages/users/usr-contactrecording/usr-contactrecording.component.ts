@@ -36,7 +36,7 @@ import {FormControl} from '@angular/forms';
 import {TooltipPosition} from '@angular/material/tooltip';
 import { UsrAllocationdetailComponent } from '../usr-allocationdetail/usr-allocationdetail.component';
 import { UsrCollateraldetailssComponent } from './../usr-collateraldetailss/usr-collateraldetailss.component';
-
+import { UsrWorkflowComponent } from './../usr-workflow/usr-workflow.component';
 @Component({
   selector: 'app-usr-contactrecording',
   templateUrl: './usr-contactrecording.component.html',
@@ -49,6 +49,7 @@ export class UsrContactrecordingComponent implements OnInit {
   searchQR: any;
   value1: any;
   del:boolean = false;
+  show:any;
   constructor(
     private router: Router,
     public dialog: MatDialog) { }
@@ -86,17 +87,19 @@ export class UsrContactrecordingComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+    this.show = 'show1';
   }
 
 
   show2() {
-    const dialogRef = this.dialog.open(UsrGurantordetailsComponent, {
+    const dialogRef = this.dialog.open(UsrWorkflowComponent, {
       height: '600px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+    this.show = 'show2';
   }
   show3() {
     const dialogRef = this.dialog.open(UsrAllocationhistoryComponent, {

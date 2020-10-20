@@ -91,6 +91,7 @@ import { UsrRepaymentComponent } from './pages/users/usr-repayment/usr-repayment
 import { UsrBouncesComponent } from './pages/users/usr-bounces/usr-bounces.component';
 import { UsrPaymentHistoryComponent } from './pages/users/usr-payment-history/usr-payment-history.component';
 import { UsrForeclosureComponent } from './pages/users/usr-foreclosure/usr-foreclosure.component';
+import { UsrWorkflowComponent } from './pages/users/usr-workflow/usr-workflow.component';
 
 @NgModule({
   declarations: [AdminHeaderComponent,
@@ -149,6 +150,7 @@ import { UsrForeclosureComponent } from './pages/users/usr-foreclosure/usr-forec
     UsrBouncesComponent,
     UsrPaymentHistoryComponent,
     UsrForeclosureComponent,
+    UsrWorkflowComponent,
   ],
   imports: [
     CommonModule,

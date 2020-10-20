@@ -1,0 +1,78 @@
+<!-- <h4 class="title">Follow up Save</h4> -->
+
+      <div class="card-box">
+        <h4 class="title-f">Workflow</h4>
+        <div class="row" style="padding: 0px 0px 23px 10px;">
+          <div class="col-md-12">
+            <h5 class="form-lable">Action:</h5>
+            <div class="p-field-radiobutton">
+                <p-radioButton name="city" value="Chicago"  inputId="city1"></p-radioButton>
+                <label for="city1">Close Workflow</label>
+                <p-radioButton name="city" value="Los Angeles"  inputId="city2"></p-radioButton>
+                <label for="city2">Initiate Workflow</label>
+                <p-radioButton name="city" value="New York" inputId="city3"></p-radioButton>
+                <label for="city3">Change Workflow</label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <h5 class="form-lable">Workflow Action:</h5>
+            <p-dropdown [options]="types" placeholder="Select" optionLabel="y" [showClear]="true"></p-dropdown>
+           
+          </div>
+          <div class="col-md-3">
+            <h5 class="form-lable">TO Group:</h5>
+            <p-dropdown [options]="types1" placeholder="Select" optionLabel="y" [showClear]="true"></p-dropdown>
+           
+          </div>
+          <div class="col-md-3">
+            <h5 class="form-lable">To Collector:</h5>
+            <p-dropdown [options]="types2" placeholder="Select" optionLabel="y" [showClear]="true"></p-dropdown>
+           
+          </div>
+          <div class="col-md-3">
+            <h5 class="form-lable">Reason:</h5>
+            <p-dropdown [options]="types3" placeholder="Select" optionLabel="y" [showClear]="true"></p-dropdown>
+           
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">Notes:</h5>
+            <textarea pInputTextarea></textarea>
+
+        </div>
+          
+          <!-- <div class="col-md-12 mt-20">
+                  <button type="button" class="btn btn-primary">Add</button>
+             </div> -->
+      
+        </div>
+      </div>
+
+  
+  <h4 class="title">Workflow History</h4>
+  <div class="doc-table">
+    <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
+        [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
+        <ng-template pTemplate="header">
+    <tr style="text-align: center;">
+      <th>Date</th>
+      <th>Collector </th>
+      <th>Group</th>
+      <th>Workflow</th>
+      <th>Status</th>
+      <th>Type</th>
+    </tr>
+    <tr style="text-align: center;">
+      <td>19-10-2020</td>
+      <td>Vicky</td>
+      <td>Group1</td>
+      <td>Cvil</td>
+      <td>RQSTD</td>
+      <td>REA</td>
+    </tr>
+        </ng-template>
+    </p-table>
+    </div>
+    <br>
+  
+  
