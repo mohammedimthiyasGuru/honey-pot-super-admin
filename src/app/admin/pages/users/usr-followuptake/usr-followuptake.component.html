@@ -56,9 +56,9 @@
           <h5 class="form-lable">Contacted By:</h5>
           <input type="text" pInputText placeholder="" value="">
         </div>
-        <!-- <div class="col-md-12 mt-20">
-                <button type="button" class="btn btn-primary">Add</button>
-           </div> -->
+        <div class="col-md-3 mt-20">
+                <button type="button" class="btn btn-primary">Save</button>
+           </div>
     
       </div>
     </div>
@@ -79,7 +79,9 @@
     </div>
   </div>
 </div>
-
+<a (click)="table_v = !table_v" class="link-a">View Folow Up History</a>
+<ng-container *ngIf="table_v == true">
+ 
 <h4 class="title">Follow up Trails</h4>
 <div class="doc-table">
   <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
@@ -122,4 +124,6 @@
   </p-table>
   </div>
   <br>
+   
+</ng-container>
 

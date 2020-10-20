@@ -48,31 +48,46 @@
       </div>
 
   
-  <h4 class="title">Workflow History</h4>
-  <div class="doc-table">
-    <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
-        [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
-        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
-        <ng-template pTemplate="header">
-    <tr style="text-align: center;">
-      <th>Date</th>
-      <th>Collector </th>
-      <th>Group</th>
-      <th>Workflow</th>
-      <th>Status</th>
-      <th>Type</th>
-    </tr>
-    <tr style="text-align: center;">
-      <td>19-10-2020</td>
-      <td>Vicky</td>
-      <td>Group1</td>
-      <td>Cvil</td>
-      <td>RQSTD</td>
-      <td>REA</td>
-    </tr>
-        </ng-template>
-    </p-table>
-    </div>
-    <br>
+      <a (click)="table_v = !table_v" class="link-a">View Workflow History</a>
+      <ng-container *ngIf="table_v == true">
+       
+        <h4 class="title">Workflow History</h4>
+        <div class="doc-table">
+          <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
+              [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+              currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
+              <ng-template pTemplate="header">
+          <tr style="text-align: center;">
+            <th>Date</th>
+            <th>Collector </th>
+            <th>Group</th>
+            <th>Workflow</th>
+            <th>Status</th>
+            <th>Type</th>
+          </tr>
+          <tr style="text-align: center;">
+            <td>19-10-2020</td>
+            <td>Vicky</td>
+            <td>Group1</td>
+            <td>Cvil</td>
+            <td>RQSTD</td>
+            <td>REA</td>
+          </tr>
+              </ng-template>
+          </p-table>
+          </div>
+          <br>
+         
+      </ng-container>
+
+
+
+
+
+
+
+
+
+ 
   
   

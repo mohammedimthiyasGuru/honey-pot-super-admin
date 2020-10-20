@@ -61,7 +61,7 @@ overflow-x: scroll;
   }
   .pr-hd{
     padding: 10px;
-    background: #0e69dd;
+    background: #253f64;
     color: #fff;
   }
   :host::ng-deep .ui-dialog .ui-dialog-content {

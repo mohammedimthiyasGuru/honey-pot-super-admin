@@ -127,3 +127,9 @@ table, th, td {
 :host::ng-deep .ui-widget:disabled {
   opacity: 1 !important;
 }
+hr{
+  margin-top: 0px;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 2px solid rgb(37 63 100);
+}

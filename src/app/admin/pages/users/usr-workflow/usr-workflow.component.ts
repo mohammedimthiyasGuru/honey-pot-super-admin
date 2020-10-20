@@ -6,6 +6,7 @@ import { Router, RouterModule } from '@angular/router';
   styleUrls: ['./usr-workflow.component.css']
 })
 export class UsrWorkflowComponent implements OnInit {
+  table_v:boolean = false;
   types: any = [
     { "y": "Action1" },
     { "y": "Action2" },

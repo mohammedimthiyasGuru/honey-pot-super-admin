@@ -104,7 +104,7 @@
 }
 
 :host::ng-deep  .ui-table .ui-table-thead > tr > th {
-    padding: 15px 8px !important;
+    padding: 8px 8px !important;
     color: #ffffff !important;
     background-color: #253f64 !important;
 }
@@ -282,4 +282,10 @@ input {
 .p-input-icon-left > .ui-inputtext {
     padding-left: 2rem;
     height: auto !important;
+}
+.link-a{
+    font-size: 11px;
+    color: #0e69dd;
+    font-weight: 500;
+    text-decoration: underline;
 }

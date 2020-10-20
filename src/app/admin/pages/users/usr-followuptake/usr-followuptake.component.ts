@@ -7,7 +7,7 @@ import { Router, RouterModule } from '@angular/router';
   styleUrls: ['./usr-followuptake.component.css']
 })
 export class UsrFollowuptakeComponent implements OnInit {
-
+  table_v:boolean = false;
   rows = [];
   searchQR: any;
   value1: any;
