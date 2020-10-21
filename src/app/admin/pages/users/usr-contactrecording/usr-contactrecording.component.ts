@@ -37,6 +37,11 @@ import {TooltipPosition} from '@angular/material/tooltip';
 import { UsrAllocationdetailComponent } from '../usr-allocationdetail/usr-allocationdetail.component';
 import { UsrCollateraldetailssComponent } from './../usr-collateraldetailss/usr-collateraldetailss.component';
 import { UsrWorkflowComponent } from './../usr-workflow/usr-workflow.component';
+import { UsrCollectionRecordingComponent } from './../usr-collection-recording/usr-collection-recording.component';
+import { UsrCollectionRecordingMainListComponent } from './../usr-collection-recording-main-list/usr-collection-recording-main-list.component';
+import { UsrSettlementRecordingMainListComponent } from './../usr-settlement-recording-main-list/usr-settlement-recording-main-list.component';
+
+import { UsrPoliceCaseComponent } from './../usr-police-case/usr-police-case.component';
 @Component({
   selector: 'app-usr-contactrecording',
   templateUrl: './usr-contactrecording.component.html',
@@ -102,32 +107,35 @@ export class UsrContactrecordingComponent implements OnInit {
     this.show = 'show2';
   }
   show3() {
-    const dialogRef = this.dialog.open(UsrAllocationhistoryComponent, {
+    const dialogRef = this.dialog.open(UsrCollectionRecordingMainListComponent, {
       height: '600px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+    this.show = 'show3';
   }
   show4() {
-    const dialogRef = this.dialog.open(UsrFollowuptrailsComponent, {
+    const dialogRef = this.dialog.open(UsrSettlementRecordingMainListComponent, {
       height: '600px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+    this.show = 'show4';
   }
 
   show5() {
-    const dialogRef = this.dialog.open(UsrLoandetailsComponent, {
+    const dialogRef = this.dialog.open(UsrPoliceCaseComponent, {
       height: '600px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+    this.show = 'show5';
   }
   show6() {
     const dialogRef = this.dialog.open(UsrCustomerleaccountComponent, {

@@ -822,18 +822,26 @@
     <mat-icon matTooltip="Initiate Workflow" (click)="show2()">timeline</mat-icon>
   </div>
   <div [ngClass]="{'active-i': show === 'show3'}">
-    <mat-icon matTooltip="Asset Details">extension</mat-icon>
+    <mat-icon matTooltip=" Collection Details" (click)="show3()">extension</mat-icon>
   </div>
   <div [ngClass]="{'active-i': show === 'show4'}">
-    <mat-icon matTooltip="special follow up trails">swap_horiz</mat-icon>
+    <mat-icon matTooltip=" Settlement Recording" (click)="show4()">extension</mat-icon>
   </div>
-  <div [ngClass]="{'active-i': show === 'show5'}">
-    <mat-icon matTooltip="Retrieve Documents">file_copy</mat-icon>
+  <div [ngClass]="{'active-i': show === 'show5'}" >
+    <mat-icon matTooltip="Police Case Filing"  (click)="show5()">swap_horiz</mat-icon>
   </div>
   <div [ngClass]="{'active-i': show === 'show6'}">
-    <mat-icon matTooltip="Phone Details">contact_phone</mat-icon>
+    <mat-icon matTooltip="Repo">file_copy</mat-icon>
+  </div>
+  <div [ngClass]="{'active-i': show === 'show7'}">
+    <mat-icon matTooltip="Civil">contact_phone</mat-icon>
   </div>
 
-
+  <div [ngClass]="{'active-i': show === 'show8'}">
+    <mat-icon matTooltip="Skip">contact_phone</mat-icon>
+  </div>
+  <div [ngClass]="{'active-i': show === 'show9'}">
+    <mat-icon matTooltip="Field">contact_phone</mat-icon>
+  </div>
 
 </div>

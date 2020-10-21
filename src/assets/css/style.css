@@ -288,4 +288,5 @@ input {
     color: #0e69dd;
     font-weight: 500;
     text-decoration: underline;
+    cursor: pointer;
 }

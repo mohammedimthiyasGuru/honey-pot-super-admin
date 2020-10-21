@@ -92,6 +92,11 @@ import { UsrBouncesComponent } from './pages/users/usr-bounces/usr-bounces.compo
 import { UsrPaymentHistoryComponent } from './pages/users/usr-payment-history/usr-payment-history.component';
 import { UsrForeclosureComponent } from './pages/users/usr-foreclosure/usr-foreclosure.component';
 import { UsrWorkflowComponent } from './pages/users/usr-workflow/usr-workflow.component';
+import { UsrCollectionRecordingComponent } from './pages/users/usr-collection-recording/usr-collection-recording.component';
+import { UsrCollectionRecordingMainListComponent } from './pages/users/usr-collection-recording-main-list/usr-collection-recording-main-list.component';
+import { UsrSettlementRecordingMainListComponent } from './pages/users/usr-settlement-recording-main-list/usr-settlement-recording-main-list.component';
+import { UsrSettlementRecordingComponent } from './pages/users/usr-settlement-recording/usr-settlement-recording.component';
+import { UsrPoliceCaseComponent } from './pages/users/usr-police-case/usr-police-case.component';
 
 @NgModule({
   declarations: [AdminHeaderComponent,
@@ -151,6 +156,11 @@ import { UsrWorkflowComponent } from './pages/users/usr-workflow/usr-workflow.co
     UsrPaymentHistoryComponent,
     UsrForeclosureComponent,
     UsrWorkflowComponent,
+    UsrCollectionRecordingComponent,
+    UsrCollectionRecordingMainListComponent,
+    UsrSettlementRecordingMainListComponent,
+    UsrSettlementRecordingComponent,
+    UsrPoliceCaseComponent,
   ],
   imports: [
     CommonModule,
