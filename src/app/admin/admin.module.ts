@@ -97,6 +97,10 @@ import { UsrCollectionRecordingMainListComponent } from './pages/users/usr-colle
 import { UsrSettlementRecordingMainListComponent } from './pages/users/usr-settlement-recording-main-list/usr-settlement-recording-main-list.component';
 import { UsrSettlementRecordingComponent } from './pages/users/usr-settlement-recording/usr-settlement-recording.component';
 import { UsrPoliceCaseComponent } from './pages/users/usr-police-case/usr-police-case.component';
+import { UsrSkipTracingMainComponent } from './pages/users/usr-skip-tracing-main/usr-skip-tracing-main.component';
+import { UsrSkipTracingAssignComponent } from './pages/users/usr-skip-tracing-assign/usr-skip-tracing-assign.component';
+import { UsrFiledVisitMainComponent } from './pages/users/usr-filed-visit-main/usr-filed-visit-main.component';
+import { UsrFiledVisitAssignComponent } from './pages/users/usr-filed-visit-assign/usr-filed-visit-assign.component';
 
 @NgModule({
   declarations: [AdminHeaderComponent,
@@ -161,6 +165,10 @@ import { UsrPoliceCaseComponent } from './pages/users/usr-police-case/usr-police
     UsrSettlementRecordingMainListComponent,
     UsrSettlementRecordingComponent,
     UsrPoliceCaseComponent,
+    UsrSkipTracingMainComponent,
+    UsrSkipTracingAssignComponent,
+    UsrFiledVisitMainComponent,
+    UsrFiledVisitAssignComponent,
   ],
   imports: [
     CommonModule,

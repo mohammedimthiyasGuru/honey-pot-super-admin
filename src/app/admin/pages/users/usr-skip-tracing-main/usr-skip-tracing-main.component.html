@@ -3,13 +3,21 @@
 
 <div class="row">
     <div class="col-md-12">
-        <h4 class="title-f">Collection Recording</h4>
-        <div class="card-box">
+        <h4 class="title-f">Account List</h4>
+        <!-- <div class="card-box">
             <div class="row" style="padding: 0px 0px 23px 10px;">
                 <div class="col-md-3">
                   <h5 class="form-lable">Loan No./Account No.:</h5>
                   <input type="text" pInputText placeholder="" value="">
                 </div>
+                <div class="col-md-3">
+                    <h5 class="form-lable">Settlement:</h5>
+                    <input type="text" pInputText placeholder="" value="">
+                  </div>
+                  <div class="col-md-3">
+                    <h5 class="form-lable">Financier:</h5>
+                    <input type="text" pInputText placeholder="" value="">
+                  </div>
                 <div class="col-md-3">
                   <h5 class="form-lable">Customer Name:</h5>
                   <input type="text" pInputText placeholder="" value="">
@@ -19,11 +27,7 @@
                   <input type="text" pInputText placeholder="" value="">
                 </div>
                 <div class="col-md-3">
-                  <h5 class="form-lable">Card Number:</h5>
-                  <input type="text" pInputText placeholder="" value="">
-                </div>
-                <div class="col-md-3">
-                  <h5 class="form-lable">Branch:</h5>
+                  <h5 class="form-lable">Amount Overdue>=:</h5>
                   <input type="text" pInputText placeholder="" value="">
                 </div>
                 <div class="col-md-3">
@@ -31,27 +35,19 @@
                   <input type="text" pInputText placeholder="" value="">
                 </div>
                 <div class="col-md-3">
-                  <h5 class="form-lable">Bucket:</h5>
-                  <input type="text" pInputText placeholder="" value="">
-                </div>
-                <div class="col-md-3">
                   <h5 class="form-lable">Queue:</h5>
                   <input type="text" pInputText placeholder="" value="">
                 </div>
                 <div class="col-md-3">
-                  <h5 class="form-lable">Car Type:</h5>
+                  <h5 class="form-lable">POS>=</h5>
                   <input type="text" pInputText placeholder="" value="">
                 </div>
                 <div class="col-md-3">
-                  <h5 class="form-lable">POS / Curr Acc Bal:</h5>
-                  <input type="text" pInputText placeholder="" value="">
-                </div>
+                    <h5 class="form-lable">Unit Level:</h5>
+                    <input type="text" pInputText placeholder="" value="">
+                  </div>
                 <div class="col-md-3">
-                  <h5 class="form-lable">Sub Product Code:</h5>
-                  <input type="text" pInputText placeholder="" value="">
-                </div>
-                <div class="col-md-3">
-                  <h5 class="form-lable">Scheme:</h5>
+                  <h5 class="form-lable">Unid Code:</h5>
                   <input type="text" pInputText placeholder="" value="">
                 </div>
                 
@@ -61,7 +57,7 @@
             
               </div>
 
-        </div>
+        </div> -->
     </div>
 </div>
 
@@ -78,26 +74,22 @@
             [globalFilterFields]="['type']">
             <ng-template pTemplate="header">
                 <tr style="text-align: center;">
-                    <th>S.No</th>
-                    <th>Loan No./ Account No. </th>
-                    <th>Customer Name</th>
-                    <th>DPD>= </th>
-                    <th>Card Number </th>
-                    <th>Branch </th>
-                    <th>Product </th>
-                    <th>Bucket </th>
-                    <th>Queue </th>
-                    <th>Car Type </th>
-                    <th>POS / Curr Acc Bal  </th>
-                    <th>Sub Product Code </th>
-                    <th>Scheme</th>
+                    <th>Account Number</th>
+                    <th>Name</th>
+                    <th>Portfolio</th>
+                    <th>Product</th>
+                    <th>OD Amount</th>
+                    <th>OS Amount</th>
+                    <th>Bucket</th>
+                    <th>Last Action Code</th>
+                    <th>Last Result Code</th>
+                    <th>Last followup taken by</th>
+                    <th>Last followup taken on</th>
                 </tr>
                 <tr style="text-align: center;">
                     <td>1</td>
                     <td (click)="show()"><a class="link-a">01234567899</a></td>
                     <td>Vignesh</td>
-                    <td>NA</td>
-                    <td>NA</td>
                     <td>NA</td>
                     <td>NA</td>
                     <td>NA</td>

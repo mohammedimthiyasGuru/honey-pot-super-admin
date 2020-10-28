@@ -119,6 +119,7 @@ table, th, td {
     width: auto;
     height: auto;
     font-size: 17px !important;
+    cursor: pointer;
 }
 .active-i .mat-icon{
   background-color: #a8b2c1;
@@ -132,4 +133,74 @@ hr{
   margin-bottom: 1rem;
   border: 0;
   border-top: 2px solid rgb(37 63 100);
+}
+.active-i i{
+  background-color: #a8b2c1;
+  color: #1758ad;
+}
+i {
+  color: #fff;
+  padding: 6px 6px;
+  width: auto;
+  height: auto;
+  font-size: 17px !important;
+}
+:host::ng-deep .tab-info .mat-tab-header {
+  display: flex;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: fixed;
+  width: calc(100% - 87px);
+  top: 160px;
+  z-index: 999;
+}
+:host::ng-deep .tab-info .cus-tab .mat-tab-header {
+  display: flex;
+  overflow: hidden;
+  position: initial;
+  width: 100%;
+}
+.profile-fix{
+  top:50px;
+  height:125px;
+  position: fixed;
+  z-index: 999;
+  width: calc(100% - 87px);
+  background: #fff;
+  padding-top: 10px;
+}
+.inner-a{
+  float: right;
+    font-size: 12px;
+    color: #253f64;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.flex-1{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+.ht-img{
+  flex-basis: 15%;
+  align-self: center;
+
+}
+.ht-t{
+  flex-basis: 85%;
+}
+.pr-t th,.pr-t td {
+  font-size: 10px;
+    border-left: 1px solid #c4c4c4;
+}
+.coll-i{
+    color: #253f64;
+    padding: 6px 6px;
+    width: auto;
+    height: auto;
+    font-size: 14px !important;
+
+}
+.follow i{
+  cursor: pointer;
 }

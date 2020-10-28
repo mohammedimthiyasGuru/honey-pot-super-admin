@@ -42,6 +42,10 @@ import { UsrCollectionRecordingMainListComponent } from './../usr-collection-rec
 import { UsrSettlementRecordingMainListComponent } from './../usr-settlement-recording-main-list/usr-settlement-recording-main-list.component';
 
 import { UsrPoliceCaseComponent } from './../usr-police-case/usr-police-case.component';
+
+import { UsrSkipTracingMainComponent } from './../usr-skip-tracing-main/usr-skip-tracing-main.component';
+import { UsrFiledVisitMainComponent } from './../usr-filed-visit-main/usr-filed-visit-main.component';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-usr-contactrecording',
   templateUrl: './usr-contactrecording.component.html',
@@ -55,9 +59,12 @@ export class UsrContactrecordingComponent implements OnInit {
   value1: any;
   del:boolean = false;
   show:any;
+  assets:boolean = false;
+  payment:boolean = false;
   constructor(
     private router: Router,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,
+    ) { }
 
 
 
@@ -86,7 +93,7 @@ export class UsrContactrecordingComponent implements OnInit {
   show1() {
     const dialogRef = this.dialog.open(UsrFollowuptakeComponent, {
       height: '600px',
-      width:'90%'
+      width:'90%',disableClose: true 
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -98,7 +105,7 @@ export class UsrContactrecordingComponent implements OnInit {
 
   show2() {
     const dialogRef = this.dialog.open(UsrWorkflowComponent, {
-      height: '600px'
+      height: '600px',disableClose: true 
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -108,7 +115,7 @@ export class UsrContactrecordingComponent implements OnInit {
   }
   show3() {
     const dialogRef = this.dialog.open(UsrCollectionRecordingMainListComponent, {
-      height: '600px'
+      height: '600px',disableClose: true 
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -118,7 +125,7 @@ export class UsrContactrecordingComponent implements OnInit {
   }
   show4() {
     const dialogRef = this.dialog.open(UsrSettlementRecordingMainListComponent, {
-      height: '600px'
+      height: '600px',disableClose: true 
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -129,7 +136,7 @@ export class UsrContactrecordingComponent implements OnInit {
 
   show5() {
     const dialogRef = this.dialog.open(UsrPoliceCaseComponent, {
-      height: '600px'
+      height: '600px',disableClose: true 
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -139,7 +146,7 @@ export class UsrContactrecordingComponent implements OnInit {
   }
   show6() {
     const dialogRef = this.dialog.open(UsrCustomerleaccountComponent, {
-      height: '600px'
+      height: '600px',disableClose: true 
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -149,7 +156,7 @@ export class UsrContactrecordingComponent implements OnInit {
 
   show7() {
     const dialogRef = this.dialog.open(UsrOverduedetailsoneComponent, {
-      height: '600px'
+      height: '600px',disableClose: true 
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -158,26 +165,28 @@ export class UsrContactrecordingComponent implements OnInit {
   }
 
   show8() {
-    const dialogRef = this.dialog.open(UsrRpoComponent, {
-      height: '600px'
+    const dialogRef = this.dialog.open(UsrSkipTracingMainComponent, {
+      height: '600px',disableClose: true 
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+    this.show = 'show8';
   }
   show9() {
-    const dialogRef = this.dialog.open(UsrDocumnetretrievalComponent, {
-      height: '600px'
+    const dialogRef = this.dialog.open(UsrFiledVisitMainComponent, {
+      height: '600px',disableClose: true 
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+    this.show = 'show9';
   }
   show10() {
     const dialogRef = this.dialog.open(UsrPaymentdetailsComponent, {
-      height: '600px'
+      height: '600px',disableClose: true 
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -186,7 +195,7 @@ export class UsrContactrecordingComponent implements OnInit {
   }
   show11() {
     const dialogRef = this.dialog.open(UsrPhonedetailsComponent, {
-      height: '600px'
+      height: '600px',disableClose: true 
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -195,12 +204,40 @@ export class UsrContactrecordingComponent implements OnInit {
   }
   show12() {
     const dialogRef = this.dialog.open(UsrOverduedetailstwoComponent, {
-      height: '600px'
+      height: '600px',disableClose: true 
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+  close(){
+    this.dialog.closeAll();
+  }
+
+  openworklist(){
+    Swal.fire({
+      // title: 'Are you sure?',
+      text: 'You want to open in a new tab!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if (result.value) {
+        let url: any = '#/admin_panel/accounts/accounts';
+        window.open(url, '_blank');
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        this.router.navigateByUrl('/admin_panel/accounts/accounts')
+      }
+    })
+    
+  }
+  asset(){
+    this.assets = !this.assets;
+  }
+  pay(){
+    this.payment = !this.payment;
   }
 }
 

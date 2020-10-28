@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import Swal from 'sweetalert2';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-usr-police-case',
   templateUrl: './usr-police-case.component.html',
@@ -11,7 +13,8 @@ export class UsrPoliceCaseComponent implements OnInit {
   searchQR: any;
   value1: any;
   constructor(
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog,
   ) { }
 
 
@@ -36,5 +39,21 @@ export class UsrPoliceCaseComponent implements OnInit {
   }
   profile() {
     this.router.navigateByUrl('/admin_panel/Client_profile')
+  }
+
+  close() {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You want to close it!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if (result.value) {
+        this.dialog.closeAll();
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+      }
+    })
   }
 }

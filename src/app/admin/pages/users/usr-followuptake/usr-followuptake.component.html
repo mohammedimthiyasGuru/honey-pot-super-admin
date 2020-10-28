@@ -1,4 +1,5 @@
 <!-- <h4 class="title">Follow up Save</h4> -->
+<mat-icon style="text-align: right;width: 100%;margin-bottom: 13px;margin-top: -10px;" mat-button (click)="close()">close</mat-icon>
 <div class="row">
   <div class="col-md-9">
     <div class="card-box">
@@ -79,7 +80,7 @@
     </div>
   </div>
 </div>
-<a (click)="table_v = !table_v" class="link-a">View Folow Up History</a>
+<a (click)="table_v = !table_v" class="link-a">View Follow Up History</a>
 <ng-container *ngIf="table_v == true">
  
 <h4 class="title">Follow up Trails</h4>
@@ -126,4 +127,3 @@
   <br>
    
 </ng-container>
-

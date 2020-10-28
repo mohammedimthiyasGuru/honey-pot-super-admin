@@ -2,8 +2,6 @@
     color: #fff;
     background-color: #0e69dd;
     border-color: #0e69dd;
-    height: 34px;
-    min-width: 80px;
     font-size: 14px;
     margin-right: 10px;
 }
@@ -75,13 +73,13 @@
     cursor: pointer;
 }
 .tdrow td {
-    font-family: Poppins-Regular;
-    font-size: 15px;
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 12px;
     color: #666666;
     line-height: 1.2;
     font-weight: unset !important;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     border-bottom: 1px solid #f2f2f2;
 }
 :host::ng-deep .ui-table {
@@ -126,7 +124,7 @@
 .form-lable{
     font-size: 11px;
     font-weight: 500;
-    color:#8d8d8d  !important;
+    color:#5d5d5d  !important;
     margin-bottom: 5px;
 }
 .search-hero{
@@ -268,7 +266,7 @@ input {
 .p-input-icon-left > i:first-of-type {
     left: 20px;
     color: #6c757d;
-    top: 15px;
+    top: 13px;
     font-size: 12px;
 }
 .p-input-icon-left>i, .p-input-icon-right>i {

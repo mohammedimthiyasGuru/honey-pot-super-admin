@@ -1,8 +1,103 @@
 <!-- <h4 class="title">Customer Details</h4> -->
 
 <div class="cus-tab">
-  <mat-tab-group>
-    <mat-tab label="Customer Details">
+  <div class="pro-head">
+    <div class="row fix-user" style="margin-left: 0px;margin-right:0px;">
+      <div>
+        <div class="ht-img" style="float: left;">
+          <img src="https://www.svgimages.com/svg-image/s5/man-passportsize-silhouette-icon-256x256.png"
+            alt="stack photo" class="img">
+        </div>
+
+        <div style="float: left;">
+          <h2 style="font-size: 13px;margin-bottom: 0px;line-height: 20px;color: #fff;margin-top: 6px;">John Doe</h2>
+          <p style="font-size: 11px;color: #d0d0d0;margin-bottom: 6px;">Acc.No: 9876543210000</p>
+        </div>
+      </div>
+      <div class="card-box">
+        <h4 class="title-f">Personal Details</h4>
+        <div class="row" style="padding: 0px 0px 23px 10px;">
+          <div class="col-md-12">
+            <h5 class="form-lable">Name:</h5>
+            <input type="text" pInputText placeholder="">
+          </div>
+          <div class="col-md-12">
+            <h5 class="form-lable">Gender:</h5>
+            <input type="text" pInputText placeholder="">
+          </div>
+          <div class="col-md-12">
+            <h5 class="form-lable">Marital Status:</h5>
+            <input type="text" pInputText placeholder="">
+          </div>
+          <div class="col-md-12">
+            <h5 class="form-lable">Date of Birth:</h5>
+            <input type="text" pInputText placeholder="">
+          </div>
+          <div class="col-md-12">
+            <h5 class="form-lable">Nationality:</h5>
+            <input type="text" pInputText placeholder="">
+          </div>
+          <div class="col-md-12">
+            <h5 class="form-lable">Tax No:</h5>
+            <input type="text" pInputText placeholder="">
+          </div>
+          <div class="col-md-12">
+            <h5 class="form-lable">DL No:</h5>
+            <input type="text" pInputText placeholder="">
+          </div>
+          <!-- <div class="col-md-12 mt-20">
+                  <button type="button" class="btn btn-primary">Add</button>
+             </div> -->
+
+        </div>
+      </div>
+      <div class="card-box">
+        <h4 class="title-f">Employement Details</h4>
+        <div class="row" style="padding: 0px 0px 23px 10px;">
+          <div class="col-md-12">
+            <h5 class="form-lable">Constitution:</h5>
+            <input type="text" pInputText placeholder="">
+          </div>
+          <div class="col-md-12">
+            <h5 class="form-lable">Industry:</h5>
+            <input type="text" pInputText placeholder="">
+          </div>
+          <div class="col-md-12">
+            <h5 class="form-lable">Profession:</h5>
+            <input type="text" pInputText placeholder="">
+          </div>
+          <div class="col-md-12">
+            <h5 class="form-lable">Current Organization / Business:</h5>
+            <input type="text" pInputText placeholder="">
+          </div>
+          <div class="col-md-12">
+            <h5 class="form-lable">Designation:</h5>
+            <input type="text" pInputText placeholder="">
+          </div>
+          <div class="col-md-12">
+            <h5 class="form-lable">Previous Organization:</h5>
+            <input type="text" pInputText placeholder="">
+          </div>
+          <div class="col-md-12">
+            <h5 class="form-lable">IC / Passport No. / Businees Reg No:</h5>
+            <input type="text" pInputText placeholder="">
+          </div>
+          <div class="col-md-12">
+            <h5 class="form-lable">SSN:</h5>
+            <input type="text" pInputText placeholder="">
+          </div>
+          <!-- <div class="col-md-12 mt-20">
+                  <button type="button" class="btn btn-primary">Add</button>
+             </div> -->
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-md-12" style="padding-left: 260px;">
+    <mat-tab-group>
+      <!-- <mat-tab label="Customer Details">
       <br>
       <div class="row" style="margin-left: 0px;margin-right:0px;">
         <div class="col-md-12">
@@ -37,9 +132,9 @@
                 <h5 class="form-lable">DL No:</h5>
                 <input type="text" pInputText placeholder="">
               </div>
-              <!-- <div class="col-md-12 mt-20">
+              <div class="col-md-12 mt-20">
                     <button type="button" class="btn btn-primary">Add</button>
-               </div> -->
+               </div>
       
             </div>
           </div>
@@ -80,9 +175,9 @@
                 <h5 class="form-lable">SSN:</h5>
                 <input type="text" pInputText placeholder="">
               </div>
-              <!-- <div class="col-md-12 mt-20">
+              <div class="col-md-12 mt-20">
                     <button type="button" class="btn btn-primary">Add</button>
-               </div> -->
+               </div>
       
             </div>
           </div>
@@ -90,17 +185,18 @@
       </div>
       
   
-    </mat-tab>
-    <mat-tab label="Address Details"> 
-      <br>
-      <app-usr-addressdetails></app-usr-addressdetails>
-    </mat-tab>
-    <mat-tab label="Bank Details"> Content 3 </mat-tab>
-    <mat-tab label="Income Details"> Income Details </mat-tab>
-    <mat-tab label="Liability Details"> Liability Details</mat-tab>
-    <mat-tab label="Esisting Asset Details"> Esisting Asset Details</mat-tab>
-    <mat-tab label="Credit Card Details"> Credit Card Details</mat-tab>
-  </mat-tab-group>
+    </mat-tab> -->
+      <mat-tab label="Address Details">
+        <br>
+        <app-usr-addressdetails></app-usr-addressdetails>
+      </mat-tab>
+      <mat-tab label="Bank Details"> Content 3 </mat-tab>
+      <mat-tab label="Income Details"> Income Details </mat-tab>
+      <mat-tab label="Liability Details"> Liability Details</mat-tab>
+      <mat-tab label="Esisting Asset Details"> Esisting Asset Details</mat-tab>
+      <mat-tab label="Credit Card Details"> Credit Card Details</mat-tab>
+    </mat-tab-group>
+  </div>
 </div>
 
 <!-- <div class="doc-table">
@@ -119,4 +215,3 @@
     </ng-template>
   </p-table>
 </div> -->
-

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { UsrCollectionRecordingComponent } from './../usr-collection-recording/usr-collection-recording.component';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-usr-collection-recording-main-list',
   templateUrl: './usr-collection-recording-main-list.component.html',
@@ -45,4 +45,20 @@ export class UsrCollectionRecordingMainListComponent implements OnInit {
     });
   }
 
+
+  close() {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You want to close it!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if (result.value) {
+        this.dialog.closeAll();
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+      }
+    })
+  }
 }

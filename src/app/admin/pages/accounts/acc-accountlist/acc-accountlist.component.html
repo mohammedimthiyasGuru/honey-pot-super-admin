@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-8">
-    <h4 class="title">Account List</h4>
+    <h4 class="title">Worklist</h4>
     <!-- <div class="search-hero">
       <input class="form-control" type="text" name="search2" style="font-family: FontAwesome;" [(ngModel)]="searchQR"
         autocomplete="off" placeholder="&#xf002; Search...">
@@ -37,7 +37,7 @@
 </div>
 <div class="doc-table">
 
-  <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="5"
+  <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="20"
     [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
 
@@ -99,7 +99,7 @@
 
 </div>
 
-<p-dialog header="Account Details" [(visible)]="displayPosition" position="right" [modal]="true"
+<p-dialog header="Account Details" [(visible)]="displayPosition" position="center" [modal]="true"
   [style]="{width: '50vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
   <div class="">
     <div class="row pr-hd">
@@ -110,7 +110,7 @@
       <div class="col-md-10 col-xs-12 col-sm-6 col-lg-10">
         <h2 style="font-size: 13px;margin-bottom: 0px;line-height: 20px;">John Doe</h2>
         <p style="font-size: 11px;color: #d0d0d0">Acc.No: 9876543210000</p>
-        <a class="pr-v" style="margin-right: 0px;" (click)="cus360()">View</a>
+        <a class="pr-v" style="margin-right: 0px;" (click)="cus360()">View 360&#176;</a>
       </div>
     </div>
     <div class="row">

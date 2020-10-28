@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-
+import { MatDialog } from '@angular/material/dialog';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-usr-followuptake',
   templateUrl: './usr-followuptake.component.html',
@@ -12,7 +13,8 @@ export class UsrFollowuptakeComponent implements OnInit {
   searchQR: any;
   value1: any;
   constructor(
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog,
   ) { }
 
 
@@ -37,6 +39,22 @@ export class UsrFollowuptakeComponent implements OnInit {
   }
   profile() {
     this.router.navigateByUrl('/admin_panel/Client_profile')
+  }
+  close(){
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You want to close it!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if (result.value) {
+        this.dialog.closeAll();
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+      }
+    })
+    
   }
 }
 

@@ -2,47 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog';
+import { MatDialogRef} from '@angular/material/dialog';
 @Component({
-  selector: 'app-usr-workflow',
-  templateUrl: './usr-workflow.component.html',
-  styleUrls: ['./usr-workflow.component.css']
+  selector: 'app-usr-filed-visit-assign',
+  templateUrl: './usr-filed-visit-assign.component.html',
+  styleUrls: ['./usr-filed-visit-assign.component.css']
 })
-export class UsrWorkflowComponent implements OnInit {
-  table_v: boolean = false;
-  types: any = [
-    { "y": "Action1" },
-    { "y": "Action2" },
-    { "y": "Action3" },
-    { "y": "Action4" },
-    { "y": "Action5" },
-  ];
-  types1: any = [
-    { "y": "Group1" },
-    { "y": "Group2" },
-    { "y": "Group3" },
-    { "y": "Group4" },
-    { "y": "Group5" },
-  ];
-  types2: any = [
-    { "y": "Collector1" },
-    { "y": "Collector2" },
-    { "y": "Collector3" },
-    { "y": "Collector4" },
-    { "y": "Collector5" },
-  ];
-  types3: any = [
-    { "y": "Reason1" },
-    { "y": "Reason2" },
-    { "y": "Reason3" },
-    { "y": "Reason4" },
-    { "y": "Reason5" },
-  ];
+export class UsrFiledVisitAssignComponent implements OnInit {
+  table_v:boolean = false;
   rows = [];
   searchQR: any;
   value1: any;
   constructor(
     private router: Router,
     public dialog: MatDialog,
+    public dialogRef: MatDialogRef<UsrFiledVisitAssignComponent>
   ) { }
 
 
@@ -72,14 +46,14 @@ export class UsrWorkflowComponent implements OnInit {
   close() {
     Swal.fire({
       title: 'Are you sure?',
-      text: 'You want to close it!',
+      text: 'You want to go back!',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Yes',
       cancelButtonText: 'No'
     }).then((result) => {
       if (result.value) {
-        this.dialog.closeAll();
+        this.dialogRef.close();
       } else if (result.dismiss === Swal.DismissReason.cancel) {
       }
     })

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import Swal from 'sweetalert2';
+import { MatDialog } from '@angular/material/dialog';
+import { MatDialogRef} from '@angular/material/dialog';
 @Component({
   selector: 'app-usr-settlement-recording',
   templateUrl: './usr-settlement-recording.component.html',
@@ -11,7 +14,9 @@ export class UsrSettlementRecordingComponent implements OnInit {
   searchQR: any;
   value1: any;
   constructor(
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog,
+    public dialogRef: MatDialogRef<UsrSettlementRecordingComponent>
   ) { }
 
 
@@ -36,5 +41,21 @@ export class UsrSettlementRecordingComponent implements OnInit {
   }
   profile() {
     this.router.navigateByUrl('/admin_panel/Client_profile')
+  }
+
+  close() {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You want to go back!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if (result.value) {
+        this.dialogRef.close();
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+      }
+    })
   }
 }

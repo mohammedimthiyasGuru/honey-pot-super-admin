@@ -76,6 +76,8 @@ p {
 #login, .logo{
     display:inline-block;
     width:50%;
+    padding: 10px;
+    background-color: #fff;
 }
 #login{
     border-left: 1px solid #fff;
@@ -86,7 +88,7 @@ p {
 .logo{
 color:#fff;
 font-size:50px;
-  line-height: 125px;
+  line-height: 85px;
 }
 
 #login form span.fa {
@@ -157,6 +159,7 @@ fieldset{
 }
 .check{
     height: auto !important;
+    width: 15px;
 }
 label{
     color: #fff;
@@ -167,4 +170,13 @@ label{
 .height-form{
     height: 300px;
     padding-top: 50px;
+}
+.logo-p {
+  color: #154476;
+  font-size: 13px;
+  font-weight: 600;
+}
+.logo-p span{
+  color: #29B6F6;
+    font-weight: 600;
 }
