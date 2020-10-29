@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     // else{
     //   alert('Invalid Login Details')
     // }
-    this.router.navigate(['admin_panel']);
+    this.router.navigate(['Dashboard_Main']);
   }
 
   forgot() {

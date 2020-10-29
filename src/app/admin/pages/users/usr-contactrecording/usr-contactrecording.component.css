@@ -204,3 +204,6 @@ i {
 .follow i{
   cursor: pointer;
 }
+td input{
+  font-size: 10px;
+}

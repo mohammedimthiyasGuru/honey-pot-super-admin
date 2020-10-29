@@ -20,9 +20,10 @@
 
 .fa {
     /* color: #019278; */
-    font-size: 21px;
+    font-size: 15px;
     /* position: absolute;
     padding-left: 5px; */
+    line-height: 12px !important;
 }
 
 .logo-img {
@@ -121,4 +122,11 @@ tr:last-child {
 }
 :host::ng-deep .mat-icon-button i:hover {
     filter: brightness(0.5);
+}
+.search-hero input {
+    padding: 12px;
+    border-radius: 1px;
+}
+.mat-icon-button i, .mat-icon-button .mat-icon {
+    line-height: 12px !important;
 }

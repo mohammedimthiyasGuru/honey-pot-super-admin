@@ -43,11 +43,14 @@ export class DashboardMainComponent implements OnInit {
     // else{
     //   alert('Invalid Login Details')
     // }
-    this.router.navigate(['admin_panel']);
+    this.router.navigate(['admin_panel/accounts/accounts']);
   }
 
   
   showBasicDialog() {
     this.displayBasic = true;
+}
+Adhoc(){
+    this.router.navigate(['admin_panel/user/adhoc']); 
 }
 }

@@ -8,6 +8,7 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class UsrAdhocscreenComponent implements OnInit {
 
+  displayPosition: boolean;
   rows = [];
   searchQR: any;
   value1: any;
@@ -38,5 +39,12 @@ export class UsrAdhocscreenComponent implements OnInit {
   profile() {
     this.router.navigateByUrl('/admin_panel/Client_profile')
   }
+
+  showPositionDialog() {
+    this.displayPosition = true;
+}
+cus360(){
+  this.router.navigateByUrl('/admin_panel/user/createuser')
+}
 }
 

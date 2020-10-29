@@ -84,3 +84,25 @@
 button{
     outline: none !important;
 }
+.work{
+    font-weight: 500;
+    font-size: 13px;
+    margin-right: 15px;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 10px;
+    background: #154476;
+    color: #fff;
+}
+.blinking{
+    animation:blinkingText 0.8s infinite;
+    background: #ffc066 !important;
+}
+
+@keyframes blinkingText{
+    0%{     color:#154476;   }
+    49%{    color: #154476;}
+    50%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color:#154476;    }
+}
