@@ -175,7 +175,7 @@
 :host::ng-deep button:focus {
     outline: none !important;
 }
-::-webkit-scrollbar {
+.mat-typography::-webkit-scrollbar {
     display: none !important;
 }
 :host::ng-deep .ui-table-wrapper::-webkit-scrollbar {

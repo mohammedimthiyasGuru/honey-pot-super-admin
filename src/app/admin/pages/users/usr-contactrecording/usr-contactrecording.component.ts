@@ -46,6 +46,8 @@ import { UsrPoliceCaseComponent } from './../usr-police-case/usr-police-case.com
 import { UsrSkipTracingMainComponent } from './../usr-skip-tracing-main/usr-skip-tracing-main.component';
 import { UsrFiledVisitMainComponent } from './../usr-filed-visit-main/usr-filed-visit-main.component';
 import Swal from 'sweetalert2';
+import { UsrCustomerExplosureComponent } from './../usr-customer-explosure/usr-customer-explosure.component';
+
 @Component({
   selector: 'app-usr-contactrecording',
   templateUrl: './usr-contactrecording.component.html',
@@ -61,6 +63,7 @@ export class UsrContactrecordingComponent implements OnInit {
   show:any;
   assets:boolean = false;
   payment:boolean = false;
+  displayPosition :boolean =true;
   constructor(
     private router: Router,
     public dialog: MatDialog,
@@ -211,6 +214,24 @@ export class UsrContactrecordingComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+  show13() {
+    const dialogRef = this.dialog.open(UsrCustomerExplosureComponent, {
+      height: '600px',disableClose: true 
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  show14() {
+    const dialogRef = this.dialog.open(UsrAllocationhistoryComponent, {
+      height: '600px',disableClose: true 
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
   close(){
     this.dialog.closeAll();
   }
@@ -239,6 +260,7 @@ export class UsrContactrecordingComponent implements OnInit {
   pay(){
     this.payment = !this.payment;
   }
+  
 }
 
 

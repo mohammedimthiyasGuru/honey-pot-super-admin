@@ -3,13 +3,12 @@ import { Router, RouterModule } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
 @Component({
-  selector: 'app-usr-allocationhistory',
-  templateUrl: './usr-allocationhistory.component.html',
-  styleUrls: ['./usr-allocationhistory.component.css']
+  selector: 'app-usr-customer-explosure',
+  templateUrl: './usr-customer-explosure.component.html',
+  styleUrls: ['./usr-customer-explosure.component.css']
 })
-export class UsrAllocationhistoryComponent implements OnInit {
-
-
+export class UsrCustomerExplosureComponent implements OnInit {
+  table_v:boolean = false;
   rows = [];
   searchQR: any;
   value1: any;
@@ -35,8 +34,13 @@ export class UsrAllocationhistoryComponent implements OnInit {
     { type: "Cat", name: "cat1" }]
 
   }
+  client_form() {
+    this.router.navigateByUrl('/admin_panel/client-form')
+  }
+  profile() {
+    this.router.navigateByUrl('/admin_panel/Client_profile')
+  }
   close(){
     this.dialog.closeAll();
   }
 }
-

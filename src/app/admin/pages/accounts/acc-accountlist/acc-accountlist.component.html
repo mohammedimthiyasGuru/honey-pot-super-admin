@@ -37,38 +37,30 @@
 </div>
 <div class="doc-table">
 
-  <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="20"
+  <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
     [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
 
     <ng-template pTemplate="header">
 
       <tr style="text-align: center;" class="thhead">
-        <th rowspan="2" style="width: 50px;">S.No</th>
-        <th rowspan="2">Account No</th>
-        <th rowspan="2">Customer No</th>
-        <th rowspan="2">Name</th>
-        <th rowspan="2">Portfolio</th>
-        <th colspan="3">Deliquency</th>
-        <th colspan="3">Status</th>
-        <th rowspan="2" style="width: 100px;">Action</th>
-      </tr>
-      <tr class="thhead">
-        <th>Telephone:</th>
-        <th>Telephone:</th>
-        <th>Telephone:</th>
+        <th style="width: 50px;">S.No</th>
+        <th>Account No</th>
+        <th>Customer No</th>
+        <th>Name</th>
+        <th>Portfolio</th>
         <th>Bucket:</th>
         <th>OS Amount:</th>
         <th>OD Amount:</th>
-      </tr>
+        <th>Phone Number</th>
+        <th style="width: 100px;">Action</th>
+        
 
     </ng-template>
     <ng-template pTemplate="body" let-item let-i="rowIndex">
       <tr class="tdrow">
         <td style="text-align: center;">{{i+1}}</td>
         <td><a (click)="showPositionDialog()" style="color: #0e69dd;">0321654987</a></td>
-        <td>Lorem ipsum.</td>
-        <td>Lorem ipsum.</td>
         <td>Lorem ipsum.</td>
         <td>Lorem ipsum.</td>
         <td>Lorem ipsum.</td>

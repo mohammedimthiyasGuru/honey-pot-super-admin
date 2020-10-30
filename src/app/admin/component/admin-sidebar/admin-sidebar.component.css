@@ -65,15 +65,15 @@
 :host::ng-deep  .menuslider mat-drawer h5{
     display: block !important;
 }
-.example-container::-webkit-scrollbar {
+/* .example-container::-webkit-scrollbar {
     display: none;
   }
   .example-container {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+  } */
 
-:host::ng-deep .mat-list-base::-webkit-scrollbar {
+/* :host::ng-deep .mat-list-base::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 7px;
     height: 5px;
@@ -82,7 +82,7 @@
     border-radius: 4px;
     background-color: rgba(0,0,0,.5);
     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
-}
+} */
 button{
     outline: none !important;
 }

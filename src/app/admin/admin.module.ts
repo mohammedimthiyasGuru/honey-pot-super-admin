@@ -101,6 +101,9 @@ import { UsrSkipTracingMainComponent } from './pages/users/usr-skip-tracing-main
 import { UsrSkipTracingAssignComponent } from './pages/users/usr-skip-tracing-assign/usr-skip-tracing-assign.component';
 import { UsrFiledVisitMainComponent } from './pages/users/usr-filed-visit-main/usr-filed-visit-main.component';
 import { UsrFiledVisitAssignComponent } from './pages/users/usr-filed-visit-assign/usr-filed-visit-assign.component';
+import { UsrCustomerExplosureComponent } from './pages/users/usr-customer-explosure/usr-customer-explosure.component';
+import { UsrSpecialFollowupComponent } from './pages/users/usr-special-followup/usr-special-followup.component';
+import { UsrOldFollowupComponent } from './pages/users/usr-old-followup/usr-old-followup.component';
 
 @NgModule({
   declarations: [AdminHeaderComponent,
@@ -169,6 +172,9 @@ import { UsrFiledVisitAssignComponent } from './pages/users/usr-filed-visit-assi
     UsrSkipTracingAssignComponent,
     UsrFiledVisitMainComponent,
     UsrFiledVisitAssignComponent,
+    UsrCustomerExplosureComponent,
+    UsrSpecialFollowupComponent,
+    UsrOldFollowupComponent,
   ],
   imports: [
     CommonModule,
@@ -249,7 +255,9 @@ import { UsrFiledVisitAssignComponent } from './pages/users/usr-filed-visit-assi
     UsrRepaymentComponent,
     UsrBouncesComponent,
     UsrPaymentHistoryComponent,
-    UsrForeclosureComponent
+    UsrForeclosureComponent,
+    UsrSpecialFollowupComponent,
+    UsrOldFollowupComponent,
   ]
 })
 export class AdminModule { }
