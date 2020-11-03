@@ -46,12 +46,12 @@
         </table>
       </div>
     </div>
-    <h4 class="title" style="margin-top: 15px;">Customer 360&#176; Overview 
+    <h4 class="title" style="margin-top: 15px;">Customer 360&#176; Overview
       <span class="inner-a"><a (click)="openworklist()">Go to your Worklist</a></span>
       <span class="inner-a"><a (click)="show13()">Customer Level Exposure</a></span>
       <span class="inner-a"><a (click)="openworklist()">Currency Convertor</a></span>
     </h4>
-   
+
   </div>
 
   <!-- <div class="doc-table">
@@ -306,8 +306,8 @@
             <div class="col-md-12">
               <h4 class="title-f">Multiple Account Information</h4>
               <div class="doc-table">
-                <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
-                  [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+                <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false"
+                  [rows]="5" [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
                   currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                   [globalFilterFields]="['type']">
                   <ng-template pTemplate="header">
@@ -339,6 +339,7 @@
                 </p-table>
               </div>
             </div>
+            
             <div class="col-md-3">
               <h4 class="title-f">Guarantor Details</h4>
               <div class="row" style="padding: 0px 0px  26px 10px;">
@@ -414,8 +415,10 @@
                  </div> -->
 
               </div>
-              <h4 class="title-f" style="margin-top: -11px;"><span style="color: #3F51B5;font-size: 11px;text-decoration: underline;cursor: pointer;" (click)="show14()">view
-                Allocation history</span></h4>
+              <h4 class="title-f" style="margin-top: -11px;"><span
+                  style="color: #3F51B5;font-size: 11px;text-decoration: underline;cursor: pointer;"
+                  (click)="show14()">view
+                  Allocation history</span></h4>
               <hr>
             </div>
             <div class="col-md-3">
@@ -470,8 +473,8 @@
               </div>
               <hr>
             </div>
-            <div class="col-md-6" >
-              
+            <div class="col-md-6">
+
               <h4 class="title-f">Financial Details</h4>
               <div class="row" style="padding: 0px 0px 6px 10px;">
                 <div class="col-md-6">
@@ -513,8 +516,8 @@
               </div>
               <hr>
             </div>
-            
-            <div class="col-md-3" >
+
+            <div class="col-md-3">
               <h4 class="title-f">Promise Details</h4>
               <div class="row" style="padding: 0px 0px 6px 10px;">
                 <div class="col-md-6">
@@ -550,7 +553,7 @@
               </div>
               <hr>
             </div>
-            <div class="col-md-3" >
+            <div class="col-md-3">
               <h4 class="title-f">Active Address</h4>
               <div class="row" style="padding: 0px 0px 6px 10px;">
                 <div class="col-md-12">
@@ -576,7 +579,173 @@
               <hr>
             </div>
             <div class="col-md-12">
-              <h4 class="title-f" style="cursor: pointer;" (click)="asset()">Assets Details <i *ngIf="!assets" class="fa fa-arrow-circle-down coll-i" aria-hidden="true"></i><i *ngIf="assets" class="fa fa-arrow-circle-up coll-i" aria-hidden="true"></i></h4>
+              <h4 class="title-f">Loan Details</h4>
+              <div class="row" style="padding: 0px 0px 36px 10px;">
+                <div class="col-md-3">
+                  <h5 class="form-lable">Financier:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">LOB:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Loan Type:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Loan Currency:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Scheme:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Loan Financed:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Interest Type:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Interest Rate(%):</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Tenure:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Asset Cost:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Sourcing Dealer:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Sourcing Dealer:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">No. of installments:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Frequency:</h5>
+                  <input type="text" pInputText disabled=true placeholder="">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Installment Mode:</h5>
+                  <input type="text" pInputText disabled=true placeholder="">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">EMI:</h5>
+                  <input type="text" pInputText disabled=true placeholder="">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Billed Installment:</h5>
+                  <input type="text" pInputText disabled=true placeholder="">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Due Date:</h5>
+                  <input type="text" pInputText disabled=true placeholder="">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Collection Cycle:</h5>
+                  <input type="text" pInputText disabled=true placeholder="">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Cycle Date:</h5>
+                  <input type="text" pInputText disabled=true placeholder="">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Loan To value: </h5>
+                  <input type="text" pInputText disabled=true placeholder="">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Note Date:</h5>
+                  <input type="text" pInputText disabled=true placeholder="">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">EMI Start Date:</h5>
+                  <input type="text" pInputText disabled=true placeholder="">
+                </div>
+
+                <!-- <div class="col-md-12 mt-20">
+                        <button type="button" class="btn btn-primary">Add</button>
+                   </div> -->
+
+              </div>
+              <hr>
+
+
+
+            </div>
+            <div class="col-md-12">
+              <h4 class="title-f">Overdue Details</h4>
+              <div class="row" style="padding: 0px 0px 36px 10px;">
+                  <div class="col-md-3">
+                      <h5 class="form-lable">DPD:</h5>
+                      <input type="text" pInputText disabled=true placeholder="" value="NA">
+                  </div>
+                  <div class="col-md-3">
+                      <h5 class="form-lable">Bucket/Cycles:</h5>
+                      <input type="text" pInputText disabled=true placeholder="" value="NA">
+                  </div>
+                  <div class="col-md-3">
+                      <h5 class="form-lable">No. of installments Overdue:</h5>
+                      <input type="text" pInputText disabled=true placeholder="" value="NA">
+                  </div>
+                  <div class="col-md-3">
+                      <h5 class="form-lable">Total Amount Overdue:</h5>
+                      <input type="text" pInputText disabled=true placeholder="" value="NA">
+                  </div>
+                  <div class="col-md-3">
+                      <h5 class="form-lable">Interest Overdue:</h5>
+                      <input type="text" pInputText disabled=true placeholder="" value="NA">
+                  </div>
+                  <div class="col-md-3">
+                      <h5 class="form-lable">Total Charges Overdue:</h5>
+                      <input type="text" pInputText disabled=true placeholder="" value="NA">
+                  </div>
+                  <div class="col-md-3">
+                      <h5 class="form-lable">Other Charges:</h5>
+                      <input type="text" pInputText disabled=true placeholder="" value="NA">
+                  </div>
+                  <div class="col-md-3">
+                      <h5 class="form-lable">Cheque Bounce Counter:</h5>
+                      <input type="text" pInputText disabled=true placeholder="" value="NA">
+                  </div>
+                  <div class="col-md-3">
+                      <h5 class="form-lable">Accrued Interest:</h5>
+                      <input type="text" pInputText disabled=true placeholder="" value="NA">
+                  </div>
+                  <div class="col-md-3">
+                      <h5 class="form-lable">Suspense Interest:</h5>
+                      <input type="text" pInputText disabled=true placeholder="" value="NA">
+                  </div>
+                  <div class="col-md-3">
+                      <h5 class="form-lable">Nomination Interest:</h5>
+                      <input type="text" pInputText disabled=true placeholder="" value="NA">
+                  </div>
+  
+                  <!-- <div class="col-md-12 mt-20">
+                    <button type="button" class="btn btn-primary">Add</button>
+               </div> -->
+  
+              </div>
+              <hr>
+  
+  
+  
+          </div>
+            <div class="col-md-12">
+              <h4 class="title-f" style="cursor: pointer;" (click)="asset()">Assets Details <i *ngIf="!assets"
+                  class="fa fa-arrow-circle-down coll-i" aria-hidden="true"></i><i *ngIf="assets"
+                  class="fa fa-arrow-circle-up coll-i" aria-hidden="true"></i></h4>
               <div class="row" *ngIf="assets" style="padding: 0px 0px 6px 10px;">
                 <div class="col-md-2">
                   <h5 class="form-lable">Model:</h5>
@@ -632,8 +801,10 @@
                   <button type="button" class="btn btn-primary">Add</button>
              </div> -->
               <hr>
-              
-              <h4 class="title-f" (click)="pay()" style="cursor: pointer;">Payment Details <i *ngIf="!payment" class="fa fa-arrow-circle-down coll-i" aria-hidden="true"></i><i *ngIf="payment" class="fa fa-arrow-circle-up coll-i" aria-hidden="true"></i></h4>
+
+              <h4 class="title-f" (click)="pay()" style="cursor: pointer;">Payment Details <i *ngIf="!payment"
+                  class="fa fa-arrow-circle-down coll-i" aria-hidden="true"></i><i *ngIf="payment"
+                  class="fa fa-arrow-circle-up coll-i" aria-hidden="true"></i></h4>
               <div class="row" *ngIf="payment" style="padding: 0px 0px 6px 10px;">
                 <div class="col-md-2">
                   <h5 class="form-lable">Last Paid Date:</h5>
@@ -656,7 +827,7 @@
             </div>
           </div>
         </div>
-       
+
 
 
 
@@ -819,7 +990,7 @@
           <mat-icon matTooltip="special follow up trails">swap_horiz</mat-icon>
         </ng-template>
         <br>
-       <app-usr-special-followup></app-usr-special-followup>
+        <app-usr-special-followup></app-usr-special-followup>
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
@@ -837,32 +1008,32 @@
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Loan Details">monetization_on</mat-icon>
+          <mat-icon matTooltip="Loan & Overdue Details">monetization_on</mat-icon>
         </ng-template>
         <br>
         <app-usr-loandetails></app-usr-loandetails>
       </mat-tab>
-      <mat-tab>
+      <!-- <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon matTooltip="Allocation Details">ballot</mat-icon>
         </ng-template>
         <br>
         <app-usr-allocationdetail></app-usr-allocationdetail>
-      </mat-tab>
-      <mat-tab>
+      </mat-tab> -->
+      <!-- <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon matTooltip="Delinquency flow">merge_type</mat-icon>
         </ng-template>
         <br>
         <app-usr-delinquencyflow></app-usr-delinquencyflow>
-      </mat-tab>
-      <mat-tab>
+      </mat-tab> -->
+      <!-- <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon matTooltip="Overdue Details">payment</mat-icon>
         </ng-template>
         <br>
         <app-usr-overduedetailsone></app-usr-overduedetailsone>
-      </mat-tab>
+      </mat-tab> -->
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon matTooltip="RPO/Auction/PLA information">info</mat-icon>
@@ -870,13 +1041,13 @@
         <br>
         <app-usr-rpo></app-usr-rpo>
       </mat-tab>
-      <mat-tab>
+      <!-- <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon matTooltip="Account Summary">event_note</mat-icon>
         </ng-template>
         <br>
         <app-usr-accountsummery></app-usr-accountsummery>
-      </mat-tab>
+      </mat-tab> -->
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon matTooltip="Phone Details">contact_phone</mat-icon>

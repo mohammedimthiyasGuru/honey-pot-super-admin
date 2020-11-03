@@ -194,11 +194,407 @@
         <br>
         <app-usr-addressdetails></app-usr-addressdetails>
       </mat-tab>
-      <mat-tab label="Bank Details"> Content 3 </mat-tab>
-      <mat-tab label="Income Details"> Income Details </mat-tab>
-      <mat-tab label="Liability Details"> Liability Details</mat-tab>
-      <mat-tab label="Esisting Asset Details"> Esisting Asset Details</mat-tab>
-      <mat-tab label="Credit Card Details"> Credit Card Details</mat-tab>
+      <mat-tab label="Bank Details">
+        <!-- <h4 class="title-f">Address Details</h4> -->
+        <div class="row" style="margin-right: 0px;margin-left: 0px;margin-top: 20px;">
+          <div class="col-md-12">
+            <div class="card-box">
+              <h4 class="title-f">Bank Details</h4>
+              <div class="row" style="padding: 0px 0px 23px 10px;">
+                <div class="col-md-4">
+                  <h5 class="form-lable">Bank Name :</h5>
+                  <input type="text" pInputText placeholder="">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Branch:</h5>
+                  <input type="text" pInputText placeholder="">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Account No:</h5>
+                  <input type="text" pInputText placeholder="">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Year Opened:</h5>
+                  <input type="text" pInputText placeholder="">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Status:</h5>
+                  <input type="text" pInputText placeholder="">
+                </div>
+                <div class="col-md-4 mt-20">
+                  <button type="button" class="btn btn-primary">Add</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-md-4">
+              <div class="search-hero">
+                  <input class="form-control" type="text" name="search2" style="font-family: FontAwesome;"
+                      [(ngModel)]="searchQR" autocomplete="off" placeholder="&#xf002; Search...">
+              </div>
+          </div> -->
+          <!--  h -->
+          <!-- <div class="col-md-2 text-right">
+            <button type="button" class="btn btn-primary mr-0" (click)="show2()">Add</button>
+          </div> -->
+        </div>
+        <br>
+        <div class="doc-table">
+          <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="5"
+            [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            [globalFilterFields]="['type']">
+
+            <ng-template pTemplate="header">
+              <tr class="thhead">
+                <th>
+                  Bank Name
+                </th>
+                <th>
+                  Branch
+                </th>
+                <th>
+                  Account Type
+                </th>
+
+                <th>
+                  Account No.
+                </th>
+                <th>
+                  Year Opened
+                </th>
+                <th>
+                  Status
+                </th>
+                <th style="width: 110px;text-align:center">
+                  Action
+                </th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-item let-i="rowIndex">
+              <tr class="tdrow">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="act">
+                  <!-- <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true" pTooltip="Edit"></i>
+                  <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"></i> -->
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+
+        </div>
+
+
+      </mat-tab>
+      <mat-tab label="Income Details">
+        <div class="row" style="margin-right: 0px;margin-left: 0px; margin-top: 20px;">
+          <div class="doc-table">
+            <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="5"
+              [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+              currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+              [globalFilterFields]="['type']">
+
+              <ng-template pTemplate="header">
+                <tr class="thhead">
+                  <th>
+                    Year
+                  </th>
+                  <th>
+                    Income
+                  </th>
+                  <!-- <th>
+                  Account Type 
+                </th>
+
+                <th>
+                  Account No.
+                </th>
+                <th>
+                  Year Opened 
+                </th>
+                <th>
+                  Status
+                </th>
+                <th style="width: 110px;text-align:center">
+                  Action
+                </th> -->
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-item let-i="rowIndex">
+                <tr class="tdrow">
+                  <td></td>
+                  <td></td>
+                  <!-- <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="act">
+                  <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true" pTooltip="Edit"></i>
+                  <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"></i>
+                </td> -->
+                </tr>
+              </ng-template>
+            </p-table>
+
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Liability Details">
+        <div class="row" style="margin-right: 0px;margin-left: 0px; margin-top: 20px;">
+          <div class="doc-table">
+            <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="5"
+              [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+              currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+              [globalFilterFields]="['type']">
+
+              <ng-template pTemplate="header">
+                <tr class="thhead">
+                  <th>
+                    Liability Description
+                  </th>
+                  <th>
+                    Financier Details
+                  </th>
+                  <th>
+                    Liability Type
+                  </th>
+                  <!-- <th>
+                  Account Type 
+                </th>
+
+                <th>
+                  Account No.
+                </th>
+                <th>
+                  Year Opened 
+                </th>
+                <th>
+                  Status
+                </th>
+                <th style="width: 110px;text-align:center">
+                  Action
+                </th> -->
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-item let-i="rowIndex">
+                <tr class="tdrow">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <!-- <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="act">
+                  <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true" pTooltip="Edit"></i>
+                  <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"></i>
+                </td> -->
+                </tr>
+              </ng-template>
+            </p-table>
+
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Esisting Asset Details"> 
+          <!-- <h4 class="title-f">Address Details</h4> -->
+          <div class="row" style="margin-right: 0px;margin-left: 0px;margin-top: 20px;">
+            <div class="col-md-12">
+              <div class="card-box">
+                <h4 class="title-f">Esisting Asset Details</h4>
+                <div class="row" style="padding: 0px 0px 23px 10px;">
+                  <div class="col-md-4">
+                    <h5 class="form-lable">Asset Description:</h5>
+                    <input type="text" pInputText placeholder="">
+                  </div>
+                  <div class="col-md-4">
+                    <h5 class="form-lable">Asset Cost:</h5>
+                    <input type="text" pInputText placeholder="">
+                  </div>
+                  <div class="col-md-4">
+                    <h5 class="form-lable">Additional Information:</h5>
+                    <input type="text" pInputText placeholder="">
+                  </div>
+                  <div class="col-md-4 mt-20">
+                    <button type="button" class="btn btn-primary">Add</button>
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-md-4">
+                <div class="search-hero">
+                    <input class="form-control" type="text" name="search2" style="font-family: FontAwesome;"
+                        [(ngModel)]="searchQR" autocomplete="off" placeholder="&#xf002; Search...">
+                </div>
+            </div> -->
+            <!--  h -->
+            <!-- <div class="col-md-2 text-right">
+              <button type="button" class="btn btn-primary mr-0" (click)="show2()">Add</button>
+            </div> -->
+          </div>
+          <br>
+          <div class="doc-table">
+            <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="5"
+              [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+              currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+              [globalFilterFields]="['type']">
+  
+              <ng-template pTemplate="header">
+                <tr class="thhead">
+                  <th>
+                    Asset Description 
+                  </th>
+                  <th>
+                    Asset Cost 
+                  </th>
+                  <th>
+                    Additional Information
+                  </th>
+                  <!-- <th style="width: 110px;text-align:center">
+                    Action
+                  </th> -->
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-item let-i="rowIndex">
+                <tr class="tdrow">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <!-- <td></td>
+                  <td></td>
+                  <td></td>
+                  <td class="act">
+                    <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true" pTooltip="Edit"></i>
+                    <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"></i>
+                  </td> -->
+                </tr>
+              </ng-template>
+            </p-table>
+  
+          </div>
+  
+  
+      </mat-tab>
+      <mat-tab label="Credit Card Details"> 
+         <!-- <h4 class="title-f">Address Details</h4> -->
+         <div class="row" style="margin-right: 0px;margin-left: 0px;margin-top: 20px;">
+          <div class="col-md-12">
+            <div class="card-box">
+              <h4 class="title-f">Credit Card Details</h4>
+              <div class="row" style="padding: 0px 0px 23px 10px;">
+                <div class="col-md-4">
+                  <h5 class="form-lable">Card Number:</h5>
+                  <input type="text" pInputText placeholder="">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Card Type:</h5>
+                  <input type="text" pInputText placeholder="">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Card Category:</h5>
+                  <input type="text" pInputText placeholder="">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Financier Type:</h5>
+                  <input type="text" pInputText placeholder="">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Amount Due:</h5>
+                  <input type="text" pInputText placeholder="">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Valid Till:</h5>
+                  <input type="text" pInputText placeholder="">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Card Limit:</h5>
+                  <input type="text" pInputText placeholder="">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Status:</h5>
+                  <input type="text" pInputText placeholder="">
+                </div>
+                <div class="col-md-4 mt-20">
+                  <button type="button" class="btn btn-primary">Add</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-md-4">
+              <div class="search-hero">
+                  <input class="form-control" type="text" name="search2" style="font-family: FontAwesome;"
+                      [(ngModel)]="searchQR" autocomplete="off" placeholder="&#xf002; Search...">
+              </div>
+          </div> -->
+          <!--  h -->
+          <!-- <div class="col-md-2 text-right">
+            <button type="button" class="btn btn-primary mr-0" (click)="show2()">Add</button>
+          </div> -->
+        </div>
+        <br>
+        <div class="doc-table">
+          <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="5"
+            [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            [globalFilterFields]="['type']">
+
+            <ng-template pTemplate="header">
+              <tr class="thhead">
+                <th>
+                  Card Number 
+                </th>
+                <th>
+                  Card Type 
+                </th>
+                <th>
+                  Card Category
+                </th>
+                <th>
+                  Member Since 
+                </th>
+                <th>
+                  Amount Due 
+                </th>
+                <th>
+                  Valid Till 
+                </th>
+                <th>
+                  Card Limit 
+                </th>
+                <th>
+                  Status
+                </th>
+                <!-- <th style="width: 110px;text-align:center">
+                  Action
+                </th> -->
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-item let-i="rowIndex">
+              <tr class="tdrow">
+                <td></td>
+                <td></td>
+                <td></td>
+                <!-- <td></td>
+                <td></td>
+                <td></td>
+                <td class="act">
+                  <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true" pTooltip="Edit"></i>
+                  <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"></i>
+                </td> -->
+              </tr>
+            </ng-template>
+          </p-table>
+
+        </div>
+      </mat-tab>
     </mat-tab-group>
   </div>
 </div>
