@@ -31,17 +31,17 @@
             <th>Total Overdue Amt.</th>
           </tr>
           <tr style="text-align: center;font-size: 12px;">
-            <td>9876543210</td>
-            <td>0213645878</td>
-            <td>ASDFGHJ</td>
+            <td>98765432109876543210</td>
+            <td>02136458789876543210</td>
+            <td>ASDFGHJASDFGHJASDFGH</td>
             <td>3</td>
             <td>Auto Loan</td>
             <td>NA</td>
-            <td>5,000</td>
-            <td>5,00,000</td>
-            <td>20,000</td>
-            <td>15,000</td>
-            <td>1,00,000</td>
+            <td>5,000.00</td>
+            <td>5,00,000.00</td>
+            <td>20,000.00</td>
+            <td>15,000.00</td>
+            <td>1,00,000.00</td>
           </tr>
         </table>
       </div>
@@ -168,7 +168,7 @@
                   <input type="text" pInputText disabled=true placeholder="" value="NA">
                 </div>
                 <div class="col-md-4">
-                  <h5 class="form-lable">Agreement ID:</h5>
+                  <h5 class="form-lable">Agreement ID/ Acc Card No.:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="125987">
                 </div>
                 <div class="col-md-4">
@@ -260,6 +260,64 @@
               <hr>
             </div>
             <div class="col-md-12">
+              <h4 class="title-f">Overdue Details</h4>
+              <div class="row" style="padding: 0px 0px 36px 10px;">
+                <div class="col-md-3">
+                  <h5 class="form-lable">DPD:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Bucket/Cycles:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">No. of installments Overdue:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Total Amount Overdue:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Interest Overdue:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Total Charges Overdue:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Other Charges:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Cheque Bounce Counter:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Accrued Interest:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Suspense Interest:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+                <div class="col-md-3">
+                  <h5 class="form-lable">Nomination Interest:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div>
+
+                <!-- <div class="col-md-12 mt-20">
+                    <button type="button" class="btn btn-primary">Add</button>
+               </div> -->
+
+              </div>
+              <hr>
+
+
+
+            </div>
+            <div class="col-md-12">
               <h4 class="title-f">Follow Up Trails</h4>
               <div class="doc-table">
                 <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false"
@@ -339,7 +397,7 @@
                 </p-table>
               </div>
             </div>
-            
+
             <div class="col-md-3">
               <h4 class="title-f">Guarantor Details</h4>
               <div class="row" style="padding: 0px 0px  26px 10px;">
@@ -684,64 +742,7 @@
 
 
             </div>
-            <div class="col-md-12">
-              <h4 class="title-f">Overdue Details</h4>
-              <div class="row" style="padding: 0px 0px 36px 10px;">
-                  <div class="col-md-3">
-                      <h5 class="form-lable">DPD:</h5>
-                      <input type="text" pInputText disabled=true placeholder="" value="NA">
-                  </div>
-                  <div class="col-md-3">
-                      <h5 class="form-lable">Bucket/Cycles:</h5>
-                      <input type="text" pInputText disabled=true placeholder="" value="NA">
-                  </div>
-                  <div class="col-md-3">
-                      <h5 class="form-lable">No. of installments Overdue:</h5>
-                      <input type="text" pInputText disabled=true placeholder="" value="NA">
-                  </div>
-                  <div class="col-md-3">
-                      <h5 class="form-lable">Total Amount Overdue:</h5>
-                      <input type="text" pInputText disabled=true placeholder="" value="NA">
-                  </div>
-                  <div class="col-md-3">
-                      <h5 class="form-lable">Interest Overdue:</h5>
-                      <input type="text" pInputText disabled=true placeholder="" value="NA">
-                  </div>
-                  <div class="col-md-3">
-                      <h5 class="form-lable">Total Charges Overdue:</h5>
-                      <input type="text" pInputText disabled=true placeholder="" value="NA">
-                  </div>
-                  <div class="col-md-3">
-                      <h5 class="form-lable">Other Charges:</h5>
-                      <input type="text" pInputText disabled=true placeholder="" value="NA">
-                  </div>
-                  <div class="col-md-3">
-                      <h5 class="form-lable">Cheque Bounce Counter:</h5>
-                      <input type="text" pInputText disabled=true placeholder="" value="NA">
-                  </div>
-                  <div class="col-md-3">
-                      <h5 class="form-lable">Accrued Interest:</h5>
-                      <input type="text" pInputText disabled=true placeholder="" value="NA">
-                  </div>
-                  <div class="col-md-3">
-                      <h5 class="form-lable">Suspense Interest:</h5>
-                      <input type="text" pInputText disabled=true placeholder="" value="NA">
-                  </div>
-                  <div class="col-md-3">
-                      <h5 class="form-lable">Nomination Interest:</h5>
-                      <input type="text" pInputText disabled=true placeholder="" value="NA">
-                  </div>
-  
-                  <!-- <div class="col-md-12 mt-20">
-                    <button type="button" class="btn btn-primary">Add</button>
-               </div> -->
-  
-              </div>
-              <hr>
-  
-  
-  
-          </div>
+
             <div class="col-md-12">
               <h4 class="title-f" style="cursor: pointer;" (click)="asset()">Assets Details <i *ngIf="!assets"
                   class="fa fa-arrow-circle-down coll-i" aria-hidden="true"></i><i *ngIf="assets"
@@ -1061,6 +1062,147 @@
         </ng-template>
         <br>
         <app-usr-documnetretrieval></app-usr-documnetretrieval>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon matTooltip="Field Visit Status"> directions_bike</mat-icon>
+        </ng-template>
+        <br>
+
+        <h4 class="title">Field Visit Details</h4>
+
+        <div class="doc-table">
+          <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
+            [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            [globalFilterFields]="['type']">
+            <ng-template pTemplate="header">
+              <tr style="text-align: center;">
+                <th>S.No</th>
+                <th>Requested Date</th>
+                <th>Field Visit for</th>
+                <th>Address Type</th>
+                <th>Address</th>
+                <th>Phone Ext</th>
+                <th>Mobile</th>
+                <th>Contact Person</th>
+                <th>Amount</th>
+                <th>Field Visit Date</th>
+                <th>Customer Available </th>
+                <th>Payment Made</th>
+                <th>Amount Collected</th>
+                <th>Status</th>
+                <th>Receipt Number</th>
+                <th>Next Action</th>
+                <th>Next Action Date</th>
+                <th>Remarks</th>
+              </tr>
+              <tr style="text-align: center;">
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+        <br>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon matTooltip="Settlement Details">payment</mat-icon>
+        </ng-template>
+        <br>
+        <h4 class="title">Settlement Details</h4>
+
+        <div class="doc-table">
+          <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
+            [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            [globalFilterFields]="['type']">
+            <ng-template pTemplate="header">
+              <tr style="text-align: center;">
+                <th>S.No</th>
+                <th>Settlement Type</th>
+                <th>Installment Amount</th>
+                <th>Instrument Date</th>
+                <th>Remarks</th>
+                <th>Total Settlement Amount</th>
+              </tr>
+              <tr style="text-align: center;">
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+        <br>
+
+
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon matTooltip="Skip Tracing">trending_up</mat-icon>
+        </ng-template>
+        <br>
+
+        <h4 class="title">Skip Tracing Details</h4>
+
+        <div class="doc-table">
+          <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
+            [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            [globalFilterFields]="['type']">
+            <ng-template pTemplate="header">
+              <tr style="text-align: center;">
+                <th>S.No</th>
+                <th>Account Number</th>
+                <th>Details Obtained</th>
+                <th>Source of Detail</th>
+                <th>Remarks</th>
+                <th>Customer Name</th>
+                <th>Open Text</th>
+                <th>Open Text</th>
+                <th>Open Text</th>
+                <th>Date</th>
+                <th>User ID</th>
+              </tr>
+              <tr style="text-align: center;">
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+        <br>
+
       </mat-tab>
     </mat-tab-group>
   </div>
