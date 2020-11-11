@@ -31,15 +31,14 @@
 }
 .bage {
     position: absolute;
-    top: -10px;
+    top: 0px;
     right: 10px;
     font-size: 11px !important;
     border-radius: 50%;
     background-color: red;
     color: white;
-    /* line-height: 1.6; */
     font-family: "Helvetica Neue", sans-serif !important;
-    padding: 1px 6px;
+    padding: 2px 6px;
   }
   .ad-user h5{
     font-size: 12px;

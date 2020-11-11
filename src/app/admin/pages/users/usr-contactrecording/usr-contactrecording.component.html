@@ -13,7 +13,25 @@
             <p style="font-size: 11px;color: #d0d0d0;margin-bottom: 6px;">Male, 30 Years old, Indian.</p>
           </div>
         </div>
+        <button style="width: 100%;background-color: #0a4078;border-radius: 0px;height: 28px;" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+         <p style="font-size:12px;color: #fff;line-height: 10px;"> Choose Account<mat-icon style="font-size:15px;position: relative;top:3px">arrow_downward</mat-icon></p>
 
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon style="font-size:18px;">home</mat-icon>
+            <span>123458012582825987</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon style="font-size:18px;">person</mat-icon>
+            <span>153458012582825987</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon style="font-size:18px;">credit_card</mat-icon>
+            <span>985458012582825965</span>
+          </button>
+        </mat-menu>
+        
       </div>
       <div class="col-md-9" style="padding-left: 0px;padding-right: 0px;">
         <table style="width: 100%;border: none;" class="pr-t">
@@ -117,36 +135,96 @@
         <div class="row" style="margin-left: 0px;margin-right: 0px;">
           <div class="card-box" style="margin: 2px;">
             <div class="col-md-6">
+              <h4 class="title-f">Account Information</h4>
+              <div class="row" style="padding: 0px 0px 6px 10px;">
+                <div class="col-md-4">
+                  <h5 class="form-lable">Account Type:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="Credit Card">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Bank Acc No:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="12345 12345 12345 123">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Loan Acc No:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="12345 12345 12345 123">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Last Payment Date:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="12/12/19">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">POS No:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="123 123 123">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Credit Limit:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="100000">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">CIF No:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="12345 12345 12345 123">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Credit Card No:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="12345 12345 12345 123 ">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Total Outstanding:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="3000000">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Priciple Outstanding:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="200000">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">CID No:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="12345 12345 12345 123">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Status:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="Confirmed">
+                </div>
+                <!-- <div class="col-md-12 mt-20">
+                        <button type="button" class="btn btn-primary">Add</button>
+                   </div> -->
+
+              </div>
+              <hr>
+            </div>
+            <div class="col-md-6">
+
               <h4 class="title-f">Customer Information</h4>
-              <div class="row" style="padding: 0px 0px 36px 10px;">
-                <div class="col-md-4">
-                  <h5 class="form-lable">Loan Number:</h5>
-                  <input type="text" pInputText disabled=true placeholder="" value="00213547458585">
-                </div>
-                <div class="col-md-4">
-                  <h5 class="form-lable">Gender:</h5>
-                  <input type="text" pInputText disabled=true placeholder="" value="Male">
-                </div>
-                <div class="col-md-4">
-                  <h5 class="form-lable">Products:</h5>
-                  <input type="text" pInputText disabled=true placeholder="" value="10">
-                </div>
-                <div class="col-md-4">
-                  <h5 class="form-lable">Customer ID:</h5>
-                  <input type="text" pInputText disabled=true placeholder="" value="112235485">
-                </div>
-                <div class="col-md-4">
-                  <h5 class="form-lable">Date of Birth:</h5>
-                  <input type="text" pInputText disabled=true placeholder="" value="07-07-1994">
-                </div>
-                <div class="col-md-4">
-                  <h5 class="form-lable">CEP Name:</h5>
-                  <input type="text" pInputText disabled=true placeholder="" value="NA">
-                </div>
+              <div class="row" style="padding: 0px 0px 6px 10px;">
                 <div class="col-md-4">
                   <h5 class="form-lable">Customer Name:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="Vignesh V">
                 </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Customer ID:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="2345 12345 12345 123">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Customer Type:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="Confirmed">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Customer Representitive:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="Type">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Contact Person:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="Atul Sunil">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Nationality:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="India">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Passport No:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="XZER3433">
+                </div>
+
                 <div class="col-md-4">
                   <h5 class="form-lable">Branch:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="Mizher Mall">
@@ -155,20 +233,24 @@
                   <h5 class="form-lable">Branch Code:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="1244">
                 </div>
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                   <h5 class="form-lable">Sub Products Code:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="NA">
+                </div> -->
+                <!-- <div class="col-md-4">
+                  <h5 class="form-lable">CEP Name:</h5>
+                  <input type="text" pInputText disabled=true placeholder="">
                 </div>
                 <div class="col-md-4">
                   <h5 class="form-lable">CIF Number:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="NA">
-                </div>
+                </div> -->
                 <div class="col-md-4">
                   <h5 class="form-lable">Constitution:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="NA">
                 </div>
                 <div class="col-md-4">
-                  <h5 class="form-lable">Agreement ID/ Acc Card No.:</h5>
+                  <h5 class="form-lable">Agreement ID:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="125987">
                 </div>
                 <div class="col-md-4">
@@ -237,13 +319,6 @@
                   <h5 class="form-lable">Risk Segment:</h5>
                   <input type="text" pInputText disabled=true placeholder="">
                 </div>
-                <!-- <div class="col-md-12 mt-20">
-                      <button type="button" class="btn btn-primary">Add</button>
-                 </div> -->
-
-              </div>
-              <h4 class="title-f">Analysis</h4>
-              <div class="row" style="padding: 0px 0px 6px 10px;">
                 <div class="col-md-4">
                   <h5 class="form-lable">Best Number to call:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="9876543210">
@@ -257,52 +332,65 @@
                  </div> -->
 
               </div>
+              <!-- <h4 class="title-f">Analysis</h4>
+              <div class="row" style="padding: 0px 0px 6px 10px;">
+                <div class="col-md-4">
+                  <h5 class="form-lable">Best Number to call:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="9876543210">
+                </div>
+                <div class="col-md-4">
+                  <h5 class="form-lable">Best Time to call:</h5>
+                  <input type="text" pInputText disabled=true placeholder="" value="10:25am - 12.30pm">
+                </div>
+              
+
+              </div> -->
               <hr>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
               <h4 class="title-f">Overdue Details</h4>
-              <div class="row" style="padding: 0px 0px 36px 10px;">
-                <div class="col-md-3">
+              <div class="row" style="padding: 0px 0px 6px 10px;">
+                <div class="col-md-4">
                   <h5 class="form-lable">DPD:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="NA">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <h5 class="form-lable">Bucket/Cycles:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="NA">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <h5 class="form-lable">No. of installments Overdue:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="NA">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <h5 class="form-lable">Total Amount Overdue:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="NA">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <h5 class="form-lable">Interest Overdue:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="NA">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <h5 class="form-lable">Total Charges Overdue:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="NA">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <h5 class="form-lable">Other Charges:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="NA">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <h5 class="form-lable">Cheque Bounce Counter:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="NA">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <h5 class="form-lable">Accrued Interest:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="NA">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <h5 class="form-lable">Suspense Interest:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="NA">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <h5 class="form-lable">Nomination Interest:</h5>
                   <input type="text" pInputText disabled=true placeholder="" value="NA">
                 </div>
@@ -636,6 +724,7 @@
               </div>
               <hr>
             </div>
+            
             <div class="col-md-12">
               <h4 class="title-f">Loan Details</h4>
               <div class="row" style="padding: 0px 0px 36px 10px;">
@@ -742,7 +831,46 @@
 
 
             </div>
-
+            <div class="col-md-12">
+              <h4 class="title-f">Skip Tracing Details</h4>
+  
+              <div class="doc-table">
+                <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
+                  [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+                  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                  [globalFilterFields]="['type']">
+                  <ng-template pTemplate="header">
+                    <tr style="text-align: center;">
+                      <th>S.No</th>
+                      <th>Account Number</th>
+                      <th>Details Obtained</th>
+                      <th>Source of Detail</th>
+                      <th>Remarks</th>
+                      <th>Customer Name</th>
+                      <th>Open Text</th>
+                      <th>Open Text</th>
+                      <th>Open Text</th>
+                      <th>Date</th>
+                      <th>User ID</th>
+                    </tr>
+                    <tr style="text-align: center;">
+                      <td>1</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </ng-template>
+                </p-table>
+              </div>
+              <br>
+             </div>
             <div class="col-md-12">
               <h4 class="title-f" style="cursor: pointer;" (click)="asset()">Assets Details <i *ngIf="!assets"
                   class="fa fa-arrow-circle-down coll-i" aria-hidden="true"></i><i *ngIf="assets"
@@ -826,79 +954,79 @@
               </div>
               <hr>
             </div>
+            <div class="col-md-12">
+              <h4 class="title-f">Delinquency String <span
+                  style="color: #3F51B5;font-size: 11px;text-decoration: underline;cursor: pointer;"
+                  (click)="del = !del">view
+                  Detail</span></h4>
+              <div class="doc-table" *ngIf="del">
+                <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false"
+                  [rows]="5" [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+                  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                  [globalFilterFields]="['type']">
+  
+                  <ng-template pTemplate="header">
+  
+                    <tr style="text-align: center;">
+                      <th>JAN</th>
+                      <th>FEB</th>
+                      <th>MAR</th>
+                      <th>APR</th>
+                      <th>MAY</th>
+                      <th>JUN</th>
+                      <th>JUL</th>
+                      <th>AUG</th>
+                      <th>SEP</th>
+                      <th>OCT</th>
+                      <th>NOV</th>
+                      <th>DEC</th>
+                      <th>JAN</th>
+                      <th>FEB</th>
+                      <th>MAR</th>
+                      <th>APR</th>
+                      <th>MAY</th>
+                      <th>JUN</th>
+                      <th>JUL</th>
+                      <th>AUG</th>
+                      <th>SEP</th>
+                      <th>OCT</th>
+                      <th>NOV</th>
+                      <th>DEC</th>
+                    </tr>
+                    <tr style="text-align: center;">
+                      <td><input type="text" value="1"></td>
+                      <td><input type="text" value="1"></td>
+                      <td><input type="text" value="1"></td>
+                      <td><input type="text" value="1"></td>
+                      <td><input type="text" value="1"></td>
+                      <td><input type="text" value="1"></td>
+                      <td><input type="text" value="1"></td>
+                      <td><input type="text" value="1"></td>
+                      <td><input type="text" value="1"></td>
+                      <td><input type="text" value="1"></td>
+                      <td><input type="text" value="1"></td>
+                      <td><input type="text" value="1"></td>
+                      <td><input type="text" value="1"></td>
+                      <td><input type="text" value="1"></td>
+                      <td><input type="text" value="NA"></td>
+                      <td><input type="text" value="NA"></td>
+                      <td><input type="text" value="NA"></td>
+                      <td><input type="text" value="NA"></td>
+                      <td><input type="text" value="NA"></td>
+                      <td><input type="text" value="NA"></td>
+                      <td><input type="text" value="NA"></td>
+                      <td><input type="text" value="NA"></td>
+                      <td><input type="text" value="NA"></td>
+                      <td><input type="text" value="NA"></td>
+                    </tr>
+                  </ng-template>
+                </p-table>
+              </div>
+            </div>
+          
           </div>
+         
         </div>
-
-
-
-
-        <h4 class="title-f">Delinquency String <span
-            style="color: #3F51B5;font-size: 11px;text-decoration: underline;cursor: pointer;" (click)="del = !del">view
-            Detail</span></h4>
-        <div class="doc-table" *ngIf="del">
-          <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
-            [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
-            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-            [globalFilterFields]="['type']">
-
-            <ng-template pTemplate="header">
-
-              <tr style="text-align: center;">
-                <th>JAN</th>
-                <th>FEB</th>
-                <th>MAR</th>
-                <th>APR</th>
-                <th>MAY</th>
-                <th>JUN</th>
-                <th>JUL</th>
-                <th>AUG</th>
-                <th>SEP</th>
-                <th>OCT</th>
-                <th>NOV</th>
-                <th>DEC</th>
-                <th>JAN</th>
-                <th>FEB</th>
-                <th>MAR</th>
-                <th>APR</th>
-                <th>MAY</th>
-                <th>JUN</th>
-                <th>JUL</th>
-                <th>AUG</th>
-                <th>SEP</th>
-                <th>OCT</th>
-                <th>NOV</th>
-                <th>DEC</th>
-              </tr>
-              <tr style="text-align: center;">
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="1"></td>
-                <td><input type="text" value="NA"></td>
-                <td><input type="text" value="NA"></td>
-                <td><input type="text" value="NA"></td>
-                <td><input type="text" value="NA"></td>
-                <td><input type="text" value="NA"></td>
-                <td><input type="text" value="NA"></td>
-                <td><input type="text" value="NA"></td>
-                <td><input type="text" value="NA"></td>
-                <td><input type="text" value="NA"></td>
-                <td><input type="text" value="NA"></td>
-              </tr>
-            </ng-template>
-          </p-table>
-        </div>
-        <br>
 
       </mat-tab>
       <mat-tab>

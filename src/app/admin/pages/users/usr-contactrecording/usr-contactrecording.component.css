@@ -210,3 +210,6 @@ i {
 td input{
   font-size: 10px;
 }
+button:focus {
+  outline: none !important;
+}

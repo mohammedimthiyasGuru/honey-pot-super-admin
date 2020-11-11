@@ -125,7 +125,7 @@
     font-size: 11px;
     font-weight: 500;
     color:#5d5d5d  !important;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 .search-hero{
     margin-bottom: 10px;
@@ -250,7 +250,7 @@ textarea {
 
 
 :host::ng-deep .ui-inputtext {
-    margin-bottom: 0px !important;
+    margin-bottom: 5px !important;
 }
 
 h5 span{
