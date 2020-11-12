@@ -104,6 +104,7 @@ import { UsrFiledVisitAssignComponent } from './pages/users/usr-filed-visit-assi
 import { UsrCustomerExplosureComponent } from './pages/users/usr-customer-explosure/usr-customer-explosure.component';
 import { UsrSpecialFollowupComponent } from './pages/users/usr-special-followup/usr-special-followup.component';
 import { UsrOldFollowupComponent } from './pages/users/usr-old-followup/usr-old-followup.component';
+import { ExcelUploadComponent } from './pages/excel-upload/excel-upload.component';
 
 @NgModule({
   declarations: [AdminHeaderComponent,
@@ -175,6 +176,7 @@ import { UsrOldFollowupComponent } from './pages/users/usr-old-followup/usr-old-
     UsrCustomerExplosureComponent,
     UsrSpecialFollowupComponent,
     UsrOldFollowupComponent,
+    ExcelUploadComponent,
   ],
   imports: [
     CommonModule,
@@ -258,6 +260,7 @@ import { UsrOldFollowupComponent } from './pages/users/usr-old-followup/usr-old-
     UsrForeclosureComponent,
     UsrSpecialFollowupComponent,
     UsrOldFollowupComponent,
+    ExcelUploadComponent
   ]
 })
 export class AdminModule { }

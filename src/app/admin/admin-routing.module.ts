@@ -46,6 +46,7 @@ import { UsrUserdetailsComponent } from './pages/users//usr-userdetails/usr-user
 import { UsrAllocationdetailComponent } from './pages/users//usr-allocationdetail/usr-allocationdetail.component';
 import { UsrCollateraldetailssComponent } from './pages/users//usr-collateraldetailss/usr-collateraldetailss.component';
 
+import { ExcelUploadComponent } from './pages/excel-upload/excel-upload.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' ,pathMatch:'full'},
@@ -56,7 +57,7 @@ const routes: Routes = [
   { path: 'Country', component: CountryComponent },
   { path: 'License', component: LicenseComponent },
   { path: 'License_Form', component: LicenseFormComponent },
-
+  { path: 'Excel_Upload', component: ExcelUploadComponent },
 
   //////Accounts//////
   { path: 'accounts/accounts', component: AccAccountlistComponent },
