@@ -1,22 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashboardMainComponent } from './dashboard-main.component';
+import { LocalaccallocComponent } from './localaccalloc.component';
 
-
-
-describe('DashboardMainComponent', () => {
-  let component: DashboardMainComponent;
-  let fixture: ComponentFixture<DashboardMainComponent>;
+describe('LocalaccallocComponent', () => {
+  let component: LocalaccallocComponent;
+  let fixture: ComponentFixture<LocalaccallocComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardMainComponent ]
+      declarations: [ LocalaccallocComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DashboardMainComponent);
+    fixture = TestBed.createComponent(LocalaccallocComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

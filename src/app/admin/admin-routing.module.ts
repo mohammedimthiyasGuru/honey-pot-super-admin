@@ -47,6 +47,15 @@ import { UsrAllocationdetailComponent } from './pages/users//usr-allocationdetai
 import { UsrCollateraldetailssComponent } from './pages/users//usr-collateraldetailss/usr-collateraldetailss.component';
 
 import { ExcelUploadComponent } from './pages/excel-upload/excel-upload.component';
+import { LocalaccallocComponent } from './pages/userflow/localaccalloc/localaccalloc.component';
+import { LocalaccpendingComponent } from './pages/userflow/localaccpending/localaccpending.component';
+import { LocalaccworkedComponent } from './pages/userflow/localaccworked/localaccworked.component';
+import { LocalaccptpComponent } from './pages/userflow/localaccptp/localaccptp.component';
+import { VechicleloanlistComponent } from './Pages/userflow/vechicleloanlist/vechicleloanlist.component';
+import { PersonalloanlistComponent } from './Pages/userflow/personalloanlist/personalloanlist.component';
+import { HomeloanlistComponent } from './Pages/userflow/homeloanlist/homeloanlist.component';
+import { CreditcardlistComponent } from './Pages/userflow/creditcardlist/creditcardlist.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' ,pathMatch:'full'},
@@ -104,6 +113,16 @@ const routes: Routes = [
   { path: 'user/usercollateraldetails', component: UsrCollateraldetailssComponent },
 
 
+
+  { path: 'userflow/accallocate', component:  LocalaccallocComponent},
+  { path: 'userflow/accworked', component: LocalaccworkedComponent },
+  { path: 'userflow/accpending', component: LocalaccpendingComponent },
+  { path: 'userflow/accptptoken', component: LocalaccptpComponent },
+
+  { path: 'userflow/creditcardlist', component:  CreditcardlistComponent},
+  { path: 'userflow/vehicleloanlist', component: VechicleloanlistComponent },
+  { path: 'userflow/personaloanlist', component: PersonalloanlistComponent },
+  { path: 'userflow/homeloanlist', component: HomeloanlistComponent },
 
 
 

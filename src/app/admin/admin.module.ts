@@ -106,6 +106,16 @@ import { UsrSpecialFollowupComponent } from './pages/users/usr-special-followup/
 import { UsrOldFollowupComponent } from './pages/users/usr-old-followup/usr-old-followup.component';
 import { ExcelUploadComponent } from './pages/excel-upload/excel-upload.component';
 
+import { LocalaccworkedComponent } from './pages/userflow/localaccworked/localaccworked.component';
+import { LocalaccpendingComponent } from './pages/userflow/localaccpending/localaccpending.component';
+import { LocalaccptpComponent } from './pages/userflow/localaccptp/localaccptp.component';
+import { LocalaccallocComponent } from './pages/userflow/localaccalloc/localaccalloc.component';
+import { CreditcardlistComponent } from './Pages/userflow/creditcardlist/creditcardlist.component';
+import { VechicleloanlistComponent } from './Pages/userflow/vechicleloanlist/vechicleloanlist.component';
+import { PersonalloanlistComponent } from './Pages/userflow/personalloanlist/personalloanlist.component';
+import { HomeloanlistComponent } from './Pages/userflow/homeloanlist/homeloanlist.component';
+
+
 @NgModule({
   declarations: [AdminHeaderComponent,
     AdminSidebarComponent,
@@ -177,6 +187,14 @@ import { ExcelUploadComponent } from './pages/excel-upload/excel-upload.componen
     UsrSpecialFollowupComponent,
     UsrOldFollowupComponent,
     ExcelUploadComponent,
+    LocalaccworkedComponent,
+    LocalaccpendingComponent,
+    LocalaccptpComponent,
+    LocalaccallocComponent,
+    CreditcardlistComponent,
+    VechicleloanlistComponent,
+    PersonalloanlistComponent,
+    HomeloanlistComponent,
   ],
   imports: [
     CommonModule,

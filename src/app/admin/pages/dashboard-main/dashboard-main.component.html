@@ -1,11 +1,10 @@
-<section class="head-tool ">
+<section class="head-tool">
     <div class="row" style="margin: 0px !important;">
         <div class="col-md-6">
             <div class="logo-img">
                 <img class="logo-dark" src="assets/images/logo/logo.png" alt="Logo" style="width: 50px;">
               </div>
         </div>
-
         <div class="col-md-6">
             <div style="text-align: right;">
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" style="margin-right: 20px;">
@@ -41,7 +40,7 @@
                   <mat-icon>person</mat-icon>
                   <span>Profile </span>
                 </button>
-                <button mat-menu-item >
+                <button mat-menu-item (click)="logout()">
                     <mat-icon>power_settings_new</mat-icon>
                   <span>Logout </span>
                 </button>
@@ -51,52 +50,364 @@
     </div>
 </section>
 
-<section style="margin-top: 150px;">
 
+<section style="margin-top: 70px;">
     <div class="container">
         <div class="row">
+          <div class="col-md-12" (click)="pay()" style="font-size: 16px;font-weight: 800;padding: 17px;">
+          Activity Dashboards <i *ngIf="!payment"
+          class="fa fa-arrow-circle-down coll-i" aria-hidden="true"></i><i *ngIf="payment"
+          class="fa fa-arrow-circle-up coll-i" aria-hidden="true"></i>
+          </div>
+          <div class="row" *ngIf="payment">
+            <div class="col-md-2 col-xl-2">
+                <div class="card bg-c-blue order-card" (click)="accallocate()">
+                    <div class="card-block">
+                        <h5 class="m-b-20">Accounts Allocated</h5>
+                        <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>65</span></h2>
 
-            <div class="col-md-4 col-xl-4">
-                <div class="card bg-c-blue order-card">
-                    <div class="card-block">
-                        <h5 class="m-b-20">Local Accounts Allocated</h5>
-                        <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>150</span></h2>
-                        <!-- <p class="m-b-0"><span class="f-right">351</span></p> -->
                     </div>
                 </div>
             </div>
+            <div class="col-md-2 col-xl-2">
+                <div class="card bg-c-pink order-card" (click)="accworked()">
+                    <div class="card-block">
+                        <h5 class="m-b-20">Accounts Worked on</h5>
+                        <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>50</span></h2>
 
-            <div class="col-md-4 col-xl-4">
-                <div class="card bg-c-pink order-card">
-                    <div class="card-block">
-                        <h5 class="m-b-20">Local Accounts Worked on</h5>
-                        <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>76</span></h2>
-                        <!-- <p class="m-b-0"><span class="f-right">351</span></p> -->
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-xl-4">
-                <div class="card bg-c-yellow order-card">
+            <div class="col-md-2 col-xl-2">
+                <div class="card bg-c-yellow order-card" (click)="accpending()">
                     <div class="card-block">
-                        <h5 class="m-b-20">Local Accounts Pending</h5>
-                        <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>74</span></h2>
-                        <!-- <p class="m-b-0"><span class="f-right">351</span></p> -->
+                        <h5 class="m-b-20">Accounts Pending</h5>
+                        <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>15</span></h2>
+
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-xl-4">
-                <div class="card bg-c-green order-card">
+            <div class="col-md-2 col-xl-2">
+                <div class="card bg-c-green order-card" (click)="accptptoken()">
                     <div class="card-block">
                         <h5 class="m-b-20">PTP Taken</h5>
-                        <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>15</span></h2>
-                        <!-- <p class="m-b-0"><span class="f-right">351</span></p> -->
+                        <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>7</span></h2>
+
                     </div>
                 </div>
             </div>
-            <div class="col-md-12 col-xl-12">
-                <a class="work" (click)="dash()">Go to your Worklist</a><a class="work" (click)="Adhoc()">Adhoc Contact Recording</a><a class="work blinking" (click)="dash()">Priority Worklist</a> 
+            <div class="col-md-2 col-xl-2">
+              <div class="card bg-c-blue order-card" (click)="accallocate()">
+                  <div class="card-block">
+                      <h5 class="m-b-20">Broken Promises</h5>
+                      <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>20</span></h2>
+
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-2 col-xl-2">
+            <div class="card bg-c-pink order-card" (click)="accallocate()">
+                <div class="card-block">
+                    <h5 class="m-b-20">Kept promises</h5>
+                    <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>10</span></h2>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-xl-2">
+          <div class="card bg-c-yellow order-card" (click)="accallocate()">
+              <div class="card-block">
+                  <h5 class="m-b-20">Payment Recived</h5>
+                  <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>8</span></h2>
+
+              </div>
+          </div>
+      </div>
+      <div class="col-md-2 col-xl-2">
+        <div class="card bg-c-green order-card" (click)="accallocate()">
+            <div class="card-block">
+                <h5 class="m-b-20">call back</h5>
+                <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>5</span></h2>
+
             </div>
         </div>
     </div>
+    <div class="col-md-2 col-xl-2">
+      <div class="card bg-c-blue order-card" (click)="accallocate()">
+          <div class="card-block">
+              <h5 class="m-b-20">Priority Accounts</h5>
+              <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>20</span></h2>
 
+          </div>
+      </div>
+  </div>
+  <div class="col-md-6 col-xl-6">
+  </div>
+        </div>
+
+
+
+
+
+        <hr>
+    <div class="col-md-12" (click)="asset()" style="font-size: 16px;font-weight: 800;padding: 17px;">
+      Workflow Related <i *ngIf="!assets"
+      class="fa fa-arrow-circle-down coll-i" aria-hidden="true"></i><i *ngIf="assets"
+      class="fa fa-arrow-circle-up coll-i" aria-hidden="true"></i>
+      </div>
+      <div class="row" *ngIf="assets">
+  <div class="col-md-2 col-xl-2">
+    <div class="card bg-c-blue order-card" (click)="accallocate()">
+        <div class="card-block">
+            <h5 class="m-b-20">Skip Requested</h5>
+            <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>20</span></h2>
+
+        </div>
+    </div>
+</div>
+
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-blue order-card" (click)="accallocate()">
+      <div class="card-block">
+          <h5 class="m-b-20">Skip updated</h5>
+          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>20</span></h2>
+
+      </div>
+  </div>
+</div>
+
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-pink order-card" (click)="accallocate()">
+      <div class="card-block">
+          <h5 class="m-b-20">Field visit reqeusted</h5>
+          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>20</span></h2>
+
+      </div>
+  </div>
+</div>
+
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-yellow order-card" (click)="accallocate()">
+      <div class="card-block">
+        <h5 class="m-b-20">Field visit Updated</h5>
+        <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>20</span></h2>
+
+      </div>
+  </div>
+</div>
+
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-green order-card" (click)="accallocate()">
+      <div class="card-block">
+          <h5 class="m-b-20">Settlement Raised</h5>
+          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>20</span></h2>
+
+      </div>
+  </div>
+</div>
+
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-blue order-card" (click)="accallocate()">
+      <div class="card-block">
+        <h5 class="m-b-20">Settlement Completed</h5>
+        <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>20</span></h2>
+
+      </div>
+  </div>
+</div>
+
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-pink order-card" (click)="accallocate()">
+      <div class="card-block">
+        <h5 class="m-b-20">Criminal case requested</h5>
+          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>20</span></h2>
+
+      </div>
+  </div>
+</div>
+
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-yellow order-card" (click)="accallocate()">
+      <div class="card-block">
+        <h5 class="m-b-20">Criminal case completed</h5>
+          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>20</span></h2>
+
+      </div>
+  </div>
+</div>
+
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-green order-card" (click)="accallocate()">
+      <div class="card-block">
+        <h5 class="m-b-20">Criminal case released</h5>
+          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>20</span></h2>
+
+      </div>
+  </div>
+</div>
+
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-blue order-card" (click)="accallocate()">
+      <div class="card-block">
+        <h5 class="m-b-20">RPO reqeusted</h5>
+          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>20</span></h2>
+
+      </div>
+  </div>
+</div>
+
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-pink order-card" (click)="accallocate()">
+      <div class="card-block">
+        <h5 class="m-b-20">RPO completed</h5>
+          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>20</span></h2>
+
+      </div>
+  </div>
+</div>
+
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-yellow order-card" (click)="accallocate()">
+      <div class="card-block">
+        <h5 class="m-b-20">RPO released</h5>
+          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>20</span></h2>
+
+      </div>
+  </div>
+</div>
+
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-green order-card" (click)="accallocate()">
+      <div class="card-block">
+        <h5 class="m-b-20">Civil case requested</h5>
+          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>20</span></h2>
+
+      </div>
+  </div>
+</div>
+
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-blue order-card" (click)="accallocate()">
+      <div class="card-block">
+        <h5 class="m-b-20">Civil case completed</h5>
+          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>20</span></h2>
+
+      </div>
+  </div>
+</div>
+
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-pink order-card" (click)="accallocate()">
+      <div class="card-block">
+        <h5 class="m-b-20">Civil case released</h5>
+          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>20</span></h2>
+
+      </div>
+  </div>
+</div>
+</div>
+ <hr>
+    <div class="col-md-12" (click)="asset1()" style="font-size: 16px;font-weight: 800;padding: 17px;">
+      Product Dashboards <i *ngIf="!assets1"
+      class="fa fa-arrow-circle-down coll-i" aria-hidden="true"></i><i *ngIf="assets1"
+      class="fa fa-arrow-circle-up coll-i" aria-hidden="true"></i>
+      </div>
+      <div class="row" *ngIf="assets1">
+    <div class="col-md-2 col-xl-2">
+      <div class="card bg-c-blue order-card" (click)="creditcardlist()">
+          <div class="card-block">
+              <h5 class="m-b-20">Credit Card</h5>
+              <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>25</span></h2>
+
+          </div>
+      </div>
+  </div>
+  <div class="col-md-2 col-xl-2">
+    <div class="card bg-c-pink order-card" (click)="vehicleloanlist()">
+        <div class="card-block">
+            <h5 class="m-b-20">Vehicle Loan</h5>
+            <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>20</span></h2>
+
+        </div>
+    </div>
+</div>
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-yellow order-card" (click)="personalloanlist()">
+      <div class="card-block">
+          <h5 class="m-b-20">Personal Loan</h5>
+          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>10</span></h2>
+
+      </div>
+  </div>
+</div>
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-green order-card" (click)="homeloanlist()">
+      <div class="card-block">
+          <h5 class="m-b-20">Home Loan</h5>
+          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>5</span></h2>
+      </div>
+  </div>
+</div>
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-blue order-card" (click)="homeloanlist()">
+      <div class="card-block">
+          <h5 class="m-b-20">Auto Loan</h5>
+          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>5</span></h2>
+
+      </div>
+  </div>
+</div>
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-pink order-card" (click)="homeloanlist()">
+      <div class="card-block">
+          <h5 class="m-b-20">Business Loan</h5>
+          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>5</span></h2>
+
+      </div>
+  </div>
+</div>
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-yellow order-card" (click)="homeloanlist()">
+      <div class="card-block">
+          <h5 class="m-b-20">Buiness Vehicle Loan</h5>
+          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>5</span></h2>
+
+      </div>
+  </div>
+</div>
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-green order-card" (click)="homeloanlist()">
+      <div class="card-block">
+          <h5 class="m-b-20">Etisalat</h5>
+          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>5</span></h2>
+
+      </div>
+  </div>
+</div>
+<div class="col-md-2 col-xl-2">
+  <div class="card bg-c-blue order-card" (click)="homeloanlist()">
+      <div class="card-block">
+          <h5 class="m-b-20">DU</h5>
+          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>5</span></h2>
+
+      </div>
+  </div>
+</div>
+</div>
+
+<hr>
+            <div class="col-md-12 col-xl-12">
+                <a class="work" (click)="dash()">Go to your Worklist</a>
+                <a class="work" (click)="Adhoc()">Adhoc Contact Recording</a>
+                <a class="work blinking" (click)="dash()">Priority Worklist</a>
+            </div>
+
+        </div>
+    </div>
 </section>
+
+<div class="row">
+  <app-dashboard></app-dashboard>
+</div>
+
+
