@@ -21,6 +21,8 @@ import {ToolbarModule} from 'primeng/toolbar';
 import {MegaMenuModule} from 'primeng/megamenu';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { ChartsModule } from 'ng2-charts';
+
 
 
 @NgModule({
@@ -33,6 +35,7 @@ import { MatIconModule } from '@angular/material/icon';
    ],
   imports: [
     BrowserModule,
+    ChartsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,

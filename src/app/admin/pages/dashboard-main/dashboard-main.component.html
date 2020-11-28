@@ -401,86 +401,90 @@
       class="fa fa-arrow-circle-up coll-i" aria-hidden="true"></i>
       </div>
       <div class="row" *ngIf="assets2" style="padding: 10px;">
-    <div class="col-md-2 col-xl-2">
-      <div class="card bg-c-blue order-card" (click)="creditcardlist()">
-          <div class="card-block">
-              <h5 class="m-b-20">Credit Card</h5>
-              <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>25</span></h2>
-
+          <div style="display: block" class="col-md-4">
+            <div class="col-md-12" style="text-align: center;font-weight: 800;padding: 10px;">
+              Productivity Target VS Actual
+            </div>
+            <canvas baseChart
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType">
+            </canvas>
           </div>
-      </div>
-  </div>
-  <div class="col-md-2 col-xl-2">
-    <div class="card bg-c-pink order-card" (click)="vehicleloanlist()">
-        <div class="card-block">
-            <h5 class="m-b-20">Vehicle Loan</h5>
-            <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>20</span></h2>
 
+
+        <div style="display: block" class="col-md-4">
+          <div class="col-md-12" style="text-align: center;font-weight: 800;padding: 10px;">
+            Resolutions Total Allocated VS Actual Resolved
+          </div>
+          <canvas baseChart
+                      [data]="doughnutChartData"
+                      [labels]="doughnutChartLabels"
+                      [chartType]="doughnutChartType"></canvas>
         </div>
-    </div>
-</div>
-<div class="col-md-2 col-xl-2">
-  <div class="card bg-c-yellow order-card" (click)="personalloanlist()">
-      <div class="card-block">
-          <h5 class="m-b-20">Personal Loan</h5>
-          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>10</span></h2>
 
-      </div>
-  </div>
-</div>
-<div class="col-md-2 col-xl-2">
-  <div class="card bg-c-green order-card" (click)="homeloanlist()">
-      <div class="card-block">
-          <h5 class="m-b-20">Home Loan</h5>
-          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>5</span></h2>
-      </div>
-  </div>
-</div>
-<div class="col-md-2 col-xl-2">
-  <div class="card bg-c-blue order-card" (click)="homeloanlist()">
-      <div class="card-block">
-          <h5 class="m-b-20">Auto Loan</h5>
-          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>5</span></h2>
 
-      </div>
-  </div>
-</div>
-<div class="col-md-2 col-xl-2">
-  <div class="card bg-c-pink order-card" (click)="homeloanlist()">
-      <div class="card-block">
-          <h5 class="m-b-20">Business Loan</h5>
-          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>5</span></h2>
 
-      </div>
-  </div>
-</div>
-<div class="col-md-2 col-xl-2">
-  <div class="card bg-c-yellow order-card" (click)="homeloanlist()">
-      <div class="card-block">
-          <h5 class="m-b-20">Buiness Vehicle Loan</h5>
-          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>5</span></h2>
+        <div style="display: block" class="col-md-4">
+          <div class="col-md-12" style="text-align: center;font-weight: 800;padding: 10px;">
+            Cash collection target vs cash collected
+          </div>
+          <canvas baseChart
+                  [datasets]="radarChartData"
+                  [labels]="radarChartLabels"
+                  [chartType]="radarChartType"></canvas>
+        </div>
 
-      </div>
-  </div>
-</div>
-<div class="col-md-2 col-xl-2">
-  <div class="card bg-c-green order-card" (click)="homeloanlist()">
-      <div class="card-block">
-          <h5 class="m-b-20">Etisalat</h5>
-          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>5</span></h2>
 
-      </div>
-  </div>
-</div>
-<div class="col-md-2 col-xl-2">
-  <div class="card bg-c-blue order-card" (click)="homeloanlist()">
-      <div class="card-block">
-          <h5 class="m-b-20">DU</h5>
-          <h2 class="text-right"><i class="fa fa-id-card f-left"></i><span>5</span></h2>
+        <div style="display: block" class="col-md-4">
+          <div class="col-md-12" style="text-align: center;font-weight: 800;padding: 10px;">
+            Attendance calendar
+          </div>
+          <canvas baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType">
+          </canvas>
+        </div>
 
-      </div>
-  </div>
-</div>
+
+        <div style="display: block" class="col-md-4">
+          <div class="col-md-12" style="text-align: center;font-weight: 800;padding: 10px;">
+           Login - Logout
+          </div>
+          <canvas baseChart
+                  [data]="pieChartData"
+                  [labels]="pieChartLabels"
+                  [chartType]="pieChartType"></canvas>
+        </div>
+
+
+        <div style="display: block" class="col-md-4">
+          <div class="col-md-12" style="text-align: center;font-weight: 800;padding: 10px;">
+            Allocations + Tos + Pos + Target
+          </div>
+          <canvas baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType">
+          </canvas>
+        </div>
+
+        <div style="display: block" class="col-md-4">
+          <div class="col-md-12" style="text-align: center;font-weight: 800;padding: 10px;">
+            Performance Tranding
+          </div>
+          <canvas baseChart
+                  [datasets]="radarChartData"
+                  [labels]="radarChartLabels"
+                  [chartType]="radarChartType"></canvas>
+        </div>
 </div>
   </div>
         <div class="row" style="margin-top: 11px;">
@@ -490,6 +494,98 @@
             <a class="work blinking" (click)="dash()">Priority Worklist</a>
         </div>
         </div>
+
+        <!-- <div class="row" style="border: 1px solid;border-radius: 7px;margin: 4px;background-color: white;">
+
+
+
+  <div style="display: block" class="col-md-4">
+    <div class="col-md-12" style="text-align: center;font-weight: 800;padding: 10px;">
+      Productivity Target VS Actual
+    </div>
+    <canvas baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType">
+    </canvas>
+  </div>
+
+
+<div style="display: block" class="col-md-4">
+  <div class="col-md-12" style="text-align: center;font-weight: 800;padding: 10px;">
+    Resolutions Total Allocated VS Actual Resolved
+  </div>
+  <canvas baseChart
+              [data]="doughnutChartData"
+              [labels]="doughnutChartLabels"
+              [chartType]="doughnutChartType"></canvas>
+</div>
+
+
+
+<div style="display: block" class="col-md-4">
+  <div class="col-md-12" style="text-align: center;font-weight: 800;padding: 10px;">
+    Cash collection target vs cash collected
+  </div>
+  <canvas baseChart
+          [datasets]="radarChartData"
+          [labels]="radarChartLabels"
+          [chartType]="radarChartType"></canvas>
+</div>
+
+
+<div style="display: block" class="col-md-4">
+  <div class="col-md-12" style="text-align: center;font-weight: 800;padding: 10px;">
+    Attendance calendar
+  </div>
+  <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          [chartType]="barChartType">
+  </canvas>
+</div>
+
+
+<div style="display: block" class="col-md-4">
+  <div class="col-md-12" style="text-align: center;font-weight: 800;padding: 10px;">
+   Login - Logout
+  </div>
+  <canvas baseChart
+          [data]="pieChartData"
+          [labels]="pieChartLabels"
+          [chartType]="pieChartType"></canvas>
+</div>
+
+
+<div style="display: block" class="col-md-4">
+  <div class="col-md-12" style="text-align: center;font-weight: 800;padding: 10px;">
+    Allocations + Tos + Pos + Target
+  </div>
+  <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          [chartType]="barChartType">
+  </canvas>
+</div>
+
+<div style="display: block" class="col-md-4">
+  <div class="col-md-12" style="text-align: center;font-weight: 800;padding: 10px;">
+    Performance Tranding
+  </div>
+  <canvas baseChart
+          [datasets]="radarChartData"
+          [labels]="radarChartLabels"
+          [chartType]="radarChartType"></canvas>
+</div>
+
+
+        </div> -->
     </div>
 </section>
 

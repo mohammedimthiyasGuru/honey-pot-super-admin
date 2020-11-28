@@ -27,7 +27,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
-
+import { ChartsModule } from 'ng2-charts';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { TableModule } from 'primeng/table';
 import { FileUploadModule } from 'primeng/fileupload';
@@ -215,6 +215,7 @@ import { LinkdelinkComponent } from './Pages/userflow/linkdelink/linkdelink.comp
   ],
   imports: [
     CommonModule,
+    ChartsModule,
     HttpClientModule,
     AdminRoutingModule,
     MatToolbarModule,
