@@ -116,6 +116,15 @@ import { PersonalloanlistComponent } from './Pages/userflow/personalloanlist/per
 import { HomeloanlistComponent } from './Pages/userflow/homeloanlist/homeloanlist.component';
 
 
+import { AllocationsingleComponent } from './Pages/userflow/allocationsingle/allocationsingle.component';
+import { AllocationexcelComponent } from './Pages/userflow/allocationexcel/allocationexcel.component';
+import { WithdrawsingleComponent } from './Pages/userflow/withdrawsingle/withdrawsingle.component';
+import { WithdrawexcelComponent } from './Pages/userflow/withdrawexcel/withdrawexcel.component';
+import { ReallowsingleComponent } from './Pages/userflow/reallowsingle/reallowsingle.component';
+import { ReallowexcelComponent } from './Pages/userflow/reallowexcel/reallowexcel.component';
+import { DedupeComponent } from './Pages/userflow/dedupe/dedupe.component';
+import { LinkdelinkComponent } from './Pages/userflow/linkdelink/linkdelink.component';
+
 @NgModule({
   declarations: [AdminHeaderComponent,
     AdminSidebarComponent,
@@ -195,6 +204,14 @@ import { HomeloanlistComponent } from './Pages/userflow/homeloanlist/homeloanlis
     VechicleloanlistComponent,
     PersonalloanlistComponent,
     HomeloanlistComponent,
+    AllocationsingleComponent,
+    AllocationexcelComponent,
+    WithdrawsingleComponent,
+    WithdrawexcelComponent,
+    ReallowsingleComponent,
+    ReallowexcelComponent,
+    DedupeComponent,
+    LinkdelinkComponent
   ],
   imports: [
     CommonModule,

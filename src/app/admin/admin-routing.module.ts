@@ -55,6 +55,14 @@ import { VechicleloanlistComponent } from './Pages/userflow/vechicleloanlist/vec
 import { PersonalloanlistComponent } from './Pages/userflow/personalloanlist/personalloanlist.component';
 import { HomeloanlistComponent } from './Pages/userflow/homeloanlist/homeloanlist.component';
 import { CreditcardlistComponent } from './Pages/userflow/creditcardlist/creditcardlist.component';
+import { WithdrawexcelComponent } from './Pages/userflow/withdrawexcel/withdrawexcel.component';
+import { WithdrawsingleComponent } from './Pages/userflow/withdrawsingle/withdrawsingle.component';
+import { ReallowsingleComponent } from './Pages/userflow/reallowsingle/reallowsingle.component';
+import { ReallowexcelComponent } from './Pages/userflow/reallowexcel/reallowexcel.component';
+import { LinkdelinkComponent } from './Pages/userflow/linkdelink/linkdelink.component';
+import { DedupeComponent } from './Pages/userflow/dedupe/dedupe.component';
+import { AllocationsingleComponent } from './Pages/userflow/allocationsingle/allocationsingle.component';
+import { AllocationexcelComponent } from './Pages/userflow/allocationexcel/allocationexcel.component';
 
 
 const routes: Routes = [
@@ -123,6 +131,17 @@ const routes: Routes = [
   { path: 'userflow/vehicleloanlist', component: VechicleloanlistComponent },
   { path: 'userflow/personaloanlist', component: PersonalloanlistComponent },
   { path: 'userflow/homeloanlist', component: HomeloanlistComponent },
+
+
+
+  { path: 'userflow/allocationexcel', component:  AllocationexcelComponent},
+  { path: 'userflow/allocationsingle', component: AllocationsingleComponent },
+  { path: 'userflow/dedupe', component: DedupeComponent },
+  { path: 'userflow/linkdeliknk', component: LinkdelinkComponent },
+  { path: 'userflow/reallowexcel', component : ReallowexcelComponent },
+  { path: 'userflow/reallowsingle', component: ReallowsingleComponent },
+  { path: 'userflow/withdrawexcel', component: WithdrawexcelComponent },
+  { path: 'userflow/withdrawsingle', component: WithdrawsingleComponent },
 
 
 

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 // import { ApiService } from '../../../api/userApi/api.service';
 import { ApiService } from '../../../api.service';
 import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
+import { BookType } from 'xlsx/types';
 
 @Component({
   selector: 'app-admin-sidebar',
@@ -17,6 +18,7 @@ export class AdminSidebarComponent implements OnInit {
   expand3: boolean = false;
   expand4: boolean = false;
   expand5: boolean = false;
+  expand6: boolean = false;
   menu_slider: boolean = false;
   constructor(
     @Inject(SESSION_STORAGE) private storage: StorageService,

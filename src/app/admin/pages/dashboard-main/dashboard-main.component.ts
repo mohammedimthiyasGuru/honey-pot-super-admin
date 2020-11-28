@@ -12,6 +12,7 @@ export class DashboardMainComponent implements OnInit {
   payment:boolean = false;
   assets:boolean = false;
   assets1 : boolean = false;
+  assets2 : boolean = false;
 
   rows:any = [{ type: "Dog", name: "dog1" },
     { type: "Cat", name: "cat1" },
@@ -179,6 +180,10 @@ asset(){
 
 asset1(){
   this.assets1 = !this.assets1;
+}
+
+asset2(){
+  this.assets2 = !this.assets2;
 }
 
 
