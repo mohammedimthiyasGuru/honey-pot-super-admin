@@ -63,6 +63,7 @@ import { LinkdelinkComponent } from './Pages/userflow/linkdelink/linkdelink.comp
 import { DedupeComponent } from './Pages/userflow/dedupe/dedupe.component';
 import { AllocationsingleComponent } from './Pages/userflow/allocationsingle/allocationsingle.component';
 import { AllocationexcelComponent } from './Pages/userflow/allocationexcel/allocationexcel.component';
+import { ConfigurationComponent } from './pages/configuration/configuration.component';
 
 
 const routes: Routes = [
@@ -143,6 +144,8 @@ const routes: Routes = [
   { path: 'userflow/withdrawexcel', component: WithdrawexcelComponent },
   { path: 'userflow/withdrawsingle', component: WithdrawsingleComponent },
 
+ 
+  { path: 'Configuration', component: ConfigurationComponent },
 
 
 

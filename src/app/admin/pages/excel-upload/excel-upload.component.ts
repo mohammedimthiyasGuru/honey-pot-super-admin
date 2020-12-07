@@ -18,6 +18,8 @@ export class ExcelUploadComponent implements OnInit {
   file: any;
   arrayBuffer: any;
   filelist: any;
+  displayPosition: any;
+  displayPosition1: any;
   constructor() { }
 
   ngOnInit(): void {
@@ -53,4 +55,11 @@ export class ExcelUploadComponent implements OnInit {
     /* save to file */
     XLSX.writeFile(wb, this.fileName);
   }
+
+  showPositionDialog() {
+    this.displayPosition = true;
+  }
+  showPositionDialog1() {
+    this.displayPosition1 = true;
+}
 }

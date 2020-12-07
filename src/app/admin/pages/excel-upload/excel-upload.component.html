@@ -9,9 +9,12 @@
         <div class="profile-form-edit">
             <div class="upload-btn-wrapper mt-3">
                 <input type="file" (change)="onFileChange($event)" multiple="false" accept=".xlsx" />
-            </div>
+            
+                <button class="btn btn-primary" (click)="showPositionDialog()" style="margin-right: 10px;">Account Detail</button>
+    
+                <button class="btn btn-primary" (click)="showPositionDialog1()" style="margin-right: 10px;">Condition Checking</button>
         </div>
-
+        </div>
     </div>
 </div>
 <!-- <div class="social-edit" id="sn">
@@ -145,3 +148,119 @@
 
     </div>
 </ng-container>
+
+<p-dialog header="Account Information" [(visible)]="displayPosition" position="center" [modal]="true"
+  [style]="{width: '70vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+  <div class="row">
+     <div class="col-md-12">
+        <div class="row" style="padding: 0px 0px 6px 10px;">
+          <div class="col-md-4">
+            <h5 class="form-lable">Account Type:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="Credit Card">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">Bank Acc No:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="12345 12345 12345 123">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">Loan Acc No:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="12345 12345 12345 123">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">Last Payment Date:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="12/12/19">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">POS No:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="123 123 123">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">Credit Limit:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="100000">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">CIF No:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="12345 12345 12345 123">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">Credit Card No:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="12345 12345 12345 123 ">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">Total Outstanding:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="3000000">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">Priciple Outstanding:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="200000">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">CID No:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="12345 12345 12345 123">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">Status:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="Confirmed">
+          </div>
+        </div>
+     </div>
+  </div>
+</p-dialog>
+
+<p-dialog header="Account Information" [(visible)]="displayPosition1" position="center" [modal]="true"
+  [style]="{width: '70vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+  <div class="row">
+     <div class="col-md-12">
+        <div class="row" style="padding: 0px 0px 6px 10px;">
+          <div class="col-md-4">
+            <h5 class="form-lable">Account Type:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="Credit Card">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">Bank Acc No:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="12345 12345 12345 123">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">Loan Acc No:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="12345 12345 12345 123">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">Last Payment Date:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="12/12/19">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">POS No:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="123 123 123">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">Credit Limit:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="100000">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">CIF No:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="12345 12345 12345 123">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">Credit Card No:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="12345 12345 12345 123 ">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">Total Outstanding:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="3000000">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">Priciple Outstanding:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="200000">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">CID No:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="12345 12345 12345 123">
+          </div>
+          <div class="col-md-4">
+            <h5 class="form-lable">Status:</h5>
+            <input type="text" pInputText disabled=true placeholder="" value="Confirmed">
+          </div>
+        </div>
+     </div>
+  </div>
+</p-dialog>

@@ -124,6 +124,7 @@ import { ReallowsingleComponent } from './Pages/userflow/reallowsingle/reallowsi
 import { ReallowexcelComponent } from './Pages/userflow/reallowexcel/reallowexcel.component';
 import { DedupeComponent } from './Pages/userflow/dedupe/dedupe.component';
 import { LinkdelinkComponent } from './Pages/userflow/linkdelink/linkdelink.component';
+import { ConfigurationComponent } from './pages/configuration/configuration.component';
 
 @NgModule({
   declarations: [AdminHeaderComponent,
@@ -211,7 +212,8 @@ import { LinkdelinkComponent } from './Pages/userflow/linkdelink/linkdelink.comp
     ReallowsingleComponent,
     ReallowexcelComponent,
     DedupeComponent,
-    LinkdelinkComponent
+    LinkdelinkComponent,
+    ConfigurationComponent
   ],
   imports: [
     CommonModule,

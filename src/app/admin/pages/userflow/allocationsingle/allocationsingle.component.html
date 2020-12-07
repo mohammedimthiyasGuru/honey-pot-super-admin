@@ -1,85 +1,82 @@
-
-<div class="card-box">
+<div>
   <div class="row">
     <div class="col-md-4">
-        <div class="search-hero">
-          <h3>Allocations</h3>
-        </div>
+        <h4 class="title">Allocation</h4>
     </div>
     <div class="col-md-8 text-right">
     </div>
-</div>
+  </div>
 </div>
 
 
-<div class="card-box">
+<div class="card-box doc-table">
   <div class="row">
     <div class="col-md-6">
       <h4>Account Details</h4>
       <input type="text" class="form-control" placeholder="Search..." style="height: 35px;"><br>
       <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
-      [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
-      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
-      <ng-template pTemplate="header">
-        <tr style="text-align: center;" class="thhead">
-          <th style="width: 100px;">Action</th>
-          <th style="width: 50px;">S.No</th>
-          <th sstyle="width: 100px;">Account No</th>
-          <th>Customer No</th>
-          <th>Name</th>
-          <th>Portfolio</th>
-          <th>Phone Number</th>
-      </ng-template>
-      <ng-template pTemplate="body" let-item let-i="rowIndex">
-        <tr class="tdrow">
-          <td class="act">
-            <input type="checkbox">
-           </td>
-          <td style="text-align: center;">{{i+1}}</td>
-          <td style="width: 100px;"><a (click)="showPositionDialog()" style="color: #0e69dd;">1.26472587459</a></td>
-          <td>Lorem ipsum.</td>
-          <td>Lorem ipsum.</td>
-          <td>Lorem ipsum.</td>
-          <td>Lorem ipsum.</td>
-        </tr>
-      </ng-template>
-    </p-table>
+        [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
+        <ng-template pTemplate="header">
+          <tr style="text-align: center;" class="thhead">
+            <th style="width: 100px;">Action</th>
+            <th style="width: 50px;">S.No</th>
+            <th sstyle="width: 100px;">Account No</th>
+            <th>Customer No</th>
+            <th>Name</th>
+            <th>Portfolio</th>
+            <th>Phone Number</th>
+        </ng-template>
+        <ng-template pTemplate="body" let-item let-i="rowIndex">
+          <tr class="tdrow">
+            <td class="act">
+              <input type="checkbox">
+            </td>
+            <td style="text-align: center;">{{i+1}}</td>
+            <td style="width: 100px;"><a (click)="showPositionDialog()" style="color: #0e69dd;">1.26472587459</a></td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+          </tr>
+        </ng-template>
+      </p-table>
     </div>
     <div class="col-md-6">
       <h4>User Details</h4>
-      <select name="cars" id="cars"  class="form-control" style="height: 35px;">
+      <select name="cars" id="cars" class="form-control" style="height: 35px;">
         <option value="volvo">Manager</option>
         <option value="saab">Sub-Manager</option>
         <option value="mercedes">User</option>
         <option value="audi">Data Entry</option>
       </select><br>
       <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
-      [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
-      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
-      <ng-template pTemplate="header">
-        <tr style="text-align: center;" class="thhead">
-          <th style="width: 100px;">Action</th>
-          <th style="width: 50px;">S.No</th>
-          <th>User ID</th>
-          <th>Name</th>
-          <th>Designation</th>
-          <th>Assigned Count</th>
-      </ng-template>
-      <ng-template pTemplate="body" let-item let-i="rowIndex">
-        <tr class="tdrow">
-          <td class="act">
-            <input type="checkbox">
-           </td>
-          <td style="text-align: center;">{{i+1}}</td>
-          <td style="width: 100px;"><a (click)="showPositionDialog()" style="color: #0e69dd;">1.26472587459</a></td>
-          <td>Lorem ipsum.</td>
-          <td>Lorem ipsum.</td>
-          <td>Lorem ipsum.</td>
-        </tr>
-      </ng-template>
-    </p-table>
+        [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
+        <ng-template pTemplate="header">
+          <tr style="text-align: center;" class="thhead">
+            <th style="width: 100px;">Action</th>
+            <th style="width: 50px;">S.No</th>
+            <th>User ID</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Assigned Count</th>
+        </ng-template>
+        <ng-template pTemplate="body" let-item let-i="rowIndex">
+          <tr class="tdrow">
+            <td class="act">
+              <input type="checkbox">
+            </td>
+            <td style="text-align: center;">{{i+1}}</td>
+            <td style="width: 100px;"><a (click)="showPositionDialog()" style="color: #0e69dd;">1.26472587459</a></td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+            <td>Lorem ipsum.</td>
+          </tr>
+        </ng-template>
+      </p-table>
     </div>
-</div>
+  </div>
 </div>
 
 

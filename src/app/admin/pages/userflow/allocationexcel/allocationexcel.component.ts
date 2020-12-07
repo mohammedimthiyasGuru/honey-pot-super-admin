@@ -2,6 +2,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 import * as XLSX from 'xlsx';
 import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 import Swal from 'sweetalert2';
+import { Router, RouterModule } from '@angular/router';
+
 type AOA = any[][];
 @Component({
   selector: 'app-allocationexcel',
@@ -18,7 +20,13 @@ export class AllocationexcelComponent implements OnInit {
   file: any;
   arrayBuffer: any;
   filelist: any;
-  constructor() { }
+  check: any = 0;
+  checking: any;
+  displayPosition: any;
+  displayPosition1: any;
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
   }
@@ -52,5 +60,26 @@ export class AllocationexcelComponent implements OnInit {
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
     /* save to file */
     XLSX.writeFile(wb, this.fileName);
+  }
+  showPositionDialog() {
+    this.displayPosition = true;
+    this.displayPosition1 = false;
+  }
+  showPositionDialog1() {
+    this.displayPosition1 = true;
+  }
+  Assign() {
+    this.displayPosition1 = true;
+    this.checking = setInterval(() => {
+      this.check++;
+      console.log(this.check);
+      if (this.check == 4) {
+        clearInterval(this.checking);
+      }
+    }, 2000);
+
+  }
+  list() {
+    this.router.navigateByUrl('admin_panel/userflow/allocationsingle')
   }
 }
