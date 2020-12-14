@@ -122,8 +122,8 @@
     margin-bottom: 10px;
 }
 .form-lable{
-    font-size: 11px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 600;
     color:#5d5d5d  !important;
     margin-bottom: 0px;
 }
@@ -162,7 +162,8 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    height: 20px;
+    height: 25px;
+;
 }
 :host::ng-deep .ui-dropdown.ui-dropdown-clearable .ui-dropdown-label {
     padding-right: 4em;
@@ -170,7 +171,7 @@
 }
 :host::ng-deep .ui-dropdown {
     border: 1px solid #dcdcdc;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 :host::ng-deep button:focus {
     outline: none !important;
@@ -250,7 +251,7 @@ textarea {
 
 
 :host::ng-deep .ui-inputtext {
-    margin-bottom: 5px !important;
+    margin-bottom: 0px !important;
 }
 
 h5 span{

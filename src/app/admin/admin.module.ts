@@ -125,6 +125,24 @@ import { ReallowexcelComponent } from './Pages/userflow/reallowexcel/reallowexce
 import { DedupeComponent } from './Pages/userflow/dedupe/dedupe.component';
 import { LinkdelinkComponent } from './Pages/userflow/linkdelink/linkdelink.component';
 import { ConfigurationComponent } from './pages/configuration/configuration.component';
+import { UserManagementComponent } from './pages/user-management/user-management.component';
+import { UserFormComponent } from './pages/user-management/user-form/user-form.component';
+import { UserGroupComponent } from './pages/user-management/user-group/user-group.component';
+import { UserRoleComponent } from './pages/user-management/user-role/user-role.component';
+import { AgencyManagementComponent } from './pages/agency-management/agency-management.component';
+import { AgencyFieldAddComponent } from './pages/agency-management/agency-field-add/agency-field-add.component';
+import { FieldMappingComponent } from './pages/honey-pot-client-detail/field-mapping/field-mapping.component';
+import { AddPortfolioComponent } from './pages/honey-pot-client-detail/add-portfolio/add-portfolio.component';
+import { UploadedListComponent } from './pages/userflow/uploaded-list/uploaded-list.component';
+import { AddProductComponent } from './pages/honey-pot-client-detail/add-product/add-product.component';
+import { DocumentManagementComponent } from './pages/honey-pot-client-detail/document-management/document-management.component';
+import { BucketComponent } from './pages/honey-pot-client-detail/bucket/bucket.component';
+import { UserStatusMarkingComponent } from './pages/user-management/user-status-marking/user-status-marking.component';
+import { ClientStatusMarkingComponent } from './pages/honey-pot-client-detail/client-status-marking/client-status-marking.component';
+import { CreatePortfolioComponent } from './pages/honey-pot-client-detail/create-portfolio/create-portfolio.component';
+import { CreateProductComponent } from './pages/honey-pot-client-detail/create-product/create-product.component';
+import { CreateClientTypeComponent } from './pages/honey-pot-client-detail/create-client-type/create-client-type.component';
+import { CreateDocumentTypeComponent } from './pages/honey-pot-client-detail/create-document-type/create-document-type.component';
 
 @NgModule({
   declarations: [AdminHeaderComponent,
@@ -213,7 +231,25 @@ import { ConfigurationComponent } from './pages/configuration/configuration.comp
     ReallowexcelComponent,
     DedupeComponent,
     LinkdelinkComponent,
-    ConfigurationComponent
+    ConfigurationComponent,
+    UserManagementComponent,
+    UserFormComponent,
+    UserGroupComponent,
+    UserRoleComponent,
+    AgencyManagementComponent,
+    AgencyFieldAddComponent,
+    FieldMappingComponent,
+    AddPortfolioComponent,
+    UploadedListComponent,
+    AddProductComponent,
+    DocumentManagementComponent,
+    BucketComponent,
+    UserStatusMarkingComponent,
+    ClientStatusMarkingComponent,
+    CreatePortfolioComponent,
+    CreateProductComponent,
+    CreateClientTypeComponent,
+    CreateDocumentTypeComponent
   ],
   imports: [
     CommonModule,

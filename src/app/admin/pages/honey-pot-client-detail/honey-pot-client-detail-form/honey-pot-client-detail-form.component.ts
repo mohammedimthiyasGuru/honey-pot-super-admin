@@ -1,6 +1,8 @@
 import { SlicePipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
+
 @Component({
   selector: 'app-honey-pot-client-detail-form',
   templateUrl: './honey-pot-client-detail-form.component.html',
@@ -21,15 +23,41 @@ export class HoneyPotClientDetailFormComponent implements OnInit {
     { "y": "Telecom" },
     { "y": "Others" },
   ];
+  type: any = [
+    { "y": "Existing" },
+    { "y": "New" },
+  ];
+  typ: any = [
+    { "y": "Primary office" },
+    { "y": "Sister concern" },
+    { "y": "Branch" },
+    { "y": "Business Division" },
+  ];
+  form_type: any;
   uploadedFiles: any[] = [];
   constructor(
-    private router: Router
+    private router: Router,
+    @Inject(SESSION_STORAGE) private storage: StorageService,
   ) { }
 
   ngOnInit(): void {
+    this.form_type = this.getFromLocal('Client_form')
   }
   cancel() {
-    this.router.navigateByUrl('/admin_panel/Clients')
+    if(this.form_type == "client"){
+      this.router.navigateByUrl('/admin_panel/Clients');
+    }
+    else if(this.form_type == "product"){
+      this.router.navigateByUrl('/admin_panel/Product');
+    }
+    else if(this.form_type == "document"){
+      this.router.navigateByUrl('/admin_panel/Document');
+    }
+    else if(this.form_type == "bucket"){
+      this.router.navigateByUrl('/admin_panel/Bucket');
+    }
+   
+    
   }
   addcontact() {
 
@@ -40,7 +68,7 @@ export class HoneyPotClientDetailFormComponent implements OnInit {
       this.con_role = undefined;
       this.con_pone = undefined;
     }
-    else{
+    else {
       alert("fill all the required fields")
     }
   }
@@ -54,6 +82,13 @@ export class HoneyPotClientDetailFormComponent implements OnInit {
       console.log(this.uploadedFiles)
     }
 
+  }
+  saveInLocal(key, val): void {
+    this.storage.set(key, val);
+  }
+
+  getFromLocal(key): any {
+    return this.storage.get(key);
   }
 
 }

@@ -64,7 +64,23 @@ import { DedupeComponent } from './Pages/userflow/dedupe/dedupe.component';
 import { AllocationsingleComponent } from './Pages/userflow/allocationsingle/allocationsingle.component';
 import { AllocationexcelComponent } from './Pages/userflow/allocationexcel/allocationexcel.component';
 import { ConfigurationComponent } from './pages/configuration/configuration.component';
-
+import { UserManagementComponent } from './pages/user-management/user-management.component';
+import { UserFormComponent } from './pages/user-management/user-form/user-form.component';
+import { UserGroupComponent } from './pages/user-management/user-group/user-group.component';
+import { UserRoleComponent } from './pages/user-management/user-role/user-role.component';
+import { AgencyManagementComponent } from './pages/agency-management/agency-management.component';
+import { AgencyFieldAddComponent } from './pages/agency-management/agency-field-add/agency-field-add.component';
+import { FieldMappingComponent } from './pages/honey-pot-client-detail/field-mapping/field-mapping.component';
+import { AddPortfolioComponent } from './pages/honey-pot-client-detail/add-portfolio/add-portfolio.component';
+import { UploadedListComponent } from './pages/userflow/uploaded-list/uploaded-list.component';
+import { AddProductComponent } from './pages/honey-pot-client-detail/add-product/add-product.component';
+import { DocumentManagementComponent } from './pages/honey-pot-client-detail/document-management/document-management.component';
+import { BucketComponent } from './pages/honey-pot-client-detail/bucket/bucket.component';
+import { UserStatusMarkingComponent } from './pages/user-management/user-status-marking/user-status-marking.component';
+import { ClientStatusMarkingComponent } from './pages/honey-pot-client-detail/client-status-marking/client-status-marking.component';
+import { CreatePortfolioComponent } from './pages/honey-pot-client-detail/create-portfolio/create-portfolio.component';
+import { CreateProductComponent } from './pages/honey-pot-client-detail/create-product/create-product.component';
+import { CreateClientTypeComponent } from './pages/honey-pot-client-detail/create-client-type/create-client-type.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' ,pathMatch:'full'},
@@ -120,8 +136,10 @@ const routes: Routes = [
   { path: 'user/screen3', component: UsrContactrecordingComponent },
   { path: 'user/userdetails', component: UsrUserdetailsComponent },
   { path: 'user/usercollateraldetails', component: UsrCollateraldetailssComponent },
-
-
+  { path: 'user/user_management', component: UserManagementComponent },
+  { path: 'user/user_form', component: UserFormComponent },
+  { path: 'user/user_group', component: UserGroupComponent },
+  { path: 'user/user_role', component: UserRoleComponent },
 
   { path: 'userflow/accallocate', component:  LocalaccallocComponent},
   { path: 'userflow/accworked', component: LocalaccworkedComponent },
@@ -146,8 +164,21 @@ const routes: Routes = [
 
  
   { path: 'Configuration', component: ConfigurationComponent },
-
-
+  { path: 'Agency', component: AgencyManagementComponent },
+  { path: 'fieldset', component: AgencyFieldAddComponent },
+  { path: 'field_mapping', component: FieldMappingComponent },
+  { path: 'Portfolio', component: AddPortfolioComponent },
+   
+  { path: 'uploaded_list', component: UploadedListComponent },
+  { path: 'Product', component: AddProductComponent },
+  { path: 'Document', component: DocumentManagementComponent },
+  { path: 'Bucket', component: BucketComponent },
+  { path: 'user/user_status_marking', component: UserStatusMarkingComponent },
+  { path: 'client/client_status_marking', component: ClientStatusMarkingComponent },
+  { path: 'client/Create_portfolio', component: CreatePortfolioComponent },
+  { path: 'client/Create_product', component: CreateProductComponent },
+  { path: 'client/Create_client_type', component: CreateClientTypeComponent },
+  { path: 'client/Create_document_type', component: CreateClientTypeComponent },
 
 
 ];

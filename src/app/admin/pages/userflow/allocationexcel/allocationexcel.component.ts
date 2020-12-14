@@ -24,6 +24,15 @@ export class AllocationexcelComponent implements OnInit {
   checking: any;
   displayPosition: any;
   displayPosition1: any;
+  types: any = [
+    { "y": "Banks" },
+    { "y": "Finance companies" },
+    { "y": "Real Estate" },
+    { "y": "Telecom" },
+    { "y": "Others" },
+  ];
+  cli_type:any;
+  section:any=1;
   constructor(
     private router: Router,
   ) { }
@@ -49,6 +58,7 @@ export class AllocationexcelComponent implements OnInit {
       this.ErrorShow = false;
     }
     reader.readAsBinaryString(target.files[0]);
+    this.section = 3;
   }
 
 
@@ -81,5 +91,22 @@ export class AllocationexcelComponent implements OnInit {
   }
   list() {
     this.router.navigateByUrl('admin_panel/userflow/allocationsingle')
+  }
+  Field_mapping(){
+    this.router.navigateByUrl('admin_panel/Field_mapping')
+  }
+  field_form() {
+    this.router.navigateByUrl('/admin_panel/fieldset')
+  }
+  cancel() {
+    this.router.navigateByUrl('/admin_panel/Clients')
+  }
+  acc_list() {
+    window.scrollTo(0,0);
+    this.router.navigateByUrl('/admin_panel/uploaded_list');
+  
+  }
+  entry(){
+    this.section = 2;
   }
 }

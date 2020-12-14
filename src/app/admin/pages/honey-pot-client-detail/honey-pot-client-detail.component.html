@@ -7,47 +7,62 @@
         </div>
     </div>
     <div class="col-md-8 text-right">
-        <button type="button" class="btn btn-primary mr-0" (click)="client_form()" >Add</button> 
+        <button type="button" class="btn btn-primary mr-0" (click)="client_form()">Add</button>
     </div>
 </div>
 <div class="doc-table">
 
-<p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="5"
-    [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
-    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
-  
-    <ng-template pTemplate="header">
-        <tr class="thhead">
-            <th class="th-1">
-                S.No
-            </th>
-            <th>
-                Client Type
-            </th>
-            <th>
-                Client Name
-            </th>
-            <th>
-                Client Address
-            </th>
-            <th>Client representative/contact persons</th>
-            <!-- <th>Created by</th>
+    <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="5"
+        [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
+
+        <ng-template pTemplate="header">
+            <tr class="thhead">
+                <th class="th-1">
+                    S.No
+                </th>
+                <th>
+                    Client Logo
+                </th>
+                <th>
+                    Client Type
+                </th>
+                <th>
+                    Client Name
+                </th>
+                <th>
+                    HO Address
+                </th>
+                <th>
+                   Branch Address
+                </th>
+                <th>Website</th>
+                <th>Common email id</th>
+                <th>Status</th>
+                <th>Remarks</th>
+                <!-- <th>Status Marking</th> -->
+                <!-- 
             <th>Modified by</th>
             <th>Created at</th>
             <th>Modified at</th> -->
-            <th style="width: 110px;text-align:center">
-                Action
-            </th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-item let-i="rowIndex">
-        <tr class="tdrow">
-            <td>{{i+1}}</td>
-            <td>Type-1</td>
-            <td>Lorem ipsum.</td>
-            <td>Lorem ipsum.</td>
-            <td>Lorem ipsum.</td>
-            <!-- <td>
+                <th style="width: 110px;text-align:center">
+                    Action
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-item let-i="rowIndex">
+            <tr class="tdrow">
+                <td>{{i+1}}</td>
+                <td><img src="" alt="" style="width: 40px;height: 40px;"/></td>
+                <td>Type-1</td>
+                <td>Lorem ipsum.</td>
+                <td>Lorem ipsum.</td>
+                <td>Lorem ipsum.</td>
+                <td>Lorem ipsum.</td>
+                <td>Lorem ipsum.</td>
+                <td>Lorem ipsum.</td>
+                <td>Lorem ipsum.</td>
+                <!-- <td>
                 User
             </td>
             <td>
@@ -59,13 +74,15 @@
             <td>
                 17-09-2020
             </td> -->
-            <td class="act">
-                <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true" pTooltip="Edit"></i>
-                <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"></i>
-                <!-- <i style="color: #4CAF50;" class="fa fa-user" aria-hidden="true" (click)="profile()" pTooltip="Profile"></i> -->
-            </td>
-        </tr>
-    </ng-template>
-</p-table>
+            <!-- <td>  <a  class="link-a mt-20">Status Update</a></td> -->
+                <td class="act">
+                    <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true" pTooltip="Edit"></i>
+                    <!-- <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"></i> -->
+                    <i style="color: #4CAF50;" class="fa fa-user" aria-hidden="true" (click)="profile()"
+                        pTooltip="Profile"></i>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
 
 </div>

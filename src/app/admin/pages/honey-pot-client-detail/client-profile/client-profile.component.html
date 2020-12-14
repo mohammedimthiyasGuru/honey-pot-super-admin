@@ -121,7 +121,7 @@
                             </div>
                         </div>
                         <div class="col-md-8 text-right">
-                            <button type="button" class="btn btn-primary mr-0" >Add</button>
+                            <button type="button" class="btn btn-primary mr-0" (click)="portfolio()">Add</button>
                         </div>
                     </div>
                     <div class="doc-table">
@@ -153,15 +153,15 @@
                                         S.No
                                     </th>
                                     <th>
-                                        Client Type
+                                        Portfolio Name
                                     </th>
                                     <th>
-                                        Client Name
+                                        Portfolio Type
                                     </th>
                                     <th>
-                                        Client Address
+                                        Portfolio Data set
                                     </th>
-                                    <th>contact persons</th>
+                                    <!-- <th>contact persons</th> -->
                                     <!-- <th>Created by</th>
                             <th>Modified by</th>
                             <th>Created at</th>
@@ -177,7 +177,7 @@
                                     <td>Type-1</td>
                                     <td>Lorem ipsum.</td>
                                     <td>Lorem ipsum.</td>
-                                    <td>Lorem ipsum.</td>
+                                    <!-- <td>Lorem ipsum.</td> -->
                                     <!-- <td>
                                 User
                             </td>
@@ -196,7 +196,7 @@
                                         <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true"
                                             pTooltip="Delete"></i>
                                         <i style="color: #4CAF50;" class="fa fa-user" aria-hidden="true"
-                                             pTooltip="Profile"></i>
+                                            pTooltip="Profile"></i>
                                     </td>
                                 </tr>
                             </ng-template>
@@ -210,7 +210,7 @@
         <div class="row">
             <div class="col-md-12" style="margin-top: 25px;">
                 <div class="spec">
-                    <h5>Customers Details</h5>
+                    <h5>Client representative/contact persons</h5>
 
                 </div>
                 <div class="card-box">
@@ -222,7 +222,7 @@
                             </div>
                         </div>
                         <div class="col-md-8 text-right">
-                            <button type="button" class="btn btn-primary mr-0" >Add</button>
+                            <button type="button" class="btn btn-primary mr-0">Add</button>
                         </div>
                     </div>
                     <div class="doc-table">
@@ -297,7 +297,7 @@
                                         <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true"
                                             pTooltip="Delete"></i>
                                         <i style="color: #4CAF50;" class="fa fa-user" aria-hidden="true"
-                                             pTooltip="Profile"></i>
+                                            pTooltip="Profile"></i>
                                     </td>
                                 </tr>
                             </ng-template>

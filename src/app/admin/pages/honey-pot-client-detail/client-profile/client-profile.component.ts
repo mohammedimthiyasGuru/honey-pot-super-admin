@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
+
 @Component({
   selector: 'app-client-profile',
   templateUrl: './client-profile.component.html',
@@ -21,11 +23,16 @@ export class ClientProfileComponent implements OnInit {
   searchQR:any;
   constructor(
     private location: Location,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
   }
   back(){
     this.location.back();
+  }
+  portfolio(){
+    this.router.navigateByUrl('/admin_panel/Portfolio')
+
   }
 }

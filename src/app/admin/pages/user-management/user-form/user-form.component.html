@@ -1,0 +1,298 @@
+<h4 class="title">User Create</h4>
+<button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()"
+    style="float:right;margin-top:-36px;">Back</button>
+
+<div class="card-box">
+    <div class="row" style="padding: 0px 0px 23px 10px;">
+        <div class="col-md-4">
+            <h5 class="form-lable">User Type:</h5>
+            <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                [showClear]="true"></p-dropdown>
+
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">User Name:</h5>
+            <input type="text" pInputText [(ngModel)]="Name" placeholder="User Name">
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">User Role:</h5>
+            <input type="text" pInputText [(ngModel)]="Name" placeholder="User Role">
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">User id:</h5>
+            <input type="text" pInputText [(ngModel)]="Name" placeholder="User id">
+
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">Staff id:</h5>
+            <input type="text" pInputText [(ngModel)]="Name" placeholder="Staff id">
+
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">Mobile no:</h5>
+            <input type="text" pInputText [(ngModel)]="Name" placeholder="Mobile no">
+
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">WhatsApp no:</h5>
+            <input type="text" pInputText [(ngModel)]="Name" placeholder="WhatsApp no">
+
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">Landline no:</h5>
+            <input type="text" pInputText [(ngModel)]="Name" placeholder="Landline no">
+
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">Ext no:</h5>
+            <input type="text" pInputText [(ngModel)]="Name" placeholder="Ext no">
+
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">Office email id:</h5>
+            <input type="text" pInputText [(ngModel)]="Name" placeholder="Office email id">
+
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">Personal email id:</h5>
+            <input type="text" pInputText [(ngModel)]="Name" placeholder="Personal email id">
+
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">Linkedin URL:</h5>
+            <input type="text" pInputText [(ngModel)]="Name" placeholder="Linkedin URL">
+
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">FB URL:</h5>
+            <input type="text" pInputText [(ngModel)]="Name" placeholder="FB URL">
+
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">Website:</h5>
+            <input type="text" pInputText [(ngModel)]="Name" placeholder="Website">
+
+        </div>
+        <div class="col-md-6">
+            <h5 class="form-lable">Current address:</h5>
+            <textarea rows="3" cols="30" pInputTextarea [(ngModel)]="address"></textarea>
+        </div>
+        <div class="col-md-6">
+            <h5 class="form-lable">Hometown address:</h5>
+            <textarea rows="3" cols="30" pInputTextarea [(ngModel)]="address"></textarea>
+        </div>
+        <div class="col-md-3">
+            <h5 class="form-lable">Photo:</h5>
+            <input type="file">
+        </div>
+        <!-- <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h5 class="form-lable">User representative/contact persons:</h5>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" pInputText [(ngModel)]="con_name" placeholder="Name">
+                </div>
+                <div class="col-md-3">
+                    <input type="text" pInputText [(ngModel)]="con_role" placeholder="Role">
+                </div>
+                <div class="col-md-3">
+                    <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Phone">
+                </div>
+
+                <div class="col-md-2 text-right">
+                    <i class="fa fa-plus add-icon" (click)="addcontact()" aria-hidden="true" pTooltip="Add"></i>
+                </div>
+
+
+            </div>
+            <table *ngIf="contactarray.length > 0 " class="spec-table">
+                <thead>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Phone</th>
+                    <th>Remove</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let arr of contactarray ; let i= index;">
+                        <td>{{i+1}}</td>
+                        <td>{{arr.con_name}}</td>
+                        <td>{{arr.con_role}}</td>
+                        <td>{{arr.con_pone}}</td>
+                        <td><i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"
+                                (click)="remove_contact(i)"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> -->
+        <!-- <div class="col-md-6">
+            <h5 class="form-lable">User Address:</h5>
+            <textarea rows="5" cols="30" pInputTextarea [(ngModel)]="address"></textarea>
+        </div> -->
+        <!-- <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5 class="form-lable">Profile Image:</h5>
+                    <input type="file">
+                </div>
+                <div class="col-md-3">
+                    <h5 class="form-lable">Govt ID proof:</h5>
+                    <input type="file">
+                </div>
+                <div class="col-md-3">
+                    <h5 class="form-lable">Photo ID proof:</h5>
+                    <input type="file">
+                </div>
+                <div class="col-md-3">
+                    <h5 class="form-lable">Certificate:</h5>
+                    <input type="file">
+                </div>
+                <div class="col-md-12 mt-20">
+                    <h5 class="form-lable">Other images:</h5>
+                    <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" multiple="multiple"
+                        accept="image/*" maxFileSize="1000000">
+                        <ng-template pTemplate="content">
+                            <ul *ngIf="uploadedFiles.length">
+                                <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                            </ul>
+                        </ng-template>
+                    </p-fileUpload>
+                </div>
+            </div>
+        </div> -->
+        <div class="col-md-12" style="margin-top: 10px;">
+            
+            <div class="card-box">
+                <h4 class="title-f">Add Documents</h4>
+                <div class="row" style="padding: 0px 0px 23px 10px;">
+                    <div class="col-md-4">
+                        <h5 class="form-lable">Document Type:</h5>
+                        <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                            [showClear]="true"></p-dropdown>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="form-lable">Document Name:</h5>
+                        <input type="text" pInputText [(ngModel)]="Name" placeholder="Document Name">
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="form-lable">Attachment:</h5>
+                        <input type="file">
+
+                    </div>
+                    <div class="col-md-12 mt-20">
+                        <button type="button" class="btn btn-primary">Add</button>
+                        <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-12 mt-20">
+            <button type="button" class="btn btn-primary">Create</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+<h4 class="title">HR reporting line</h4>
+
+<div class="card-box">
+    <div class="row" style="padding: 0px 0px 23px 10px;">
+        <div class="col-md-4">
+            <h5 class="form-lable">Staff ID:</h5>
+            <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                [showClear]="true"></p-dropdown>
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">Staff name:</h5>
+            <input type="text" pInputText [(ngModel)]="Name" placeholder="Staff name">
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">Role:</h5>
+            <input type="text" pInputText [(ngModel)]="Name" placeholder="Role">
+
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">Employee type:</h5>
+            <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                [showClear]="true"></p-dropdown>
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">Start date:</h5>
+            <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">End date:</h5>
+            <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+        </div>
+        <div class="col-md-12" style="margin-top: 10px;">
+            
+            <div class="card-box">
+                <h4 class="title-f">Add Documents</h4>
+                <div class="row" style="padding: 0px 0px 23px 10px;">
+                    <div class="col-md-4">
+                        <h5 class="form-lable">Document Type:</h5>
+                        <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                            [showClear]="true"></p-dropdown>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="form-lable">Document Name:</h5>
+                        <input type="text" pInputText [(ngModel)]="Name" placeholder="Document Name">
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="form-lable">Attachment:</h5>
+                        <input type="file">
+
+                    </div>
+                    <div class="col-md-12 mt-20">
+                        <button type="button" class="btn btn-primary">Add</button>
+                        <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-12 mt-20">
+            <button type="button" class="btn btn-primary">Add</button>
+            <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
+        </div>
+
+    </div>
+</div>
+
+<h4 class="title">Product reporting line</h4>
+
+<div class="card-box">
+    <div class="row" style="padding: 0px 0px 23px 10px;">
+        <div class="col-md-4">
+            <h5 class="form-lable">Client:</h5>
+            <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                [showClear]="true"></p-dropdown>
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">Product:</h5>
+            <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+            [showClear]="true"></p-dropdown>        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">Bucket:</h5>
+            <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+            [showClear]="true"></p-dropdown>
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">Start date:</h5>
+            <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+        </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">End date:</h5>
+            <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+        </div>
+        <div class="col-md-12 mt-20">
+            <button type="button" class="btn btn-primary">Add</button>
+            <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
+        </div>
+
+    </div>
+</div>

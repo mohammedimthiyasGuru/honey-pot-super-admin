@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
+import { UsrSettlementRecordingComponent } from './../usr-settlement-recording/usr-settlement-recording.component';
+
 @Component({
   selector: 'app-usr-followuptake',
   templateUrl: './usr-followuptake.component.html',
@@ -9,6 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class UsrFollowuptakeComponent implements OnInit {
   table_v:boolean = false;
+  table_s:boolean = false;
   rows = [];
   searchQR: any;
   value1: any;
@@ -56,5 +59,16 @@ export class UsrFollowuptakeComponent implements OnInit {
     })
     
   }
+  show() {
+    const dialogRef = this.dialog.open(UsrSettlementRecordingComponent, {
+      height: '600px',
+      width:'90%'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
 }
 
