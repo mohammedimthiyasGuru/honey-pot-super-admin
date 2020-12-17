@@ -48,13 +48,13 @@ export class HoneyPotClientDetailFormComponent implements OnInit {
       this.router.navigateByUrl('/admin_panel/Clients');
     }
     else if(this.form_type == "product"){
-      this.router.navigateByUrl('/admin_panel/Product');
+      this.router.navigateByUrl('/admin_panel/client/product');
     }
     else if(this.form_type == "document"){
       this.router.navigateByUrl('/admin_panel/Document');
     }
     else if(this.form_type == "bucket"){
-      this.router.navigateByUrl('/admin_panel/Bucket');
+      this.router.navigateByUrl('/admin_panel/client/Bucket');
     }
    
     

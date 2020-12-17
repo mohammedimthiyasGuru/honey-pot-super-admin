@@ -267,7 +267,7 @@ input {
 .p-input-icon-left > i:first-of-type {
     left: 20px;
     color: #6c757d;
-    top: 13px;
+    top: 10px;
     font-size: 12px;
 }
 .p-input-icon-left>i, .p-input-icon-right>i {

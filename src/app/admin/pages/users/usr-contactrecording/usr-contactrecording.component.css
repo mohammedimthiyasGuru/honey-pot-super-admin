@@ -117,15 +117,19 @@ table, th, td {
   position: fixed;
     right: 0;
     top: 50px;
-  background: #0a4078;
+    background-color: rgb(255 255 255);
+    box-shadow: 0px 0px 5px 0px #90a1b3;
 }
 .follow .mat-icon {
-    color: #fff;
+  color:rgb(144 161 179);
     padding: 6px 6px;
     width: auto;
     height: auto;
     font-size: 17px !important;
     cursor: pointer;
+}
+.follow i {
+  color:rgb(144 161 179);
 }
 .active-i .mat-icon{
   background-color: #a8b2c1;

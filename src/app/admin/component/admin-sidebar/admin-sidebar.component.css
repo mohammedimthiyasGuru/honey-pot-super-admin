@@ -6,19 +6,19 @@
 }
 
 .side {
-    width: 39px;
+    width: 48px;
     transition: all 0.5s;
 }
 
 .side .sidenav-item h5 {
-    margin: 0px 0px 0px !important;
+    margin: 0px 0px 0px 10px !important;
     font-size: 11px;
     color: #fff;
     font-weight: 500;
 }
 
 .mat-drawer {
-    background: #0a4078;
+background-color: rgb(63 78 99);
 }
 
 .active {

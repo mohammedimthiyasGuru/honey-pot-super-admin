@@ -15,7 +15,8 @@
     position: fixed;
     top: 0px;
     z-index: 9;
-    background: #0a4078;
+    background: rgb(14 105 221);
+;
 }
 
 .fa {

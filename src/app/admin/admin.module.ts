@@ -143,7 +143,13 @@ import { CreatePortfolioComponent } from './pages/honey-pot-client-detail/create
 import { CreateProductComponent } from './pages/honey-pot-client-detail/create-product/create-product.component';
 import { CreateClientTypeComponent } from './pages/honey-pot-client-detail/create-client-type/create-client-type.component';
 import { CreateDocumentTypeComponent } from './pages/honey-pot-client-detail/create-document-type/create-document-type.component';
-
+import { AccessRightsComponent } from './pages/access-rights/access-rights.component';
+import {CarouselModule} from 'primeng/carousel';
+import {SliderModule} from 'primeng/slider';
+import { DualTemporaryAllocationComponent } from './pages/userflow/dual-temporary-allocation/dual-temporary-allocation.component';
+import { AgentInboxComponent } from './pages/agent-inbox/agent-inbox.component';
+import { AgentAccListComponent } from './pages/agent-acc-list/agent-acc-list.component';
+import { AgentTODOListComponent } from './pages/agent-to-do-list/agent-to-do-list.component';
 @NgModule({
   declarations: [AdminHeaderComponent,
     AdminSidebarComponent,
@@ -249,7 +255,12 @@ import { CreateDocumentTypeComponent } from './pages/honey-pot-client-detail/cre
     CreatePortfolioComponent,
     CreateProductComponent,
     CreateClientTypeComponent,
-    CreateDocumentTypeComponent
+    CreateDocumentTypeComponent,
+    AccessRightsComponent,
+    DualTemporaryAllocationComponent,
+    AgentInboxComponent,
+    AgentAccListComponent,
+    AgentTODOListComponent
   ],
   imports: [
     CommonModule,
@@ -278,7 +289,9 @@ import { CreateDocumentTypeComponent } from './pages/honey-pot-client-detail/cre
     ChartModule,
     MatTabsModule,
     // FlexLayoutModule,
-    MatTooltipModule
+    MatTooltipModule,
+    CarouselModule,
+    SliderModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,

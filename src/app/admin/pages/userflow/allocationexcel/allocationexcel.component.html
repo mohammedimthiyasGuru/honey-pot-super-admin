@@ -23,14 +23,15 @@
             <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
         </div>
     </div>
-    <div class="row" style="padding: 0px 0px 23px 10px;"  *ngIf="section >= 2">
+    <div class="row" style="padding: 0px 0px 23px 10px;" *ngIf="section >= 2">
         <div class="col-md-12">
             <h5 class="form-lable">Choose Excel file</h5>
             <div class="profile-form-edit">
                 <div class="upload-btn-wrapper mt-3">
                     <input type="file" (change)="onFileChange($event)" multiple="false" accept=".xlsx" />
                     <a href="assets/Data OD (3).xlsx" download="" class="btn btn-primary"
-                        style="margin: 10px;margin-left: 0px;float: right;margin-top: -27px;">Download Sample Document</a>
+                        style="margin: 10px;margin-left: 0px;float: right;margin-top: -27px;">Download Sample
+                        Document</a>
                 </div>
             </div>
         </div>
@@ -56,18 +57,18 @@
             <div class="row">
                 <div class="col-md-3">
                     <h4 class="title-f">Rak Bucket 2 C3</h4>
-        
+
                     <table style=" width: 100%;">
                         <tr>
                             <th style="padding: 10px;">Status:</th>
                             <td style="padding: 10px;">Allocation Confirmed</td>
                         </tr>
-        
+
                     </table>
                 </div>
                 <div class="col-md-9">
                     <h4 class="title-f">Rak Bank</h4>
-        
+
                     <table style=" width: 100%;">
                         <tr>
                             <th style="padding: 10px;">Type:</th>
@@ -77,77 +78,26 @@
                             <th style="padding: 10px;">No of Accounts:</th>
                             <td style="padding: 10px;">20</td>
                         </tr>
-        
+
                     </table>
                 </div>
                 <div class="col-md-12" style="margin-top: 10px;">
                     <hr>
                 </div>
-                <div class="col-md-12">
+                <!-- <div class="col-md-12">
                     <h4 class="title-f">Task Information</h4>
-                    <i class="fa fa-chevron-circle-right" style="margin-top: -29px;font-size: 20px !important; color: #0a4078;float: right;" pTooltip="View"></i>
+                    <i class="fa fa-chevron-circle-right"
+                        style="margin-top: -29px;font-size: 20px !important; color: #0a4078;float: right;"
+                        pTooltip="View"></i>
                     <hr>
-                </div>
+                </div> -->
                 <div class="col-md-6">
                     <h4 class="title-f">Mapped Fields</h4>
-        
-                    <table style=" width: 100%;">
-                        <tr>
-                            <th style="padding: 10px;">System Field</th>
-                            <th style="padding: 10px;">Excel Field</th>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px;">CIF No</td>
-                            <td style="padding: 10px;">
-                                <select>
-                                    <option>CIF No</option>
-                                    <option>Personal Loan</option>
-                                    <option>Auto Loan</option>
-                                    <option>Credit Cards</option>
-                                    <option>Sales Finance</option>
-                                </select></td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px;">Passport No</td>
-                            <td style="padding: 10px;">
-                                <select>
-                                    <option>Passport No</option>
-                                    <option>Personal Loan</option>
-                                    <option>Auto Loan</option>
-                                    <option>Credit Cards</option>
-                                    <option>Sales Finance</option>
-                                </select></td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px;">Emirates ID</td>
-                            <td style="padding: 10px;">
-                                <select>
-                                    <option>Emirates ID</option>
-                                    <option>Personal Loan</option>
-                                    <option>Auto Loan</option>
-                                    <option>Credit Cards</option>
-                                    <option>Sales Finance</option>
-                                </select></td>
-                        </tr>
-        
-                    </table>
-                    <div style="margin-top: 15px;">
-                        <button class="btn btn-primary" style="margin-right: 10px;">Cancel</button>
-        
-                        <button class="btn btn-primary" style="margin-right: 10px;background-color: #0a4078;" (click)="Assign()">Save &
-                            Continue</button>
-                    </div>
-                    
-                </div>
-                <div class="col-md-6">
-                    <h4 class="title-f">Un Mapped Fields</h4>
-                    <i class="fa fa-plus-circle" style="font-size: 20px !important; color: #0a4078;float: right;margin-top: -32px;" pTooltip="Add Fields" (click)="field_form()"></i>
 
                     <table style=" width: 100%;">
                         <tr>
                             <th style="padding: 10px;">System Field</th>
                             <th style="padding: 10px;">Excel Field</th>
-                            
                         </tr>
                         <tr>
                             <td style="padding: 10px;">CIF No</td>
@@ -182,15 +132,62 @@
                                     <option>Sales Finance</option>
                                 </select></td>
                         </tr>
-        
+
                     </table>
                     <div style="margin-top: 15px;">
                         <button class="btn btn-primary" style="margin-right: 10px;">Cancel</button>
-        
-                        <button class="btn btn-primary" style="margin-right: 10px;background-color: #0a4078;" (click)="Assign()">Save &
+
+                        <button class="btn btn-primary" style="margin-right: 10px;background-color: #0a4078;"
+                            (click)="Assign()">Save &
                             Continue</button>
                     </div>
-        
+
+                </div>
+                <div class="col-md-6">
+                    <h4 class="title-f">Un Mapped Fields</h4>
+                    <table style=" width: 100%;">
+                        <tr>
+                            <th style="padding: 10px;">Excel Field</th>
+                            <th style="padding: 10px;">System Field</th>
+
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px;">CUS Name</td>
+                            <td style="padding: 10px;">
+                                <input type="text"> <i class="fa fa-plus-circle"
+                                    style="font-size: 20px !important; color: #0a4078;float: right;margin-top: -4px;"
+                                    pTooltip="Add Fields" (click)="field_form()"></i>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px;">Ovedue Amount</td>
+                            <td style="padding: 10px;">
+                                <input type="text"> <i class="fa fa-plus-circle"
+                                    style="font-size: 20px !important; color: #0a4078;float: right;margin-top: -4px;"
+                                    pTooltip="Add Fields" (click)="field_form()"></i>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px;">customer_group</td>
+                            <td style="padding: 10px;">
+                                <input type="text"> <i class="fa fa-plus-circle"
+                                    style="font-size: 20px !important; color: #0a4078;float: right;margin-top: -4px;"
+                                    pTooltip="Add Fields" (click)="field_form()"></i>
+
+                            </td>
+                        </tr>
+
+                    </table>
+                    <div style="margin-top: 15px;">
+                        <button class="btn btn-primary" style="margin-right: 10px;">Cancel</button>
+
+                        <button class="btn btn-primary" style="margin-right: 10px;background-color: #0a4078;"
+                            (click)="Assign()">Save &
+                            Continue</button>
+                    </div>
+
                 </div>
             </div>
         </div>

@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-uploaded-list',
-  templateUrl: './uploaded-list.component.html',
-  styleUrls: ['./uploaded-list.component.css']
+  selector: 'app-dual-temporary-allocation',
+  templateUrl: './dual-temporary-allocation.component.html',
+  styleUrls: ['./dual-temporary-allocation.component.css']
 })
-export class UploadedListComponent implements OnInit {
+export class DualTemporaryAllocationComponent implements OnInit {
   displayPosition: boolean;
   rows = [];
   searchQR: any;
   value1: any;
-  rangeValues: number[] = [0,100];
   constructor(
     // private router: Router
   ) { }

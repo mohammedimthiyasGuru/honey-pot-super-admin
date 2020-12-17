@@ -1,74 +1,86 @@
-<div class="row">
-  <div class="col-md-8">
-    <h4 class="title">Worklist</h4>
-    <!-- <div class="search-hero">
+<div style="margin-right: 25px;">
+  <div class="row">
+    <div class="col-md-8">
+      <h4 class="title">Worklist</h4>
+      <!-- <div class="search-hero">
       <input class="form-control" type="text" name="search2" style="font-family: FontAwesome;" [(ngModel)]="searchQR"
         autocomplete="off" placeholder="&#xf002; Search...">
     </div> -->
-  </div>
-  <div class="col-md-4 text-right" style="margin-bottom: 10px;">
+    </div>
+    <!-- <div class="col-md-4 text-right" style="margin-bottom: 10px;">
     <button type="button" class="btn btn-primary mr-0" (click)="client_form()"><i class="fa fa-plus"
         aria-hidden="true"></i> Add</button>
+  </div> -->
   </div>
-</div>
 
-<div class="row" style="margin-bottom: 10px;">
-  <div class="col-md-3">
-    <span class="p-input-icon-left">
-      <i class="pi pi-search"></i>
-      <input type="text" pInputText placeholder="Account Search" />
-    </span>
+  <div class="row" style="margin-bottom: 10px;">
+    <div class="col-md-3">
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input type="text" pInputText placeholder="Account Search" />
+      </span>
+    </div>
+    <div class="col-md-3">
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input type="text" pInputText placeholder="Full Search" />
+      </span>
+    </div>
+    <div class="col-md-6 text-right">
+      <p-carousel [value]="buttons" [numVisible]="5" [numScroll]="2" [circular]="false"
+        [responsiveOptions]="responsiveOptions">
+        <ng-template pTemplate="header">
+          <h5>Basic</h5>
+        </ng-template>
+        <ng-template let-product pTemplate="item">
+          <div class="product-item">
+            <div class="product-item-content">
+              <button class="btn btn-primary" style="margin-right: 10px;">{{product.btn}}</button>
+
+            </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
   </div>
-  <div class="col-md-3">
-    <span class="p-input-icon-left">
-      <i class="pi pi-search"></i>
-      <input type="text" pInputText placeholder="Full Search" />
-    </span>
-  </div>
-  <div class="col-md-6 text-right">
-    <button class="btn btn-primary" style="margin-right: 10px;">Personal Loan</button>
+  <div class="doc-table">
 
-    <button class="btn btn-primary" style="margin-right: 10px;">Auto Loan</button>
+    <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
+      [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
 
-    <button class="btn btn-primary" style="margin-right: 10px;">Credit Cards</button>
+      <ng-template pTemplate="header">
 
-    <button class="btn btn-primary" style="margin-right: 0px;">Sales Finance</button>
-  </div>
-</div>
-<div class="doc-table">
+        <!-- <tr style="text-align: center;" class="thhead">
+          <th style="width: 50px;">S.No</th>
+          <th>Account No</th>
+          <th>Customer No</th>
+          <th>Name</th>
+          <th>Portfolio</th>
+          <th>Bucket:</th>
+          <th>OS Amount:</th>
+          <th>OD Amount:</th>
+          <th>Phone Number</th>
+          <th style="width: 100px;">Action</th>
+        </tr> -->
 
-  <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
-    [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
-    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
-
-    <ng-template pTemplate="header">
-
-      <tr style="text-align: center;" class="thhead">
-        <th style="width: 50px;">S.No</th>
-        <th>Account No</th>
-        <th>Customer No</th>
-        <th>Name</th>
-        <th>Portfolio</th>
-        <th>Bucket:</th>
-        <th>OS Amount:</th>
-        <th>OD Amount:</th>
-        <th>Phone Number</th>
-        <th style="width: 100px;">Action</th>
-        
-
-    </ng-template>
-    <ng-template pTemplate="body" let-item let-i="rowIndex">
-      <tr class="tdrow">
-        <td style="text-align: center;">{{i+1}}</td>
-        <td><a (click)="showPositionDialog()" style="color: #0e69dd;">1.26472587459</a></td>
-        <td>Lorem ipsum.</td>
-        <td>Lorem ipsum.</td>
-        <td>Lorem ipsum.</td>
-        <td>Lorem ipsum.</td>
-        <td>Lorem ipsum.</td>
-        <td>Lorem ipsum.</td>
-        <td>Lorem ipsum.</td>
-        <!-- <td>
+      </ng-template>
+      <ng-template pTemplate="body" let-item let-i="rowIndex">
+        <tr style="text-align: center;" *ngIf="i == 0" class="thhead">
+          <th style="text-align: center;width: 40px;font-size: 10px;">S.No</th>
+          <th *ngFor="let val of item" style="font-size: 10px;">
+            {{val}}
+          </th>
+        </tr>
+        <tr class="tdrow">
+          
+          <ng-container style="text-align: center;" *ngIf="i > 0">
+            <td style="text-align: center;width: 60px;">{{i}}</td>
+            <td (click)="showPositionDialog()"*ngFor="let val of item" style="font-size: 10px;">
+              {{val}}
+            </td>
+          </ng-container >
+          <!-- <td>
                 User
             </td>
             <td>
@@ -80,17 +92,17 @@
             <td>
                 17-09-2020
             </td> -->
-        <td class="act">
-          <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true" pTooltip="Edit"></i>
-          <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"></i>
-          <!-- <i style="color: #4CAF50;" class="fa fa-user" aria-hidden="true" (click)="profile()" pTooltip="Profile"></i> -->
-        </td>
-      </tr>
-    </ng-template>
-  </p-table>
+          <!-- <td class="act">
+            <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true" pTooltip="Edit"></i>
+            <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"></i>
+            <i style="color: #4CAF50;" class="fa fa-user" aria-hidden="true" (click)="profile()" pTooltip="Profile"></i>
+          </td> -->
+        </tr>
+      </ng-template>
+    </p-table>
 
+  </div>
 </div>
-
 <p-dialog header="Account Details" [(visible)]="displayPosition" position="center" [modal]="true"
   [style]="{width: '50vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
   <div class="">
@@ -124,7 +136,7 @@
             <th>Nationality:</th>
             <td>Sri Lanka</td>
           </tr>
-          
+
         </table>
       </div>
       <div class="col-md-6">
@@ -170,3 +182,29 @@
     </div>
   </div>
 </p-dialog>
+<div class="follow">
+  <div style="text-align: center;padding: 10px;color: #fff;">
+    <i class="fa fa-filter" aria-hidden="true" aria-hidden="true" matTooltip=" Filter"></i>
+    <!-- <mat-icon matTooltip=" Collection Details" >extension</mat-icon> -->
+  </div>
+  <div style="text-align: center;padding: 10px;color: #fff;">
+    <i class="fa fa fa-binoculars" aria-hidden="true" matTooltip=""></i>
+    <!-- <mat-icon matTooltip=" Settlement Recording" >extension</mat-icon> -->
+  </div>
+  <div style="text-align: center;padding: 10px;color: #fff;">
+    <i class="fa fa-envelope" aria-hidden="true" matTooltip=""></i>
+    <!-- <mat-icon matTooltip=""  >swap_horiz</mat-icon> -->
+  </div>
+  <div style="text-align: center;padding: 10px;color: #fff;">
+    <i class="fa fa-calendar" aria-hidden="true" matTooltip=""></i>
+    <!-- <mat-icon matTooltip=""  >swap_horiz</mat-icon> -->
+  </div>
+  <div style="text-align: center;padding: 10px;color: #fff;">
+    <i class="fa fa-file-text-o" aria-hidden="true" matTooltip=""></i>
+    <!-- <mat-icon matTooltip=""  >swap_horiz</mat-icon> -->
+  </div>
+  <div style="text-align: center;padding: 10px;color: #fff;">
+    <i class="fa fa-globe" aria-hidden="true" matTooltip=""></i>
+    <!-- <mat-icon matTooltip=""  >swap_horiz</mat-icon> -->
+  </div>
+</div>

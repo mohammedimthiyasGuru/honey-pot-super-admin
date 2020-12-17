@@ -3,7 +3,25 @@
 
 <ng-container *ngIf="form_type == 'client'">
     <h4 class="title">Create Client</h4>
-
+    <div class="card-box">
+        <div class="row" style="padding: 0px 0px 23px 10px;">
+            <div class="col-md-4">
+                <h5 class="form-lable">Existing or New:</h5>
+                <p-dropdown [options]="type" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                    [showClear]="true"></p-dropdown>
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Account Type:</h5>
+                <p-dropdown [options]="typ" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                    [showClear]="true"></p-dropdown>
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Set Primary:</h5>
+                <p-dropdown [options]="typ" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                    [showClear]="true"></p-dropdown>
+            </div>
+        </div>
+    </div>
     <div class="card-box">
         <div class="row" style="padding: 0px 0px 23px 10px;">
             <div class="col-md-4">
@@ -51,76 +69,92 @@
                 <textarea rows="3" cols="30" pInputTextarea [(ngModel)]="address"></textarea>
             </div>
 
-            <div class="col-md-12">
-                <h5 class="form-lable">Client representative/contact persons:</h5>
-                <div class="row">
-                    <div class="col-md-12 text-right">
+
+
+            <div class="col-md-12 mt-20">
+                <button type="button" class="btn btn-primary">Create</button>
+                <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
+            </div>
+
+        </div>
+    </div>
+
+    <h4 class="title-f">Client representative/contact persons:</h4>
+    <div class="card-box">
+        <div class="row" style="padding: 0px 0px 23px 10px;">
+            <!-- <div class="col-md-12 text-right">
+                       
                         <i class="fa fa-plus add-icon" (click)="addcontact()" aria-hidden="true" pTooltip="Add"
                             style="top: -15px;position: relative;"></i>
-                    </div>
-                    <div class="col-md-4" style="margin-bottom: 7px;">
-                        <input type="text" pInputText [(ngModel)]="con_name" placeholder="Name">
-                    </div>
-                    <div class="col-md-4" style="margin-bottom: 7px;">
-                        <input type="text" pInputText [(ngModel)]="con_role" placeholder="Email">
-                    </div>
-                    <div class="col-md-4" style="margin-bottom: 7px;">
-                        <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Phone No">
-                    </div>
-                    <div class="col-md-4" style="margin-bottom: 7px;">
-                        <input type="text" pInputText [(ngModel)]="con_pone" placeholder="WhatsApp No">
-                    </div>
-                    <div class="col-md-4" style="margin-bottom: 7px;">
-                        <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Landline">
-                    </div>
-                    <div class="col-md-4" style="margin-bottom: 7px;">
-                        <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Extension">
-                    </div>
-                    <div class="col-md-4" style="margin-bottom: 7px;">
-                        <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Staff no">
-                    </div>
-                    <div class="col-md-4" style="margin-bottom: 7px;">
-                        <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Internal ID card no">
-                    </div>
-                    <div class="col-md-4" style="margin-bottom: 7px;">
-                        <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Designation">
-                    </div>
-                    <div class="col-md-4" style="margin-bottom: 7px;">
-                        <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Reporting to" optionLabel="y"
-                            [showClear]="true"></p-dropdown>
-                    </div>
-                    <div class="col-md-4" style="margin-bottom: 7px;">
-                        <input type="file">
-                    </div>
+                    </div> -->
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="text" pInputText [(ngModel)]="con_name" placeholder="Name">
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="text" pInputText [(ngModel)]="con_role" placeholder="Email">
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Phone No">
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="text" pInputText [(ngModel)]="con_pone" placeholder="WhatsApp No">
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Landline">
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Extension">
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Staff no">
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Internal ID card no">
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Designation">
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Reporting to" optionLabel="y"
+                    [showClear]="true"></p-dropdown>
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="file">
+            </div>
 
+            <div class="col-md-12 mt-20">
+                <button type="button" class="btn btn-primary">Add</button>
+                <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
+            </div>
 
-
-                </div>
-                <table *ngIf="contactarray.length > 0 " class="spec-table">
+            <div class="col-md-12 mt-20">
+                <table class="spec-table">
                     <thead>
                         <th>S.No</th>
                         <th>Name</th>
-                        <th>Role</th>
-                        <th>Phone</th>
-                        <th>Remove</th>
+                        <th>Email</th>
+                        <th>Phone No</th>
+                        <th>WhatsApp No</th>
+                        <th>Landline</th>
+                        <th>Extension</th>
+                        <th>Staff no</th>
+                        <th>Internal ID card no</th>
+                        <th>Designation</th>
+                        <th>Reporting to</th>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let arr of contactarray ; let i= index;">
+                        <!-- <tr *ngFor="let arr of contactarray ; let i= index;">
                             <td>{{i+1}}</td>
                             <td>{{arr.con_name}}</td>
                             <td>{{arr.con_role}}</td>
                             <td>{{arr.con_pone}}</td>
                             <td><i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"
                                     (click)="remove_contact(i)"></i></td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
 
-            <div class="col-md-12 mt-20">
-                <button type="button" class="btn btn-primary">Create</button>
-                <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
-            </div>
 
         </div>
     </div>
@@ -155,7 +189,28 @@
                 <button type="button" class="btn btn-primary">Add</button>
                 <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
             </div>
-
+            <div class="col-md-12 mt-20">
+                <table class="spec-table">
+                    <thead>
+                        <th>S.No</th>
+                        <th>Document Type</th>
+                        <th>Document Name</th>
+                        <th>Attachment</th>
+                        <th>Start date</th>
+                        <th>End date</th>
+                    </thead>
+                    <tbody>
+                        <!-- <tr *ngFor="let arr of contactarray ; let i= index;">
+                        <td>{{i+1}}</td>
+                        <td>{{arr.con_name}}</td>
+                        <td>{{arr.con_role}}</td>
+                        <td>{{arr.con_pone}}</td>
+                        <td><i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"
+                                (click)="remove_contact(i)"></i></td>
+                    </tr> -->
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <h4 class="title-f">Account Detail</h4>
@@ -188,13 +243,19 @@
                 <h5 class="form-lable">Address of the bank:</h5>
                 <textarea rows="3" cols="30" pInputTextarea [(ngModel)]="address"></textarea>
             </div>
+
             <div class="col-md-4">
-                <h5 class="form-lable">Existing or New Account:</h5>
-                <p-dropdown [options]="type" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                <h5 class="form-lable">Country:</h5>
+                <p-dropdown [options]="typ" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
                     [showClear]="true"></p-dropdown>
             </div>
             <div class="col-md-4">
-                <h5 class="form-lable">Account:</h5>
+                <h5 class="form-lable">Currency:</h5>
+                <p-dropdown [options]="typ" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                    [showClear]="true"></p-dropdown>
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Swift Code:</h5>
                 <p-dropdown [options]="typ" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
                     [showClear]="true"></p-dropdown>
             </div>
@@ -202,7 +263,32 @@
                 <button type="button" class="btn btn-primary">Add</button>
                 <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
             </div>
-
+            <div class="col-md-12 mt-20">
+                <table class="spec-table">
+                    <thead>
+                        <th>S.No</th>
+                        <th>Account No</th>
+                        <th>IFSC Code</th>
+                        <th>IBAN No</th>
+                        <th>Bank Name</th>
+                        <th>Branch</th>
+                        <th>Address of the bank</th>
+                        <th>Country</th>
+                        <th>Currency</th>
+                        <th>Swift Code</th>
+                    </thead>
+                    <tbody>
+                        <!-- <tr *ngFor="let arr of contactarray ; let i= index;">
+                        <td>{{i+1}}</td>
+                        <td>{{arr.con_name}}</td>
+                        <td>{{arr.con_role}}</td>
+                        <td>{{arr.con_pone}}</td>
+                        <td><i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"
+                                (click)="remove_contact(i)"></i></td>
+                    </tr> -->
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </ng-container>

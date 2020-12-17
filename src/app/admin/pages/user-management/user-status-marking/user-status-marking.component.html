@@ -23,10 +23,36 @@
             <h5 class="form-lable">Remarks:</h5>
             <textarea rows="3" cols="30" pInputTextarea [(ngModel)]="address"></textarea>
         </div>
+        <div class="col-md-4">
+            <h5 class="form-lable">Attachment:</h5>
+            <input type="file">
+
+        </div>
         <div class="col-md-6 mt-20">
             <button type="button" class="btn btn-primary">Update</button>
             <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
         </div>
-
+        <div class="col-md-12 mt-20">
+            <table class="spec-table">
+                <thead>
+                    <!-- <th>S.No</th> -->
+                    <th>User</th>
+                    <th>Status</th>
+                    <th>Attachment</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                </thead>
+                <tbody>
+                    <!-- <tr *ngFor="let arr of contactarray ; let i= index;">
+                    <td>{{i+1}}</td>
+                    <td>{{arr.con_name}}</td>
+                    <td>{{arr.con_role}}</td>
+                    <td>{{arr.con_pone}}</td>
+                    <td><i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"
+                            (click)="remove_contact(i)"></i></td>
+                </tr> -->
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

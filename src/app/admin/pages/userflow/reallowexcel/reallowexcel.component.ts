@@ -9,48 +9,37 @@ type AOA = any[][];
   styleUrls: ['./reallowexcel.component.css']
 })
 export class ReallowexcelComponent implements OnInit {
-  ErrorShow: boolean = true;
-  Error: any = [];
-  displayMaximizable: boolean = false;
-  data: AOA = [];
-  wopts: XLSX.WritingOptions = { bookType: 'xlsx', type: 'array' };
-  fileName: string = 'SheetJS.xlsx';
-  file: any;
-  arrayBuffer: any;
-  filelist: any;
-  constructor() { }
+  displayPosition: boolean;
+  rows = [];
+  searchQR: any;
+  value1: any;
+  constructor(
+    // private router: Router
+  ) { }
+
+
 
   ngOnInit(): void {
-  }
-  onFileChange(evt: any) {
-    console.log('this.data');
-    const target: DataTransfer = <DataTransfer>(evt.target);
-    if (target.files.length !== 1) throw new Error('Cannot use multiple files');
-    const reader: FileReader = new FileReader();
-    console.log('data');
-    reader.onload = (e: any) => {
-      console.log('data-1');
-      const bstr: string = e.target.result;
-      const wb: XLSX.WorkBook = XLSX.read(bstr, { type: 'binary' });
-      const wsname: string = wb.SheetNames[0];
-      const ws: XLSX.WorkSheet = wb.Sheets[wsname];
-      this.data = <AOA>(XLSX.utils.sheet_to_json(ws, { header: 1 }));
-      console.log(this.data);
-    };
-    if (this.Error.length != 0) {
-      this.ErrorShow = false;
-    }
-    reader.readAsBinaryString(target.files[0]);
-  }
+    this.rows = [{ type: "Dog", name: "dog1" },
+    { type: "Cat", name: "cat1" },
+    { type: "Cat", name: "cat1" },
+    { type: "Cat", name: "cat1" },
+    ]
 
 
-  export(): void {
-    /* generate worksheet */
-    const ws: XLSX.WorkSheet = XLSX.utils.aoa_to_sheet(this.data);
-    /* generate workbook and add the worksheet */
-    const wb: XLSX.WorkBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
-    /* save to file */
-    XLSX.writeFile(wb, this.fileName);
+
   }
+  client_form() {
+    // this.router.navigateByUrl('/admin_panel/client-form')
+  }
+  profile() {
+    // this.router.navigateByUrl('/admin_panel/Client_profile')
+  }
+
+  showPositionDialog() {
+    this.displayPosition = true;
+}
+cus360(){
+  // this.router.navigateByUrl('/admin_panel/user/createuser')
+}
 }

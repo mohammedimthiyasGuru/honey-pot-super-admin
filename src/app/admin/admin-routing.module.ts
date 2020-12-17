@@ -81,6 +81,12 @@ import { ClientStatusMarkingComponent } from './pages/honey-pot-client-detail/cl
 import { CreatePortfolioComponent } from './pages/honey-pot-client-detail/create-portfolio/create-portfolio.component';
 import { CreateProductComponent } from './pages/honey-pot-client-detail/create-product/create-product.component';
 import { CreateClientTypeComponent } from './pages/honey-pot-client-detail/create-client-type/create-client-type.component';
+import { AccessRightsComponent } from './pages/access-rights/access-rights.component';
+import { CreateDocumentTypeComponent } from './pages/honey-pot-client-detail/create-document-type/create-document-type.component';
+import { DualTemporaryAllocationComponent } from './pages/userflow/dual-temporary-allocation/dual-temporary-allocation.component';
+import { AgentInboxComponent } from './pages/agent-inbox/agent-inbox.component';
+import { AgentAccListComponent } from './pages/agent-acc-list/agent-acc-list.component';
+import { AgentTODOListComponent } from './pages/agent-to-do-list/agent-to-do-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' ,pathMatch:'full'},
@@ -161,7 +167,8 @@ const routes: Routes = [
   { path: 'userflow/reallowsingle', component: ReallowsingleComponent },
   { path: 'userflow/withdrawexcel', component: WithdrawexcelComponent },
   { path: 'userflow/withdrawsingle', component: WithdrawsingleComponent },
-
+  { path: 'userflow/Dual_Temporary_allocation', component: DualTemporaryAllocationComponent },
+  
  
   { path: 'Configuration', component: ConfigurationComponent },
   { path: 'Agency', component: AgencyManagementComponent },
@@ -170,17 +177,20 @@ const routes: Routes = [
   { path: 'Portfolio', component: AddPortfolioComponent },
    
   { path: 'uploaded_list', component: UploadedListComponent },
-  { path: 'Product', component: AddProductComponent },
+  { path: 'client/product', component: AddProductComponent },
   { path: 'Document', component: DocumentManagementComponent },
-  { path: 'Bucket', component: BucketComponent },
+  { path: 'client/Bucket', component: BucketComponent },
   { path: 'user/user_status_marking', component: UserStatusMarkingComponent },
   { path: 'client/client_status_marking', component: ClientStatusMarkingComponent },
   { path: 'client/Create_portfolio', component: CreatePortfolioComponent },
   { path: 'client/Create_product', component: CreateProductComponent },
   { path: 'client/Create_client_type', component: CreateClientTypeComponent },
-  { path: 'client/Create_document_type', component: CreateClientTypeComponent },
-
-
+  { path: 'client/Create_document_type', component: CreateDocumentTypeComponent },
+  { path: 'Access_Rights', component: AccessRightsComponent },
+  { path: 'Agent_Inbox', component: AgentInboxComponent },
+  { path: 'Agent_acc_list', component: AgentAccListComponent },
+  { path: 'Agent_TO_DO_list', component: AgentTODOListComponent },
+  
 ];
 
 @NgModule({
