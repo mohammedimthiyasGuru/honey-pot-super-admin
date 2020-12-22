@@ -1,7 +1,7 @@
 
 
 div.main{
-background-image: url("../../assets/images/ban-1.jpg");
+background-image: url("../../assets/images/003.jpeg");
 background-size: cover;
 height:calc(100vh);
 width:100%;
@@ -31,7 +31,9 @@ a {
 }
 
 a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
+  color: #fde10f !important;
+  cursor: pointer;
 }
 
 input {
@@ -39,7 +41,8 @@ input {
 	font-family: 'Open Sans', Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.5em;
-	padding: 0;
+  padding: 0;
+  outline: none;
 }
 
 p {
@@ -83,14 +86,16 @@ p {
     border-left: 1px solid #fff;
     padding: 40px 20px 25px;
     width: 50%;
-    background: #154476;
+    background: #00000069;
 }
 .logo{
 color:#fff;
 font-size:50px;
   line-height: 85px;
 }
-
+.log-btn:hover{
+  background: #ffffff;
+}
 #login form span.fa {
 	background-color: #fff;
 	border-radius: 3px 0px 0px 3px;
@@ -153,9 +158,8 @@ fieldset{
     /* padding: 110px 20px 25px !important; */
 }
 .l-h5{
-    text-align: left;
-    color: #fff;
-    text-decoration: underline;
+  color: #fff;
+  font-size: 20px;
 }
 .check{
     height: auto !important;

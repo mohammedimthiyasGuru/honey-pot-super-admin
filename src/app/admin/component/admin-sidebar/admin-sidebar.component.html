@@ -1,7 +1,7 @@
-<mat-drawer-container class="example-container" [ngClass]="{'menuslider' : menu_slider}">
+<mat-drawer-container class="example-container side-men" [ngClass]="{'menuslider' : menu_slider}">
     <mat-drawer class="side" mode="side" opened (mouseover)="menuslide()" (mouseout)="menuslide()">
         <mat-nav-list>
-            <mat-list-item (click)="menuslide()">
+            <mat-list-item  routerLink="dashboard">
                 <mat-icon style="color: #fff;"> notes</mat-icon>
             </mat-list-item>
             <mat-list-item routerLink="dashboard" routerLinkActive="active">
@@ -36,113 +36,116 @@
                 </div>
             </mat-list-item> -->
 
-            <mat-list-item routerLinkActive="active" (click)="expand8 = !expand8">
+            <mat-list-item routerLinkActive="active" [matMenuTriggerFor]="menu" pTooltip="Client Master">
                 <mat-icon style="color: #fff !important;" mat-list-icon>
-                    <i class="fa fa-database" aria-hidden="true"
+                    <i class="fa fa-university" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
                 <div fxFlex="10"></div>
                 <div class="sidenav-item">
                     <h5 class="lead">Client Master</h5>
                 </div>
-                <div class="sb-sidenav-collapse-arrow" *ngIf="menu_slider">
+                <!-- <div class="sb-sidenav-collapse-arrow" *ngIf="menu_slider">
                     <i *ngIf="!expand8" class="fa fa-chevron-down" aria-hidden="true"></i>
                     <i *ngIf="expand8" class="fa fa-chevron-up" aria-hidden="true"></i>
-                </div>
+                </div> -->
             </mat-list-item>
-            <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand8">
-                <div class="sub-menu">
-                    <mat-list-item routerLink="client/Create_client_type" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Create Client Type</h5>
-                        </div>
-                    </mat-list-item>
-                    <mat-list-item routerLink="client/Create_portfolio" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Create Portfolio</h5>
-                        </div>
-                    </mat-list-item>
-                    <mat-list-item routerLink="client/Create_product" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Create Product</h5>
-                        </div>
-                    </mat-list-item>
-                    <mat-list-item routerLink="client/Create_document_type" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Create Document Type</h5>
-                        </div>
-                    </mat-list-item>
-                    <mat-list-item routerLink="Clients" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Clients Management</h5>
-                        </div>
-                    </mat-list-item>
-                    <mat-list-item routerLink="client/product" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Product Management</h5>
-                        </div>
-                    </mat-list-item>
-                    <mat-list-item routerLink="client/Bucket" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Bucket management</h5>
-                        </div>
-                    </mat-list-item>
-                    <!-- <mat-list-item routerLink="Document" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Document management</h5>
-                        </div>
-                    </mat-list-item> -->
-                    <mat-list-item routerLink="field_mapping" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Table/Field Creation</h5>
-                        </div>
-                    </mat-list-item>
-                    <mat-list-item routerLink="client/client_status_marking" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Client Status Marking</h5>
-                        </div>
-                    </mat-list-item>
-                </div>
-            </mat-nav-list>
+            <mat-menu #menu="matMenu">
+                <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand8">
+                    <div class="sub-menu">
+                        <mat-list-item routerLink="client/Create_client_type" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">Create Client Type</h5>
+                            </div>
+                        </mat-list-item>
+                        <mat-list-item routerLink="client/Create_portfolio" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">Create Portfolio</h5>
+                            </div>
+                        </mat-list-item>
+                        <mat-list-item routerLink="client/Create_product" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">Create Product</h5>
+                            </div>
+                        </mat-list-item>
+                        <mat-list-item routerLink="client/Create_document_type" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">Create Document Type</h5>
+                            </div>
+                        </mat-list-item>
+                        <mat-list-item routerLink="Clients" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">Clients Management</h5>
+                            </div>
+                        </mat-list-item>
+                        <mat-list-item routerLink="client/product" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">Product Management</h5>
+                            </div>
+                        </mat-list-item>
+                        <mat-list-item routerLink="client/Bucket" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">Bucket management</h5>
+                            </div>
+                        </mat-list-item>
+                        <!-- <mat-list-item routerLink="Document" routerLinkActive="active">
+                            <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div>
+                            <div class="sidenav-item">
+                                <h5 class="lead">Document management</h5>
+                            </div>
+                        </mat-list-item> -->
+                        <mat-list-item routerLink="field_mapping" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">Table/Field Creation</h5>
+                            </div>
+                        </mat-list-item>
+                        <mat-list-item routerLink="client/client_status_marking" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">Client Status Marking</h5>
+                            </div>
+                        </mat-list-item>
+                    </div>
+                </mat-nav-list>
+            </mat-menu>
+
 
             <!-- <mat-list-item routerLink="Agency" routerLinkActive="active">
                 <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-users" aria-hidden="true"
@@ -154,60 +157,63 @@
                 </div>
             </mat-list-item>  -->
 
-            <mat-list-item routerLinkActive="active" (click)="expand7 = !expand7">
+            <mat-list-item routerLinkActive="active" [matMenuTriggerFor]="menu1" pTooltip="User Master">
                 <mat-icon style="color: #fff !important;" mat-list-icon>
-                    <i class="fa fa-database" aria-hidden="true"
+                    <i class="fa fa-user" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
                 <div fxFlex="10"></div>
                 <div class="sidenav-item">
                     <h5 class="lead">User Master</h5>
                 </div>
-                <div class="sb-sidenav-collapse-arrow" *ngIf="menu_slider">
+                <!-- <div class="sb-sidenav-collapse-arrow" *ngIf="menu_slider">
                     <i *ngIf="!expand7" class="fa fa-chevron-down" aria-hidden="true"></i>
                     <i *ngIf="expand7" class="fa fa-chevron-up" aria-hidden="true"></i>
-                </div>
+                </div> -->
             </mat-list-item>
-            <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand7">
-                <div class="sub-menu">
-                    <mat-list-item routerLink="user/user_role" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">User Role</h5>
-                        </div>
-                    </mat-list-item>
-                    <mat-list-item routerLink="user/user_group" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">User Group</h5>
-                        </div>
-                    </mat-list-item>
-                    <mat-list-item routerLink="user/user_management" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">User Management</h5>
-                        </div>
-                    </mat-list-item>
+            <mat-menu #menu1="matMenu">
+                <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand7">
+                    <div class="sub-menu">
+                        <mat-list-item routerLink="user/user_role" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">User Role</h5>
+                            </div>
+                        </mat-list-item>
+                        <mat-list-item routerLink="user/user_group" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">User Group</h5>
+                            </div>
+                        </mat-list-item>
+                        <mat-list-item routerLink="user/user_management" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">User Management</h5>
+                            </div>
+                        </mat-list-item>
 
-                    <mat-list-item routerLink="user/user_status_marking" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">User Status Marking</h5>
-                        </div>
-                    </mat-list-item>
-                </div>
-            </mat-nav-list>
+                        <mat-list-item routerLink="user/user_status_marking" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">User Status Marking</h5>
+                            </div>
+                        </mat-list-item>
+                    </div>
+                </mat-nav-list>
+            </mat-menu>
+
 
             <!-- <mat-list-item routerLink="Access_Rights" routerLinkActive="active">
                 <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe" aria-hidden="true"
@@ -219,7 +225,7 @@
             </mat-list-item> -->
 
 
-            <mat-list-item routerLinkActive="active" (click)="expand1 = !expand1">
+            <mat-list-item routerLinkActive="active" [matMenuTriggerFor]="menu2" pTooltip="Master">
                 <mat-icon style="color: #fff !important;" mat-list-icon>
                     <i class="fa fa-database" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
@@ -227,232 +233,238 @@
                 <div class="sidenav-item">
                     <h5 class="lead">Master</h5>
                 </div>
-                <div class="sb-sidenav-collapse-arrow" *ngIf="menu_slider">
+                <!-- <div class="sb-sidenav-collapse-arrow" *ngIf="menu_slider">
                     <i *ngIf="!expand1" class="fa fa-chevron-down" aria-hidden="true"></i>
                     <i *ngIf="expand1" class="fa fa-chevron-up" aria-hidden="true"></i>
-                </div>
+                </div> -->
             </mat-list-item>
+            <mat-menu #menu2="matMenu">
+                <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand1">
+                    <div class="sub-menu">
+                        <mat-list-item routerLink="fieldset" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">Set Predefined Fields</h5>
+                            </div>
+                        </mat-list-item>
+                        <mat-list-item routerLink="Country" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">Country & Currency Management</h5>
+                            </div>
+                        </mat-list-item>
+                    </div>
+                </mat-nav-list>
+            </mat-menu>
 
-            <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand1">
-                <div class="sub-menu">
-                    <mat-list-item routerLink="fieldset" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Set Predefined Fields</h5>
-                        </div>
-                    </mat-list-item>
-                    <mat-list-item routerLink="Country" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Country & Currency Management</h5>
-                        </div>
-                    </mat-list-item>
-                </div>
-            </mat-nav-list>
 
-            <mat-list-item routerLinkActive="active" (click)="expand6 = !expand6">
+
+            <mat-list-item routerLinkActive="active" [matMenuTriggerFor]="menu3" pTooltip="Allocations">
                 <mat-icon style="color: #fff !important;" mat-list-icon>
-                    <i class="fa fa-database" aria-hidden="true"
+                    <i class="fa fa-tasks" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
                 <div fxFlex="10"></div>
                 <div class="sidenav-item">
                     <h5 class="lead">Allocations</h5>
                 </div>
-                <div class="sb-sidenav-collapse-arrow" *ngIf="menu_slider">
+                <!-- <div class="sb-sidenav-collapse-arrow" *ngIf="menu_slider">
                     <i *ngIf="!expand6" class="fa fa-chevron-down" aria-hidden="true"></i>
                     <i *ngIf="expand6" class="fa fa-chevron-up" aria-hidden="true"></i>
-                </div>
+                </div> -->
             </mat-list-item>
-            <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand6">
-                <div class="sub-menu">
-                    <mat-list-item routerLink="userflow/allocationexcel" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Excel Upload</h5>
-                        </div>
-                    </mat-list-item>
-                    <!-- <mat-list-item routerLink="userflow/allocationsingle" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Allocate Single (1 to 1)</h5>
-                        </div>
-                    </mat-list-item> -->
+            <mat-menu #menu3="matMenu">
+                <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand6">
+                    <div class="sub-menu">
+                        <mat-list-item routerLink="userflow/allocationexcel" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">Excel Upload</h5>
+                            </div>
+                        </mat-list-item>
+                        <!-- <mat-list-item routerLink="userflow/allocationsingle" routerLinkActive="active">
+                            <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div>
+                            <div class="sidenav-item">
+                                <h5 class="lead">Allocate Single (1 to 1)</h5>
+                            </div>
+                        </mat-list-item> -->
 
-                    <!-- <mat-list-item routerLink="userflow/withdrawsingle" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Withdraw Single (1 to 1)</h5>
-                        </div>
-                    </mat-list-item> -->
-                    <!-- <mat-list-item routerLink="userflow/withdrawexcel" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Withdraw Excel (upload)</h5>
-                        </div>
-                    </mat-list-item> -->
-                    <!-- <mat-list-item routerLink="userflow/reallowsingle" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Re-allocate Single (1 to 1)</h5>
-                        </div>
-                    </mat-list-item> -->
-                    <mat-list-item routerLink="userflow/reallowexcel" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Re-allocate</h5>
-                        </div>
-                    </mat-list-item>
-                    <mat-list-item routerLink="userflow/Dual_Temporary_allocation" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Dual/Temporary allocation</h5>
-                        </div>
-                    </mat-list-item>
-                </div>
-            </mat-nav-list>
-            <mat-list-item routerLink="Agent_Inbox" routerLinkActive="active">
-                <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                        aria-hidden="true"
+                        <!-- <mat-list-item routerLink="userflow/withdrawsingle" routerLinkActive="active">
+                            <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div>
+                            <div class="sidenav-item">
+                                <h5 class="lead">Withdraw Single (1 to 1)</h5>
+                            </div>
+                        </mat-list-item> -->
+                        <!-- <mat-list-item routerLink="userflow/withdrawexcel" routerLinkActive="active">
+                            <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div>
+                            <div class="sidenav-item">
+                                <h5 class="lead">Withdraw Excel (upload)</h5>
+                            </div>
+                        </mat-list-item> -->
+                        <!-- <mat-list-item routerLink="userflow/reallowsingle" routerLinkActive="active">
+                            <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div>
+                            <div class="sidenav-item">
+                                <h5 class="lead">Re-allocate Single (1 to 1)</h5>
+                            </div>
+                        </mat-list-item> -->
+                        <mat-list-item routerLink="userflow/reallowexcel" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">Re-allocate</h5>
+                            </div>
+                        </mat-list-item>
+                        <mat-list-item routerLink="userflow/Dual_Temporary_allocation" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">Dual/Temporary allocation</h5>
+                            </div>
+                        </mat-list-item>
+                    </div>
+                </mat-nav-list>
+            </mat-menu>
+
+
+            <mat-list-item routerLink="Agent_Inbox" routerLinkActive="active" pTooltip="Agent Inbox">
+                <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-inbox" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
                 <div fxFlex="10"></div>
                 <div class="sidenav-item">
                     <h5 class="lead">Agent Inbox</h5>
                 </div>
             </mat-list-item>
-            <mat-list-item routerLink="Agent_TO_DO_list" routerLinkActive="active">
-                <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                        aria-hidden="true"
+            <mat-list-item routerLink="Agent_TO_DO_list" routerLinkActive="active" pTooltip="Agent TO_DO List">
+                <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-table" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
                 <div fxFlex="10"></div>
                 <div class="sidenav-item">
-                    <h5 class="lead">Agent TO_DO LIst</h5>
+                    <h5 class="lead">Agent TO_DO List</h5>
                 </div>
             </mat-list-item>
-            <mat-list-item routerLinkActive="active" (click)="expand2 = !expand2">
+            <mat-list-item routerLinkActive="active" [matMenuTriggerFor]="menu5" pTooltip="Accounts">
                 <mat-icon style="color: #fff !important;" mat-list-icon>
-                    <i class="fa fa-database" aria-hidden="true"
+                    <i class="fa fa-list-alt" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
                 <div fxFlex="10"></div>
                 <div class="sidenav-item">
                     <h5 class="lead">Accounts</h5>
                 </div>
-                <div class="sb-sidenav-collapse-arrow" *ngIf="menu_slider">
+                <!-- <div class="sb-sidenav-collapse-arrow" *ngIf="menu_slider">
                     <i *ngIf="!expand2" class="fa fa-chevron-down" aria-hidden="true"></i>
                     <i *ngIf="expand2" class="fa fa-chevron-up" aria-hidden="true"></i>
-                </div>
+                </div> -->
             </mat-list-item>
-            <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand2">
-                <div class="sub-menu">
-                    <mat-list-item routerLink="accounts/accounts" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Worklist</h5>
-                        </div>
-                    </mat-list-item>
-                </div>
-            </mat-nav-list>
+            <mat-menu #menu5="matMenu">
+                <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand2">
+                    <div class="sub-menu">
+                        <mat-list-item routerLink="accounts/legal" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">Legal</h5>
+                            </div>
+                        </mat-list-item>
+                    </div>
 
-            <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand2">
-                <div class="sub-menu">
-                    <mat-list-item routerLink="accounts/legal" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Legal</h5>
-                        </div>
-                    </mat-list-item>
-                </div>
-            </mat-nav-list>
+                    <div class="sub-menu">
+                        <mat-list-item routerLink="accounts/authorization" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">Authorizations</h5>
+                            </div>
+                        </mat-list-item>
+                    </div>
 
-            <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand2">
-                <div class="sub-menu">
-                    <mat-list-item routerLink="accounts/authorization" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Authorizations</h5>
-                        </div>
-                    </mat-list-item>
-                </div>
-            </mat-nav-list>
-
-            <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand2">
-                <div class="sub-menu">
-                    <mat-list-item routerLink="accounts/view_authorization" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">view Authorizations</h5>
-                        </div>
-                    </mat-list-item>
-                </div>
-            </mat-nav-list>
+                    <div class="sub-menu">
+                        <mat-list-item routerLink="accounts/view_authorization" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">view Authorizations</h5>
+                            </div>
+                        </mat-list-item>
+                    </div>
+                </mat-nav-list>
+            </mat-menu>
 
 
 
 
-            <mat-list-item routerLinkActive="active" (click)="expand3 = !expand3">
+
+
+
+            <mat-list-item routerLinkActive="active" [matMenuTriggerFor]="menu6" pTooltip="User Details">
                 <mat-icon style="color: #fff !important;" mat-list-icon>
-                    <i class="fa fa-database" aria-hidden="true"
+                    <i class="fa fa-users" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
                 <div fxFlex="10"></div>
                 <div class="sidenav-item">
-                    <h5 class="lead">User Details</h5>
+                    <h5 class="lead">Users Details</h5>
                 </div>
-                <div class="sb-sidenav-collapse-arrow" *ngIf="menu_slider">
+                <!-- <div class="sb-sidenav-collapse-arrow" *ngIf="menu_slider">
                     <i *ngIf="!expand3" class="fa fa-chevron-down" aria-hidden="true"></i>
                     <i *ngIf="expand3" class="fa fa-chevron-up" aria-hidden="true"></i>
-                </div>
+                </div> -->
             </mat-list-item>
-            <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
-                <div class="sub-menu">
-                    <mat-list-item routerLink="user/createuser" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Customer 360</h5>
-                        </div>
-                    </mat-list-item>
-                </div>
-            </mat-nav-list>
+            <mat-menu #menu6="matMenu">
+                <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+                    <div class="sub-menu">
+                        <mat-list-item routerLink="user/createuser" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">Customer 360</h5>
+                            </div>
+                        </mat-list-item>
+                    </div>
+                    <div class="sub-menu">
+                        <mat-list-item routerLink="Configuration" routerLinkActive="active">
+                            <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
+                                    aria-hidden="true"
+                                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+                            <div fxFlex="10"></div> -->
+                            <div class="sidenav-item">
+                                <h5 class="lead">Configuration Screen</h5>
+                            </div>
+                        </mat-list-item>
+                    </div>
+                </mat-nav-list>
+            </mat-menu>
+
 
 
 
@@ -902,19 +914,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list> -->
-            <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
-                <div class="sub-menu">
-                    <mat-list-item routerLink="Configuration" routerLinkActive="active">
-                        <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
-                                aria-hidden="true"
-                                style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
-                        <div fxFlex="10"></div>
-                        <div class="sidenav-item">
-                            <h5 class="lead">Configuration Screen</h5>
-                        </div>
-                    </mat-list-item>
-                </div>
-            </mat-nav-list>
+
 
 
 

@@ -11,17 +11,17 @@ import { BookType } from 'xlsx/types';
   styleUrls: ['./admin-sidebar.component.css']
 })
 export class AdminSidebarComponent implements OnInit {
-  expanded: boolean = false;
-  expand: boolean = false;
-  expand1: boolean = false;
-  expand2: boolean = false;
-  expand3: boolean = false;
-  expand4: boolean = false;
-  expand5: boolean = false;
-  expand6: boolean = false;
-  expand7: boolean = false;
-  expand8: boolean = false;
-  menu_slider: boolean = false;
+  expanded: boolean = true;
+  expand: boolean = true;
+  expand1: boolean = true;
+  expand2: boolean = true;
+  expand3: boolean = true;
+  expand4: boolean = true;
+  expand5: boolean = true;
+  expand6: boolean = true;
+  expand7: boolean = true;
+  expand8: boolean = true;
+  menu_slider: boolean = true;
   constructor(
     @Inject(SESSION_STORAGE) private storage: StorageService,
     private router: Router,

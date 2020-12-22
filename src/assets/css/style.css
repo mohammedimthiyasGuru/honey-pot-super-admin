@@ -1,9 +1,11 @@
 .btn-primary {
-    color: #fff;
-    background-color: #0e69dd;
-    border-color: #0e69dd;
+    color: #000;
+    background-color: #ffffff7d;
+    border-color: #98bef73d;
     font-size: 14px;
     margin-right: 10px;
+    font-weight: 600 !important;
+    box-shadow: 0px 0px 3px 1px #74a6f7;
 }
 :host::ng-deep .ui-dropdown {
     width: 100%;
@@ -61,8 +63,9 @@
     box-shadow: none !important;
 }
 .thhead th{
-    color: #ffffff;
-    background: #0e69dd;
+    color: #000000 !important;
+    background: linear-gradient(90deg, rgba(109,185,250,1) 0%, rgba(96,151,241,1) 100%);
+    padding: 2px 3px;
 }
 .tdrow {
     display: table-row;
@@ -73,13 +76,13 @@
     cursor: pointer;
 }
 .tdrow td {
-    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
     font-size: 12px;
-    color: #666666;
+    color: #000;
     line-height: 1.2;
     font-weight: unset !important;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border-bottom: 1px solid #f2f2f2;
 }
 :host::ng-deep .ui-table {
@@ -103,7 +106,7 @@
 
 :host::ng-deep  .ui-table .ui-table-thead > tr > th {
     padding: 8px 8px !important;
-    color: #ffffff !important;
+    color: #000000 !important;
     background-color: #0A2440 !important;
 }
 /* table */
@@ -288,4 +291,20 @@ input {
     font-weight: 500;
     text-decoration: underline;
     cursor: pointer;
+}
+.tdrow:hover {
+    background-color: #74bee2 !important;
+    font-weight: 600;
+}
+.mat-list-item {
+    color: #fff !important;
+}
+:host::ng-deep .ui-tooltip .ui-tooltip-text {
+    font-size: 10px !important;
+}
+:host::ng-deep .side-men .cdk-overlay-pane {
+    top: 50px !important;
+    left: 41px !important;
+    height: 100vh !important;
+    background: #20353f !important;   
 }

@@ -15,8 +15,8 @@
     position: fixed;
     top: 0px;
     z-index: 9;
-    background: rgb(14 105 221);
-;
+    background: #20353f;
+    border-bottom: 4px solid #EF6C00;
 }
 
 .fa {
@@ -28,7 +28,7 @@
 }
 
 .logo-img {
-    padding-left: 55px;
+    /* padding-left: 55px; */
 }
 .bage {
     position: absolute;

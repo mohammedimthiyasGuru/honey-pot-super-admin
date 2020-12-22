@@ -5,7 +5,7 @@
     border: 1px solid #555;
 }
 :host::ng-deep .mat-drawer-content{
-    background-color:transparent !important;
+    /* background: #8196c282; */
 }
 
 :host::ng-deep .mat-drawer-container{

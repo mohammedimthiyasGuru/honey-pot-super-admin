@@ -125,3 +125,7 @@ overflow-x: scroll;
 :host::ng-deep  .pi-chevron-left:before {
   font-size: 10px;
 }
+:host::ng-deep .ui-clickable {
+  padding: 0px 3px !important;
+  display: none;
+}

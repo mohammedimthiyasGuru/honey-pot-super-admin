@@ -6,7 +6,7 @@
 }
 
 .side {
-    width: 48px;
+    width: 39px;
     transition: all 0.5s;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .mat-drawer {
-background-color: rgb(63 78 99);
+    background-color: rgb(32 53 63);
 }
 
 .active {
@@ -51,7 +51,7 @@ background-color: rgb(63 78 99);
     font-family: 'Roboto', sans-serif !important;
 }
 :host::ng-deep  .menuslider .side{
-    width: 220px !important;
+    width: 39px !important;
     transition: all 0.5s;
 }
 
@@ -96,4 +96,13 @@ button{
 .mat-menu-panel {
     background: #313131;
     margin-left: 38px;
+}
+:host::ng-deep .mat-menu-content:not(:empty) {
+    background: #545454 !important;
+}
+:host::ng-deep .side-men .cdk-overlay-pane {
+    top: 50px !important;
+    left: 41px !important;
+    height: 100vh !important;
+    background: #20353f !important;   
 }

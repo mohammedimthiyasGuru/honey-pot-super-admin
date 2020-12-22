@@ -5,22 +5,40 @@
 }
 
 .bg-c-blue {
-    background: linear-gradient(45deg,#4099ff,#73b4ff);
+    background: #ffeaee;
+    border-bottom: 3px solid #f3133e !important;
+}
+.bg-c-blue .op i {
+    background: #f3133e !important;
 }
 
 .bg-c-green {
-    background: linear-gradient(45deg,#2ed8b6,#59e0c5);
-}
+    background: #e8e5f6;
+    border-bottom: 3px solid #519051 !important;
 
+}
+.bg-c-green .op i {
+    background: #519051 !important;
+}
 .bg-c-yellow {
-    background: linear-gradient(45deg,#FFB64D,#ffcb80);
-}
+    background: #fcffcc;
+    border-bottom: 3px solid #908c51 !important;
 
+}
+.bg-c-yellow .op i {
+    background: #908c51 !important;
+}
 .bg-c-pink {
-    background: linear-gradient(45deg,#FF5370,#ff869a);
+    background: #f3e5f6;
+    border-bottom: 3px solid #855190 !important;
+
 }
-
-
+.bg-c-pink .op i {
+    background: #855190 !important;
+}
+.card .op i:hover{
+    background-color: #696969 !important;
+}
 .card {
     border-radius: 5px;
     -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
@@ -29,6 +47,8 @@
     margin-bottom: 30px;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+    box-shadow: 0px 2px 5px 0px #777;
+    height: 125px;
 }
 
 .card .card-block {
@@ -58,12 +78,12 @@
     top: 0px;
     z-index: 9;
     background-color: #154476;
-    height: 75px;
+    height: 50px;
     width: 100%;
 }
 .logo-img {
     padding-left: 55px;
-    margin-top: 12px;
+    /* margin-top: 12px; */
 }
 :host::ng-deep  .mat-icon-button {
     padding: 0;
@@ -73,7 +93,7 @@
     flex-shrink: 0;
     line-height: 40px;
     border-radius: 50%;
-    margin-top: 15px;
+    margin-top: 3px;
 }
 .card-box-i img {
     width: 30px;
@@ -257,3 +277,9 @@ padding: 10px 10px 10px 10px;
     background-color: rgba(0,0,0,.5);
     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 } */
+.op i{
+    margin: 2px;
+    font-size: 16px;
+    padding: 4px;
+    background: #F44336;
+}
