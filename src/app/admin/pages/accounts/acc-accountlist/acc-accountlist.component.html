@@ -3,13 +3,13 @@
     <div class="col-md-12">
       <h4 class="title">Worklist</h4>
       <i class="fa fa-download" aria-hidden="true"
-        style="color: #717c88;float: right;margin-top: -43px;margin-right: 6px;padding: 6px;background: #eee;border-radius: 3px;"></i>
+        style="color: #717c88;float: right;margin-top: -43px;margin-right: 6px;padding: 6px;background: #d0d0d0;border-radius: 3px;"></i>
 
       <i class="fa fa-download" aria-hidden="true"
-        style="color: #717c88;float: right;margin-top: -43px;margin-right: 6px;padding: 6px;background: #eee;border-radius: 3px;"></i>
+        style="color: #717c88;float: right;margin-top: -43px;margin-right: 6px;padding: 6px;background: #d0d0d0;border-radius: 3px;"></i>
 
       <i class="fa fa-download" aria-hidden="true"
-        style="color: #717c88;float: right;margin-top: -43px;margin-right: 6px;padding: 6px;background: #eee;border-radius: 3px;"></i>
+        style="color: #717c88;float: right;margin-top: -43px;margin-right: 6px;padding: 6px;background: #d0d0d0;border-radius: 3px;"></i>
 
       <!-- <div class="search-hero">
       <input class="form-control" type="text" name="search2" style="font-family: FontAwesome;" [(ngModel)]="searchQR"
@@ -28,19 +28,19 @@
       <div class="p-col-12 p-md-4">
         <div class="p-inputgroup">
           <i class="fa fa-search" aria-hidden="true"
-            style="color: #717c88;margin-top: -43px;margin-right: 6px;padding: 6px;background: #eee;border-radius: 3px;"></i>
+            style="color: #717c88;margin-top: -43px;margin-right: 6px;padding: 6px;background: #d0d0d0;border-radius: 3px;"></i>
 
           <i class="fa fa-sort" aria-hidden="true"
-            style="color: #717c88;margin-top: -43px;margin-right: 6px;padding: 6px;background: #eee;border-radius: 3px;"></i>
+            style="color: #717c88;margin-top: -43px;margin-right: 6px;padding: 6px;background: #d0d0d0;border-radius: 3px;"></i>
 
           <select style="color: #fff;padding: 2px 2px;background: #173677;;border: none;">
             <option>Account No</option>
             <option>Customer No</option>
             <option>Name</option>
           </select>
-          <input type="text" pInputText placeholder="Search" style="width: auto;border: none;border-radius: none;">
+          <input type="text" pInputText placeholder="Search" style="width: auto;border-radius: none;">
           <button type="button" pButton pRipple label=""
-            style="width: auto;padding: 1px 3px;font-size: 11px; background-color: #173677 !important;border: 1px solid #173677 !important;">
+            style="width: auto;padding: 1px 3px;font-size: 12px; background-color: #173677 !important;border: 1px solid #173677 !important;">
             <i class="pi pi-search"></i></button>
 
         </div>
@@ -91,8 +91,8 @@
       </ng-template>
       <ng-template pTemplate="body" let-item let-i="rowIndex">
         <tr style="text-align: center;" *ngIf="i == 0" class="thhead">
-          <th style="text-align: center;width: 40px;font-size: 10px;">S.No</th>
-          <th *ngFor="let val of item" style="font-size: 10px;">
+          <th style="text-align: center;width: 40px;font-size: 12px;">S.No</th>
+          <th *ngFor="let val of item" style="font-size: 12px;">
             {{val}}
           </th>
         </tr>
@@ -100,7 +100,7 @@
 
           <ng-container style="text-align: center;" *ngIf="i > 0">
             <td style="text-align: center;width: 60px;">{{i}}</td>
-            <td (click)="showPositionDialog()" *ngFor="let val of item" style="font-size: 10px;">
+            <td (click)="showPositionDialog()" *ngFor="let val of item" style="font-size: 12px;">
               {{val}}
             </td>
           </ng-container>
@@ -136,8 +136,8 @@
           class="img">
       </div>
       <div class="col-md-10 col-xs-12 col-sm-6 col-lg-10">
-        <h2 style="font-size: 13px;margin-bottom: 0px;line-height: 20px;">John Doe</h2>
-        <p style="font-size: 11px;color: #d0d0d0">Acc.No: 1.26472587459</p>
+        <h2 style="font-size: 12px;margin-bottom: 0px;line-height: 20px;">John Doe</h2>
+        <p style="font-size: 12px;color: #d0d0d0">Acc.No: 1.26472587459</p>
         <a class="pr-v" style="margin-right: 0px;" (click)="cus360()">View 360&#176;</a>
       </div>
     </div>

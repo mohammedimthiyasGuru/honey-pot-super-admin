@@ -1,10 +1,10 @@
 <mat-drawer-container class="example-container side-men" [ngClass]="{'menuslider' : menu_slider}">
     <mat-drawer class="side" mode="side" opened (mouseover)="menuslide()" (mouseout)="menuslide()">
         <mat-nav-list>
-            <mat-list-item  routerLink="dashboard">
+            <mat-list-item  routerLink="dashboard" (click)="act()" >
                 <mat-icon style="color: #fff;"> notes</mat-icon>
             </mat-list-item>
-            <mat-list-item routerLink="dashboard" routerLinkActive="active">
+            <mat-list-item routerLink="dashboard" routerLinkActive="active" (click)="act()">
                 <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-tachometer" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
                 <div fxFlex="10"></div>
@@ -36,7 +36,7 @@
                 </div>
             </mat-list-item> -->
 
-            <mat-list-item routerLinkActive="active" [matMenuTriggerFor]="menu" pTooltip="Client Master">
+            <mat-list-item routerLinkActive="active" [matMenuTriggerFor]="menu" pTooltip="Client Master" (click)="act1()" [ngClass]="{'active' : !expand1}">
                 <mat-icon style="color: #fff !important;" mat-list-icon>
                     <i class="fa fa-university" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
@@ -50,7 +50,7 @@
                 </div> -->
             </mat-list-item>
             <mat-menu #menu="matMenu">
-                <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand8">
+                <mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" >
                     <div class="sub-menu">
                         <mat-list-item routerLink="client/Create_client_type" routerLinkActive="active">
                             <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -157,7 +157,7 @@
                 </div>
             </mat-list-item>  -->
 
-            <mat-list-item routerLinkActive="active" [matMenuTriggerFor]="menu1" pTooltip="User Master">
+            <mat-list-item routerLinkActive="active" [matMenuTriggerFor]="menu1" pTooltip="User Master" (click)="act2()" [ngClass]="{'active' : !expand2}">
                 <mat-icon style="color: #fff !important;" mat-list-icon>
                     <i class="fa fa-user" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
@@ -171,7 +171,7 @@
                 </div> -->
             </mat-list-item>
             <mat-menu #menu1="matMenu">
-                <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand7">
+                <mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;">
                     <div class="sub-menu">
                         <mat-list-item routerLink="user/user_role" routerLinkActive="active">
                             <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -225,7 +225,7 @@
             </mat-list-item> -->
 
 
-            <mat-list-item routerLinkActive="active" [matMenuTriggerFor]="menu2" pTooltip="Master">
+            <mat-list-item routerLinkActive="active" [matMenuTriggerFor]="menu2" pTooltip="Master" (click)="act3()" [ngClass]="{'active' : !expand3}">
                 <mat-icon style="color: #fff !important;" mat-list-icon>
                     <i class="fa fa-database" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
@@ -239,7 +239,7 @@
                 </div> -->
             </mat-list-item>
             <mat-menu #menu2="matMenu">
-                <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand1">
+                <mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" >
                     <div class="sub-menu">
                         <mat-list-item routerLink="fieldset" routerLinkActive="active">
                             <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -265,7 +265,7 @@
 
 
 
-            <mat-list-item routerLinkActive="active" [matMenuTriggerFor]="menu3" pTooltip="Allocations">
+            <mat-list-item routerLinkActive="active" [matMenuTriggerFor]="menu3" pTooltip="Allocations" (click)="act4()" [ngClass]="{'active' : !expand4}">
                 <mat-icon style="color: #fff !important;" mat-list-icon>
                     <i class="fa fa-tasks" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
@@ -279,7 +279,7 @@
                 </div> -->
             </mat-list-item>
             <mat-menu #menu3="matMenu">
-                <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand6">
+                <mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" >
                     <div class="sub-menu">
                         <mat-list-item routerLink="userflow/allocationexcel" routerLinkActive="active">
                             <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -350,7 +350,7 @@
             </mat-menu>
 
 
-            <mat-list-item routerLink="Agent_Inbox" routerLinkActive="active" pTooltip="Agent Inbox">
+            <mat-list-item routerLink="Agent_Inbox" routerLinkActive="active" pTooltip="Agent Inbox" (click)="act()">
                 <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-inbox" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
                 <div fxFlex="10"></div>
@@ -358,7 +358,7 @@
                     <h5 class="lead">Agent Inbox</h5>
                 </div>
             </mat-list-item>
-            <mat-list-item routerLink="Agent_TO_DO_list" routerLinkActive="active" pTooltip="Agent TO_DO List">
+            <mat-list-item routerLink="Agent_TO_DO_list" routerLinkActive="active" pTooltip="Agent TO_DO List" (click)="act()">
                 <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-table" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
                 <div fxFlex="10"></div>
@@ -366,7 +366,7 @@
                     <h5 class="lead">Agent TO_DO List</h5>
                 </div>
             </mat-list-item>
-            <mat-list-item routerLinkActive="active" [matMenuTriggerFor]="menu5" pTooltip="Accounts">
+            <mat-list-item routerLinkActive="active" [matMenuTriggerFor]="menu5" pTooltip="Accounts" (click)="act6()" [ngClass]="{'active' : !expand6}">
                 <mat-icon style="color: #fff !important;" mat-list-icon>
                     <i class="fa fa-list-alt" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
@@ -380,7 +380,7 @@
                 </div> -->
             </mat-list-item>
             <mat-menu #menu5="matMenu">
-                <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand2">
+                <mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand2">
                     <div class="sub-menu">
                         <mat-list-item routerLink="accounts/legal" routerLinkActive="active">
                             <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -425,7 +425,7 @@
 
 
 
-            <mat-list-item routerLinkActive="active" [matMenuTriggerFor]="menu6" pTooltip="User Details">
+            <mat-list-item routerLinkActive="active" [matMenuTriggerFor]="menu6" pTooltip="User Details" (click)="act7()" [ngClass]="{'active' : !expand7}">
                 <mat-icon style="color: #fff !important;" mat-list-icon>
                     <i class="fa fa-users" aria-hidden="true"
                         style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
@@ -439,7 +439,7 @@
                 </div> -->
             </mat-list-item>
             <mat-menu #menu6="matMenu">
-                <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+                <mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
                     <div class="sub-menu">
                         <mat-list-item routerLink="user/createuser" routerLinkActive="active">
                             <!-- <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -468,7 +468,7 @@
 
 
 
-            <!-- <mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+            <!-- <mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
     <div class="sub-menu">
         <mat-list-item routerLink="user/actioncode" routerLinkActive="active">
             <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -481,7 +481,7 @@
         </mat-list-item>
     </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/addnewaddres" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -494,7 +494,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/addresdetails" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -507,7 +507,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/adhoc" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -520,7 +520,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/allocationhistroy" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -533,7 +533,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/customerdetails" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -546,7 +546,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/customeraccounts" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -559,7 +559,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/documentretrieval" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -572,7 +572,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/excelexport" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -585,7 +585,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/followupsave" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -598,7 +598,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/followuptake" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -611,7 +611,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/followuptake1" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -624,7 +624,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/followuptrails" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -637,7 +637,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/guarantordetails" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -650,7 +650,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/loandetails" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -663,7 +663,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/logoffuser" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -676,7 +676,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/overduedetails" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -689,7 +689,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/overduedetails1" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -702,7 +702,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/paymentsdetails" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -715,7 +715,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/paymentsdetails1" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -728,7 +728,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/phonedetails" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -741,7 +741,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/referaccount" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -754,7 +754,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/reports" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -767,7 +767,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/rpodetails" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -780,7 +780,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/screenaccess" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -793,7 +793,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/screenaccess1" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -806,7 +806,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/screenaccess2" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -819,7 +819,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/screenaccess3" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -832,7 +832,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/screencontrol" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -845,7 +845,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/screencontrol1" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -858,7 +858,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/screen1" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -871,7 +871,7 @@
       </mat-list-item>
   </div>
 </mat-nav-list>
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/screen2" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -886,7 +886,7 @@
   </div>
 </mat-nav-list>
 
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/screen3" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"
@@ -901,7 +901,7 @@
 </mat-nav-list>
 
 
-<mat-nav-list style="background: rgb(84 84 84);padding-left: 5px;" *ngIf="expand3">
+<mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;" *ngIf="expand3">
   <div class="sub-menu">
       <mat-list-item routerLink="user/userdetails" routerLinkActive="active">
           <mat-icon style="color: #fff !important;" mat-list-icon><i class="fa fa-globe"

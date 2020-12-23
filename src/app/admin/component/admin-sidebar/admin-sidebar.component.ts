@@ -46,4 +46,95 @@ export class AdminSidebarComponent implements OnInit {
   menuslide() {
     this.menu_slider = !this.menu_slider;
   }
+  act() {
+    this.expand1 = true;
+    this.expand2 = true;
+    this.expand3 = true;
+    this.expand4 = true;
+    this.expand5 = true;
+    this.expand6 = true;
+    this.expand7 = true;
+    this.expand8 = true;
+  }
+  act1() {
+    this.expand1 = false;
+    this.expand2 = true;
+    this.expand3 = true;
+    this.expand4 = true;
+    this.expand5 = true;
+    this.expand6 = true;
+    this.expand7 = true;
+    this.expand8 = true;
+  }
+  act2() {
+    this.expand2 = false;
+    this.expand1 = true;
+    this.expand3 = true;
+    this.expand4 = true;
+    this.expand5 = true;
+    this.expand6 = true;
+    this.expand7 = true;
+    this.expand8 = true;
+  }
+  act3() {
+    this.expand3 = false;
+    this.expand2 = true;
+    this.expand1 = true;
+    this.expand4 = true;
+    this.expand5 = true;
+    this.expand6 = true;
+    this.expand7 = true;
+    this.expand8 = true;
+  }
+  act4() {
+    this.expand4 = false;
+    this.expand2 = true;
+    this.expand3 = true;
+    this.expand1 = true;
+    this.expand5 = true;
+    this.expand6 = true;
+    this.expand7 = true;
+    this.expand8 = true;
+  }
+  act5() {
+    this.expand5 = false;
+    this.expand2 = true;
+    this.expand3 = true;
+    this.expand4 = true;
+    this.expand1 = true;
+    this.expand6 = true;
+    this.expand7 = true;
+    this.expand8 = true;
+  }
+  act6() {
+    this.expand6 = false;
+    this.expand2 = true;
+    this.expand3 = true;
+    this.expand4 = true;
+    this.expand5 = true;
+    this.expand1 = true;
+    this.expand7 = true;
+    this.expand8 = true;
+  }
+  act7() {
+    this.expand7 = false;
+    this.expand2 = true;
+    this.expand3 = true;
+    this.expand4 = true;
+    this.expand5 = true;
+    this.expand6 = true;
+    this.expand1 = true;
+    this.expand8 = true;
+  }
+  act8() {
+    this.expand8 = false;
+    this.expand2 = true;
+    this.expand3 = true;
+    this.expand4 = true;
+    this.expand5 = true;
+    this.expand6 = true;
+    this.expand7 = true;
+    this.expand1 = true;
+  }
+ 
 }

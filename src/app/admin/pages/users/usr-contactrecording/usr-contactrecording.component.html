@@ -13,10 +13,16 @@
           <div class="ht-t">
             <h2 style="font-size: 16px;margin-bottom: 0px;line-height: 20px;margin-top: 6px;font-weight: 900;color: #df3e3e;">John Doe
             </h2>
-            <p style="font-size: 11px;margin-bottom: 6px;color: #fff;">Male, 30 Years old, Indian.</p>
+            <p style="font-size: 12px;margin-bottom: 6px;color: #fff;">Male, 30 Years old, Indian.</p>
           </div>
         </div>
-        <button style="width: 100%;background-color: #0a4078;border-radius: 0px;height: 28px;" mat-icon-button
+        <select style="width: 100%;background-color: #ef6c00;;border-radius: 2px;height: 28px;border:none;color:#fff" >
+          <option>Choose Account</option>
+          <option>Home</option>
+          <option>Person</option>
+          <option>Credit Card</option>
+        </select>
+        <!-- <button style="width: 100%;background-color: #ef6c00;;border-radius: 0px;height: 28px;" mat-icon-button
           [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
           <p style="font-size:12px;color: #fff;line-height: 10px;"> Choose Account<mat-icon
               style="font-size:15px;position: relative;top:3px">arrow_downward</mat-icon>
@@ -36,25 +42,21 @@
             <mat-icon style="font-size:18px;">credit_card</mat-icon>
             <span>985458012582825965</span>
           </button>
-        </mat-menu>
+        </mat-menu> -->
       </div>
 
       <div class="col-md-9" style="padding-left: 0px;padding-right: 0px;">
-        <table style="width: 100%;height: 96px" class="table_wrapper" #target>
-          <tr style="text-align: center;font-size: 10px;">
-            <th style="padding: 10px; background: #0a4078; color:white; font-size: 12px;">Acc No</th>
-            <th style="padding: 10px; background: #0a4078; color:white;font-size: 12px;">Customer ID</th>
-            <th style="padding: 10px;background: #0a4078; color:white; font-size: 12px;">Agreement ID</th>
-            <th style="padding: 10px;background: #0a4078; color:white; font-size: 12px;">No of Acc</th>
-            <th style="padding: 10px;background: #0a4078; color:white; font-size: 12px;">Product</th>
-            <th style="padding: 10px;background: #0a4078; color:white; font-size: 12px;">Legal Status</th>
-            <th style="padding: 10px;background: #0a4078; color:white; font-size: 12px;">Principle Amt.</th>
-            <th style="padding: 10px;background: #0a4078; color:white; font-size: 12px;">Interest & Other Amt.</th>
-            <th style="padding: 10px;background: #0a4078; color:white; font-size: 12px;">Total Outstanding Amt.</th>
-            <th style="padding: 10px;background: #0a4078; color:white; font-size: 12px;">Miinimum Payment Amt.</th>
-            <th style="padding: 10px;background: #0a4078; color:white; font-size: 12px;">Total Overdue Amt.</th>
+        <table style="width: 100%;height: 96px" class="table_wrapper inpo" #target>
+          <tr style="font-size: 12px;">
+            <th style="padding: 10px; background: #20353f; color:white; font-size: 12px;">Acc No</th>
+            <th style="padding: 10px; background: #20353f; color:white;font-size: 12px;">Customer ID</th>
+            <th style="padding: 10px;background: #20353f; color:white; font-size: 12px;">Agreement ID</th>
+            <th style="padding: 10px;background: #20353f; color:white; font-size: 12px;">No of Acc</th>
+            <th style="padding: 10px;background: #20353f; color:white; font-size: 12px;">Product</th>
+            <th style="padding: 10px;background: #20353f; color:white; font-size: 12px;">Legal Status</th>
+            <th style="padding: 10px;background: #20353f; color:white; font-size: 12px;">Principle Amt.</th>
           </tr>
-          <tr style="text-align: center;font-size: 12px;">
+          <tr style="font-size: 12px;">
             <td style="padding: 10px;">985458012582825965</td>
             <td style="padding: 10px;">985458012582825965</td>
             <td style="padding: 10px;">QWERTYUIOP</td>
@@ -62,10 +64,21 @@
             <td style="padding: 10px;">Auto Loan</td>
             <td style="padding: 10px;">NA</td>
             <td style="padding: 10px;">5,000.00</td>
-            <td style="padding: 10px;">5,00,000.00</td>
+          </tr>
+          <tr>
+            <th style="padding: 10px;background: #20353f; color:white; font-size: 12px;">Interest & Other Amt.</th>
+            <th style="padding: 10px;background: #20353f; color:white; font-size: 12px;">Total Outstanding Amt.</th>
+            <th style="padding: 10px;background: #20353f; color:white; font-size: 12px;">Miinimum Payment Amt.</th>
+            <th style="padding: 10px;background: #20353f; color:white; font-size: 12px;">Total Overdue Amt.</th>
+        
+           
+          </tr>
+          <tr>
+           <td style="padding: 10px;">5,00,000.00</td>
             <td style="padding: 10px;">20,000.00</td>
             <td style="padding: 10px;">15,000.00</td>
             <td style="padding: 10px;">1,00,000.00</td>
+         
           </tr>
         </table>
       </div>
@@ -80,7 +93,7 @@
     <mat-tab-group>
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Account Info">account_balance</mat-icon>
+          <mat-icon pTooltip="Account Info">account_balance</mat-icon>
         </ng-template>
         <br>
         <div class="row" style="margin-left: 0px;margin-right: 0px;">
@@ -99,7 +112,7 @@
                   <h4 class="title-f">Account Information</h4>
                 </div>
                 <div class="col-md-1">
-                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:blue"
+                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:#ef6c00"
                       (click)="showPositionDialog()"></i></span>
                 </div>
               </div>
@@ -188,7 +201,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                   <h4 class="title-f">Customer Information</h4>
                 </div>
                 <div class="col-md-1">
-                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:blue"
+                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:#ef6c00"
                       (click)="showPositionDialog()"></i></span>
                 </div>
               </div>
@@ -276,7 +289,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                   <h4 class="title-f">Followup Status</h4>
                 </div>
                 <div class="col-md-1">
-                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:blue"
+                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:#ef6c00"
                       (click)="showPositionDialog()"></i></span>
                 </div>
               </div>
@@ -364,7 +377,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                   <h4 class="title-f">Overdue Details</h4>
                 </div>
                 <div class="col-md-1">
-                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:blue"
+                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:#ef6c00"
                       (click)="showPositionDialog()"></i></span>
                 </div>
               </div>
@@ -445,7 +458,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                   <h4 class="title-f">Contact Information</h4>
                 </div>
                 <div class="col-md-2">
-                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:blue"
+                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:#ef6c00"
                       (click)="showPositionDialog()"></i></span>
                 </div>
               </div>
@@ -514,7 +527,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                   </h4>
                 </div>
                 <div class="col-md-2">
-                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:blue"
+                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:#ef6c00"
                       (click)="showPositionDialog()"></i></span>
                 </div>
               </div>
@@ -547,7 +560,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                   </h4>
                 </div>
                 <div class="col-md-2">
-                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:blue"
+                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:#ef6c00"
                       (click)="showPositionDialog()"></i></span>
                 </div>
               </div>
@@ -581,7 +594,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                   </h4>
                 </div>
                 <div class="col-md-2">
-                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:blue"
+                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:#ef6c00"
                       (click)="showPositionDialog()"></i></span>
                 </div>
               </div>
@@ -629,7 +642,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                 <h4 class="title-f">Overdue Details</h4>
               </div>
               <div class="col-md-1">
-                <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:blue"
+                <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:#ef6c00"
                     (click)="showPositionDialog()"></i></span>
               </div>
             </div>
@@ -658,7 +671,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                     <th>Review Time</th>
                     <th>Created by</th>
                   </tr>
-                  <tr style="text-align: center;font-size: 10px;">
+                  <tr style="text-align: center;font-size: 12px;">
                     <td>NA</td>
                     <td>NA</td>
                     <td>NA</td>
@@ -686,7 +699,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                 <h4 class="title-f">Multiple Account Information</h4>
               </div>
               <div class="col-md-1">
-                <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:blue"
+                <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:#ef6c00"
                     (click)="showPositionDialog()"></i></span>
               </div>
             </div>
@@ -739,7 +752,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                   </h4>
                 </div>
                 <div class="col-md-2">
-                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:blue"
+                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:#ef6c00"
                       (click)="showPositionDialog()"></i></span>
                 </div>
               </div>
@@ -782,7 +795,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                   </h4>
                 </div>
                 <div class="col-md-2">
-                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:blue"
+                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:#ef6c00"
                       (click)="showPositionDialog()"></i></span>
                 </div>
               </div>
@@ -823,7 +836,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                   </h4>
                 </div>
                 <div class="col-md-2">
-                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:blue"
+                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:#ef6c00"
                       (click)="showPositionDialog()"></i></span>
                 </div>
               </div>
@@ -860,7 +873,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                   xxxxx
                 </div>
                 <div class="col-md-6 labels">
-                  <span style="color: #3F51B5;font-size: 11px;text-decoration: underline;cursor: pointer;"
+                  <span style="color: #3F51B5;font-size: 12px;text-decoration: underline;cursor: pointer;"
                     (click)="show14()">viewAllocation history</span>
                 </div>
               </div>
@@ -880,7 +893,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                   </h4>
                 </div>
                 <div class="col-md-2">
-                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:blue"
+                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:#ef6c00"
                       (click)="showPositionDialog()"></i></span>
                 </div>
               </div>
@@ -954,7 +967,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                   </h4>
                 </div>
                 <div class="col-md-1">
-                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:blue"
+                  <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:#ef6c00"
                       (click)="showPositionDialog()"></i></span>
                 </div>
               </div>
@@ -1131,7 +1144,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                 <h4 class="title-f">Skip Tracing Details</h4>
               </div>
               <div class="col-md-1">
-                <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:blue"
+                <span><i class="fa fa-plus-circle" style="font-size:20px !important;color:#ef6c00"
                     (click)="showPositionDialog()"></i></span>
               </div>
             </div>
@@ -1262,7 +1275,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
             </div>
             <div class="col-md-12">
               <h4 class="title-f">Delinquency String <span
-                  style="color: #3F51B5;font-size: 11px;text-decoration: underline;cursor: pointer;"
+                  style="color: #3F51B5;font-size: 12px;text-decoration: underline;cursor: pointer;"
                   (click)="del = !del">view
                   Detail</span></h4>
               <div class="doc-table" *ngIf="del">
@@ -1336,63 +1349,63 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Customer Info">account_circle</mat-icon>
+          <mat-icon pTooltip="Customer Info">account_circle</mat-icon>
         </ng-template>
         <br>
         <app-usr-customerdetails></app-usr-customerdetails>
       </mat-tab>
       <!-- <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Guarantor / Reference Datails">collections_bookmark</mat-icon>
+          <mat-icon pTooltip="Guarantor / Reference Datails">collections_bookmark</mat-icon>
         </ng-template>
         <br>
         <app-usr-gurantordetails></app-usr-gurantordetails>
       </mat-tab> -->
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Asset Details">extension</mat-icon>
+          <mat-icon pTooltip="Asset Details">extension</mat-icon>
         </ng-template>
         <br>
         <app-usr-asset-detail></app-usr-asset-detail>
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Collateral Details">attach_money</mat-icon>
+          <mat-icon pTooltip="Collateral Details">attach_money</mat-icon>
         </ng-template>
         <br>
         <app-usr-collateraldetailss></app-usr-collateraldetailss>
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Financial Details">payment</mat-icon>
+          <mat-icon pTooltip="Financial Details">payment</mat-icon>
         </ng-template>
         <br>
         <app-usr-paymentdetails></app-usr-paymentdetails>
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Statcard">card_membership</mat-icon>
+          <mat-icon pTooltip="Statcard">card_membership</mat-icon>
         </ng-template>
         <br>
         <app-usr-statcard></app-usr-statcard>
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Repayment Schedule">timeline</mat-icon>
+          <mat-icon pTooltip="Repayment Schedule">timeline</mat-icon>
         </ng-template>
         <br>
         <app-usr-repayment></app-usr-repayment>
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Bounces">assignment_return</mat-icon>
+          <mat-icon pTooltip="Bounces">assignment_return</mat-icon>
         </ng-template>
         <br>
         <app-usr-bounces></app-usr-bounces>
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Statement">file_copy</mat-icon>
+          <mat-icon pTooltip="Statement">file_copy</mat-icon>
         </ng-template>
         <br>
         <app-usr-payment-history></app-usr-payment-history>
@@ -1400,105 +1413,105 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
 
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Foreclosure">timeline</mat-icon>
+          <mat-icon pTooltip="Foreclosure">timeline</mat-icon>
         </ng-template>
         <br>
         <app-usr-foreclosure></app-usr-foreclosure>
       </mat-tab>
       <!-- <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Allocation history reports">history</mat-icon>
+          <mat-icon pTooltip="Allocation history reports">history</mat-icon>
         </ng-template>
         <br>
         <app-usr-allocationhistory></app-usr-allocationhistory>
       </mat-tab> -->
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Customer Available Accounts">link</mat-icon>
+          <mat-icon pTooltip="Customer Available Accounts">link</mat-icon>
         </ng-template>
         <br>
         <app-usr-customerleaccount></app-usr-customerleaccount>
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="special follow up trails">swap_horiz</mat-icon>
+          <mat-icon pTooltip="special follow up trails">swap_horiz</mat-icon>
         </ng-template>
         <br>
         <app-usr-special-followup></app-usr-special-followup>
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Follow up trails">swap_horiz</mat-icon>
+          <mat-icon pTooltip="Follow up trails">swap_horiz</mat-icon>
         </ng-template>
         <br>
         <app-usr-followuptrails></app-usr-followuptrails>
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="FYI & Old Follow Up Trails">folder</mat-icon>
+          <mat-icon pTooltip="FYI & Old Follow Up Trails">folder</mat-icon>
         </ng-template>
         <br>
         <app-usr-old-followup></app-usr-old-followup>
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Loan & Overdue Details">monetization_on</mat-icon>
+          <mat-icon pTooltip="Loan & Overdue Details">monetization_on</mat-icon>
         </ng-template>
         <br>
         <app-usr-loandetails></app-usr-loandetails>
       </mat-tab>
       <!-- <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Allocation Details">ballot</mat-icon>
+          <mat-icon pTooltip="Allocation Details">ballot</mat-icon>
         </ng-template>
         <br>
         <app-usr-allocationdetail></app-usr-allocationdetail>
       </mat-tab> -->
       <!-- <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Delinquency flow">merge_type</mat-icon>
+          <mat-icon pTooltip="Delinquency flow">merge_type</mat-icon>
         </ng-template>
         <br>
         <app-usr-delinquencyflow></app-usr-delinquencyflow>
       </mat-tab> -->
       <!-- <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Overdue Details">payment</mat-icon>
+          <mat-icon pTooltip="Overdue Details">payment</mat-icon>
         </ng-template>
         <br>
         <app-usr-overduedetailsone></app-usr-overduedetailsone>
       </mat-tab> -->
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="RPO/Auction/PLA information">info</mat-icon>
+          <mat-icon pTooltip="RPO/Auction/PLA information">info</mat-icon>
         </ng-template>
         <br>
         <app-usr-rpo></app-usr-rpo>
       </mat-tab>
       <!-- <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Account Summary">event_note</mat-icon>
+          <mat-icon pTooltip="Account Summary">event_note</mat-icon>
         </ng-template>
         <br>
         <app-usr-accountsummery></app-usr-accountsummery>
       </mat-tab> -->
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Phone Details">contact_phone</mat-icon>
+          <mat-icon pTooltip="Phone Details">contact_phone</mat-icon>
         </ng-template>
         <br>
         <app-usr-phonedetails></app-usr-phonedetails>
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Retrieve Documents">file_copy</mat-icon>
+          <mat-icon pTooltip="Retrieve Documents">file_copy</mat-icon>
         </ng-template>
         <br>
         <app-usr-documnetretrieval></app-usr-documnetretrieval>
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Field Visit Status"> directions_bike</mat-icon>
+          <mat-icon pTooltip="Field Visit Status"> directions_bike</mat-icon>
         </ng-template>
         <br>
 
@@ -1557,7 +1570,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Settlement Details">payment</mat-icon>
+          <mat-icon pTooltip="Settlement Details">payment</mat-icon>
         </ng-template>
         <br>
         <h4 class="title">Settlement Details</h4>
@@ -1593,7 +1606,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
-          <mat-icon matTooltip="Skip Tracing">trending_up</mat-icon>
+          <mat-icon pTooltip="Skip Tracing">trending_up</mat-icon>
         </ng-template>
         <br>
 
@@ -1642,35 +1655,35 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
 </div>
 <div class="follow">
   <div [ngClass]="{'active-i': show === 'show1'}">
-    <mat-icon matTooltip="Follow up" (click)="show1()">swap_horiz</mat-icon>
+    <mat-icon pTooltip="Follow up" (click)="show1()">swap_horiz</mat-icon>
   </div>
   <div [ngClass]="{'active-i': show === 'show2'}">
-    <mat-icon matTooltip="Initiate Workflow" (click)="show2()">timeline</mat-icon>
+    <mat-icon pTooltip="Initiate Workflow" (click)="show2()">timeline</mat-icon>
   </div>
   <div [ngClass]="{'active-i': show === 'show3'}" style="text-align: center;color: #fff;">
-    <i class="fa fa-list-alt" aria-hidden="true" matTooltip=" Collection Details" (click)="show3()"></i>
-    <!-- <mat-icon matTooltip=" Collection Details" (click)="show3()">extension</mat-icon> -->
+    <i class="fa fa-list-alt" aria-hidden="true" pTooltip=" Collection Details" (click)="show3()"></i>
+    <!-- <mat-icon pTooltip=" Collection Details" (click)="show3()">extension</mat-icon> -->
   </div>
   <div [ngClass]="{'active-i': show === 'show4'}" style="text-align: center;color: #fff;">
-    <i class="fa fa-file-text-o" aria-hidden="true" matTooltip=" Settlement Recording" (click)="show4()"></i>
-    <!-- <mat-icon matTooltip=" Settlement Recording" (click)="show4()">extension</mat-icon> -->
+    <i class="fa fa-file-text-o" aria-hidden="true" pTooltip=" Settlement Recording" (click)="show4()"></i>
+    <!-- <mat-icon pTooltip=" Settlement Recording" (click)="show4()">extension</mat-icon> -->
   </div>
   <div [ngClass]="{'active-i': show === 'show5'}" style="text-align: center;color: #fff;">
-    <i class="fa fa-taxi" aria-hidden="true" matTooltip="Police Case Filing" (click)="show5()"></i>
-    <!-- <mat-icon matTooltip="Police Case Filing"  (click)="show5()">swap_horiz</mat-icon> -->
+    <i class="fa fa-taxi" aria-hidden="true" pTooltip="Police Case Filing" (click)="show5()"></i>
+    <!-- <mat-icon pTooltip="Police Case Filing"  (click)="show5()">swap_horiz</mat-icon> -->
   </div>
   <div [ngClass]="{'active-i': show === 'show6'}">
-    <mat-icon matTooltip="Repo">file_copy</mat-icon>
+    <mat-icon pTooltip="Repo">file_copy</mat-icon>
   </div>
   <div [ngClass]="{'active-i': show === 'show7'}">
-    <mat-icon matTooltip="Civil">contact_phone</mat-icon>
+    <mat-icon pTooltip="Civil">contact_phone</mat-icon>
   </div>
 
   <div [ngClass]="{'active-i': show === 'show8'}">
-    <mat-icon matTooltip="Skip Tracing" (click)="show8()">skip_next</mat-icon>
+    <mat-icon pTooltip="Skip Tracing" (click)="show8()">skip_next</mat-icon>
   </div>
   <div [ngClass]="{'active-i': show === 'show9'}">
-    <mat-icon matTooltip="Field Visit" (click)="show9()">person_pin_circle</mat-icon>
+    <mat-icon pTooltip="Field Visit" (click)="show9()">person_pin_circle</mat-icon>
   </div>
 
 </div>
@@ -1733,3 +1746,29 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
     </div>
   </div>
 </p-dialog>
+<div class="follow follow-1">
+  <div style="text-align: center;padding: 10px;color: #fff;">
+    <i class="fa fa-filter" aria-hidden="true" aria-hidden="true" pTooltip=" Filter"></i>
+    <!-- <mat-icon pTooltip=" Collection Details" >extension</mat-icon> -->
+  </div>
+  <div style="text-align: center;padding: 10px;color: #fff;">
+    <i class="fa fa fa-binoculars" aria-hidden="true" pTooltip=""></i>
+    <!-- <mat-icon pTooltip=" Settlement Recording" >extension</mat-icon> -->
+  </div>
+  <div style="text-align: center;padding: 10px;color: #fff;">
+    <i class="fa fa-envelope" aria-hidden="true" pTooltip=""></i>
+    <!-- <mat-icon pTooltip=""  >swap_horiz</mat-icon> -->
+  </div>
+  <div style="text-align: center;padding: 10px;color: #fff;">
+    <i class="fa fa-calendar" aria-hidden="true" pTooltip=""></i>
+    <!-- <mat-icon pTooltip=""  >swap_horiz</mat-icon> -->
+  </div>
+  <div style="text-align: center;padding: 10px;color: #fff;">
+    <i class="fa fa-file-text-o" aria-hidden="true" pTooltip=""></i>
+    <!-- <mat-icon pTooltip=""  >swap_horiz</mat-icon> -->
+  </div>
+  <div style="text-align: center;padding: 10px;color: #fff;">
+    <i class="fa fa-globe" aria-hidden="true" pTooltip=""></i>
+    <!-- <mat-icon pTooltip=""  >swap_horiz</mat-icon> -->
+  </div>
+</div>

@@ -150,6 +150,8 @@ import { DualTemporaryAllocationComponent } from './pages/userflow/dual-temporar
 import { AgentInboxComponent } from './pages/agent-inbox/agent-inbox.component';
 import { AgentAccListComponent } from './pages/agent-acc-list/agent-acc-list.component';
 import { AgentTODOListComponent } from './pages/agent-to-do-list/agent-to-do-list.component';
+import { EntityManagementComponent } from './pages/entity-management/entity-management.component';
+import { EntityFormComponent } from './pages/entity-management/entity-form/entity-form.component';
 @NgModule({
   declarations: [AdminHeaderComponent,
     AdminSidebarComponent,
@@ -260,7 +262,9 @@ import { AgentTODOListComponent } from './pages/agent-to-do-list/agent-to-do-lis
     DualTemporaryAllocationComponent,
     AgentInboxComponent,
     AgentAccListComponent,
-    AgentTODOListComponent
+    AgentTODOListComponent,
+    EntityManagementComponent,
+    EntityFormComponent
   ],
   imports: [
     CommonModule,

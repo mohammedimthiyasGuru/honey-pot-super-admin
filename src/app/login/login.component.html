@@ -28,16 +28,28 @@
                             <div>
                                 <!-- <span class="fa fa-user"></span> -->
                                 <div class="p-inputgroup">
-                                    <span class="p-inputgroup-addon" style="padding: 16.5px;position: relative;top: -1px;background: #fff;"><i class="pi pi-user"></i></span>
-                                    <input type="text" pInputText placeholder="Username" style="width:80%">         
+                                    <span class="p-inputgroup-addon" style="padding: 16.5px;position: relative;top: 0px;background: #fff;"><i class="pi pi-user"></i></span>
+                                    <input type="text" (ngModelChange)="emailChange($event)"
+                                    [ngModelOptions]="{standalone: true}" [(ngModel)]="email_id" pInputText placeholder="Username" style="width:80%">         
+                                    
+                                <div *ngIf="emailError">
+                                    <div class="text-danger">{{emailErrorMsg}}</div>
+                                </div>
                                 </div>
                                 <!-- <input type="text" Placeholder="Username" required> -->
                             </div>
                             <div>
                                 <!-- <span class="fa fa-lock"></span> -->
                                 <div class="p-inputgroup">
-                                    <span class="p-inputgroup-addon" style="padding: 16.5px;position: relative;top: -1px;background: #fff;"><i class="fa fa-lock"></i></span>
-                                    <input type="password" pInputText placeholder="Password" style="width:82%">         
+                                    <span class="p-inputgroup-addon" style="padding: 16.5px;position: relative;top: 0px;background: #fff;"><i class="fa fa-lock"></i></span>
+                                    <input type="password" [(ngModel)]="password"  [(ngModel)]="passwords" name="passwords"
+                                    (ngModelChange)="passwordChange($event)"
+                                    [ngModelOptions]="{standalone: true}"pInputText placeholder="Password" style="width:82%">         
+                                    
+                                <div *ngIf="passwordError">
+                                    <div class="text-danger">{{passwordErrorMsg}}</div>
+                                </div>
+                                
                                 </div>
                                 <!-- <input type="password" Placeholder="Password" required> -->
                             </div>
@@ -55,7 +67,7 @@
                         </fieldset>
 
                         <div>
-                            <span style="width:50%; text-align:center;  display: inline-block;" (click)="login()"><input class="log-btn"
+                            <span style="width:50%; text-align:center;  display: inline-block;" (click)="logintest1()"><input class="log-btn"
                                     type="submit" value="Login" style="border-radius: 20px;background: #e3db00;"></span>
                         </div>
                         <div class="clearfix"></div>

@@ -19,7 +19,7 @@ table, th, td {
   border-collapse: collapse;
   background-color: #575a5e24;
   padding: 3px;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .add-icon{
@@ -48,7 +48,7 @@ table, th, td {
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: left;
-    background-color: #0e69dd;
+    background-color: #20353f;
     color: white;
   }
   input {
@@ -180,7 +180,7 @@ i {
   margin-right: 10px;
   background-color: #3e669b;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 12px;
   cursor: pointer;
 
 }
@@ -198,7 +198,7 @@ i {
   flex-basis: 85%;
 }
 .pr-t th,.pr-t td {
-  font-size: 10px;
+  font-size: 12px;
     border-left: 1px solid #c4c4c4;
 }
 .coll-i{
@@ -213,5 +213,5 @@ i {
   cursor: pointer;
 }
 td input{
-  font-size: 10px;
+  font-size: 12px;
 }

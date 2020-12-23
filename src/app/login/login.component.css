@@ -39,7 +39,7 @@ a:hover {
 input {
 	border: none;
 	font-family: 'Open Sans', Arial, sans-serif;
-	font-size: 14px;
+	font-size: 12px;
 	line-height: 1.5em;
   padding: 0;
   outline: none;
@@ -169,7 +169,7 @@ label{
     color: #fff;
     margin-left: 10px;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
 }
 .height-form{
     height: 300px;
@@ -177,10 +177,16 @@ label{
 }
 .logo-p {
   color: #154476;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
 }
 .logo-p span{
   color: #29B6F6;
     font-weight: 600;
+}
+.text-danger {
+  color: #e3db00!important;
+  text-align: left;
+  margin-left: 14px;
+  margin-top: -11px;
 }

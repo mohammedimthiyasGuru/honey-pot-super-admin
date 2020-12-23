@@ -50,7 +50,7 @@ table, th, td {
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: left;
-    background-color: #0e69dd;
+    background-color: #20353f;
     color: white;
   }
   input {
@@ -65,6 +65,9 @@ table, th, td {
   :host::ng-deep  .tab-info .mat-tab-label {
     padding: 5px 5px !important;
     min-width: 20px !important;
+}
+:host::ng-deep  .tab-info .mat-tab-label:hover {
+  background-color: #fff !important;
 }
 :host::ng-deep  .mat-tab-label {
   height: 25px !important;
@@ -90,6 +93,9 @@ table, th, td {
   width: 20px;
   font-size: 19px;
     color: #1f1f1f !important;
+}
+:host::ng-deep  .tab-info .mat-tab-label:hover .mat-icon{
+  color: #ef6c00 !important;
 }
 :host::ng-deep .mat-tab-label-container {
   margin-top: 7px;
@@ -138,6 +144,13 @@ table, th, td {
 }
 .follow i {
   color:rgb(144 161 179);
+}
+.follow-1{
+    top: 320px !important;
+}
+.follow-1 i {
+  padding: 0px 0px !important;
+  font-size: 13px !important;
 }
 .active-i .mat-icon{
   background-color: #a8b2c1;
@@ -206,16 +219,16 @@ i {
     position: fixed;
     z-index: 999;
     width: calc(100% - 87px);
-    background: #bbc6de;
+    background: #ffff;
     padding-top: 10px;
 }
 .inner-a{
   color: #fff;
   padding: 4px 10px;
   margin-right: 10px;
-  background-color: #0a4078;
+  background-color: #20353f;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 12px;
   cursor: pointer;
 
 }
@@ -233,7 +246,7 @@ i {
   flex-basis: 85%;
 }
 .pr-t th,.pr-t td {
-  font-size: 10px;
+  font-size: 12px;
     border-left: 1px solid #c4c4c4;
 }
 .coll-i{
@@ -248,7 +261,7 @@ i {
   cursor: pointer;
 }
 td input{
-  font-size: 10px;
+  font-size: 12px;
 }
 button:focus {
   outline: none !important;
@@ -257,7 +270,7 @@ button:focus {
 .ui-table .ui-table-thead > tr > th {
   padding: 8px 8px !important;
   color: #ffffff !important;
-  background-color: #0a4078 !important;
+  background-color: #20353f !important;
 }
 
 
@@ -295,7 +308,7 @@ overflow-x: scroll;
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: left;
-    background-color: #0e69dd;
+    background-color: #20353f;
     color: white;
   }
   .details li {
@@ -342,3 +355,17 @@ overflow-x: scroll;
     top: 0px;
     cursor: pointer;
   }
+.inpo th{
+  background-color: white !important;
+    padding: 2px 10px 0px 10px !important;
+    color: #333 !important;
+    border: none !important;
+    text-align: left !important;
+}
+.inpo td{
+  background-color: white !important;
+    padding:1px 10px 1px 10px !important;
+    color: #333 !important;
+    border: none !important;
+}
+

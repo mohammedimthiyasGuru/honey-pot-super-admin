@@ -1,0 +1,286 @@
+<app-admin-header></app-admin-header>
+<div class="section" style="padding: 0px 45px;">
+<button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()"
+    style="float:right;margin-bottom:-36px;">Back</button>
+
+<ng-container *ngIf="form_type == 'client'">
+    <h4 class="title" style="margin-top: 100px;">Create Entity</h4>
+    
+    <div class="card-box">
+        <div class="row" style="padding: 0px 0px 23px 10px;">
+            <div class="col-md-4">
+                <h5 class="form-lable">No.of License:</h5>
+                <input type="text" pInputText [(ngModel)]="Name" placeholder="No.of License">
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Client Type:</h5>
+                <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                    [showClear]="true"></p-dropdown>
+
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Country:</h5>
+                <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                    [showClear]="true"></p-dropdown>
+
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Client short code:</h5>
+                <input type="text" pInputText [(ngModel)]="Name" placeholder="Client short code">
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Client system code:</h5>
+                <input type="text" pInputText [(ngModel)]="Name" placeholder="Client system code">
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Client Name:</h5>
+                <input type="text" pInputText [(ngModel)]="Name" placeholder="Client Name">
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Website:</h5>
+                <input type="text" pInputText [(ngModel)]="Name" placeholder="Website">
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Common email id:</h5>
+                <input type="text" pInputText [(ngModel)]="Name" placeholder="Common email id">
+            </div>
+            <!-- <div class="col-md-4">
+                <h5 class="form-lable">Password:</h5>
+                <input type="text" pInputText [(ngModel)]="Name" placeholder="Password">
+            </div> -->
+            <div class="col-md-4">
+                <h5 class="form-lable">Logo:</h5>
+                <input type="file">
+            </div>
+            <div class="col-md-6">
+                <h5 class="form-lable">Ho Address:</h5>
+                <textarea rows="3" cols="30" pInputTextarea [(ngModel)]="address"></textarea>
+            </div>
+            <div class="col-md-6">
+                <h5 class="form-lable">Office Address:</h5>
+                <textarea rows="3" cols="30" pInputTextarea [(ngModel)]="address"></textarea>
+            </div>
+           
+
+
+            <div class="col-md-12 mt-20">
+                <button type="button" class="btn btn-primary">Create</button>
+                <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
+            </div>
+
+        </div>
+    </div>
+
+    <h4 class="title-f">Client representative/contact persons:</h4>
+    <div class="card-box">
+        <div class="row" style="padding: 0px 0px 23px 10px;">
+            <!-- <div class="col-md-12 text-right">
+                       
+                        <i class="fa fa-plus add-icon" (click)="addcontact()" aria-hidden="true" pTooltip="Add"
+                            style="top: -15px;position: relative;"></i>
+                    </div> -->
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="text" pInputText [(ngModel)]="con_name" placeholder="Name">
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="text" pInputText [(ngModel)]="con_role" placeholder="Email">
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Phone No">
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="text" pInputText [(ngModel)]="con_pone" placeholder="WhatsApp No">
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Landline">
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Extension">
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Staff no">
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Internal ID card no">
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Designation">
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Reporting to" optionLabel="y"
+                    [showClear]="true"></p-dropdown>
+            </div>
+            <div class="col-md-4" style="margin-bottom: 7px;">
+                <input type="file">
+            </div>
+
+            <div class="col-md-12 mt-20">
+                <button type="button" class="btn btn-primary">Add</button>
+                <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
+            </div>
+
+            <div class="col-md-12 mt-20">
+                <table class="spec-table">
+                    <thead>
+                        <th>S.No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone No</th>
+                        <th>WhatsApp No</th>
+                        <th>Landline</th>
+                        <th>Extension</th>
+                        <th>Staff no</th>
+                        <th>Internal ID card no</th>
+                        <th>Designation</th>
+                        <th>Reporting to</th>
+                    </thead>
+                    <tbody>
+                        <!-- <tr *ngFor="let arr of contactarray ; let i= index;">
+                            <td>{{i+1}}</td>
+                            <td>{{arr.con_name}}</td>
+                            <td>{{arr.con_role}}</td>
+                            <td>{{arr.con_pone}}</td>
+                            <td><i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"
+                                    (click)="remove_contact(i)"></i></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+    <h4 class="title-f">Add Documents</h4>
+
+    <div class="card-box">
+        <div class="row" style="padding: 0px 0px 23px 10px;">
+
+            <div class="col-md-4">
+                <h5 class="form-lable">Document Type:</h5>
+                <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                    [showClear]="true"></p-dropdown>
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Document Name:</h5>
+                <input type="text" pInputText [(ngModel)]="Name" placeholder="Product Name">
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Attachment:</h5>
+                <input type="file">
+
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Start date:</h5>
+                <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">End date:</h5>
+                <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+            </div>
+            <div class="col-md-12 mt-20">
+                <button type="button" class="btn btn-primary">Add</button>
+                <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
+            </div>
+            <div class="col-md-12 mt-20">
+                <table class="spec-table">
+                    <thead>
+                        <th>S.No</th>
+                        <th>Document Type</th>
+                        <th>Document Name</th>
+                        <th>Attachment</th>
+                        <th>Start date</th>
+                        <th>End date</th>
+                    </thead>
+                    <tbody>
+                        <!-- <tr *ngFor="let arr of contactarray ; let i= index;">
+                        <td>{{i+1}}</td>
+                        <td>{{arr.con_name}}</td>
+                        <td>{{arr.con_role}}</td>
+                        <td>{{arr.con_pone}}</td>
+                        <td><i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"
+                                (click)="remove_contact(i)"></i></td>
+                    </tr> -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <h4 class="title-f">Account Detail</h4>
+
+    <div class="card-box">
+        <div class="row" style="padding: 0px 0px 23px 10px;">
+
+            <div class="col-md-4">
+                <h5 class="form-lable">Account No:</h5>
+                <input type="text" pInputText [(ngModel)]="Name" placeholder="Account No">
+
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">IFSC Code:</h5>
+                <input type="text" pInputText [(ngModel)]="Name" placeholder="IFSC code">
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">IBAN No:</h5>
+                <input type="text" pInputText [(ngModel)]="Name" placeholder="IBAN No">
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Bank Name:</h5>
+                <input type="text" pInputText [(ngModel)]="Name" placeholder="Bank Name">
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Branch:</h5>
+                <input type="text" pInputText [(ngModel)]="Name" placeholder="Branch">
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Address of the bank:</h5>
+                <textarea rows="3" cols="30" pInputTextarea [(ngModel)]="address"></textarea>
+            </div>
+
+            <div class="col-md-4">
+                <h5 class="form-lable">Country:</h5>
+                <p-dropdown [options]="typ" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                    [showClear]="true"></p-dropdown>
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Currency:</h5>
+                <p-dropdown [options]="typ" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                    [showClear]="true"></p-dropdown>
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Swift Code:</h5>
+                <p-dropdown [options]="typ" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                    [showClear]="true"></p-dropdown>
+            </div>
+            <div class="col-md-12 mt-20">
+                <button type="button" class="btn btn-primary">Add</button>
+                <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
+            </div>
+            <div class="col-md-12 mt-20">
+                <table class="spec-table">
+                    <thead>
+                        <th>S.No</th>
+                        <th>Account No</th>
+                        <th>IFSC Code</th>
+                        <th>IBAN No</th>
+                        <th>Bank Name</th>
+                        <th>Branch</th>
+                        <th>Address of the bank</th>
+                        <th>Country</th>
+                        <th>Currency</th>
+                        <th>Swift Code</th>
+                    </thead>
+                    <tbody>
+                        <!-- <tr *ngFor="let arr of contactarray ; let i= index;">
+                        <td>{{i+1}}</td>
+                        <td>{{arr.con_name}}</td>
+                        <td>{{arr.con_role}}</td>
+                        <td>{{arr.con_pone}}</td>
+                        <td><i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"
+                                (click)="remove_contact(i)"></i></td>
+                    </tr> -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</ng-container>

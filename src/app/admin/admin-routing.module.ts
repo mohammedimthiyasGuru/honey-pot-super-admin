@@ -87,6 +87,8 @@ import { DualTemporaryAllocationComponent } from './pages/userflow/dual-temporar
 import { AgentInboxComponent } from './pages/agent-inbox/agent-inbox.component';
 import { AgentAccListComponent } from './pages/agent-acc-list/agent-acc-list.component';
 import { AgentTODOListComponent } from './pages/agent-to-do-list/agent-to-do-list.component';
+import { EntityFormComponent } from './pages/entity-management/entity-form/entity-form.component';
+import { EntityManagementComponent } from './pages/entity-management/entity-management.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' ,pathMatch:'full'},
@@ -190,7 +192,8 @@ const routes: Routes = [
   { path: 'Agent_Inbox', component: AgentInboxComponent },
   { path: 'Agent_acc_list', component: AgentAccListComponent },
   { path: 'Agent_TO_DO_list', component: AgentTODOListComponent },
-  
+  { path: 'Super_admin/EntityForm', component: EntityFormComponent },
+  { path: 'Super_admin/EntityManagement', component: EntityManagementComponent },
 ];
 
 @NgModule({

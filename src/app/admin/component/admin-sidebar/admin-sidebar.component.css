@@ -8,11 +8,12 @@
 .side {
     width: 39px;
     transition: all 0.5s;
+    overflow-x: hidden !important;
 }
 
 .side .sidenav-item h5 {
     margin: 0px 0px 0px 10px !important;
-    font-size: 11px;
+    font-size: 12px;
     color: #fff;
     font-weight: 500;
 }
@@ -22,7 +23,7 @@
 }
 
 .active {
-    background:#262626 !important
+    background: #ef6c00 !important;
 }
 
 :host::ng-deep .mat-list-base {
@@ -100,9 +101,10 @@ button{
 :host::ng-deep .mat-menu-content:not(:empty) {
     background: #545454 !important;
 }
-:host::ng-deep .side-men .cdk-overlay-pane {
-    top: 50px !important;
-    left: 41px !important;
-    height: 100vh !important;
-    background: #20353f !important;   
+
+.mat-menu-panel {
+    background: #20353f !important; ;
+}
+.mat-drawer-inner-container{
+    overflow: hidden;
 }

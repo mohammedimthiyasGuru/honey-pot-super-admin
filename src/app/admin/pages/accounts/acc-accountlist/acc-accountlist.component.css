@@ -35,7 +35,7 @@ overflow-x: scroll;
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: left;
-    background-color: #0e69dd;
+    background-color: #20353f;
     color: white;
   }
   .details li {
@@ -123,7 +123,7 @@ overflow-x: scroll;
     font-size: 10px !important;
 }
 :host::ng-deep  .pi-chevron-left:before {
-  font-size: 10px;
+  font-size: 12px;
 }
 :host::ng-deep .ui-clickable {
   padding: 0px 3px !important;
