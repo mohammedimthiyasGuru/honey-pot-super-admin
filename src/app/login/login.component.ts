@@ -22,9 +22,10 @@ export class LoginComponent implements OnInit {
 
   email: any;
   emailError = false;
+  emailError1 = false;
   emailErrorMsg: any;
-
-
+  validation1 = false;
+  email_id1:any;
   passwordError = false;
   passwordErrorMsg: any;
   constructor(private router: Router,
@@ -46,7 +47,7 @@ export class LoginComponent implements OnInit {
   forgot() {
     this.forget = true;
   }
-  backtologin(){
+  backtologin() {
     this.forget = false;
   }
 
@@ -84,6 +85,25 @@ export class LoginComponent implements OnInit {
     this.passwordValidator();
   }
 
+ 
+  emailValidator1() {
+    let reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let emailcheck = reg.test(this.email);
+    if (this.email === '' || this.email === undefined || this.email === null) {
+      this.emailError1 = true;
+      this.emailErrorMsg = 'Email Address Required.'
+    } else if (!emailcheck) {
+      this.emailError1 = true;
+      this.emailErrorMsg = 'Enter Valid Email Address.'
+    } else {
+      this.emailError1 = false;
+    }
+  }
+  emailChange1(data) {
+    //console.log(data);
+    this.email = data;
+    this.emailValidator1();
+  }
   validator() {
     this.emailValidator();
     this.passwordValidator();
@@ -94,13 +114,39 @@ export class LoginComponent implements OnInit {
     }
   }
   logintest1() {
+    // this.router.navigateByUrl('/Dashboard_Main');
     this.validator();
     if (this.validation) {
-      if ((this.email == 'test@gmail.com') && (this.password == '12345')) {
-        this.router.navigateByUrl('/Super_admin/EntityManagement');
-      } else {
-        alert('Invalid Account');
+      let a = {
+        "username": this.email_id,
+        "password": this.password
       }
+      this._api.login(a).subscribe(
+        (response: any) => {
+          console.log(response.Data);
+          if (response.Code == 200) {
+            this.saveInLocal("login_detail", response.Data)
+            alert('Logged in successfully');
+            if(response.Data.Clinet_name != undefined){
+              this.saveInLocal("login_type", "Organization")
+              this.router.navigateByUrl('/admin_panel');
+              let a = this.getFromLocal("login_type")
+              console.log(a)
+            }
+            else{
+              this.saveInLocal("login_type", "Super_Admin")
+              this.router.navigateByUrl('/Dashboard_Main');
+              let a = this.getFromLocal("login_type")
+              console.log(a)
+            }
+            
+          }
+          else {
+            alert('Invalid Account');
+          }
+
+        }
+      );
     }
   }
 
@@ -110,5 +156,38 @@ export class LoginComponent implements OnInit {
 
   getFromLocal(key): any {
     return this.storage.get(key);
+  }
+
+  validator1() {
+    this.emailValidator1();
+    if (!this.emailError1) {
+      this.validation1 = true;
+    } else {
+      this.validation1 = false;
+    }
+    console.log( this.validation1)
+  }
+  Forgotpass() {
+    // this.router.navigateByUrl('/Dashboard_Main');
+    this.validator1();
+    if (this.validation) {
+      let a = {
+        "username": this.email_id1,
+      }
+      console.log(a)
+      this._api.Forgot_password(a).subscribe(
+        (response: any) => {
+          console.log(response.Data);
+          if (response.Code == 200) {
+            alert('Password sent to your mail id successfully');
+            this.forget = false;
+          }
+          else {
+            alert('Invalid Account');
+          }
+
+        }
+      );
+    }
   }
 }

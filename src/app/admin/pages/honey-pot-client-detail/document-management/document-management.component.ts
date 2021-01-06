@@ -1,49 +1,107 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Component, OnInit, Inject, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
-
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../../../../api.service';
 @Component({
   selector: 'app-document-management',
   templateUrl: './document-management.component.html',
   styleUrls: ['./document-management.component.css']
 })
 export class DocumentManagementComponent implements OnInit {
-  rows = [];
+  type: any;
+  rows: any;
   searchQR: any;
-  value1: any;
+  id: any;
+  edit_f:boolean = false;
   constructor(
     private router: Router,
+    private _api: ApiService,
     @Inject(SESSION_STORAGE) private storage: StorageService,
+    private http: HttpClient,
   ) { }
 
   ngOnInit(): void {
-    this.rows = [{ type: "Dog", name: "dog1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" }]
-
+    this._api.reportingto_type_list().subscribe(
+      (response: any) => {
+        console.log(response);
+        this.rows = response.Data.reverse();
+        console.log(this.rows);
+      }
+    );
   }
-  client_form() {
-    this.saveInLocal('Client_form', 'document');
-    this.router.navigateByUrl('/admin_panel/client-form')
+  add() {
+    if (this.type == undefined || this.type == '') {
+      alert("Please enter valid inputs")
+    } else {
+      let a = {
+        "reporting_type": this.type,
+        "addedby": "Admin"
+      };
+      console.log(a);
+      this._api.reportingto_type_add(a).subscribe(
+        (response: any) => {
+          console.log(response);
+          if (response.Code === 200) {
+            alert(response.Message);
+            this.type = undefined;
+            this.ngOnInit();
+          } else {
+            alert(response.Message);
+          }
+        }
+      );
+    }
   }
-  profile() {
-    this.router.navigateByUrl('/admin_panel/Client_profile')
+  show_edit(item) {
+    this.id = item._id;
+    this.edit_f = true;
+    this.type = item.reporting_type
   }
-  saveInLocal(key, val): void {
-    this.storage.set(key, val);
+  edit() {
+    if (this.type == undefined || this.type == '') {
+      alert("Please enter valid input")
+    } else {
+      let a = {
+        "_id": this.id,
+        "reporting_type": this.type,
+        "addedby": "Admin"
+      };
+      console.log(a);
+      this._api.reportingto_type_edit(a).subscribe(
+        (response: any) => {
+          console.log(response);
+          if (response.Code === 200) {
+            alert(response.Message);
+            this.edit_f = false;
+            this.type = undefined;
+            this.ngOnInit();
+          } else {
+            alert(response.Message);
+          }
+        }
+      );
+    }
   }
-
-  getFromLocal(key): any {
-    return this.storage.get(key);
+  delete(id) {
+    let a = {
+      "_id": id
+    }
+    this._api.reportingto_type_delete(a).subscribe(
+      (response: any) => {
+        console.log(response);
+        if (response.Code === 200) {
+          alert(response.Message);
+          this.ngOnInit();
+        } else {
+          alert(response.Message);
+        }
+      }
+    );
   }
- 
+  cancel(){
+    this.type = undefined;
+    this.edit_f = false;
+  }
 }

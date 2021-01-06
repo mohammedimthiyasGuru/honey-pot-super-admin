@@ -17,7 +17,8 @@ overflow-x: scroll;
     background: #0e69dd;
 }
 .spec-table {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      /*  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; */
+
     border-collapse: collapse;
     width: 100%;
   }
@@ -37,6 +38,7 @@ overflow-x: scroll;
     text-align: left;
     background-color: #20353f;
     color: white;
+font-weight:500;
   }
   .details li {
     list-style: none;

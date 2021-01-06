@@ -89,11 +89,16 @@ import { AgentAccListComponent } from './pages/agent-acc-list/agent-acc-list.com
 import { AgentTODOListComponent } from './pages/agent-to-do-list/agent-to-do-list.component';
 import { EntityFormComponent } from './pages/entity-management/entity-form/entity-form.component';
 import { EntityManagementComponent } from './pages/entity-management/entity-management.component';
+import { CreateAccountTypeComponent } from './pages/create-account-type/create-account-type.component';
+import { CreateReportingToComponent } from './pages/create-reporting-to/create-reporting-to.component';
+import { CreateStateComponent } from './pages/create-state/create-state.component';
+import { CreateDesignationComponent } from './pages/create-designation/create-designation.component';
+import { CreateUserTypeComponent } from './pages/user-management/create-user-type/create-user-type.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' ,pathMatch:'full'},
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'client-form', component: HoneyPotClientDetailFormComponent },
+  { path: 'client_form', component: HoneyPotClientDetailFormComponent },
   { path: 'Clients', component: HoneyPotClientDetailComponent },
   { path: 'Client_profile', component: ClientProfileComponent },
   { path: 'Country', component: CountryComponent },
@@ -148,6 +153,8 @@ const routes: Routes = [
   { path: 'user/user_form', component: UserFormComponent },
   { path: 'user/user_group', component: UserGroupComponent },
   { path: 'user/user_role', component: UserRoleComponent },
+  { path: 'user/user_type', component: CreateUserTypeComponent },
+
 
   { path: 'userflow/accallocate', component:  LocalaccallocComponent},
   { path: 'userflow/accworked', component: LocalaccworkedComponent },
@@ -192,8 +199,12 @@ const routes: Routes = [
   { path: 'Agent_Inbox', component: AgentInboxComponent },
   { path: 'Agent_acc_list', component: AgentAccListComponent },
   { path: 'Agent_TO_DO_list', component: AgentTODOListComponent },
-  { path: 'Super_admin/EntityForm', component: EntityFormComponent },
   { path: 'Super_admin/EntityManagement', component: EntityManagementComponent },
+  { path: 'Super_admin/EntityForm', component: EntityFormComponent },
+  { path: 'Create_Account_Type', component: CreateAccountTypeComponent },
+  { path: 'Create_Designation', component: CreateDesignationComponent },
+  { path: 'Create_State', component: CreateStateComponent },
+  
 ];
 
 @NgModule({

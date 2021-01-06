@@ -1,6 +1,9 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Component, OnInit, Inject, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../../../api.service';
 
 @Component({
   selector: 'app-honey-pot-client-detail',
@@ -13,27 +16,25 @@ export class HoneyPotClientDetailComponent implements OnInit {
   value1: any;
   constructor(
     private router: Router,
+    private _api: ApiService,
     @Inject(SESSION_STORAGE) private storage: StorageService,
+    private http: HttpClient,
   ) { }
 
   ngOnInit(): void {
-    this.rows = [{ type: "Dog", name: "dog1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" }]
+    this.saveInLocal('client_data', undefined);
+    this._api.client_list().subscribe(
+      (response: any) => {
+        console.log(response);
+        this.rows = response.Data.reverse();
+        console.log(this.rows);
+      }
+    );
 
   }
   client_form() {
-    this.saveInLocal('Client_form', 'client');
-    this.router.navigateByUrl('/admin_panel/client-form')
+    // this.saveInLocal('Client_form', 'client');
+    this.router.navigateByUrl('admin_panel/client_form')
   }
   profile() {
     this.router.navigateByUrl('/admin_panel/Client_profile')
@@ -45,5 +46,30 @@ export class HoneyPotClientDetailComponent implements OnInit {
   getFromLocal(key): any {
     return this.storage.get(key);
   }
-}
+  client_form_view(item) {
+    this.saveInLocal('client_data', item);
+    this.router.navigateByUrl('admin_panel/client_form')
+  }
+  client_view(item) {
+    this.saveInLocal('client_data', item);
+    this.router.navigateByUrl('admin_panel/Client_profile')
+  }
+  Delete(id){
+    let a={
+      "_id": id
+    }
+    this._api.client_delete(a).subscribe(
+      (response: any) => {
+        console.log(response);
+        if (response.Code == 200) {
+          alert("Deleted successfully");
+          this.ngOnInit();
+        }
+        else {
+          alert('Somthing went wrong');
+        }
 
+      }
+    );
+  }
+}

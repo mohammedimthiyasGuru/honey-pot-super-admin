@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12">
+        <!-- <div class="col-md-12">
             <h5 class="form-lable">Select Unique value Column:</h5>
             <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
                 [showClear]="true"></p-dropdown>
@@ -44,7 +44,7 @@
         <div class="col-md-12 mt-20">
             <button type="button" class="btn btn-primary">Check Duplicates</button>
             <button type="button" class="btn btn-primary">Group Customers</button>
-        </div>
+        </div> -->
 
     </div>
     <div class="row" style="padding: 0px 0px 23px 10px;" *ngIf="section == 3">
@@ -196,7 +196,7 @@
 <!-- <ng-container *ngIf="data.length > 0">
     <div class="doc-table">
 
-        <p-table [value]="data" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50" [rowHover]="true"
+        <div class="card-box"> <p-table [value]="data" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50" [rowHover]="true"
             [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
             [globalFilterFields]="['type']">
@@ -224,7 +224,7 @@
                 </tr>
 
             </ng-template>
-        </p-table>
+         </p-table>  </div>
 
     </div>
 </ng-container> -->
@@ -303,6 +303,15 @@
                     <!-- <i class="fa fa-times-circle-o" aria-hidden="true"
                         style="font-size: 30px  !important;position: relative;top: 6px;margin: 3px;color: #D32F2F;"></i> -->
                     Product name <i class="fa fa-info-circle" aria-hidden="true"
+                        style="font-size: 20px;margin: 3px;color: #03A9F4;"></i>
+                </h5>
+                <h5 *ngIf="check >= 4" class="form-lable"
+                    style="font-size: 12px;font-weight: 500;color: #000 !important;"><i class="fa fa-check-circle-o"
+                        aria-hidden="true"
+                        style="font-size: 30px  !important;position: relative;top: 6px;margin: 3px;color: #4CAF50;"></i>
+                    <!-- <i class="fa fa-times-circle-o" aria-hidden="true"
+                        style="font-size: 30px  !important;position: relative;top: 6px;margin: 3px;color: #D32F2F;"></i> -->
+                    Check Duplicates<i class="fa fa-info-circle" aria-hidden="true"
                         style="font-size: 20px;margin: 3px;color: #03A9F4;"></i>
                 </h5>
                 <hr />

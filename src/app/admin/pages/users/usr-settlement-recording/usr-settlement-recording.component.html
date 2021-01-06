@@ -81,7 +81,7 @@
                       </div>
                   </div> -->
                     <div class="doc-table">
-                        <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt
+                        <div class="card-box"> <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt
                             [paginator]="false" [rows]="5" [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]"
                             [showCurrentPageReport]="true"
                             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
@@ -106,7 +106,7 @@
                                     <td><input type=""></td>
                                 </tr>
                             </ng-template>
-                        </p-table>
+                         </p-table>  </div>
                     </div>
                 </div>
             </div>
@@ -122,7 +122,7 @@
     <h4 class="title">Settlement History</h4>
 
     <div class="doc-table">
-        <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
+        <div class="card-box"> <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
             [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
             [globalFilterFields]="['type']">
@@ -144,7 +144,7 @@
                     <td></td>
                 </tr>
             </ng-template>
-        </p-table>
+         </p-table>  </div>
     </div>
     <br>
 

@@ -9,7 +9,7 @@
                         <img src="assets/images/logo-01.png" style="width: 200px;height: 100%;;" alt="">
 
                     </div>
-                    <img src="assets/images/dept.png" style="width: 300px;height: auto;padding: 50px 20px 145px 20px;"
+                    <img src="assets/images/dept.png" style="width: 380px;height: auto;padding: 50px 20px 115px 20px;"
                         alt="">
                     <div>
                         <p class="logo-p">&#169; 2020-21 All Rights Reserved <br>Powered By <span>Bees Technologies Pvt.
@@ -28,28 +28,33 @@
                             <div>
                                 <!-- <span class="fa fa-user"></span> -->
                                 <div class="p-inputgroup">
-                                    <span class="p-inputgroup-addon" style="padding: 16.5px;position: relative;top: 0px;background: #fff;"><i class="pi pi-user"></i></span>
+                                    <span class="p-inputgroup-addon"
+                                        style="padding: 16.5px;position: relative;top: 0px;background: #fff;"><i
+                                            class="pi pi-user"></i></span>
                                     <input type="text" (ngModelChange)="emailChange($event)"
-                                    [ngModelOptions]="{standalone: true}" [(ngModel)]="email_id" pInputText placeholder="Username" style="width:80%">         
-                                    
-                                <div *ngIf="emailError">
-                                    <div class="text-danger">{{emailErrorMsg}}</div>
-                                </div>
+                                        [ngModelOptions]="{standalone: true}" [(ngModel)]="email_id" pInputText
+                                        placeholder="Username" style="width:80%">
+
+                                    <div *ngIf="emailError">
+                                        <div class="text-danger">{{emailErrorMsg}}</div>
+                                    </div>
                                 </div>
                                 <!-- <input type="text" Placeholder="Username" required> -->
                             </div>
                             <div>
                                 <!-- <span class="fa fa-lock"></span> -->
                                 <div class="p-inputgroup">
-                                    <span class="p-inputgroup-addon" style="padding: 16.5px;position: relative;top: 0px;background: #fff;"><i class="fa fa-lock"></i></span>
-                                    <input type="password" [(ngModel)]="password"  [(ngModel)]="passwords" name="passwords"
-                                    (ngModelChange)="passwordChange($event)"
-                                    [ngModelOptions]="{standalone: true}"pInputText placeholder="Password" style="width:82%">         
-                                    
-                                <div *ngIf="passwordError">
-                                    <div class="text-danger">{{passwordErrorMsg}}</div>
-                                </div>
-                                
+                                    <span class="p-inputgroup-addon"
+                                        style="padding: 16.5px;position: relative;top: 0px;background: #fff;"><i
+                                            class="fa fa-lock"></i></span>
+                                    <input type="password" [(ngModel)]="password" name="passwords"
+                                        (ngModelChange)="passwordChange($event)" [ngModelOptions]="{standalone: true}"
+                                        pInputText placeholder="Password" style="width:82%">
+
+                                    <div *ngIf="passwordError">
+                                        <div class="text-danger">{{passwordErrorMsg}}</div>
+                                    </div>
+
                                 </div>
                                 <!-- <input type="password" Placeholder="Password" required> -->
                             </div>
@@ -57,8 +62,9 @@
                                 <!-- <span style="width:48%; text-align:left;  display: inline-block;" class="small-text">
                                     <input type="checkbox" name="loginkeeping" value="loginkeeping" class="check" />
                                     <label for="loginkeeping">Keep me logged in</label></span> -->
-                                    <span style="width:48%; text-align:left;  display: inline-block;text-decoration: underline;"><a class="small-text"
-                                        (click)="forgot()">Reset
+                                <span
+                                    style="width:48%; text-align:left;  display: inline-block;"><a
+                                        class="small-text" (click)="forgot()">Reset
                                         password</a></span>
                                 <span style="width:48%; text-align:right;  display: inline-block;"><a class="small-text"
                                         (click)="forgot()">Forgot
@@ -67,8 +73,9 @@
                         </fieldset>
 
                         <div>
-                            <span style="width:50%; text-align:center;  display: inline-block;" (click)="logintest1()"><input class="log-btn"
-                                    type="submit" value="Login" style="border-radius: 20px;background: #e3db00;"></span>
+                            <span style="width:50%; text-align:center;  display: inline-block;"
+                                (click)="logintest1()"><input class="log-btn" type="submit" value="Login"
+                                    style="border-radius: 20px;background: #e3db00;"></span>
                         </div>
                         <div class="clearfix"></div>
                     </form>
@@ -84,8 +91,13 @@
 
                             <p>
                                 <!-- <span class="fa fa-user"></span> -->
-                                <input type="text" Placeholder="Email id" required></p>
-                            <!-- JS because of IE support; better: placeholder="Username" -->
+                                <input type="text" (ngModelChange)="emailChange1($event)"
+                                [ngModelOptions]="{standalone: true}" [(ngModel)]="email_id1" pInputText
+                                placeholder="Email ID" style="width:80%">
+
+                            <div *ngIf="emailError1">
+                                <div class="text-danger">{{emailErrorMsg}}</div>
+                            </div> <!-- JS because of IE support; better: placeholder="Username" -->
                             <!-- <p><span class="fa fa-lock"></span><input type="password"  Placeholder="Password" required></p> -->
                             <div>
                                 <span style="width:100%; text-align:left;  display: inline-block;"><a class="small-text"
@@ -94,8 +106,11 @@
                             </div>
 
                         </fieldset>
-                        <span style="width:50%; text-align:center;  display: inline-block;"><input type="submit"
-                                value="Send"></span>
+                        <div>
+                            <span style="width:50%; text-align:center;  display: inline-block;"
+                                (click)="Forgotpass()"><input class="log-btn" type="submit" value="Send"
+                                    style="border-radius: 20px;background: #e3db00;"></span>
+                        </div>
                         <div class="clearfix"></div>
                     </form>
 

@@ -22,6 +22,7 @@ export class AdminSidebarComponent implements OnInit {
   expand7: boolean = true;
   expand8: boolean = true;
   menu_slider: boolean = true;
+  login_type:any;
   constructor(
     @Inject(SESSION_STORAGE) private storage: StorageService,
     private router: Router,
@@ -29,6 +30,8 @@ export class AdminSidebarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+   this.login_type = this.getFromLocal("login_type");
+   console.log(this.login_type)
   }
   formtype() {
     this.saveInLocal('Company_detail', undefined);
@@ -136,5 +139,8 @@ export class AdminSidebarComponent implements OnInit {
     this.expand7 = true;
     this.expand1 = true;
   }
- 
+  logout(){
+    this.saveInLocal("login_detail", undefined)
+    this.router.navigate(['']);
+  }
 }

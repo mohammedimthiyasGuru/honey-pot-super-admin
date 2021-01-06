@@ -7,7 +7,8 @@
     background: #0e69dd;
 }
 .spec-table {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      /*  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; */
+
     border-collapse: collapse;
     width: 100%;
   }
@@ -27,6 +28,7 @@
     text-align: left;
     background-color: #20353f;
     color: white;
+font-weight:500;
   }
 
  :host::ng-deep .auto .ui-inputtext {

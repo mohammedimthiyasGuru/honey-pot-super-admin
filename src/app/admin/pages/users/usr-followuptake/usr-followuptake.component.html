@@ -153,7 +153,7 @@
     <!-- <h4 class="title">Collection Recording</h4> -->
 
     <div class="doc-table">
-      <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
+      <div class="card-box"> <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
         [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
         <ng-template pTemplate="header">
@@ -180,7 +180,7 @@
             <td>NA</td>
           </tr>
         </ng-template>
-      </p-table>
+       </p-table>  </div>
     </div>
     <br>
 
@@ -190,7 +190,7 @@
 <ng-container *ngIf="table_v == true">
   <h4 class="title">Follow up Trails</h4>
   <div class="doc-table">
-    <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
+    <div class="card-box"> <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
       [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
       currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
       <ng-template pTemplate="header">
@@ -227,7 +227,7 @@
           <td><input type=""></td>
         </tr>
       </ng-template>
-    </p-table>
+     </p-table>  </div>
   </div>
   <br>
 

@@ -152,6 +152,11 @@ import { AgentAccListComponent } from './pages/agent-acc-list/agent-acc-list.com
 import { AgentTODOListComponent } from './pages/agent-to-do-list/agent-to-do-list.component';
 import { EntityManagementComponent } from './pages/entity-management/entity-management.component';
 import { EntityFormComponent } from './pages/entity-management/entity-form/entity-form.component';
+import { CreateAccountTypeComponent } from './pages/create-account-type/create-account-type.component';
+import { CreateReportingToComponent } from './pages/create-reporting-to/create-reporting-to.component';
+import { CreateStateComponent } from './pages/create-state/create-state.component';
+import { CreateDesignationComponent } from './pages/create-designation/create-designation.component';
+import { CreateUserTypeComponent } from './pages/user-management/create-user-type/create-user-type.component';
 @NgModule({
   declarations: [AdminHeaderComponent,
     AdminSidebarComponent,
@@ -264,7 +269,12 @@ import { EntityFormComponent } from './pages/entity-management/entity-form/entit
     AgentAccListComponent,
     AgentTODOListComponent,
     EntityManagementComponent,
-    EntityFormComponent
+    EntityFormComponent,
+    CreateAccountTypeComponent,
+    CreateReportingToComponent,
+    CreateStateComponent,
+    CreateDesignationComponent,
+    CreateUserTypeComponent
   ],
   imports: [
     CommonModule,

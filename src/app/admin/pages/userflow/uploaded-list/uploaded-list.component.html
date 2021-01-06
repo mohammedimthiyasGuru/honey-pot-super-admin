@@ -109,7 +109,7 @@
 
             </div>
             <h4 class="title-f">New Accounts</h4>
-            <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
+            <div class="card-box"> <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
                 [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
                 currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                 [globalFilterFields]="['type']">
@@ -137,9 +137,9 @@
                         <td>Lorem ipsum.</td>
                     </tr>
                 </ng-template>
-            </p-table>
+             </p-table>  </div>
             <h4 class="title-f">Re-Activated Accounts</h4>
-            <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
+            <div class="card-box"> <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
                 [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
                 currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                 [globalFilterFields]="['type']">
@@ -167,9 +167,9 @@
                         <td>Lorem ipsum.</td>
                     </tr>
                 </ng-template>
-            </p-table>
+             </p-table>  </div>
             <h4 class="title-f">Existing Accounts</h4>
-            <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
+            <div class="card-box"> <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
                 [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
                 currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                 [globalFilterFields]="['type']">
@@ -197,7 +197,7 @@
                         <td>Lorem ipsum.</td>
                     </tr>
                 </ng-template>
-            </p-table>
+             </p-table>  </div>
             </div>
             <div style="text-align: right;">
                 <button class="btn btn-primary" style="margin-top:15px;margin-bottom: 25px;"> Submit to Manager</button>

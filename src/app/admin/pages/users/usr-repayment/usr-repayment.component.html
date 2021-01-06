@@ -2,8 +2,9 @@
 
 
     <div class="col-md-12">
+      <h4 class="title">Repayment Schedule Details </h4>
+
       <div class="card-box">
-        <h4 class="title-f">Repayment Schedule Details </h4>
         <div class="row" style="padding: 0px 0px 23px 10px;">
           <div class="col-md-3">
             <h5 class="form-lable">Start Date:</h5>
@@ -36,7 +37,7 @@
         <h5 class="form-lable">Customer Name: <span>Mohammed Imthiyas</span></h5>
     </div>
     <div class="doc-table">
-      <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
+      <div class="card-box"> <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false" [rows]="5"
         [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
     
@@ -54,7 +55,7 @@
             <td>  </td>
           </tr>
         </ng-template>
-      </p-table>
+       </p-table>  </div>
     </div>
     <br>
     </div>

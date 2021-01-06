@@ -76,11 +76,17 @@ p {
 #login form{
 	width: 350px;
 }
-#login, .logo{
+#login{
     display:inline-block;
     width:50%;
     padding: 10px;
     background-color: #fff;
+}
+.logo{
+  display:inline-block;
+  width:50%;
+  padding: 10px;
+  background-color: #ffffff82;
 }
 #login{
     border-left: 1px solid #fff;
@@ -181,7 +187,7 @@ label{
   font-weight: 600;
 }
 .logo-p span{
-  color: #29B6F6;
+  color: #1d1d1d;
     font-weight: 600;
 }
 .text-danger {

@@ -1,207 +1,138 @@
 <section>
     <div class="container" style="width: 100%;">
         <p> <i (click)="back()" class="fa fa-arrow-left" aria-hidden="true"></i> Back </p>
-        <div class="card-box">
-            <div class="row" style="padding: 0px 0px 23px 10px;">
-                <div class="col-md-3">
-                    <img src="assets/images/005.png" alt="" class="pro-pic">
+        <div class="row" style="padding: 0px 0px 23px 10px;">
+            <div class="card-box">
+                <div class="row" style="padding: 0px 0px 23px 10px;">
+                    <div class="col-md-4">
+                        <h5 class="form-lable">Existing or New:</h5>
+                       
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="form-lable">Account Type:</h5>
+                        
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="form-lable">Set Primary:</h5>
+                       
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="form-lable">Primary Account:</h5>
+                     
+                    </div>
                 </div>
-                <div class="col-md-9">
-                    <h1 style="margin-bottom: 0px;"></h1>
-                    <p class="title">Lorem Ipsum</p>
-                    <p><i class="fa fa-envelope-o" aria-hidden="true"></i> test@gmail.com - <i class="fa fa-phone"
-                            aria-hidden="true"></i>9876543210</p>
-                    <p style="font-size:12px;font-weight: 500;"><i class="fa fa-briefcase" aria-hidden="true"></i>
-                        Lorem Ipsum </p>
-                    <!-- <div class="p-field p-col-12 p-md-4">
-                        <label (click)="doc_cal()">Doctor Calendar <i class="fa fa-calendar"
-                                aria-hidden="true"></i></label>
+            </div>
+
+            <div class="card-box">
+                <div class="row" style="padding: 0px 0px 23px 10px;">
+                    <div class="col-md-4">
+                        <h5 class="form-lable">No.of License:</h5>
+                        <input type="text" pInputText [(ngModel)]="License"
+                            placeholder="No.of License">
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="form-lable">Client Type:</h5>
+                        
+
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="form-lable">Country:</h5>
+                        
+
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="form-lable">Client short code:</h5>
+                        <input type="text" pInputText [(ngModel)]="Short_code" placeholder="Client short code">
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="form-lable">Client system code:</h5>
+                        <input type="text" pInputText [(ngModel)]="System_code" placeholder="Client system code">
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="form-lable">Client Name:</h5>
+                        <input type="text" pInputText [(ngModel)]="Name" placeholder="Client Name">
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="form-lable">Website:</h5>
+                        <input type="text" pInputText [(ngModel)]="Website" placeholder="Website">
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="form-lable">Common email id:</h5>
+                        <input type="text"  [ngModelOptions]="{standalone: true}"
+                            [(ngModel)]="email_id" pInputText placeholder="Common email id" style="width:80%">
+
+                    </div>
+                    <!-- <div class="col-md-4">
+                        <h5 class="form-lable">Password:</h5>
+                        <input type="text" pInputText [(ngModel)]="Name" placeholder="Password">
                     </div> -->
+                    <div class="col-md-4">
+                        <h5 class="form-lable">Logo:</h5>
+                      <img *ngIf="logo != undefined" src="{{logo}}" alt=""
+                            style="width: 40px;height: 40px;float: right;margin-top: -37px;" />
+
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="form-lable">Ho Address:</h5>
+                        <textarea rows="3" cols="30" pInputTextarea [(ngModel)]="Ho_Address"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="form-lable">Office Address:</h5>
+                        <textarea rows="3" cols="30" pInputTextarea [(ngModel)]="Office_Address"></textarea>
+                    </div>
+
+
+
+                    <!-- <div class="col-md-12 mt-20">
+                        <button *ngIf="id == undefined" type="button" class="btn btn-primary"
+                            (click)="create()">Create</button>
+                        <button *ngIf="id != undefined" type="button" class="btn btn-primary"
+                            (click)="update()">Update</button>
+                    </div> -->
+
                 </div>
             </div>
         </div>
+
+
         <div class="row">
             <div class="col-md-12" style="margin-top: 25px;">
                 <div class="spec">
-                    <h5>Portfolios Details</h5>
+                    <h5>Client Representative / Contact Persons:</h5>
 
                 </div>
                 <div class="card-box">
-                    <!-- <div>
-                        <table cellpadding="5" cellspacing="0">
-                            <tr>
-                                <th> <label for="f-user"> Specialisation </label> </th>
-
-                                <td class="desc">
-                                    <ng-container *ngFor="let spe of data.Specilization; let i=index">
-                                        {{i+1}}.{{spe}}<br />
-                                    </ng-container>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th> <label for="f-pass1"> Date of Birth </label> </th>
-
-                                <td class="desc"> {{data.DOB}}</td>
-                            </tr>
-                            <tr>
-                                <th> <label for="f-pass2">Gender </label> </th>
-
-                                <td class="desc"> {{data.Gender}} </td>
-                            </tr>
-                            <tr>
-                                <th> <label for="f-dispname">University </label> </th>
-
-                                <td class="desc"> {{data.HighestQualifications}} </td>
-                            </tr>
-                            <tr>
-                                <th> <label for="f-dispname">Year of Passout </label> </th>
-
-                                <td class="desc"> {{data.Year_of_Passout}} </td>
-                            </tr>
-                            <tr>
-                                <th> <label for="f-email"> Languages </label> </th>
-
-                                <td class="desc">
-                                    <ng-container *ngFor="let spe of data.Languages; let i=index">{{i+1}}.{{spe}}<br />
-                                    </ng-container>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <th> <label for="f-tos">Available Hours </label> </th>
-
-                                <td class="desc"> {{data.AvailableHours}} </td>
-                            </tr>
-                            <tr>
-                                <th> <label for="f-tos"> Available Type </label> </th>
-
-                                <td class="desc"> {{data.Available_type}} </td>
-                            </tr>
-                            <tr>
-                                <th> <label for="f-tos"> Charges Per Appointment </label> </th>
-
-                                <td class="desc"> {{data.Charge_Per_15min}} </td>
-                            </tr>
-                            <tr>
-                                <th><label for="f-tos"> Live Status</label></th>
-                                <td class="desc"> {{data.Live_Status}} </td>
-                            </tr>
-                            <tr>
-                                <th><label for="f-tos"> Current Location</label></th>
-                                <td class="desc"> {{data.Current_location}} </td>
-                            </tr>
-
-                            <tr>
-                                <th><label for="f-tos">Doctor Brife</label></th>
-                                <td class="desc"> {{data.Special_mention}} </td>
-                            </tr>
-
-
-                            <tr>
-                                <th><label for="f-tos">About Doctor</label></th>
-                                <td class="desc"> {{data.Information}} </td>
-                            </tr>
-                            <tr>
-                                <th><label for="f-tos">KMS Registration Number</label></th>
-                                <td class="desc"> {{data.KMS_registration}} </td>
-                            </tr>
-                            <tr>
-                                <th><label for="f-tos">Signature</label></th>
-                                <td class="desc"> <img style="width: 100px;" src="{{data.signature}}" alt="" /> </td>
-                            </tr>
-
-
+                    <div class="col-md-12 mt-20">
+                        <table class="spec-table">
+                            <thead>
+                                <th>S.No</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone No</th>
+                                <th>WhatsApp No</th>
+                                <th>Landline</th>
+                                <th>Extension</th>
+                                <th>Staff no</th>
+                                <th>Internal ID card no</th>
+                                <th>Designation</th>
+                                <th>Reporting to</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let arr of ref_persons_array ; let i= index;">
+                                    <td>{{i+1}}</td>
+                                    <td>{{arr.ref_name}}</td>
+                                    <td>{{arr.ref_email}}</td>
+                                    <td>{{arr.ref_pone}}</td>
+                                    <td>{{arr.ref_whats_pone}}</td>
+                                    <td>{{arr.ref_lanline}}</td>
+                                    <td>{{arr.ref_extension}}</td>
+                                    <td>{{arr.ref_Staff_no}}</td>
+                                    <td>{{arr.ref_Internal_ID}}</td>
+                                    <td>{{arr.ref_Designation}}</td>
+                                    <td>{{arr.ref_Reporting_to.y}}</td>
+                                </tr>
+                            </tbody>
                         </table>
-                    </div> -->
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="search-hero">
-                                <input class="form-control" type="text" name="search2" style="font-family: FontAwesome;"
-                                    [(ngModel)]="searchQR" autocomplete="off" placeholder="&#xf002; Search...">
-                            </div>
-                        </div>
-                        <div class="col-md-8 text-right">
-                            <button type="button" class="btn btn-primary mr-0" (click)="portfolio()">Add</button>
-                        </div>
-                    </div>
-                    <div class="doc-table">
-
-                        <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true"
-                            [rows]="5" [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]"
-                            [showCurrentPageReport]="true"
-                            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-                            [globalFilterFields]="['type']">
-                            <!-- <ng-template pTemplate="caption">
-                        <div fxLayout="row" fxLayoutAlign="space-around center">
-                            <div fxFlex="50">
-                                <h5 style="color:#fff;">Entry Type List</h5>
-                            </div>
-                            <div fxFlex="50">
-                                <div class="ui-table-globalfilter-container">
-                                    <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
-                                    <input type="text" pInputText size="50" (input)="tt.filterGlobal($event.target.value, 'contains')"
-                                        placeholder="Entry Type">
-                                </div>
-                            </div>
-                
-                        </div>
-                
-                    </ng-template> -->
-                            <ng-template pTemplate="header">
-                                <tr class="thhead">
-                                    <th class="th-1">
-                                        S.No
-                                    </th>
-                                    <th>
-                                        Portfolio Name
-                                    </th>
-                                    <th>
-                                        Portfolio Type
-                                    </th>
-                                    <th>
-                                        Portfolio Data set
-                                    </th>
-                                    <!-- <th>contact persons</th> -->
-                                    <!-- <th>Created by</th>
-                            <th>Modified by</th>
-                            <th>Created at</th>
-                            <th>Modified at</th> -->
-                                    <th style="width: 110px;text-align:center">
-                                        Action
-                                    </th>
-                                </tr>
-                            </ng-template>
-                            <ng-template pTemplate="body" let-item let-i="rowIndex">
-                                <tr class="tdrow">
-                                    <td>{{i+1}}</td>
-                                    <td>Type-1</td>
-                                    <td>Lorem ipsum.</td>
-                                    <td>Lorem ipsum.</td>
-                                    <!-- <td>Lorem ipsum.</td> -->
-                                    <!-- <td>
-                                User
-                            </td>
-                            <td>
-                                Admin
-                            </td>
-                            <td>
-                                16-09-2020
-                            </td>
-                            <td>
-                                17-09-2020
-                            </td> -->
-                                    <td class="act">
-                                        <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true"
-                                            pTooltip="Edit"></i>
-                                        <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true"
-                                            pTooltip="Delete"></i>
-                                        <i style="color: #4CAF50;" class="fa fa-user" aria-hidden="true"
-                                            pTooltip="Profile"></i>
-                                    </td>
-                                </tr>
-                            </ng-template>
-                        </p-table>
-
                     </div>
                 </div>
             </div>
@@ -210,133 +141,79 @@
         <div class="row">
             <div class="col-md-12" style="margin-top: 25px;">
                 <div class="spec">
-                    <h5>Client representative/contact persons</h5>
+                    <h5>Documents</h5>
 
                 </div>
                 <div class="card-box">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="search-hero">
-                                <input class="form-control" type="text" name="search2" style="font-family: FontAwesome;"
-                                    [(ngModel)]="searchQR" autocomplete="off" placeholder="&#xf002; Search...">
-                            </div>
-                        </div>
-                        <div class="col-md-8 text-right">
-                            <button type="button" class="btn btn-primary mr-0">Add</button>
-                        </div>
-                    </div>
-                    <div class="doc-table">
-
-                        <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true"
-                            [rows]="5" [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]"
-                            [showCurrentPageReport]="true"
-                            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-                            [globalFilterFields]="['type']">
-                            <!-- <ng-template pTemplate="caption">
-                        <div fxLayout="row" fxLayoutAlign="space-around center">
-                            <div fxFlex="50">
-                                <h5 style="color:#fff;">Entry Type List</h5>
-                            </div>
-                            <div fxFlex="50">
-                                <div class="ui-table-globalfilter-container">
-                                    <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
-                                    <input type="text" pInputText size="50" (input)="tt.filterGlobal($event.target.value, 'contains')"
-                                        placeholder="Entry Type">
-                                </div>
-                            </div>
-                
-                        </div>
-                
-                    </ng-template> -->
-                            <ng-template pTemplate="header">
-                                <tr class="thhead">
-                                    <th class="th-1">
-                                        S.No
-                                    </th>
-                                    <th>
-                                        Client Type
-                                    </th>
-                                    <th>
-                                        Client Name
-                                    </th>
-                                    <th>
-                                        Client Address
-                                    </th>
-                                    <th>contact persons</th>
-                                    <!-- <th>Created by</th>
-                            <th>Modified by</th>
-                            <th>Created at</th>
-                            <th>Modified at</th> -->
-                                    <th style="width: 110px;text-align:center">
-                                        Action
-                                    </th>
-                                </tr>
-                            </ng-template>
-                            <ng-template pTemplate="body" let-item let-i="rowIndex">
-                                <tr class="tdrow">
+                    <div class="col-md-12 mt-20">
+                        <table class="spec-table">
+                            <thead>
+                                <th>S.No</th>
+                                <th>Document Type</th>
+                                <th>Document Name</th>
+                                <th>Attachment</th>
+                                <th>Start date</th>
+                                <th>End date</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let arr of Documents_array ; let i= index;">
                                     <td>{{i+1}}</td>
-                                    <td>Type-1</td>
-                                    <td>Lorem ipsum.</td>
-                                    <td>Lorem ipsum.</td>
-                                    <td>Lorem ipsum.</td>
-                                    <!-- <td>
-                                User
-                            </td>
-                            <td>
-                                Admin
-                            </td>
-                            <td>
-                                16-09-2020
-                            </td>
-                            <td>
-                                17-09-2020
-                            </td> -->
-                                    <td class="act">
-                                        <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true"
-                                            pTooltip="Edit"></i>
-                                        <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true"
-                                            pTooltip="Delete"></i>
-                                        <i style="color: #4CAF50;" class="fa fa-user" aria-hidden="true"
-                                            pTooltip="Profile"></i>
-                                    </td>
-                                </tr>
-                            </ng-template>
-                        </p-table>
+                                    <td>{{arr.Document_Type}}</td>
+                                    <td>{{arr.Document_Name}}</td>
+                                    <td>
+                                        <i (click)="goToLink1(arr.Document_link)" class="fa fa-file-text"
+                                            style="background-color: #fff;color: #fd2c3a;" aria-hidden="true"></i>
 
+                                    </td>
+                                    <td>{{arr.Start_date}}</td>
+                                    <td>{{arr.End_date}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="margin-top: 25px;">
+                <div class="spec">
+                    <h5>Account Details</h5>
+
+                </div>
+                <div class="card-box">
+                    <table class="spec-table">
+                        <thead>
+                            <th>S.No</th>
+                            <th>Account No</th>
+                            <th>IFSC Code</th>
+                            <th>IBAN No</th>
+                            <th>Bank Name</th>
+                            <th>Branch</th>
+                            <th>Address of the bank</th>
+                            <th>Country</th>
+                            <th>Currency</th>
+                            <th>Swift Code</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let arr of Account_array ; let i= index;">
+                                <td>{{i+1}}</td>
+                                <td>{{arr.Account_No}}</td>
+                                <td>{{arr.IFSC}}</td>
+                                <td>{{arr.IBAN}}</td>
+                                <td>{{arr.Bank_Name}}</td>
+                                <td>{{arr.Branch}}</td>
+                                <td>{{arr.Bank_address}}</td>
+                                <td>{{arr.Bnak_Country}}</td>
+                                <td>{{arr.Bank_Currency}}</td>
+                                <td>{{arr.Swift_Code}}</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
         </div>
     </div>
 </section>
-<!-- <p-dialog header="Available Date" [(visible)]="displayBasic" [style]="{width: '50vw'}" [baseZIndex]="10000">
-<ng-container *ngIf="calendar.length == 0">
-<h3 style="text-align:center">Data not found</h3>
-</ng-container>
-<ng-container *ngIf="calendar.length > 0">
-    <table class="table table-bordered table-striped table-sm">
-        <thead>
-            <tr>
-                <th>S.No</th>
-                <th>Date</th>
-                <th>Time</th>
-            </tr>
-        </thead>
-        <tbody>
-            <ng-container *ngFor="let item of calendar; let i = index;">
-                <tr>
-                    <td>{{i+1}}</td>
-                    <td>{{item.Doctor_ava_Date}}</td>
-                    <td>
-                        <ng-container *ngFor="let ite of item.Time">
-                            <span>{{ite.Total_time_slot}}</span>
-                        </ng-container>
-                    </td>
-                </tr>
-            </ng-container>
-        </tbody>
-    </table>
-</ng-container>
-    
-</p-dialog> -->

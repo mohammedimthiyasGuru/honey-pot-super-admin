@@ -117,9 +117,10 @@ text-transform: capitalize;
 /* table */
 
 .title{
-    font-size: 20px;
+    font-size: 13px;
     font-weight: 500;
-    color: #000000;;
+    color: #21a0f6;
+    margin: 2px 0px 2px 0px !important;
 }
 
 .card-box {
@@ -311,16 +312,20 @@ input {
 .cdk-overlay-pane {
     top: 50px !important;
     left: 41px !important;
-    height: 100vh !important;
-    background: #20353f !important; 
+    height: 80% !important;
+    background: none !important; 
     border-radius: 0px !important;
   
 }
 .mat-menu-panel {
-    background:  #20353f !important;
+    background:  none !important;
+    box-shadow: none !important;
 }
 .mat-drawer-inner-container{
     overflow: hidden !important;
+}
+ .mat-nav-list .mat-list-item:hover{
+    background: rgb(130 101 76 / 94%);
 }
 .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
     background-color: #ef6c00 !important;
@@ -331,3 +336,10 @@ td {
 i:hover{
     cursor: pointer;
 }
+:host::ng-deep  .ui-multiselect {
+    border: 1px solid #dcdcdc !important;
+    font-size: 14px;
+    height: 26px;
+    font-size: 12px !important;
+    /* margin-bottom: 0px; */
+  }

@@ -28,7 +28,7 @@
         <div class="col-md-6">
             <h5 class="form-lable">Select Fields:</h5>
             <div>
-                <p-table [value]="rows" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
+                <div class="card-box"> <p-table [value]="rows" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
                     [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
                     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                     [globalFilterFields]="['type']">
@@ -53,7 +53,7 @@
                             <td style="text-align: center;">8</td>
                         </tr>
                     </ng-template>
-                </p-table>
+                 </p-table>  </div>
             </div>
             <div>
                 <button type="button" class="btn btn-primary" style="margin-top: 10px;">Ok</button>
@@ -62,7 +62,7 @@
         <div class="col-md-6">
             <h5 class="form-lable">Selected Fields:</h5>
             <div>
-                <p-table [value]="rows" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
+                <div class="card-box"> <p-table [value]="rows" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
                     [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
                     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                     [globalFilterFields]="['type']">
@@ -87,7 +87,7 @@
                             <td style="text-align: center;">8</td>
                         </tr>
                     </ng-template>
-                </p-table>
+                 </p-table>  </div>
             </div>
 
         </div>

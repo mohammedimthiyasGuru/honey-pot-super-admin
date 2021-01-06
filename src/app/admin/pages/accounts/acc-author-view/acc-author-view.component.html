@@ -1,5 +1,5 @@
 <h4 class="title">Authorizations List</h4>
-<p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt>
+<div class="card-box"> <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt>
     <ng-template pTemplate="header">
             <tr style="text-align: center;" class="thhead">
                 <th>CUSTOMER NO</th>
@@ -24,7 +24,7 @@
                 <th>BP</th>
               </tr>
     </ng-template>
-</p-table>
+ </p-table>  </div>
 
 
 <div class="row" style="padding: 20px;">
@@ -48,7 +48,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-        <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt>
+        <div class="card-box"> <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt>
           <ng-template pTemplate="header">
                   <tr style="text-align: center;" class="thhead">
                       <th><input type="checkbox"></th>
@@ -69,7 +69,7 @@
                       <th></th>
                     </tr>
           </ng-template>
-      </p-table>
+       </p-table>  </div>
     </div>
       </div>
     </div>

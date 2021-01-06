@@ -44,13 +44,13 @@
 
   </button>
  
-  <div class="ad-user" [matMenuTriggerFor]="menu"  style="background:rgb(33 75 163);margin-right: -15px;padding-right: 10px;height: 47px;">
+  <div class="ad-user"  style="background:rgb(33 75 163);margin-right: -15px;padding-right: 10px;height: 47px;">
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" style="position: absolute;top: 4px;">
 
-      <button mat-icon-button aria-label="Example icon-button with a menu" pTooltip="User">
+      <button (click)="showBasicDialog()" mat-icon-button aria-label="Example icon-button with a menu" pTooltip="User">
         <mat-icon><i class="fa fa-user-circle-o" aria-hidden="true"></i></mat-icon>
       </button>
-      <mat-menu #menu="matMenu">
+      <!-- <mat-menu #menu="matMenu">
         <div (click)="showBasicDialog()" mat-menu-item>
           <mat-icon><i class="fa fa-user-circle-o" aria-hidden="true"></i></mat-icon>
           <span>Profile</span>
@@ -59,12 +59,12 @@
           <mat-icon><i class="fa fa-sign-out" aria-hidden="true"></i></mat-icon>
           <span>Logout</span>
         </div>
-      </mat-menu>
+      </mat-menu> -->
   
     </button>
     <div style="padding-left: 40px;">
-      <h5>Mohamad Imthiyas</h5>
-      <p>Super admin</p>
+      <h5>{{login_detail.Name}}</h5>
+      <p>{{login_detail.Role}}</p>
     </div>
    
 
@@ -86,13 +86,13 @@
         <table cellpadding="2" cellspacing="0">
           <tr>
             <th> <label for="f-user"> Name:</label> </th>
-            <td class="desc"> Mohamad imthiyas</td>
+            <td class="desc"> {{login_detail.Name}}</td>
 
           </tr>
           <tr>
             <th> <label for="f-user"> Role:</label> </th>
 
-            <td class="desc"> Super admin</td>
+            <td class="desc"> >{{login_detail.Role}}</td>
 
 
           </tr>
