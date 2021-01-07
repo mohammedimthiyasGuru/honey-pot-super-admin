@@ -33,26 +33,59 @@
             <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
         </div>
         <div class="col-md-12 mt-20">
-            <table class="spec-table">
-                <thead>
-                    <!-- <th>S.No</th> -->
-                    <th>User</th>
-                    <th>Status</th>
-                    <th>Attachment</th>
-                    <th>Start date</th>
-                    <th>End date</th>
-                </thead>
-                <tbody>
-                    <!-- <tr *ngFor="let arr of contactarray ; let i= index;">
-                    <td>{{i+1}}</td>
-                    <td>{{arr.con_name}}</td>
-                    <td>{{arr.con_role}}</td>
-                    <td>{{arr.con_pone}}</td>
-                    <td><i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"
-                            (click)="remove_contact(i)"></i></td>
-                </tr> -->
-                </tbody>
-            </table>
+            <div class="card-box">
+                <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="5"
+                    [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                    [globalFilterFields]="['type']">
+    
+                    <ng-template pTemplate="header">
+                        <tr class="thhead">
+                            <th class="th-1">
+                                S.No
+                            </th>
+                            <th>
+                                User Type
+                            </th>
+                            <th>
+                                User Name
+                            </th>
+                            <th>
+                                User Address
+                            </th>
+                            <th>Role</th>
+                            <th>Email</th>
+                            <!-- <th>Created by</th>
+                        <th>Modified by</th>
+                        <th>Created at</th>
+                        <th>Modified at</th> -->
+                            <th style="width: 110px;text-align:center">
+                                Action
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-item let-i="rowIndex">
+                        <tr class="tdrow">
+                            <td>{{i+1}}</td>
+                            <td>
+                                {{item.i}}
+                            </td>
+                            <td>{{item.i}}</td>
+                            <td>{{item.i}}</td>
+                            <td>{{item.i}}</td>
+                            <td>
+                                {{item.i}}
+                            </td>
+                          <td class="act">
+                                <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" (click)="Delete(item._id)"
+                                    pTooltip="Delete"></i>
+                                <i style="color: #4CAF50;" class="fa fa-user" aria-hidden="true"
+                                    (click)="client_form_view(item)" pTooltip="Profile"></i>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
         </div>
     </div>
 </div>

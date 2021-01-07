@@ -2,297 +2,281 @@
 <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()"
     style="float:right;margin-top:-36px;">Back</button>
 
-<div class="card-box">
+<div class="card-box" *ngIf="doct.length > 0 && usertype_list.length > 0 && userrole_list.length > 0">
     <div class="row" style="padding: 0px 0px 23px 10px;">
-        <div class="col-md-4">
+        <div class="col-md-4" [ngClass]="{'dis':form_act}">
             <h5 class="form-lable">User Type:</h5>
-            <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+            <p-dropdown [options]="usertype_list" [(ngModel)]="usertype" placeholder="Select" optionLabel="y"
                 [showClear]="true"></p-dropdown>
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" [ngClass]="{'dis':form_act}">
             <h5 class="form-lable">User Name:</h5>
-            <input type="text" pInputText [(ngModel)]="Name" placeholder="User Name">
+            <input type="text" pInputText [(ngModel)]="user_name" placeholder="User Name">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" [ngClass]="{'dis':form_act}">
             <h5 class="form-lable">User Role:</h5>
-            <input type="text" pInputText [(ngModel)]="Name" placeholder="User Role">
+            <p-dropdown [options]="userrole_list" [(ngModel)]="user_role" placeholder="Select" optionLabel="y"
+                [showClear]="true"></p-dropdown>
         </div>
-        <div class="col-md-4">
+
+        <div class="col-md-4" [ngClass]="{'dis':form_act}">
             <h5 class="form-lable">User id:</h5>
-            <input type="text" pInputText [(ngModel)]="Name" placeholder="User id">
+            <input type="text" pInputText [(ngModel)]="user_id" placeholder="User id">
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" [ngClass]="{'dis':form_act}">
             <h5 class="form-lable">Staff id:</h5>
-            <input type="text" pInputText [(ngModel)]="Name" placeholder="Staff id">
+            <input type="text" pInputText [(ngModel)]="staff_id" placeholder="Staff id">
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" [ngClass]="{'dis':form_act}">
             <h5 class="form-lable">Mobile no:</h5>
-            <input type="text" pInputText [(ngModel)]="Name" placeholder="Mobile no">
+            <input type="text" pInputText [(ngModel)]="mobile_no" placeholder="Mobile no">
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" [ngClass]="{'dis':form_act}">
             <h5 class="form-lable">WhatsApp no:</h5>
-            <input type="text" pInputText [(ngModel)]="Name" placeholder="WhatsApp no">
+            <input type="text" pInputText [(ngModel)]="whatsapp_no" placeholder="WhatsApp no">
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" [ngClass]="{'dis':form_act}">
             <h5 class="form-lable">Landline no:</h5>
-            <input type="text" pInputText [(ngModel)]="Name" placeholder="Landline no">
+            <input type="text" pInputText [(ngModel)]="landline_no" placeholder="Landline no">
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" [ngClass]="{'dis':form_act}">
             <h5 class="form-lable">Ext no:</h5>
-            <input type="text" pInputText [(ngModel)]="Name" placeholder="Ext no">
+            <input type="text" pInputText [(ngModel)]="ext_no" placeholder="Ext no">
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" [ngClass]="{'dis':form_act}">
             <h5 class="form-lable">Office email id:</h5>
-            <input type="text" pInputText [(ngModel)]="Name" placeholder="Office email id">
+            <input type="text" pInputText [(ngModel)]="office_email" placeholder="Office email id">
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" [ngClass]="{'dis':form_act}">
             <h5 class="form-lable">Personal email id:</h5>
-            <input type="text" pInputText [(ngModel)]="Name" placeholder="Personal email id">
+            <input type="text" pInputText [(ngModel)]="person_email" placeholder="Personal email id">
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" [ngClass]="{'dis':form_act}">
             <h5 class="form-lable">Linkedin URL:</h5>
-            <input type="text" pInputText [(ngModel)]="Name" placeholder="Linkedin URL">
+            <input type="text" pInputText [(ngModel)]="linked_url" placeholder="Linkedin URL">
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" [ngClass]="{'dis':form_act}">
             <h5 class="form-lable">FB URL:</h5>
-            <input type="text" pInputText [(ngModel)]="Name" placeholder="FB URL">
+            <input type="text" pInputText [(ngModel)]="fb_url" placeholder="FB URL">
 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" [ngClass]="{'dis':form_act}">
             <h5 class="form-lable">Website:</h5>
-            <input type="text" pInputText [(ngModel)]="Name" placeholder="Website">
+            <input type="text" pInputText [(ngModel)]="website" placeholder="Website">
 
         </div>
-        <div class="col-md-6">
-            <h5 class="form-lable">Current address:</h5>
-            <textarea rows="3" cols="30" pInputTextarea [(ngModel)]="address"></textarea>
-        </div>
-        <div class="col-md-6">
-            <h5 class="form-lable">Hometown address:</h5>
-            <textarea rows="3" cols="30" pInputTextarea [(ngModel)]="address"></textarea>
-        </div>
-        <div class="col-md-3">
-            <h5 class="form-lable">Photo:</h5>
-            <input type="file">
-        </div>
-        <!-- <div class="col-md-6">
+        <div class="col-md-6" [ngClass]="{'dis':form_act}">
+            <h5 class="form-lable">Current Address:</h5>
+            <textarea style="margin-bottom: -5px;" rows="3" cols="30" pInputTextarea
+                [(ngModel)]="current_address"></textarea>
             <div class="row">
-                <div class="col-md-12">
-                    <h5 class="form-lable">User representative/contact persons:</h5>
+                <div class="col-md-6">
+                    <input type="text" (keypress)=_keyPress($event) pInputText [(ngModel)]="current_box"
+                        placeholder="PO Box">
                 </div>
-                <div class="col-md-4">
-                    <input type="text" pInputText [(ngModel)]="con_name" placeholder="Name">
+                <div class="col-md-6">
+                    <input type="text" (keypress)=_keyPress($event) pInputText [(ngModel)]="current_pincode"
+                        placeholder="Pincode">
                 </div>
-                <div class="col-md-3">
-                    <input type="text" pInputText [(ngModel)]="con_role" placeholder="Role">
-                </div>
-                <div class="col-md-3">
-                    <input type="text" pInputText [(ngModel)]="con_pone" placeholder="Phone">
-                </div>
-
-                <div class="col-md-2 text-right">
-                    <i class="fa fa-plus add-icon" (click)="addcontact()" aria-hidden="true" pTooltip="Add"></i>
-                </div>
-
-
             </div>
-            <table *ngIf="contactarray.length > 0 " class="spec-table">
-                <thead>
-                    <th>S.No</th>
-                    <th>Name</th>
-                    <th>Role</th>
-                    <th>Phone</th>
-                    <th>Remove</th>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let arr of contactarray ; let i= index;">
-                        <td>{{i+1}}</td>
-                        <td>{{arr.con_name}}</td>
-                        <td>{{arr.con_role}}</td>
-                        <td>{{arr.con_pone}}</td>
-                        <td><i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"
-                                (click)="remove_contact(i)"></i></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div> -->
-        <!-- <div class="col-md-6">
-            <h5 class="form-lable">User Address:</h5>
-            <textarea rows="5" cols="30" pInputTextarea [(ngModel)]="address"></textarea>
-        </div> -->
-        <!-- <div class="col-md-12">
+        </div>
+        <div class="col-md-6" [ngClass]="{'dis':form_act}">
+            <h5 class="form-lable">Home Address:</h5>
+            <textarea style="margin-bottom: -5px;" rows="3" cols="30" pInputTextarea
+                [(ngModel)]="home_address"></textarea>
             <div class="row">
-                <div class="col-md-3">
-                    <h5 class="form-lable">Profile Image:</h5>
-                    <input type="file">
+                <div class="col-md-6">
+                    <input type="text" (keypress)=_keyPress($event) pInputText [(ngModel)]="home_box"
+                        placeholder="PO Box">
                 </div>
-                <div class="col-md-3">
-                    <h5 class="form-lable">Govt ID proof:</h5>
-                    <input type="file">
-                </div>
-                <div class="col-md-3">
-                    <h5 class="form-lable">Photo ID proof:</h5>
-                    <input type="file">
-                </div>
-                <div class="col-md-3">
-                    <h5 class="form-lable">Certificate:</h5>
-                    <input type="file">
-                </div>
-                <div class="col-md-12 mt-20">
-                    <h5 class="form-lable">Other images:</h5>
-                    <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" multiple="multiple"
-                        accept="image/*" maxFileSize="1000000">
-                        <ng-template pTemplate="content">
-                            <ul *ngIf="uploadedFiles.length">
-                                <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
-                            </ul>
-                        </ng-template>
-                    </p-fileUpload>
+                <div class="col-md-6">
+                    <input type="text" (keypress)=_keyPress($event) pInputText [(ngModel)]="home_pincode"
+                        placeholder="Pincode">
                 </div>
             </div>
-        </div> -->
-        <div class="col-md-12" style="margin-top: 10px;">
-            
-            <div class="card-box">
-                <h4 class="title-f">Add Documents</h4>
-                <div class="row" style="padding: 0px 0px 23px 10px;">
-                    <div class="col-md-4">
-                        <h5 class="form-lable">Document Type:</h5>
-                        <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
-                            [showClear]="true"></p-dropdown>
-                    </div>
-                    <div class="col-md-4">
-                        <h5 class="form-lable">Document Name:</h5>
-                        <input type="text" pInputText [(ngModel)]="Name" placeholder="Document Name">
-                    </div>
-                    <div class="col-md-4">
-                        <h5 class="form-lable">Attachment:</h5>
-                        <input type="file">
 
-                    </div>
-                    <div class="col-md-12 mt-20">
-                        <button type="button" class="btn btn-primary">Add</button>
-                        <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
-                    </div>
-                </div>
-
-            </div>
         </div>
+        <div class="col-md-4" [ngClass]="{'dis':form_act}">
+            <h5 class="form-lable">Image:</h5>
+            <input type="file" #imgType (change)="fileupload($event)" id="imgfile" accept=".png, .jpg, .jpeg"
+                class="form-control" id="city" placeholder="User type icon" style="width: 80%;overflow: hidden;">
+            <img *ngIf="logo != undefined" src="{{logo}}" alt=""
+                style="width: 40px;height: 40px;float: right;margin-top: -37px;" />
+
+        </div>
+
         <div class="col-md-12 mt-20">
-            <button type="button" class="btn btn-primary">Create</button>
+            <button *ngIf="id == undefined" type="button" class="btn btn-primary" (click)="create()">Create</button>
+            <button *ngIf="id != undefined && form_act == false" type="button" class="btn btn-primary"
+                (click)="update()">Update</button>
+            <button *ngIf="id != undefined && form_act == true" type="button" class="btn btn-primary btn-bg-blue"
+                (click)="edit()">Edit</button>
+            <button *ngIf="id != undefined && form_act == false" type="button" class="btn btn-danger btn-bg-blue"
+                (click)="can()">Cancel</button>
         </div>
 
     </div>
 
 </div>
+<ng-container>
+    <!-- *ngIf="id != undefined" -->
+    <h4 class="title-f">Add Documents</h4>
+    <div class="card-box">
 
 
-<h4 class="title">HR reporting line</h4>
+        <div class="row" style="padding: 0px 0px 23px 10px;">
 
-<div class="card-box">
-    <div class="row" style="padding: 0px 0px 23px 10px;">
-        <div class="col-md-4">
-            <h5 class="form-lable">Staff ID:</h5>
-            <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
-                [showClear]="true"></p-dropdown>
-        </div>
-        <div class="col-md-4">
-            <h5 class="form-lable">Staff name:</h5>
-            <input type="text" pInputText [(ngModel)]="Name" placeholder="Staff name">
-        </div>
-        <div class="col-md-4">
-            <h5 class="form-lable">Role:</h5>
-            <input type="text" pInputText [(ngModel)]="Name" placeholder="Role">
+            <div class="col-md-4">
+                <h5 class="form-lable">Document Type:</h5>
+                <p-dropdown [options]="doct" [(ngModel)]="Document_Type" placeholder="Select" optionLabel="y"
+                    [showClear]="true"></p-dropdown>
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Document Name:</h5>
+                <input type="text" pInputText [(ngModel)]="Document_Name" placeholder="Document Name">
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Attachment:</h5>
+                <input type="file" #imgType (change)="Documentupload($event)" id="imgfile"
+                    accept="application/msword, application/vnd.ms-excel, application/pdf" class="form-control"
+                    id="city" placeholder="User type icon">
 
-        </div>
-        <div class="col-md-4">
-            <h5 class="form-lable">Employee type:</h5>
-            <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
-                [showClear]="true"></p-dropdown>
-        </div>
-        <div class="col-md-4">
-            <h5 class="form-lable">Start date:</h5>
-            <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
-        </div>
-        <div class="col-md-4">
-            <h5 class="form-lable">End date:</h5>
-            <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
-        </div>
-        <div class="col-md-12" style="margin-top: 10px;">
-            
-            <div class="card-box">
-                <h4 class="title-f">Add Documents</h4>
-                <div class="row" style="padding: 0px 0px 23px 10px;">
-                    <div class="col-md-4">
-                        <h5 class="form-lable">Document Type:</h5>
-                        <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
-                            [showClear]="true"></p-dropdown>
-                    </div>
-                    <div class="col-md-4">
-                        <h5 class="form-lable">Document Name:</h5>
-                        <input type="text" pInputText [(ngModel)]="Name" placeholder="Document Name">
-                    </div>
-                    <div class="col-md-4">
-                        <h5 class="form-lable">Attachment:</h5>
-                        <input type="file">
-
-                    </div>
-                    <div class="col-md-12 mt-20">
-                        <button type="button" class="btn btn-primary">Add</button>
-                        <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
-                    </div>
-                </div>
 
             </div>
-        </div>
-        <div class="col-md-12 mt-20">
-            <button type="button" class="btn btn-primary">Add</button>
-            <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
+            <div class="col-md-4">
+                <h5 class="form-lable">Start date:</h5>
+                <p-calendar [showIcon]="true" [(ngModel)]="Start_date" inputId="icon"></p-calendar>
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">End date:</h5>
+                <p-calendar [showIcon]="true" [(ngModel)]="End_date" inputId="icon"></p-calendar>
+            </div>
+            <div class="col-md-12 mt-20">
+                <button type="button" *ngIf="Doc_id == undefined" class="btn btn-primary"
+                    (click)="create_Doc()">Add</button>
+                <button type="button" *ngIf="Doc_id != undefined" style="float: right;" class="btn btn-primary"
+                    (click)="update_Doc()">Update</button>
+
+                <!-- <button type="button" *ngIf="Documents_array.length > 0"  style="float: right;" class="btn btn-primary" (click)="create_Doc()">Save</button> -->
+                <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
+            </div>
+            <div class="col-md-12 mt-20">
+                <table class="spec-table" style="width: 100%;overflow-x: scroll;">
+
+                    <thead>
+                        <th>S.No</th>
+                        <th>Document Type</th>
+                        <th>Document Name</th>
+                        <th>Attachment</th>
+                        <th>Start date</th>
+                        <th>End date</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let arr of Documents_array ; let i= index;">
+                            <td>{{i+1}}</td>
+                            <td>{{arr.Document_Type}}</td>
+                            <td>{{arr.Document_Name}}</td>
+                            <td>
+                                <i (click)="goToLink1(arr.Document_link)" class="fa fa-file-text"
+                                    style="background-color: #fff;color: #fd2c3a;" aria-hidden="true"></i>
+
+                            </td>
+                            <td>{{arr.Start_date}}</td>
+                            <td>{{arr.End_date}}</td>
+                            <td>
+                                <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true"
+                                    pTooltip="Edit" (click)="edit_Doc(arr,i)"></i>
+
+                                <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"
+                                    (click)="remove_doc(i)"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
     </div>
-</div>
 
-<h4 class="title">Product reporting line</h4>
+    <h4 class="title">HR reporting line</h4>
 
-<div class="card-box">
-    <div class="row" style="padding: 0px 0px 23px 10px;">
-        <div class="col-md-4">
-            <h5 class="form-lable">Client:</h5>
-            <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
-                [showClear]="true"></p-dropdown>
-        </div>
-        <div class="col-md-4">
-            <h5 class="form-lable">Product:</h5>
-            <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
-            [showClear]="true"></p-dropdown>        </div>
-        <div class="col-md-4">
-            <h5 class="form-lable">Bucket:</h5>
-            <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
-            [showClear]="true"></p-dropdown>
-        </div>
-        <div class="col-md-4">
-            <h5 class="form-lable">Start date:</h5>
-            <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
-        </div>
-        <div class="col-md-4">
-            <h5 class="form-lable">End date:</h5>
-            <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
-        </div>
-        <div class="col-md-12 mt-20">
-            <button type="button" class="btn btn-primary">Add</button>
-            <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
-        </div>
+    <div class="card-box">
+        <div class="row" style="padding: 0px 0px 23px 10px;">
+            <div class="col-md-4">
+                <h5 class="form-lable">Staff ID:</h5>
+                <p-dropdown [options]="doct" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                    [showClear]="true"></p-dropdown>
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Staff name:</h5>
+                <input type="text" pInputText [(ngModel)]="Name" placeholder="Staff name">
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Role:</h5>
+                <input type="text" pInputText [(ngModel)]="Name" placeholder="Role">
 
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Employee type:</h5>
+                <p-dropdown [options]="doct" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                    [showClear]="true"></p-dropdown>
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Start date:</h5>
+                <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">End date:</h5>
+                <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+            </div>
+            <div class="col-md-12" style="margin-top: 10px;">
+
+                <div class="card-box">
+                    <h4 class="title-f">Add Documents</h4>
+                    <div class="row" style="padding: 0px 0px 23px 10px;">
+                        <div class="col-md-4">
+                            <h5 class="form-lable">Document Type:</h5>
+                            <p-dropdown [options]="doct" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                                [showClear]="true"></p-dropdown>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 class="form-lable">Document Name:</h5>
+                            <input type="text" pInputText [(ngModel)]="Name" placeholder="Document Name">
+                        </div>
+                        <div class="col-md-4">
+                            <h5 class="form-lable">Attachment:</h5>
+                            <input type="file">
+
+                        </div>
+                        <div class="col-md-12 mt-20">
+                            <button type="button" class="btn btn-primary">Add</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-12 mt-20">
+                <button type="button" class="btn btn-primary">Add</button>
+            </div>
+
+        </div>
     </div>
-</div>
+
+    <h4 class="title">Product reporting line</h4>
+
+    <div class="card-box">
+        
+        
+        
+    </div>
+</ng-container>

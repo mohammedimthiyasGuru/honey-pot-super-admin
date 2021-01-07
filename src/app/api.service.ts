@@ -229,6 +229,19 @@ export class ApiService {
   }
 
 
+  useradd_create(data) {
+    return this.http.post(this.apiUrl + 'useradd/create', data);
+  }
+  useradd_edit(data) {
+    return this.http.post(this.apiUrl + 'useradd/edit', data);
+  }
+  useradd_delete(data) {
+    return this.http.post(this.apiUrl + 'useradd/delete', data);
+  }
+  useradd_list() {
+    return this.http.get<any>(this.apiUrl + 'useradd/getlist' );
+  }
+
   Code_checker(data) {
     return this.http.post(this.apiUrl + 'entity_user/find_code', data);
   }

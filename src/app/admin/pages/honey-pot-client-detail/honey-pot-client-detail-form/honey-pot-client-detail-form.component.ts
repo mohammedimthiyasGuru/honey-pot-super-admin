@@ -180,7 +180,7 @@ export class HoneyPotClientDetailFormComponent implements OnInit {
     );
   }
   getRandomString(length) {
-    var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var randomChars1 = '0123456789';
     var result1 = '';
     var result2 = '';
@@ -194,7 +194,7 @@ export class HoneyPotClientDetailFormComponent implements OnInit {
   }
 
   getRandomString1(length) {
-    var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var randomChars1 = '0123456789';
     var result1 = '';
     var result2 = '';
@@ -825,6 +825,7 @@ export class HoneyPotClientDetailFormComponent implements OnInit {
     }
   }
   update() {
+    console.log(this.id)
     this.validation();
     if (this.Validation == false) {
       alert("Please enter valid inputs")
