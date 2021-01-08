@@ -14,7 +14,7 @@ export class ApiService {
   Activity_create(data) {
     return this.http.post<any>(this.apiUrl + 'activity/create',data);
   }
-  
+
   login(data){
     return this.http.post(this.apiUrl + 'activity/login', data);
   }
@@ -84,6 +84,22 @@ export class ApiService {
   product_type_list() {
     return this.http.get<any>(this.apiUrl + 'product_type/getlist' );
   }
+
+
+  fields_add(data) {
+    return this.http.post(this.apiUrl + 'fields/create', data);
+  }
+  fields_edit(data) {
+    return this.http.post(this.apiUrl + 'fields/edit', data);
+  }
+  fields_delete(data) {
+    return this.http.post(this.apiUrl + 'fields/delete', data);
+  }
+  fields_list() {
+    return this.http.get<any>(this.apiUrl + 'fields/getlist' );
+  }
+
+
   state_details_add(data) {
     return this.http.post(this.apiUrl + 'state_details/create', data);
   }
@@ -135,7 +151,7 @@ export class ApiService {
     return this.http.get<any>(this.apiUrl + 'reportingto_type/getlist' );
   }
 
-  
+
   designation_type_add(data) {
     return this.http.post(this.apiUrl + 'designation_type/create', data);
   }
@@ -213,7 +229,7 @@ export class ApiService {
   usertype_list() {
     return this.http.get<any>(this.apiUrl + 'usertype/getlist' );
   }
-  
+
 
   usergroup_add(data) {
     return this.http.post(this.apiUrl + 'usergroup/create', data);
