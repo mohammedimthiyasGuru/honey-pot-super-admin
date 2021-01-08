@@ -61,7 +61,7 @@ export class UserFormComponent implements OnInit {
   ref_Internal_ID: any;
   ref_Designation: any;
   ref_Reporting_to: any;
-  ref_persons_array: any = [];
+  HR_reporting_persons_array: any = [];
 
   Document_Type: any;
   Document_Name: any;
@@ -141,6 +141,28 @@ export class UserFormComponent implements OnInit {
   Doc_id: any;
   Acc_id: any;
 
+
+  HR_staff_id: any;
+  HR_staff_name: any;
+  HR_staff_role: any;
+  HR_staff_type: any;
+  HR_start_date: any;
+  HR_end_date: any;
+  Documents_array1: any = [];
+  Document_Type1: any;
+  Document_Name1: any;
+  Doc_id1: any;
+  Document_link1:any;
+  HR_id:any;
+
+  Pro_Client:any;
+  Pro_Product:any;
+  Pro_Bucket:any;
+  Pro_start_date:any;
+  Pro_end_date:any;
+  Pro_id:any;
+  product_reporting_array:any=[];
+
   constructor(
     private router: Router,
     private _api: ApiService,
@@ -194,7 +216,8 @@ export class UserFormComponent implements OnInit {
       this.home_box = this.entity_data.home_box;
       this.home_pincode = this.entity_data.home_pincode;
       this.photo = this.entity_data.photo;
-      this.Documents_array = this.entity_data.document_type;
+      this.HR_reporting_persons_array = this.entity_data.hr_reporting;
+      this.product_reporting_array = this.entity_data.product_reporting;
     }
     else {
       this.field_set = true;
@@ -207,7 +230,7 @@ export class UserFormComponent implements OnInit {
         console.log(response);
         let list = response.Data.reverse();
         for (let i = 0; i < list.length; i++) {
-          let obj = { 'y': list[i].usertype, '_id': list[i]._id };
+          let obj = { 'y': list[i].usertype };
           this.usertype_list.push(obj);
         }
         console.log(this.usertype_list);
@@ -220,7 +243,7 @@ export class UserFormComponent implements OnInit {
         console.log(response);
         let list = response.Data.reverse();
         for (let i = 0; i < list.length; i++) {
-          let obj = { 'y': list[i].userrole, '_id': list[i]._id };
+          let obj = { 'y': list[i].userrole};
           this.userrole_list.push(obj);
         }
         console.log(this.userrole_list);
@@ -246,7 +269,7 @@ export class UserFormComponent implements OnInit {
         console.log(response);
         let list = response.Data.reverse();
         for (let i = 0; i < list.length; i++) {
-          let obj = { 'y': list[i].document_type, '_id': list[i]._id };
+          let obj = { 'y': list[i].document_type};
           this.doct.push(obj);
         }
         console.log(this.doct);
@@ -260,53 +283,46 @@ export class UserFormComponent implements OnInit {
     this.router.navigateByUrl('admin_panel/Super_admin/EntityManagement');
     this.saveInLocal('Entity_data', undefined);
   }
-  addcontact() {
-    if (this.ref_name != undefined && this.ref_name != '' &&
-      this.ref_email != undefined && this.ref_email != '' && this.emailError1 != true &&
-      this.ref_pone != undefined && this.ref_pone != '' &&
-      this.ref_whats_pone != undefined && this.ref_whats_pone != '' &&
-      this.ref_lanline != undefined && this.ref_lanline != '' &&
-      // this.ref_extension != undefined && this.ref_extension != '' &&
-      // this.ref_Staff_no != undefined && this.ref_Staff_no != '' &&
-      // this.ref_Internal_ID != undefined && this.ref_Internal_ID != '' &&
-      this.ref_Designation != undefined && this.ref_Designation != '' &&
-      this.ref_Reporting_to != undefined && this.ref_Reporting_to != '') {
+  add_hr_reporting() {
+    if (
+
+      this.HR_staff_id != undefined && this.HR_staff_id != '' &&
+      this.HR_staff_name != undefined && this.HR_staff_name != '' &&
+      this.HR_staff_role != undefined && this.HR_staff_role != '' &&
+      this.HR_staff_type != undefined && this.HR_staff_type != '' &&
+      this.HR_start_date != undefined && this.HR_start_date != '' &&
+      this.HR_end_date != undefined && this.HR_end_date != '' &&
+      this.Documents_array1.length > 0) {
       let obj = {
-        "ref_name": this.ref_name,
-        "ref_email": this.ref_email,
-        "ref_pone": this.ref_pone,
-        "ref_whats_pone": this.ref_whats_pone,
-        "ref_lanline": this.ref_lanline,
-        "ref_extension": this.ref_extension,
-        "ref_Staff_no": this.ref_Staff_no,
-        "ref_Internal_ID": this.ref_Internal_ID,
-        "ref_Designation": this.ref_Designation.y,
-        "ref_Reporting_to": this.ref_Reporting_to
+        "HR_staff_id": this.HR_staff_id.y,
+        "HR_staff_name": this.HR_staff_name,
+        "HR_staff_role": this.HR_staff_role,
+        "HR_staff_type": this.HR_staff_type.y,
+        "HR_start_date": this.HR_start_date,
+        "HR_end_date": this.HR_end_date,
+        "HR_doct" : this.Documents_array1,
+
       }
-      this.ref_persons_array.push(obj);
-      this.ref_name = undefined;
-      this.ref_email = undefined;
-      this.ref_pone = undefined;
-      this.ref_whats_pone = undefined;
-      this.ref_lanline = undefined;
-      this.ref_extension = undefined;
-      this.ref_Staff_no = undefined;
-      this.ref_Internal_ID = undefined;
-      this.ref_Designation = undefined;
-      this.ref_Reporting_to = undefined;
-      console.log(this.ref_name)
+      this.HR_reporting_persons_array.push(obj);
+      this.HR_staff_id = undefined;
+      this.HR_staff_name = undefined;
+      this.HR_staff_role = undefined;
+      this.HR_staff_type = undefined;
+      this.HR_start_date = undefined;
+      this.HR_end_date = undefined;
+      this.Documents_array1 = [];
     }
     else {
       alert("fill all the required fields")
     }
   }
-  remove_contact(i) {
-    console.log(this.ref_persons_array);
-    this.ref_persons_array = this.ref_persons_array.splice(i, 1);
-    console.log(this.ref_persons_array);
+  remove_hr_reporting(i) {
+    console.log(this.HR_reporting_persons_array);
+    this.HR_reporting_persons_array = this.HR_reporting_persons_array.splice(i, 1);
+    console.log(this.HR_reporting_persons_array);
     let a = {
       "_id": this.id,
-      "contact_persons": this.ref_persons_array,
+      "hr_reporting": this.HR_reporting_persons_array,
 
     };
     console.log(a);
@@ -314,7 +330,7 @@ export class UserFormComponent implements OnInit {
       (response: any) => {
         console.log(response);
         if (response.Code === 200) {
-          this.ref_persons_array = response.Data.contact_persons
+          this.HR_reporting_persons_array = response.Data.contact_persons
           alert(response.Message);
         } else {
           alert(response.Message);
@@ -322,6 +338,138 @@ export class UserFormComponent implements OnInit {
       }
     );
   }
+
+
+  Add_pro_reporting() {
+    let obj = {
+      "Pro_Client": this.Pro_Client.y,
+      "Pro_Product": this.Pro_Product.y,
+      "Pro_Bucket": this.Pro_Bucket.y,
+      "Pro_start_date": this.Pro_start_date,
+      "Pro_end_date": this.Pro_end_date,
+    }
+    console.log(obj)
+    if (
+      this.Pro_Client != undefined && this.Pro_Client != '' && 
+      this.Pro_Product != undefined && this.Pro_Product != '' && 
+      this.Pro_Bucket != undefined && this.Pro_Bucket != '' && 
+      this.Pro_start_date != undefined && this.Pro_start_date != '' && 
+      this.Pro_end_date != undefined && this.Pro_end_date != '') {
+      let obj = {
+        "Pro_Client": this.Pro_Client.y,
+        "Pro_Product": this.Pro_Product.y,
+        "Pro_Bucket": this.Pro_Bucket.y,
+        "Pro_start_date": this.Pro_start_date,
+        "Pro_end_date": this.Pro_end_date,
+      }
+      this.product_reporting_array.push(obj);
+      this.Pro_Client = undefined ;
+      this.Pro_Product = undefined ;
+      this.Pro_Bucket = undefined ;
+      this.Pro_start_date = undefined ;
+      this.Pro_end_date = undefined ;
+      console.log(this.product_reporting_array)
+    }
+    else {
+      alert("fill all the required fields")
+    }
+  }
+  remove_Pro(i) {
+    this.Documents_array = this.Documents_array.splice(i, 1);
+    let a = {
+      "_id": this.id,
+      "document_type": this.Documents_array,
+    };
+    console.log(a);
+    this._api.useradd_edit(a).subscribe(
+      (response: any) => {
+        console.log(response);
+        if (response.Code === 200) {
+          alert(response.Message);
+          this.Documents_array = response.Data.documents
+        } else {
+          alert(response.Message);
+        }
+      }
+    );
+  }
+
+  create_Pro() {
+    this.Add_pro_reporting();
+    if (this.product_reporting_array.length == 0) {
+      alert("Please enter valid inputs")
+    } else {
+      let a = {
+        "_id": this.id,
+        "product_reporting": this.product_reporting_array,
+      };
+      console.log(a);
+      this._api.useradd_edit(a).subscribe(
+        (response: any) => {
+          console.log(response);
+          if (response.Code === 200) {
+            this.product_reporting_array = response.Data.product_reporting,
+              alert(response.Message);
+          } else {
+            alert(response.Message);
+          }
+        }
+      );
+    }
+  }
+  edit_Pro(arr, i) {
+    this.Pro_id = i;
+    this.Pro_Client = {'y':arr.Pro_Client} ;
+    this.Pro_Product = {'y':arr.Pro_Product} ;
+    this.Pro_Bucket = {'y':arr.Pro_Bucket} ;
+    this.Pro_start_date = new Date(arr.Pro_start_date) ;
+    this.Pro_end_date = new Date(arr.Pro_end_date);
+  }
+  update_Pro() {
+    if (this.Pro_Client != undefined && this.Pro_Client != '' && 
+    this.Pro_Product != undefined && this.Pro_Product != '' && 
+    this.Pro_Bucket != undefined && this.Pro_Bucket != '' && 
+    this.Pro_start_date != undefined && this.Pro_start_date != '' && 
+    this.Pro_end_date != undefined && this.Pro_end_date != '') {
+    let obj = {
+      "Pro_Client": this.Pro_Client.y,
+      "Pro_Product": this.Pro_Product.y,
+      "Pro_Bucket": this.Pro_Bucket.y,
+      "Pro_start_date": this.Pro_start_date,
+      "Pro_end_date": this.Pro_end_date,
+    }
+    this.product_reporting_array[this.Pro_id] = obj;
+    this.Pro_Client = undefined ;
+    this.Pro_Product = undefined ;
+    this.Pro_Bucket = undefined ;
+    this.Pro_start_date = undefined ;
+    this.Pro_end_date = undefined ;
+    console.log(this.product_reporting_array)
+    this.Pro_id = undefined
+      let a = {
+        "_id": this.id,
+        "product_reporting": this.product_reporting_array,
+      };
+      console.log(a);
+      this._api.useradd_edit(a).subscribe(
+        (response: any) => {
+          console.log(response);
+          if (response.Code === 200) {
+            this.product_reporting_array = response.Data.product_reporting,
+              alert(response.Message);
+          } else {
+            alert(response.Message);
+          }
+        }
+      );
+    }
+    else {
+      alert("fill all the required fields")
+    }
+  }
+
+
+
 
 
   adddocuments() {
@@ -367,6 +515,31 @@ export class UserFormComponent implements OnInit {
       }
     );
   }
+
+
+  adddocuments1() {
+    if (this.Document_Type1 != undefined && this.Document_Type1 != '' &&
+      this.Document_Name1 != undefined && this.Document_Name1 != '' &&
+      this.Document_link1 != undefined && this.Document_link1 != '') {
+      let obj = {
+        "Document_Type1": this.Document_Type1.y,
+        "Document_Name1": this.Document_Name1,
+        "Document_link1": this.Document_link1,
+      }
+      this.Documents_array1.push(obj);
+      this.Document_Type1 = undefined;
+      this.Document_Name1 = undefined;
+      console.log(this.Documents_array1)
+    }
+    else {
+      alert("fill all the required fields")
+    }
+  }
+  remove_doc1(i) {
+    this.Documents_array1 = this.Documents_array1.splice(i, 1);
+  }
+
+
 
   onUpload(event) {
     for (let file of event.files) {
@@ -506,6 +679,37 @@ export class UserFormComponent implements OnInit {
 
   }
 
+
+
+  Documentupload1(event) {
+    console.log("this.width")
+    this.selectedimgae = event.target.files[0];
+    console.log(this.selectedimgae.size / 100000);
+    let fr = new FileReader();
+
+    let d = this.selectedimgae.size / 100000;
+    if (d < 10) {
+      this.addDoc1();
+    }
+    else {
+      alert('Please upload the file below 1 MB');
+      // this.imgType.nativeElement.value = "";
+    }
+    // clear the value after upload
+  }
+  addDoc1() {
+    const fd = new FormData();
+    fd.append('sampleFile', this.selectedimgae, this.selectedimgae.name);
+    this.http.post('http://52.25.163.13:3000/upload', fd)
+      .subscribe((res: any) => {
+        console.log(res);
+        this.Document_link1 = res.Data;
+      });
+
+
+  }
+
+
   validation() {
     if (
       this.usertype == undefined || this.usertype == '' ||
@@ -596,7 +800,7 @@ export class UserFormComponent implements OnInit {
         "home_pincode": this.home_pincode,
         "photo": this.photo,
         "document_type": this.Documents_array,
-
+        "hr_reporting": [],
 
       };
       console.log(a);
@@ -669,13 +873,13 @@ export class UserFormComponent implements OnInit {
     }
   }
   create_ref() {
-    this.addcontact();
-    if (this.ref_persons_array.length == 0) {
+    this.add_hr_reporting();
+    if (this.HR_reporting_persons_array.length == 0) {
       alert("Please enter valid inputs")
     } else {
       let a = {
         "_id": this.id,
-        "contact_persons": this.ref_persons_array,
+        "hr_reporting": this.HR_reporting_persons_array,
       };
       console.log(a);
       this._api.useradd_edit(a).subscribe(
@@ -683,7 +887,7 @@ export class UserFormComponent implements OnInit {
           console.log(response);
           if (response.Code === 200) {
             alert(response.Message);
-            this.ref_persons_array = response.Data.contact_persons
+            this.HR_reporting_persons_array = response.Data.hr_reporting
           } else {
             alert(response.Message);
           }
@@ -692,58 +896,47 @@ export class UserFormComponent implements OnInit {
     }
   }
   edit_ref(arr, i) {
-    this.ref_id = i
-    this.ref_name = arr.ref_name
-    this.ref_email = arr.ref_email
-    this.ref_pone = arr.ref_pone
-    this.ref_whats_pone = arr.ref_whats_pone
-    this.ref_lanline = arr.ref_lanline
-    this.ref_extension = arr.ref_extension
-    this.ref_Staff_no = arr.ref_Staff_no
-    this.ref_Internal_ID = arr.ref_Internal_ID
-    this.ref_Designation = { 'y': arr.ref_Designation }
-    this.ref_Reporting_to = arr.ref_Reporting_to
-    console.log(this.ref_Designation)
+    this.HR_id = i
+    this.HR_staff_id = {'y': arr.HR_staff_id};
+    this.HR_staff_name = arr.HR_staff_name;
+    this.HR_staff_role = arr.HR_staff_role;
+    this.HR_staff_type = {'y' : arr.HR_staff_type};
+    this.HR_start_date = new Date(arr.HR_start_date);
+    this.HR_end_date = new Date(arr.HR_end_date);
+    this.Documents_array1 = arr.HR_doct;
+    console.log(this.HR_staff_id)
   }
   update_ref() {
-    if (this.ref_name != undefined && this.ref_name != '' &&
-      this.ref_email != undefined && this.ref_email != '' && this.emailError1 != true &&
-      this.ref_pone != undefined && this.ref_pone != '' &&
-      this.ref_whats_pone != undefined && this.ref_whats_pone != '' &&
-      this.ref_lanline != undefined && this.ref_lanline != '' &&
-      // this.ref_extension != undefined && this.ref_extension != '' &&
-      // this.ref_Staff_no != undefined && this.ref_Staff_no != '' &&
-      // this.ref_Internal_ID != undefined && this.ref_Internal_ID != '' &&
-      this.ref_Designation != undefined && this.ref_Designation != '' &&
-      this.ref_Reporting_to != undefined && this.ref_Reporting_to != '') {
+    if (
+      this.HR_staff_id != undefined && this.HR_staff_id != '' &&
+      this.HR_staff_name != undefined && this.HR_staff_name != '' &&
+      this.HR_staff_role != undefined && this.HR_staff_role != '' &&
+      this.HR_staff_type != undefined && this.HR_staff_type != '' &&
+      this.HR_start_date != undefined && this.HR_start_date != '' &&
+      this.HR_end_date != undefined && this.HR_end_date != '' &&
+      this.Documents_array1.length > 0) {
       let obj = {
-        "ref_name": this.ref_name,
-        "ref_email": this.ref_email,
-        "ref_pone": this.ref_pone,
-        "ref_whats_pone": this.ref_whats_pone,
-        "ref_lanline": this.ref_lanline,
-        "ref_extension": this.ref_extension,
-        "ref_Staff_no": this.ref_Staff_no,
-        "ref_Internal_ID": this.ref_Internal_ID,
-        "ref_Designation": this.ref_Designation.y,
-        "ref_Reporting_to": this.ref_Reporting_to
+        "HR_staff_id": this.HR_staff_id.y,
+        "HR_staff_name": this.HR_staff_name,
+        "HR_staff_role": this.HR_staff_role,
+        "HR_staff_type": this.HR_staff_type.y,
+        "HR_start_date": this.HR_start_date,
+        "HR_end_date": this.HR_end_date,
+        "HR_doct" : this.Documents_array1,
+
       }
-      this.ref_persons_array[this.ref_id] = obj;
-      this.ref_name = undefined;
-      this.ref_email = undefined;
-      this.ref_pone = undefined;
-      this.ref_whats_pone = undefined;
-      this.ref_lanline = undefined;
-      this.ref_extension = undefined;
-      this.ref_Staff_no = undefined;
-      this.ref_Internal_ID = undefined;
-      this.ref_Designation = undefined;
-      this.ref_Reporting_to = undefined;
-      console.log(this.ref_name)
-      this.ref_id = undefined;
+      this.HR_reporting_persons_array[this.HR_id]= obj;
+      this.HR_staff_id = undefined;
+      this.HR_staff_name = undefined;
+      this.HR_staff_role = undefined;
+      this.HR_staff_type = undefined;
+      this.HR_start_date = undefined;
+      this.HR_end_date = undefined;
+      this.Documents_array1 = [];
+      this.HR_id = undefined;
       let a = {
         "_id": this.id,
-        "contact_persons": this.ref_persons_array,
+        "hr_reporting": this.HR_reporting_persons_array,
       };
       console.log(a);
       this._api.useradd_edit(a).subscribe(
@@ -751,7 +944,7 @@ export class UserFormComponent implements OnInit {
           console.log(response);
           if (response.Code === 200) {
             alert(response.Message);
-            this.ref_persons_array = response.Data.contact_persons
+            this.HR_reporting_persons_array = response.Data.contact_persons
           } else {
             alert(response.Message);
           }
@@ -835,9 +1028,11 @@ export class UserFormComponent implements OnInit {
       alert("fill all the required fields")
     }
   }
- 
+
+  
   can() {
     this.form_act = true;
     this.ngOnInit();
   }
+
 }

@@ -128,7 +128,7 @@
     </div>
 
 </div>
-<ng-container>
+<ng-container *ngIf="doct.length > 0 && usertype_list.length > 0 && userrole_list.length > 0 && id != undefined">
     <!-- *ngIf="id != undefined" -->
     <h4 class="title-f">Add Documents</h4>
     <div class="card-box">
@@ -214,69 +214,215 @@
         <div class="row" style="padding: 0px 0px 23px 10px;">
             <div class="col-md-4">
                 <h5 class="form-lable">Staff ID:</h5>
-                <p-dropdown [options]="doct" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                <p-dropdown [options]="usertype_list" [(ngModel)]="HR_staff_id" placeholder="Select" optionLabel="y"
                     [showClear]="true"></p-dropdown>
             </div>
             <div class="col-md-4">
-                <h5 class="form-lable">Staff name:</h5>
-                <input type="text" pInputText [(ngModel)]="Name" placeholder="Staff name">
+                <h5 class="form-lable">Staff Name:</h5>
+                <input type="text" pInputText [(ngModel)]="HR_staff_name" placeholder="Staff name">
             </div>
             <div class="col-md-4">
                 <h5 class="form-lable">Role:</h5>
-                <input type="text" pInputText [(ngModel)]="Name" placeholder="Role">
+                <input type="text" pInputText [(ngModel)]="HR_staff_role" placeholder="Role">
 
             </div>
             <div class="col-md-4">
                 <h5 class="form-lable">Employee type:</h5>
-                <p-dropdown [options]="doct" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                <p-dropdown [options]="usertype_list" [(ngModel)]="HR_staff_type" placeholder="Select" optionLabel="y"
                     [showClear]="true"></p-dropdown>
             </div>
             <div class="col-md-4">
                 <h5 class="form-lable">Start date:</h5>
-                <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+                <p-calendar [showIcon]="true" inputId="icon" [(ngModel)]="HR_start_date"></p-calendar>
             </div>
             <div class="col-md-4">
                 <h5 class="form-lable">End date:</h5>
-                <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+                <p-calendar [showIcon]="true" inputId="icon" [(ngModel)]="HR_end_date"></p-calendar>
             </div>
             <div class="col-md-12" style="margin-top: 10px;">
 
                 <div class="card-box">
                     <h4 class="title-f">Add Documents</h4>
                     <div class="row" style="padding: 0px 0px 23px 10px;">
+
                         <div class="col-md-4">
                             <h5 class="form-lable">Document Type:</h5>
-                            <p-dropdown [options]="doct" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
-                                [showClear]="true"></p-dropdown>
+                            <p-dropdown [options]="doct" [(ngModel)]="Document_Type1" placeholder="Select"
+                                optionLabel="y" [showClear]="true"></p-dropdown>
                         </div>
                         <div class="col-md-4">
                             <h5 class="form-lable">Document Name:</h5>
-                            <input type="text" pInputText [(ngModel)]="Name" placeholder="Document Name">
+                            <input type="text" pInputText [(ngModel)]="Document_Name1" placeholder="Document Name">
                         </div>
                         <div class="col-md-4">
                             <h5 class="form-lable">Attachment:</h5>
-                            <input type="file">
+                            <input type="file" #imgType (change)="Documentupload1($event)" id="imgfile"
+                                accept="application/msword, application/vnd.ms-excel, application/pdf"
+                                class="form-control" id="city" placeholder="User type icon">
+
 
                         </div>
                         <div class="col-md-12 mt-20">
-                            <button type="button" class="btn btn-primary">Add</button>
+                            <button type="button" *ngIf="Doc_id1 == undefined" class="btn btn-primary"
+                                (click)="adddocuments1()">Add</button>
+                            <!-- <button type="button" *ngIf="Doc_id1 != undefined" style="float: right;"
+                                class="btn btn-primary" (click)="update_Doc1()">Update</button> -->
+
+                            <!-- <button type="button" *ngIf="Documents_array.length > 0"  style="float: right;" class="btn btn-primary" (click)="create_Doc()">Save</button> -->
+                            <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
+                        </div>
+                        <div class="col-md-12 mt-20">
+                            <table class="spec-table" style="width: 100%;overflow-x: scroll;">
+
+                                <thead>
+                                    <th>S.No</th>
+                                    <th>Document Type</th>
+                                    <th>Document Name</th>
+                                    <th>Attachment</th>
+                                    <th>Action</th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let arr of Documents_array1 ; let i= index;">
+                                        <td>{{i+1}}</td>
+                                        <td>{{arr.Document_Type1}}</td>
+                                        <td>{{arr.Document_Name1}}</td>
+                                        <td>
+                                            <i (click)="goToLink1(arr.Document_link)" class="fa fa-file-text"
+                                                style="background-color: #fff;color: #fd2c3a;" aria-hidden="true"></i>
+
+                                        </td>
+                                        <td>
+                                            <!-- <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true"
+                                                pTooltip="Edit" (click)="edit_Doc(arr,i)"></i> -->
+
+                                            <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true"
+                                                pTooltip="Delete" (click)="remove_doc1(i)"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 
                 </div>
             </div>
             <div class="col-md-12 mt-20">
-                <button type="button" class="btn btn-primary">Add</button>
+                <button type="button" *ngIf="HR_id == undefined" class="btn btn-primary"
+                    (click)="create_ref()">Add</button>
+                <button type="button" *ngIf="HR_id != undefined" class="btn btn-primary"
+                    (click)="update_ref()">Update</button>
+            </div>
+            <div class="col-md-12">
+
+                <div class="col-md-12 mt-20">
+                    <table class="spec-table" style="width: 100%;overflow-x: scroll;">
+                    
+                        <thead>
+                            <th>S.No</th>
+                            <th>Staff ID</th>
+                            <th>Staff name</th>
+                            <th>Role</th>
+                            <th>Employee type</th>
+                            <th>Start date</th>
+                            <th>End date</th>
+                            <th>Documents</th>
+                          
+                            <th>Action</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let arr of HR_reporting_persons_array ; let i= index;">
+                                <td>{{i+1}}</td>
+                                <td>{{arr.HR_staff_id}}</td>
+                                <td>{{arr.HR_staff_name}}</td>
+                                <td>{{arr.HR_staff_role}}</td>
+                                <td>{{arr.HR_staff_type}}</td>
+                                <td>{{arr.HR_start_date}}</td>
+                                <td>{{arr.HR_end_date}}</td>
+                                <td>
+                                    <ng-container *ngFor="let govt_id_pic of arr.HR_doct">
+                                        <i (click)="goToLink1(govt_id_pic.Document_link1)" class="fa fa-file-text"
+                                            style="background-color: #fff;color: #fd2c3a;" aria-hidden="true"></i>
+                                    </ng-container>
+                                </td>
+                                <td>
+                                    <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true" pTooltip="Edit" (click)="edit_ref(arr,i)"></i>
+
+                                    <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true"
+                                        pTooltip="Delete" (click)="remove_hr_reporting(i)"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
         </div>
+
     </div>
 
     <h4 class="title">Product reporting line</h4>
-
     <div class="card-box">
-        
-        
-        
+        <div class="row" style="padding: 0px 0px 23px 10px;">
+            <div class="col-md-4">
+                <h5 class="form-lable">Client:</h5>
+                <p-dropdown [options]="doct" [(ngModel)]="Pro_Client" placeholder="Select" optionLabel="y"
+                    [showClear]="true"></p-dropdown>
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Product:</h5>
+                <p-dropdown [options]="doct" [(ngModel)]="Pro_Product" placeholder="Select" optionLabel="y"
+                    [showClear]="true"></p-dropdown>
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Bucket:</h5>
+                <p-dropdown [options]="doct" [(ngModel)]="Pro_Bucket" placeholder="Select" optionLabel="y"
+                    [showClear]="true"></p-dropdown>
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">Start date:</h5>
+                <p-calendar [showIcon]="true" [(ngModel)]="Pro_start_date" inputId="icon"></p-calendar>
+            </div>
+            <div class="col-md-4">
+                <h5 class="form-lable">End date:</h5>
+                <p-calendar [showIcon]="true" [(ngModel)]="Pro_end_date" inputId="icon"></p-calendar>
+            </div>
+            <div class="col-md-12 mt-20">
+                <button type="button" *ngIf="Pro_id == undefined" class="btn btn-primary"
+                    (click)="create_Pro()">Add</button>
+                <button type="button" *ngIf="Pro_id != undefined" class="btn btn-primary"
+                    (click)="update_Pro()">Update</button>
+            </div>
+            <div class="col-md-12">
+
+                <div class="col-md-12 mt-20">
+                    <table class="spec-table" style="width: 100%;overflow-x: scroll;">
+                    
+                        <thead>
+                            <th>S.No</th>
+                            <th>Client</th>
+                            <th>Product</th>
+                            <th>Bucket</th>
+                            <th>Start date</th>
+                            <th>End date</th>
+                          
+                            <th>Action</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let arr of product_reporting_array ; let i= index;">
+                                <td>{{i+1}}</td>
+                                <td>{{arr.Pro_Client}}</td>
+                                <td>{{arr.Pro_Product}}</td>
+                                <td>{{arr.Pro_Bucket}}</td>
+                                <td>{{arr.Pro_start_date}}</td>
+                                <td>{{arr.Pro_end_date}}</td>
+                                <td>
+                                    <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true" pTooltip="Edit" (click)="edit_Pro(arr,i)"></i>
+
+                                    <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true"
+                                        pTooltip="Delete" (click)="remove_Pro(i)"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </ng-container>
