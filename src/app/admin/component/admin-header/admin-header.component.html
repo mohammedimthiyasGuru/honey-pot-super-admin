@@ -1,13 +1,14 @@
 <mat-toolbar color="primary">
   <div class="logo-img">
     <img class="logo-dark" src="assets/images/logo-01.png" alt="Logo" style="width: 120px;">
-    <img class="logo-dark" src="assets/images/dep-01t.png" alt="Logo" style="width: 120px;">
+    <img class="logo-dark" src="assets/images/dep-01t.png" alt="Logo" style="width: 100px;">
   </div>
 
 
   <!-- <span>My App</span> -->
   <span class="example-spacer"></span>
- 
+
+  <div class="row" style="margin:0px;background-color: #214ba3;">
   <div class="row" style="margin: 12px 0px 0px 10px;width: 200px;">
     <div class="search-hero" style="width: 100%;">
       <input class="form-control" type="text" name="search2" style="font-family: FontAwesome;" autocomplete="off"
@@ -43,7 +44,9 @@
     </mat-icon>
 
   </button>
- 
+
+</div>
+
   <div class="ad-user"  style="background:rgb(33 75 163);margin-right: -15px;padding-right: 10px;height: 47px;">
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" style="position: absolute;top: 4px;">
 
@@ -60,13 +63,13 @@
           <span>Logout</span>
         </div>
       </mat-menu> -->
-  
+
     </button>
     <div style="padding-left: 40px;">
       <h5>{{login_detail.Name}}</h5>
       <p>{{login_detail.Role}}</p>
     </div>
-   
+
 
   </div>
 </mat-toolbar>

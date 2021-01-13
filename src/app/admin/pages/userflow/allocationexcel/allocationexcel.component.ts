@@ -3,6 +3,8 @@ import * as XLSX from 'xlsx';
 import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 import Swal from 'sweetalert2';
 import { Router, RouterModule } from '@angular/router';
+import { ApiService } from '../../../../api.service';
+
 
 type AOA = any[][];
 @Component({
@@ -24,6 +26,19 @@ export class AllocationexcelComponent implements OnInit {
   checking: any;
   displayPosition: any;
   displayPosition1: any;
+
+  Bank_list_type : any;
+  product_list_type : any;
+  portfolio_list_type : any;
+  booleans = false;
+
+
+  Bank_list : any = [];
+  product_list :  any = [];
+  portfolio_list :  any = [];
+
+
+
   types: any = [
     { "y": "Banks" },
     { "y": "Finance companies" },
@@ -35,7 +50,12 @@ export class AllocationexcelComponent implements OnInit {
   section:any=1;
   constructor(
     private router: Router,
-  ) { }
+    private _api: ApiService,
+  ) {
+    this.Bank_list_get();
+    this.product_list_get();
+    this.portfolio_list_get();
+   }
 
   ngOnInit(): void {
   }
@@ -104,9 +124,56 @@ export class AllocationexcelComponent implements OnInit {
   acc_list() {
     window.scrollTo(0,0);
     this.router.navigateByUrl('/admin_panel/uploaded_list');
-  
+
   }
   entry(){
     this.section = 2;
   }
+
+
+  Bank_list_get() {
+    this._api.client_list().subscribe(
+      (response: any) => {
+        console.log(response);
+        let list = response.Data.reverse();
+        for (let i = 0; i < list.length; i++) {
+          let obj = { "y": list[i].Clinet_name};
+          this.Bank_list.push(obj);
+        }
+        console.log(this.Bank_list);
+      }
+    );
+  }
+
+  product_list_get() {
+    this._api.product_type_list().subscribe(
+      (response: any) => {
+        console.log(response);
+        let list = response.Data.reverse();
+        for (let i = 0; i < list.length; i++) {
+          let obj = { "y": list[i].product_type};
+          this.product_list.push(obj);
+        }
+        console.log(this.product_list);
+      }
+    );
+  }
+
+
+  portfolio_list_get() {
+    this._api.portfolio_type_list().subscribe(
+      (response: any) => {
+        console.log(response);
+        let list = response.Data.reverse();
+        for (let i = 0; i < list.length; i++) {
+          let obj = { "y": list[i].portfolio_type};
+          this.portfolio_list.push(obj);
+        }
+        console.log(this.portfolio_list);
+        this.booleans = true;
+      }
+    );
+  }
+
+
 }

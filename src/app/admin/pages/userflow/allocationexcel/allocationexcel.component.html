@@ -3,22 +3,30 @@
         <h4 class="title" style="margin-top: 15px;">Excel Upload</h4>
     </div>
 </div>
-<div class="card-box" style="margin: 2px;padding-bottom: 15px;">
+<div class="card-box" style="margin: 2px;padding-bottom: 15px;" *ngIf="booleans">
     <div class="row" style="padding: 0px 0px 23px 10px;" *ngIf="section == 1">
 
-        <div class="col-md-4">
-            <h5 class="form-lable">Choose Bank:</h5>
-            <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
-                [showClear]="true"></p-dropdown>
 
-        </div>
-        <div class="col-md-4">
-            <h5 class="form-lable">Choose Portfolio:</h5>
-            <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
-                [showClear]="true"></p-dropdown>
-        </div>
+      <div class="col-md-4">
+        <h5 class="form-lable">Choose Bank:</h5>
+        <p-dropdown [options]="Bank_list" name='Bank_list_type'  [(ngModel)]="Bank_list_type" placeholder="Select" optionLabel="y"
+            [showClear]="true"></p-dropdown>
+
+    </div>
+    <div class="col-md-4">
+        <h5 class="form-lable">Choose Product:</h5>
+        <p-dropdown [options]="product_list" name='product_list_type' [(ngModel)]="product_list_type" placeholder="Select" optionLabel="y"
+            [showClear]="true"></p-dropdown>
+    </div>
+    <div class="col-md-4">
+        <h5 class="form-lable">Choose Portfolio:</h5>
+        <p-dropdown [options]="portfolio_list" name='portfolio_list_type'  [(ngModel)]="portfolio_list_type" placeholder="Select" optionLabel="y"
+            [showClear]="true"></p-dropdown>
+    </div>
+
+
         <div class="col-md-12 mt-20">
-            <button type="button" class="btn btn-primary" (click)="entry()">Bulk Entry</button>
+            <button type="button" class="btn btn-primary" (click)="entry()">Excel Upload</button>
             <button type="button" class="btn btn-primary">Single Entry</button>
             <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
         </div>
@@ -203,7 +211,7 @@
 
             <ng-template pTemplate="header">
 
-              
+
 
 
             </ng-template>
@@ -220,7 +228,7 @@
                     <td *ngFor="let val of item">
                         {{val}}
                     </td>
-                    
+
                 </tr>
 
             </ng-template>
