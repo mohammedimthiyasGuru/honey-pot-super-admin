@@ -4,6 +4,8 @@ import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../../../api.service';
+import {MegaMenuItem,MenuItem} from 'primeng/api';
+
 @Component({
   selector: 'app-dashboard-main',
   templateUrl: './dashboard-main.component.html',
@@ -15,6 +17,37 @@ export class DashboardMainComponent implements OnInit {
   assets: boolean = false;
   assets1: boolean = false;
   assets2: boolean = false;
+
+
+  public doughnutChartLabels = ['Sales Q1', 'Sales Q2', 'Sales Q3', 'Sales Q4'];
+  public doughnutChartData = [120, 150, 180, 90];
+  public doughnutChartType = 'doughnut';
+
+
+  public radarChartLabels = ['Q1', 'Q2', 'Q3', 'Q4'];
+  public radarChartData = [
+    {data: [120, 130, 180, 70], label: '2017'},
+    {data: [90, 150, 200, 45], label: '2018'}
+  ];
+  public radarChartType = 'radar';
+
+
+
+  public pieChartLabels = ['Sales Q1', 'Sales Q2', 'Sales Q3', 'Sales Q4'];
+  public pieChartData = [120, 150, 180, 90];
+  public pieChartType = 'pie';
+
+  public barChartOptions = {
+    scaleShowVerticalLines: false,
+    responsive: true
+  };
+  public barChartLabels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  public barChartType = 'bar';
+  public barChartLegend = true;
+  public barChartData = [
+    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
+    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
+  ];
 
   rows: any = [{ type: "Dog", name: "dog1" },
   { type: "Cat", name: "cat1" },
@@ -29,6 +62,66 @@ export class DashboardMainComponent implements OnInit {
   { type: "Cat", name: "cat1" },
   { type: "Cat", name: "cat1" }];
   searchQR: any;
+
+
+  data:any = {
+    labels: ['A','B','C'],
+    datasets: [
+        {
+            data: [300, 50, 100],
+            backgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56"
+            ],
+            hoverBackgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56"
+            ]
+        }]
+    };
+
+
+    data1:any = {
+      labels: ['January', 'February', 'March',],
+      datasets: [
+          {
+              label: 'My First dataset',
+              backgroundColor: '#42A5F5',
+              borderColor: '#1E88E5',
+              data: [65, 59, 80,]
+          },
+          {
+              label: 'My Second dataset',
+              backgroundColor: '#9CCC65',
+              borderColor: '#7CB342',
+              data: [28, 48, 40,]
+          }
+      ]
+  }
+
+  data2:any= {
+    labels: ['A','B','C'],
+    datasets: [
+        {
+            data: [300, 50, 100],
+            backgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56"
+            ],
+            hoverBackgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56"
+            ]
+        }]
+    };
+
+
+
+  items: MegaMenuItem[];
   login_detail:any;
   constructor(
     private router: Router,

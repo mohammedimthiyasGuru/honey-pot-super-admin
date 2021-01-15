@@ -5,40 +5,22 @@
 }
 
 .bg-c-blue {
-    background: #ffeaee;
-    border-bottom: 3px solid #f3133e !important;
-}
-.bg-c-blue .op i {
-    background: #f3133e !important;
+    background: linear-gradient(45deg,#4099ff,#73b4ff);
 }
 
 .bg-c-green {
-    background: #e8e5f6;
-    border-bottom: 3px solid #519051 !important;
+    background: linear-gradient(45deg,#2ed8b6,#59e0c5);
+}
 
-}
-.bg-c-green .op i {
-    background: #519051 !important;
-}
 .bg-c-yellow {
-    background: #fcffcc;
-    border-bottom: 3px solid #908c51 !important;
+    background: linear-gradient(45deg,#FFB64D,#ffcb80);
+}
 
-}
-.bg-c-yellow .op i {
-    background: #908c51 !important;
-}
 .bg-c-pink {
-    background: #f3e5f6;
-    border-bottom: 3px solid #855190 !important;
+    background: linear-gradient(45deg,#FF5370,#ff869a);
+}
 
-}
-.bg-c-pink .op i {
-    background: #855190 !important;
-}
-.card .op i:hover{
-    background-color: #696969 !important;
-}
+
 .card {
     border-radius: 5px;
     -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
@@ -47,8 +29,6 @@
     margin-bottom: 30px;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0px 2px 5px 0px #777;
-    height: 125px;
 }
 
 .card .card-block {
@@ -78,12 +58,12 @@
     top: 0px;
     z-index: 9;
     background-color: #154476;
-    height: 50px;
+    height: 75px;
     width: 100%;
 }
 .logo-img {
     padding-left: 55px;
-    /* margin-top: 12px; */
+    margin-top: 12px;
 }
 :host::ng-deep  .mat-icon-button {
     padding: 0;
@@ -93,7 +73,7 @@
     flex-shrink: 0;
     line-height: 40px;
     border-radius: 50%;
-    margin-top: 3px;
+    margin-top: 15px;
 }
 .card-box-i img {
     width: 30px;
@@ -106,7 +86,7 @@ button{
 }
 .work{
     font-weight: 500;
-    font-size: 12px;
+    font-size: 13px;
     margin-right: 15px;
     text-decoration: underline;
     cursor: pointer;
@@ -140,7 +120,7 @@ button{
 
 .card-box p {
     margin-bottom: 2px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
     color: #989898;
     text-align: left;
@@ -204,7 +184,7 @@ button{
 }
 
 .card-box-text p {
-    font-size: 12px;
+    font-size: 14px;
     color: #5f5f60;
     font-weight: bold;
     margin-bottom: 2px;
@@ -234,7 +214,7 @@ button{
 
 .head-text span {
     float: right;
-    font-size: 12px;
+    font-size: 13px;
     padding-right: 14px;
     color: #007ad9;
 }
@@ -242,7 +222,7 @@ button{
     padding: 3px 3px;
 }
 .title-h3{
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
     margin: 0px;
 }
@@ -270,16 +250,4 @@ padding: 10px 10px 10px 10px;
     color: #ffffff;
     padding: 0px 10px;
     background: #0e69dd;
-}
-
-/* :host::ng-deep .mat-list-base::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: rgba(0,0,0,.5);
-    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
-} */
-.op i{
-    margin: 2px;
-    font-size: 16px;
-    padding: 4px;
-    background: #F44336;
 }

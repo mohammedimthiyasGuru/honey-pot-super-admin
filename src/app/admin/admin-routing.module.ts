@@ -97,6 +97,7 @@ import { CreateUserTypeComponent } from './pages/user-management/create-user-typ
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' ,pathMatch:'full'},
+  // { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'client_form', component: HoneyPotClientDetailFormComponent },
   { path: 'Clients', component: HoneyPotClientDetailComponent },
@@ -177,14 +178,14 @@ const routes: Routes = [
   { path: 'userflow/withdrawexcel', component: WithdrawexcelComponent },
   { path: 'userflow/withdrawsingle', component: WithdrawsingleComponent },
   { path: 'userflow/Dual_Temporary_allocation', component: DualTemporaryAllocationComponent },
-  
- 
+
+
   { path: 'Configuration', component: ConfigurationComponent },
   { path: 'Agency', component: AgencyManagementComponent },
   { path: 'fieldset', component: AgencyFieldAddComponent },
   { path: 'field_mapping', component: FieldMappingComponent },
   { path: 'Portfolio', component: AddPortfolioComponent },
-   
+
   { path: 'uploaded_list', component: UploadedListComponent },
   { path: 'client/product', component: AddProductComponent },
   { path: 'Document', component: DocumentManagementComponent },
@@ -204,7 +205,7 @@ const routes: Routes = [
   { path: 'Create_Account_Type', component: CreateAccountTypeComponent },
   { path: 'Create_Designation', component: CreateDesignationComponent },
   { path: 'Create_State', component: CreateStateComponent },
-  
+
 ];
 
 @NgModule({
