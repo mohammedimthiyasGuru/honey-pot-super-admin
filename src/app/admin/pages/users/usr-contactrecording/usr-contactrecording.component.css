@@ -76,7 +76,8 @@ font-weight:500;
 }
 :host::ng-deep .tab-info .mat-tab-labels {
   /* background: linear-gradient(180deg, rgba(212,232,249,1) 46%, rgba(175,198,236,1) 100%) !important; */
-  background: linear-gradient(180deg, rgb(32 53 63 / 94%) 46%, rgb(7 21 49) 100%) !important;
+  /* background: linear-gradient(180deg, rgb(32 53 63 / 94%) 46%, rgb(7 21 49) 100%) !important; */
+  background: linear-gradient(180deg, rgb(182, 212, 231 / 94%) 46%, rgb(182, 212, 231) 100%) !important;
   height: 27px;
 }
 :host::ng-deep .mat-ink-bar {
@@ -95,7 +96,8 @@ font-weight:500;
   height: 20px;
   width: 20px;
   font-size: 19px;
-  color: #ffffff !important;
+  /* color: #ffffff !important; */
+  color: #6d6d6d !important;
 }
 :host::ng-deep  .tab-info .mat-tab-label:hover .mat-icon{
   color: #ef6c00 !important;
@@ -171,11 +173,14 @@ hr{
 
 
 .labels{
-  min-width: 125px;
-  padding-right: 25px;
-  font-weight: bold !important;
+  /* min-width: 125px; */
+  max-width:150px;
+  /* padding-right: 25px; */
+  /* font-weight: bold !important; */
   color: #595555;
   font-size: 12px;
+  padding-bottom: 5px;
+  padding-right: 5px;
 }
 
 .col-md-6 {
@@ -187,6 +192,8 @@ hr{
   font-weight: normal !important;
   color: #555;
   font-size: 12px;
+  font-weight:bold !important;
+  max-width:140px;
 }
 
 
@@ -196,7 +203,7 @@ hr{
 }
 i {
   color: #fff;
-  padding: 6px 6px;
+  padding: 0px 0px 0px 3px;
   width: auto;
   height: auto;
   font-size: 17px !important;
@@ -209,6 +216,7 @@ i {
   width: calc(100% - 87px);
   top: 160px;
   z-index: 999;
+  background-color:#f7f7f7;
 }
 :host::ng-deep .tab-info .cus-tab .mat-tab-header {
   display: flex;
@@ -222,14 +230,15 @@ i {
     position: fixed;
     z-index: 999;
     width: calc(100% - 87px);
-    background: #ffff;
+    /* background: #ffff; */ 
     padding-top: 10px;
 }
 .inner-a{
   color: #fff;
   padding: 4px 10px;
   margin-right: 10px;
-  background-color: #20353f;
+  /* background-color: #20353f; */
+  background-color: #747f7f;
   font-weight: 400;
   font-size: 12px;
   cursor: pointer;
@@ -273,7 +282,8 @@ button:focus {
 .ui-table .ui-table-thead > tr > th {
   padding: 8px 8px !important;
   color: #ffffff !important;
-  background-color: #20353f !important;
+  /* background-color: #20353f !important; */
+  background-color: #747f7f !important;
 }
 
 
@@ -283,6 +293,8 @@ button:focus {
 }
 :host::ng-deep .ui-table-wrapper{
 overflow-x: scroll;
+padding: 0px 10px;
+background: #fff;
 }
 
 .add-icon{
@@ -365,7 +377,7 @@ font-weight:500;
     color: #fff !important;
     border: none !important;
     text-align: left !important;
-    border-right: 1px solid #ffffff !important;
+    border-right: 1px solid #a8a8a8 !important;
     font-weight: 500;
 }
 .inpo td{
@@ -373,7 +385,7 @@ font-weight:500;
     padding:1px 10px 1px 10px !important;
     color:#ff8c2c!important;
     border: none !important;
-    border-right: 1px solid #ffffff !important;
+    border-right: 1px solid #a8a8a8 !important;
 }
 
 .title-f{

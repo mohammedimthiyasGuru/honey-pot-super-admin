@@ -8,7 +8,8 @@ width:100%;
 }
 
 [class*="fontawesome-"]:before {
-  font-family: 'FontAwesome', sans-serif;
+  /* font-family: 'FontAwesome', sans-serif; */
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
 /* ---------- GENERAL ---------- */
@@ -37,8 +38,9 @@ a:hover {
 }
 
 input {
-	border: none;
-	font-family: 'Open Sans', Arial, sans-serif;
+  border: none;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+	/* font-family: 'Open Sans', Arial, sans-serif; */
 	font-size: 12px;
 	line-height: 1.5em;
   padding: 0;
