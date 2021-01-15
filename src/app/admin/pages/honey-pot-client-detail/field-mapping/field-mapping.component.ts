@@ -1,10 +1,10 @@
 import { Component, OnInit, Inject, ViewChild, ElementRef} from '@angular/core';
-import { Router } from '@angular/router';
 import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../../../../api.service';
-
+import Swal from 'sweetalert2';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-field-mapping',
@@ -13,26 +13,25 @@ import { ApiService } from '../../../../api.service';
 })
 export class FieldMappingComponent implements OnInit {
   cli_type:any;
-  Bank_list_type : any;
-  product_list_type : any;
-  portfolio_list_type : any;
   booleans = false;
-
-
   Bank_list : any = [];
   product_list :  any = [];
   portfolio_list :  any = [];
+  rows: any;
+  selectedRows: any;
+  selectedProducts: any[]= [];
+
   types: any = [
     { "y": "Banks" },
-    { "y": "Finance companies" },
+    { "y": "Finance companies" }  ,
     { "y": "Real Estate" },
     { "y": "Telecom" },
     { "y": "Others" },
   ];
- rows:any = [{ type: "Dog", name: "dog1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },]
+//  rows:any = [{ type: "Dog", name: "dog1" },
+//     { type: "Cat", name: "cat1" },
+//     { type: "Cat", name: "cat1" },
+//     { type: "Cat", name: "cat1" },]
   constructor(
     private router: Router,
     private _api: ApiService,
@@ -45,7 +44,13 @@ export class FieldMappingComponent implements OnInit {
    }
 
   ngOnInit(): void {
-
+    this._api.fields_list().subscribe(
+        (response: any) => {
+          console.log(response);
+          this.rows = response.Data.reverse();
+          console.log(this.rows);
+        }
+      );
   }
 
   Bank_list_get() {
@@ -59,7 +64,7 @@ export class FieldMappingComponent implements OnInit {
         }
         console.log(this.Bank_list);
       }
-    );
+    );  
   }
 
   product_list_get() {
@@ -90,6 +95,14 @@ export class FieldMappingComponent implements OnInit {
         this.booleans = true;
       }
     );
+  }
+
+  removeSelected(item) {
+    let i = this.selectedProducts.indexOf(item);
+    if (i > -1) {
+      this.selectedProducts.splice(i, 1);
+    }
+    return this.selectedProducts; 
   }
 
 }

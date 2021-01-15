@@ -8,18 +8,18 @@
 
         <div class="col-md-4">
             <h5 class="form-lable">Choose Bank:</h5>
-            <p-dropdown [options]="Bank_list" name='Bank_list_type'  [(ngModel)]="Bank_list_type" placeholder="Select" optionLabel="y"
+            <p-dropdown [options]="Bank_list" name='Bank_list_get'  [(ngModel)]="Bank_list_get" placeholder="Select" optionLabel="y"
                 [showClear]="true"></p-dropdown>
 
         </div>
         <div class="col-md-4">
             <h5 class="form-lable">Choose Product:</h5>
-            <p-dropdown [options]="product_list" name='product_list_type' [(ngModel)]="product_list_type" placeholder="Select" optionLabel="y"
+            <p-dropdown [options]="product_list" name='product_list_get' [(ngModel)]="product_list_get" placeholder="Select" optionLabel="y"
                 [showClear]="true"></p-dropdown>
         </div>
         <div class="col-md-4">
             <h5 class="form-lable">Choose Portfolio:</h5>
-            <p-dropdown [options]="portfolio_list" name='portfolio_list_type'  [(ngModel)]="portfolio_list_type" placeholder="Select" optionLabel="y"
+            <p-dropdown [options]="portfolio_list" name='portfolio_list_get'  [(ngModel)]="portfolio_list_get" placeholder="Select" optionLabel="y"
                 [showClear]="true"></p-dropdown>
         </div>
         <div class="col-md-12">
@@ -28,7 +28,7 @@
         <div class="col-md-6">
             <h5 class="form-lable">Select Fields:</h5>
             <div>
-                <div class="card-box"> <p-table [value]="rows" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
+                <div class="card-box"> <p-table [value]="rows"  styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
                     [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
                     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                     [globalFilterFields]="['type']">
@@ -41,16 +41,17 @@
                             <th>Data Type</th>
                             <th>Length</th>
                     </ng-template>
-                    <ng-template pTemplate="body" let-item let-i="rowIndex">
+                    <ng-template pTemplate="body" let-item  let-i="rowIndex">
                         <tr class="tdrow">
                             <td class="act">
-                                <input type="checkbox">
+                                <p-checkbox type="checkbox" [value]="item" [(ngModel)]="selectedProducts" ></p-checkbox>
+                                <!-- <p-tableCheckbox [value]="item"></p-tableCheckbox> -->
                             </td>
                             <td style="text-align: center;">{{i+1}}</td>
-                            <td>Cus ID</td>
-                            <td>Customer ID</td>
-                            <td>Varchar</td>
-                            <td style="text-align: center;">8</td>
+                            <td>{{item.fields}}</td>
+                            <td>{{item.fields_detail}}</td>
+                            <td>{{item.data_type}}</td>
+                            <td style="text-align: center;">{{item.length}}</td>
                         </tr>
                     </ng-template>
                  </p-table>  </div>
@@ -62,7 +63,7 @@
         <div class="col-md-6">
             <h5 class="form-lable">Selected Fields:</h5>
             <div>
-                <div class="card-box"> <p-table [value]="rows" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
+                <div class="card-box"> <p-table [value]="selectedProducts" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
                     [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
                     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                     [globalFilterFields]="['type']">
@@ -78,13 +79,13 @@
                     <ng-template pTemplate="body" let-item let-i="rowIndex">
                         <tr class="tdrow">
                             <td class="act" style="text-align: center;">
-                                <i style="color: #fd2c3a;" class="fa fa-times" aria-hidden="true" pTooltip="Remove"></i>
+                                <i style="color: #fd2c3a;" class="fa fa-times" aria-hidden="true" pTooltip="Remove" (click)="removeSelected(item)"></i>
                             </td>
                             <td style="text-align: center;">{{i+1}}</td>
-                            <td>Cus ID</td>
-                            <td>Customer ID</td>
-                            <td>Varchar</td>
-                            <td style="text-align: center;">8</td>
+                            <td>{{item.fields}}</td>
+                            <td>{{item.fields_detail}}</td>
+                            <td>{{item.data_type}}</td>
+                            <td style="text-align: center;">{{item.length}}</td>
                         </tr>
                     </ng-template>
                  </p-table>  </div>

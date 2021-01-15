@@ -52,12 +52,12 @@
     font-family: 'Roboto', sans-serif !important;
 }
 :host::ng-deep  .menuslider .side{
-    width: 39px !important;
+    width: 30px !important;
     transition: all 0.5s;
 }
 
 :host::ng-deep  .menuslider .mat-drawer-content{
-    margin-left: 39px !important;
+    margin-left: 30px !important;
     transition: all 0.5s;
 }
 :host::ng-deep  .mat-nav-list .mat-list-item:hover {

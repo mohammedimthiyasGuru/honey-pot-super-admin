@@ -34,55 +34,56 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { TooltipModule } from 'primeng/tooltip';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { ChartModule } from 'primeng/chart';
+import {CheckboxModule} from 'primeng/checkbox';
 import { HoneyPotClientDetailComponent } from './pages/honey-pot-client-detail/honey-pot-client-detail.component';
 import { HoneyPotClientDetailFormComponent } from './pages/honey-pot-client-detail/honey-pot-client-detail-form/honey-pot-client-detail-form.component';
 import { ClientProfileComponent } from './pages/honey-pot-client-detail/client-profile/client-profile.component';
 import { CountryComponent } from './pages/country/country.component';
 import { LicenseComponent } from './pages/license/license.component';
 import { LicenseFormComponent } from './pages/license/license-form/license-form.component';
-import { AccAccountlistComponent } from './Pages/accounts/acc-accountlist/acc-accountlist.component';
-import { AccLegalComponent } from './Pages/accounts/acc-legal/acc-legal.component';
-import { AccAuthorizationComponent } from './Pages/accounts/acc-authorization/acc-authorization.component';
-import { AccAuthorViewComponent } from './Pages/accounts/acc-author-view/acc-author-view.component';
-import { UsrContactrecordingComponent } from './pages/users//usr-contactrecording/usr-contactrecording.component';
-import { UsrActioncodeComponent } from './pages/users//usr-actioncode/usr-actioncode.component';
-import { UsrAddnewaddressComponent } from './pages/users//usr-addnewaddress/usr-addnewaddress.component';
-import { UsrAddressdetailsComponent } from './pages/users//usr-addressdetails/usr-addressdetails.component';
-import { UsrAdhocscreenComponent } from './pages/users//usr-adhocscreen/usr-adhocscreen.component';
-import { UsrAllocationhistoryComponent } from './pages/users//usr-allocationhistory/usr-allocationhistory.component';
-import { UsrCustomerdetailsComponent } from './pages/users//usr-customerdetails/usr-customerdetails.component';
-import { UsrCustomerleaccountComponent } from './pages/users//usr-customerleaccount/usr-customerleaccount.component';
-import { UsrDocumnetretrievalComponent } from './pages/users//usr-documnetretrieval/usr-documnetretrieval.component';
-import { UsrExcelexportComponent } from './pages/users//usr-excelexport/usr-excelexport.component';
-import { UsrFollowupsaveComponent } from './pages/users//usr-followupsave/usr-followupsave.component';
-import { UsrFollowuptakeComponent } from './pages/users//usr-followuptake/usr-followuptake.component';
-import { UsrFollowuptakeoneComponent } from './pages/users//usr-followuptakeone/usr-followuptakeone.component';
-import { UsrFollowuptrailsComponent } from './pages/users//usr-followuptrails/usr-followuptrails.component';
-import { UsrGurantordetailsComponent } from './pages/users//usr-gurantordetails/usr-gurantordetails.component';
-import { UsrLoandetailsComponent } from './pages/users//usr-loandetails/usr-loandetails.component';
-import { UsrLogoffusersComponent } from './pages/users//usr-logoffusers/usr-logoffusers.component';
-import { UsrOverduedetailsoneComponent } from './pages/users//usr-overduedetailsone/usr-overduedetailsone.component';
-import { UsrOverduedetailstwoComponent } from './pages/users//usr-overduedetailstwo/usr-overduedetailstwo.component';
-import { UsrPaymentdetailsComponent } from './pages/users//usr-paymentdetails/usr-paymentdetails.component';
-import { UsrPaymentdetailsoneComponent } from './pages/users//usr-paymentdetailsone/usr-paymentdetailsone.component';
-import { UsrPhonedetailsComponent } from './pages/users//usr-phonedetails/usr-phonedetails.component';
-import { UsrReferaccountComponent } from './pages/users//usr-referaccount/usr-referaccount.component';
-import { UsrReportComponent } from './pages/users//usr-report/usr-report.component';
-import { UsrRpoComponent } from './pages/users//usr-rpo/usr-rpo.component';
-import { UsrScreenaccessoneComponent } from './pages/users//usr-screenaccessone/usr-screenaccessone.component';
-import { UsrScreenaccesstwoComponent } from './pages/users//usr-screenaccesstwo/usr-screenaccesstwo.component';
-import { UsrScreenaccessthreeComponent } from './pages/users//usr-screenaccessthree/usr-screenaccessthree.component';
-import { UsrScreenaccesscontrolComponent } from './pages/users//usr-screenaccesscontrol/usr-screenaccesscontrol.component';
-import { UsrScreenaccesscontroloneComponent } from './pages/users//usr-screenaccesscontrolone/usr-screenaccesscontrolone.component';
-import { UsrScreenaccesscontroltwoComponent } from './pages/users//usr-screenaccesscontroltwo/usr-screenaccesscontroltwo.component';
-import { UsrScreenaccesscontrolthreeComponent } from './pages/users//usr-screenaccesscontrolthree/usr-screenaccesscontrolthree.component';
-import { UsrUserdetailsComponent } from './pages/users//usr-userdetails/usr-userdetails.component';
+import { AccAccountlistComponent } from './pages/accounts/acc-accountlist/acc-accountlist.component';
+import { AccLegalComponent } from './pages/accounts/acc-legal/acc-legal.component';
+import { AccAuthorizationComponent } from './pages/accounts/acc-authorization/acc-authorization.component';
+import { AccAuthorViewComponent } from './pages/accounts/acc-author-view/acc-author-view.component';
+import { UsrContactrecordingComponent } from './pages/users/usr-contactrecording/usr-contactrecording.component';
+import { UsrActioncodeComponent } from './pages/users/usr-actioncode/usr-actioncode.component';
+import { UsrAddnewaddressComponent } from './pages/users/usr-addnewaddress/usr-addnewaddress.component';
+import { UsrAddressdetailsComponent } from './pages/users/usr-addressdetails/usr-addressdetails.component';
+import { UsrAdhocscreenComponent } from './pages/users/usr-adhocscreen/usr-adhocscreen.component';
+import { UsrAllocationhistoryComponent } from './pages/users/usr-allocationhistory/usr-allocationhistory.component';
+import { UsrCustomerdetailsComponent } from './pages/users/usr-customerdetails/usr-customerdetails.component';
+import { UsrCustomerleaccountComponent } from './pages/users/usr-customerleaccount/usr-customerleaccount.component';
+import { UsrDocumnetretrievalComponent } from './pages/users/usr-documnetretrieval/usr-documnetretrieval.component';
+import { UsrExcelexportComponent } from './pages/users/usr-excelexport/usr-excelexport.component';
+import { UsrFollowupsaveComponent } from './pages/users/usr-followupsave/usr-followupsave.component';
+import { UsrFollowuptakeComponent } from './pages/users/usr-followuptake/usr-followuptake.component';
+import { UsrFollowuptakeoneComponent } from './pages/users/usr-followuptakeone/usr-followuptakeone.component';
+import { UsrFollowuptrailsComponent } from './pages/users/usr-followuptrails/usr-followuptrails.component';
+import { UsrGurantordetailsComponent } from './pages/users/usr-gurantordetails/usr-gurantordetails.component';
+import { UsrLoandetailsComponent } from './pages/users/usr-loandetails/usr-loandetails.component';
+import { UsrLogoffusersComponent } from './pages/users/usr-logoffusers/usr-logoffusers.component';
+import { UsrOverduedetailsoneComponent } from './pages/users/usr-overduedetailsone/usr-overduedetailsone.component';
+import { UsrOverduedetailstwoComponent } from './pages/users/usr-overduedetailstwo/usr-overduedetailstwo.component';
+import { UsrPaymentdetailsComponent } from './pages/users/usr-paymentdetails/usr-paymentdetails.component';
+import { UsrPaymentdetailsoneComponent } from './pages/users/usr-paymentdetailsone/usr-paymentdetailsone.component';
+import { UsrPhonedetailsComponent } from './pages/users/usr-phonedetails/usr-phonedetails.component';
+import { UsrReferaccountComponent } from './pages/users/usr-referaccount/usr-referaccount.component';
+import { UsrReportComponent } from './pages/users/usr-report/usr-report.component';
+import { UsrRpoComponent } from './pages/users/usr-rpo/usr-rpo.component';
+import { UsrScreenaccessoneComponent } from './pages/users/usr-screenaccessone/usr-screenaccessone.component';
+import { UsrScreenaccesstwoComponent } from './pages/users/usr-screenaccesstwo/usr-screenaccesstwo.component';
+import { UsrScreenaccessthreeComponent } from './pages/users/usr-screenaccessthree/usr-screenaccessthree.component';
+import { UsrScreenaccesscontrolComponent } from './pages/users/usr-screenaccesscontrol/usr-screenaccesscontrol.component';
+import { UsrScreenaccesscontroloneComponent } from './pages/users/usr-screenaccesscontrolone/usr-screenaccesscontrolone.component';
+import { UsrScreenaccesscontroltwoComponent } from './pages/users/usr-screenaccesscontroltwo/usr-screenaccesscontroltwo.component';
+import { UsrScreenaccesscontrolthreeComponent } from './pages/users/usr-screenaccesscontrolthree/usr-screenaccesscontrolthree.component';
+import { UsrUserdetailsComponent } from './pages/users/usr-userdetails/usr-userdetails.component';
 import { MatTabsModule } from '@angular/material/tabs';
 // import { FlexLayoutModule } from "@angular/flex-layout";
 
 import {MatTooltipModule} from '@angular/material/tooltip';
-import { UsrAllocationdetailComponent } from './pages/users//usr-allocationdetail/usr-allocationdetail.component';
-import { UsrCollateraldetailssComponent } from './pages/users//usr-collateraldetailss/usr-collateraldetailss.component';
+import { UsrAllocationdetailComponent } from './pages/users/usr-allocationdetail/usr-allocationdetail.component';
+import { UsrCollateraldetailssComponent } from './pages/users/usr-collateraldetailss/usr-collateraldetailss.component';
 import { UsrAccountsummeryComponent } from './pages/users/usr-accountsummery/usr-accountsummery.component';
 import { UsrDelinquencyflowComponent } from './pages/users/usr-delinquencyflow/usr-delinquencyflow.component';
 import { UsrStatcardComponent } from './pages/users/usr-statcard/usr-statcard.component';
@@ -110,20 +111,20 @@ import { LocalaccworkedComponent } from './pages/userflow/localaccworked/localac
 import { LocalaccpendingComponent } from './pages/userflow/localaccpending/localaccpending.component';
 import { LocalaccptpComponent } from './pages/userflow/localaccptp/localaccptp.component';
 import { LocalaccallocComponent } from './pages/userflow/localaccalloc/localaccalloc.component';
-import { CreditcardlistComponent } from './Pages/userflow/creditcardlist/creditcardlist.component';
-import { VechicleloanlistComponent } from './Pages/userflow/vechicleloanlist/vechicleloanlist.component';
-import { PersonalloanlistComponent } from './Pages/userflow/personalloanlist/personalloanlist.component';
-import { HomeloanlistComponent } from './Pages/userflow/homeloanlist/homeloanlist.component';
+import { CreditcardlistComponent } from './pages/userflow/creditcardlist/creditcardlist.component';
+import { VechicleloanlistComponent } from './pages/userflow/vechicleloanlist/vechicleloanlist.component';
+import { PersonalloanlistComponent } from './pages/userflow/personalloanlist/personalloanlist.component';
+import { HomeloanlistComponent } from './pages/userflow/homeloanlist/homeloanlist.component';
 
 
-import { AllocationsingleComponent } from './Pages/userflow/allocationsingle/allocationsingle.component';
-import { AllocationexcelComponent } from './Pages/userflow/allocationexcel/allocationexcel.component';
-import { WithdrawsingleComponent } from './Pages/userflow/withdrawsingle/withdrawsingle.component';
-import { WithdrawexcelComponent } from './Pages/userflow/withdrawexcel/withdrawexcel.component';
-import { ReallowsingleComponent } from './Pages/userflow/reallowsingle/reallowsingle.component';
-import { ReallowexcelComponent } from './Pages/userflow/reallowexcel/reallowexcel.component';
-import { DedupeComponent } from './Pages/userflow/dedupe/dedupe.component';
-import { LinkdelinkComponent } from './Pages/userflow/linkdelink/linkdelink.component';
+import { AllocationsingleComponent } from './pages/userflow/allocationsingle/allocationsingle.component';
+import { AllocationexcelComponent } from './pages/userflow/allocationexcel/allocationexcel.component';
+import { WithdrawsingleComponent } from './pages/userflow/withdrawsingle/withdrawsingle.component';
+import { WithdrawexcelComponent } from './pages/userflow/withdrawexcel/withdrawexcel.component';
+import { ReallowsingleComponent } from './pages/userflow/reallowsingle/reallowsingle.component';
+import { ReallowexcelComponent } from './pages/userflow/reallowexcel/reallowexcel.component';
+import { DedupeComponent } from './pages/userflow/dedupe/dedupe.component';
+import { LinkdelinkComponent } from './pages/userflow/linkdelink/linkdelink.component';
 import { ConfigurationComponent } from './pages/configuration/configuration.component';
 import { UserManagementComponent } from './pages/user-management/user-management.component';
 import { UserFormComponent } from './pages/user-management/user-form/user-form.component';
@@ -305,7 +306,8 @@ import { CreateUserTypeComponent } from './pages/user-management/create-user-typ
     // FlexLayoutModule,
     MatTooltipModule,
     CarouselModule,
-    SliderModule
+    SliderModule,
+    CheckboxModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
