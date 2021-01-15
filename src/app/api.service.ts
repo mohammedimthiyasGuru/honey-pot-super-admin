@@ -261,4 +261,25 @@ export class ApiService {
   Code_checker(data) {
     return this.http.post(this.apiUrl + 'entity_user/find_code', data);
   }
+
+
+
+  fields_mapping_adds(data) {
+    return this.http.post(this.apiUrl + 'fields_mapping/create', data);
+  }
+  fields_mapping_edit(data) {
+    return this.http.post(this.apiUrl + 'fields_mapping/edit', data);
+  }
+  fields_mapping_delete(data) {
+    return this.http.post(this.apiUrl + 'fields_mapping/delete', data);
+  }
+  fields_mapping_list() {
+    return this.http.get<any>(this.apiUrl + 'fields_mapping/getlist' );
+  }
+
+  fields_mapping_fetch(data) {
+    return this.http.post(this.apiUrl + 'fields_mapping/fetch_field_list', data);
+  }
+
+
 }

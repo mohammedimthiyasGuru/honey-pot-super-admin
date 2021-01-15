@@ -8,20 +8,27 @@
 
         <div class="col-md-4">
             <h5 class="form-lable">Choose Bank:</h5>
-            <p-dropdown [options]="Bank_list" name='Bank_list_get'  [(ngModel)]="Bank_list_get" placeholder="Select" optionLabel="y"
+            <p-dropdown [options]="Bank_list" name='Bank_list_get'  [(ngModel)]="Bank_list_gets" placeholder="Select" optionLabel="y"
                 [showClear]="true"></p-dropdown>
 
         </div>
         <div class="col-md-4">
             <h5 class="form-lable">Choose Product:</h5>
-            <p-dropdown [options]="product_list" name='product_list_get' [(ngModel)]="product_list_get" placeholder="Select" optionLabel="y"
+            <p-dropdown [options]="product_list" name='product_list_get' [(ngModel)]="product_list_gets" placeholder="Select" optionLabel="y"
                 [showClear]="true"></p-dropdown>
         </div>
         <div class="col-md-4">
             <h5 class="form-lable">Choose Portfolio:</h5>
-            <p-dropdown [options]="portfolio_list" name='portfolio_list_get'  [(ngModel)]="portfolio_list_get" placeholder="Select" optionLabel="y"
+            <p-dropdown [options]="portfolio_list" name='portfolio_list_get'  [(ngModel)]="portfolio_list_gets" placeholder="Select" optionLabel="y"
                 [showClear]="true"></p-dropdown>
         </div>
+
+        <div class="col-md-4">
+          <h5 class="form-lable">Actions</h5>
+          <button class="btn btn-primary" (click)="fetch_field_list()">Fetch Field Details</button>
+      </div>
+
+
         <div class="col-md-12">
             <h4 class="title-f" style="margin-top: 15px;">Set Fields</h4>
         </div>
@@ -44,7 +51,8 @@
                     <ng-template pTemplate="body" let-item  let-i="rowIndex">
                         <tr class="tdrow">
                             <td class="act">
-                                <p-checkbox type="checkbox" [value]="item" [(ngModel)]="selectedProducts" ></p-checkbox>
+                              <input type="checkbox" value="{{i}}" *ngIf="!item.check_status" (change)="changeStatus(i,true)">
+                              <input type="checkbox"  checked  value="{{i}}" *ngIf="item.check_status" (change)="changeStatus(i,false)">
                                 <!-- <p-tableCheckbox [value]="item"></p-tableCheckbox> -->
                             </td>
                             <td style="text-align: center;">{{i+1}}</td>
@@ -57,7 +65,9 @@
                  </p-table>  </div>
             </div>
             <div>
-                <button type="button" class="btn btn-primary" style="margin-top: 10px;">Ok</button>
+                <button type="button" class="btn btn-primary" style="margin-top: 10px;" (click)="field_mapping_add()" *ngIf="!submit_button">Ok</button>
+                <button type="button" class="btn btn-primary" style="margin-top: 10px;" (click)="field_mapping_edits()" *ngIf="submit_button">Update</button>
+
             </div>
         </div>
         <div class="col-md-6">
@@ -79,7 +89,7 @@
                     <ng-template pTemplate="body" let-item let-i="rowIndex">
                         <tr class="tdrow">
                             <td class="act" style="text-align: center;">
-                                <i style="color: #fd2c3a;" class="fa fa-times" aria-hidden="true" pTooltip="Remove" (click)="removeSelected(item)"></i>
+                                <i style="color: #fd2c3a;" class="fa fa-times" aria-hidden="true" pTooltip="Remove" (click)="removeSelected(item,i)"></i>
                             </td>
                             <td style="text-align: center;">{{i+1}}</td>
                             <td>{{item.fields}}</td>

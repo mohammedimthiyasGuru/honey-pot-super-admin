@@ -21,6 +21,15 @@ export class FieldMappingComponent implements OnInit {
   selectedRows: any;
   selectedProducts: any[]= [];
 
+  submit_button = false;
+
+  Bank_list_gets : any;
+  product_list_gets  : any;
+  portfolio_list_gets  : any;
+
+
+  final_data = [];
+
   types: any = [
     { "y": "Banks" },
     { "y": "Finance companies" }  ,
@@ -47,8 +56,27 @@ export class FieldMappingComponent implements OnInit {
     this._api.fields_list().subscribe(
         (response: any) => {
           console.log(response);
-          this.rows = response.Data.reverse();
-          console.log(this.rows);
+          this.final_data = [];
+          for(let a = 0 ; a < response.Data.length; a ++){
+            let c = {
+              index : a,
+              check_status : false,
+              addedby: response.Data[a].addedby,
+              createdAt: response.Data[a].createdAt,
+              data_type: response.Data[a].data_type,
+              fields: response.Data[a].fields,
+              fields_detail: response.Data[a].fields_detail,
+              length: response.Data[a].length,
+              updatedAt: response.Data[a].updatedAt,
+              __v: response.Data[a].__v,
+              _id: response.Data[a]._id,
+            }
+            this.final_data.push(c);
+           if(a == response.Data.length - 1){
+            this.rows = this.final_data.reverse();
+            console.log(this.rows);
+           }
+          }
         }
       );
   }
@@ -64,7 +92,7 @@ export class FieldMappingComponent implements OnInit {
         }
         console.log(this.Bank_list);
       }
-    );  
+    );
   }
 
   product_list_get() {
@@ -77,6 +105,128 @@ export class FieldMappingComponent implements OnInit {
           this.product_list.push(obj);
         }
         console.log(this.product_list);
+      }
+    );
+  }
+
+  fetch_field_list() {
+    this.ngOnInit();
+    let a = {
+      bank : this.Bank_list_gets.y,
+      product : this.product_list_gets.y,
+      portfolio : this.portfolio_list_gets.y,
+    }
+    console.log(a);
+    this._api.fields_mapping_fetch(a).subscribe(
+      (response: any) => {
+        if(response.Code === 404){
+          alert("No Data Found");
+          this.selectedProducts = [];
+          this.submit_button = false;
+          this.ngOnInit();
+        }else{
+          console.log(response.Data);
+          this.selectedProducts = response.Data[0].fields_details;
+          this.submit_button = true;
+          for(let c = 0 ; c < this.selectedProducts.length ; c ++){
+            for(let d = 0 ; d < this.rows.length ; d ++ ){
+              if(this.rows[d]._id == this.selectedProducts[c]._id){
+                this.rows[d].check_status = true;
+              }
+            }
+          }
+        }
+      }
+    );
+  }
+
+
+  field_mapping_add() {
+    let a = {
+      bank : this.Bank_list_gets.y,
+      product : this.product_list_gets.y,
+      portfolio : this.portfolio_list_gets.y,
+      fields_details : this.selectedProducts
+    }
+    console.log(a);
+    this._api.fields_mapping_adds(a).subscribe(
+      (response: any) => {
+        if(response.Code == 200){
+          alert("Added Successfully");
+          let c = {
+            bank : this.Bank_list_gets.y,
+            product : this.product_list_gets.y,
+            portfolio : this.portfolio_list_gets.y,
+          }
+          console.log(c);
+          this._api.fields_mapping_fetch(c).subscribe(
+            (response: any) => {
+              if(response.Code === 404){
+                alert("No Data Found");
+                this.selectedProducts = [];
+                this.submit_button = false;
+                this.ngOnInit();
+              }else{
+                console.log(response.Data);
+                this.selectedProducts = response.Data[0].fields_details
+                this.submit_button = true;
+                for(let c = 0 ; c < this.selectedProducts.length ; c ++){
+                  for(let d = 0 ; d < this.rows.length ; d ++ ){
+                    if(this.rows[d]._id == this.selectedProducts[c]._id){
+                      this.rows[d].check_status = true;
+                    }
+                  }
+                }
+              }
+            }
+          );
+        }
+      }
+    );
+  }
+
+
+
+  field_mapping_edits() {
+    let a = {
+      bank : this.Bank_list_gets.y,
+      product : this.product_list_gets.y,
+      portfolio : this.portfolio_list_gets.y,
+      fields_details : this.selectedProducts
+    }
+    console.log(a);
+    this._api.fields_mapping_edit(a).subscribe(
+      (response: any) => {
+        if(response.Code == 200){
+          alert("Added Successfully");
+          let c = {
+            bank : this.Bank_list_gets.y,
+            product : this.product_list_gets.y,
+            portfolio : this.portfolio_list_gets.y,
+          }
+          console.log(c);
+          this._api.fields_mapping_fetch(c).subscribe(
+            (response: any) => {
+              if(response.Code === 404){
+                alert("No Data Found");
+                this.selectedProducts = [];
+                this.submit_button = false;
+                this.ngOnInit();
+              }else{
+                console.log(response.Data);
+                this.selectedProducts = response.Data[0].fields_details
+                this.submit_button = true;
+                for(let c = 0 ; c < this.selectedProducts.length ; c ++){
+                  for(let d = 0 ; d < this.rows.length ; d ++ ){
+                    if(this.rows[d]._id == this.selectedProducts[c]._id){
+                      this.rows[d].check_status = true;
+                    }
+                  }
+                }
+              }
+            }
+          );
+        }
       }
     );
   }
@@ -97,12 +247,38 @@ export class FieldMappingComponent implements OnInit {
     );
   }
 
-  removeSelected(item) {
-    let i = this.selectedProducts.indexOf(item);
-    if (i > -1) {
-      this.selectedProducts.splice(i, 1);
+
+
+  changeStatus(index,status){
+    console.log(index,status);
+    this.rows[index].check_status = status;
+    console.log(this.rows[index]);
+    if(status === true){
+      console.log("True");
+      this.selectedProducts.push(this.rows[index]);
     }
-    return this.selectedProducts; 
+    else if(status === false)
+    {
+      console.log("False");
+      for(let a = 0 ; a < this.selectedProducts.length; a++){
+            if(this.selectedProducts[a]._id == this.rows[index]._id){
+              this.selectedProducts.splice(a, 1);
+            }
+      }
+    }
+
+  }
+
+
+
+  removeSelected(item,index) {
+     console.log(item);
+     for(let a = 0 ; a < this.rows.length; a ++){
+      if(this.rows[a]._id == item._id){
+        this.rows[a].check_status = false;
+        this.selectedProducts.splice(index, 1);
+      }
+     }
   }
 
 }
