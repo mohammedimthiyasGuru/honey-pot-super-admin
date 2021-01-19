@@ -13,6 +13,20 @@ type AOA = any[][];
   styleUrls: ['./allocationexcel.component.css']
 })
 export class AllocationexcelComponent implements OnInit {
+
+  Table_header : any ;
+
+  final_header_excel : any = [];
+  final_save_fields : any = [];
+  final_not_match : any = [];
+
+
+  Bank_list_gets : any;
+  product_list_gets  : any;
+  portfolio_list_gets  : any;
+  saved_Fields = [];
+
+
   ErrorShow: boolean = true;
   Error: any = [];
   displayMaximizable: boolean = false;
@@ -60,19 +74,58 @@ export class AllocationexcelComponent implements OnInit {
   ngOnInit(): void {
   }
   onFileChange(evt: any) {
-    console.log('this.data');
+
     const target: DataTransfer = <DataTransfer>(evt.target);
     if (target.files.length !== 1) throw new Error('Cannot use multiple files');
     const reader: FileReader = new FileReader();
-    console.log('data');
+
     reader.onload = (e: any) => {
-      console.log('data-1');
+
       const bstr: string = e.target.result;
       const wb: XLSX.WorkBook = XLSX.read(bstr, { type: 'binary' });
       const wsname: string = wb.SheetNames[0];
       const ws: XLSX.WorkSheet = wb.Sheets[wsname];
       this.data = <AOA>(XLSX.utils.sheet_to_json(ws, { header: 1 }));
-      console.log(this.data);
+
+      this.Table_header = this.data[0];
+
+      this.final_header_excel = [];
+      this.final_save_fields = [];
+      for(let a = 0 ; a < this.Table_header.length ; a ++){
+        var check = 0;
+        for(let b = 0 ; b < this.saved_Fields.length; b++){
+          if(this.Table_header[a] == this.saved_Fields[b].fields){
+            check = 1;
+          }
+        if(b == this.saved_Fields.length - 1){
+          if(check == 0){
+            let c = {
+              final_not_match : this.Table_header[a],
+              final_not_index : a,
+              saved_data : this.saved_Fields[b].fields,
+              saved_data_index : b
+            }
+
+            this.final_not_match.push(c) ;
+          }
+          else
+          {
+            let c = {
+              table_head : this.Table_header[a],
+              table_head_index : a,
+              saved_data : this.saved_Fields[b].fields,
+              saved_data_index : b
+            }
+            this.final_header_excel.push(c);
+          }
+        }
+        }
+        if(a == this.Table_header.length -1){
+          console.log(this.final_not_match);
+          console.log(this.final_header_excel);
+          console.log(this.final_save_fields);
+        }
+      }
     };
     if (this.Error.length != 0) {
       this.ErrorShow = false;
@@ -80,6 +133,11 @@ export class AllocationexcelComponent implements OnInit {
     reader.readAsBinaryString(target.files[0]);
     this.section = 3;
   }
+
+
+
+
+
 
 
   export(): void {
@@ -102,7 +160,7 @@ export class AllocationexcelComponent implements OnInit {
     this.displayPosition1 = true;
     this.checking = setInterval(() => {
       this.check++;
-      console.log(this.check);
+
       if (this.check == 4) {
         clearInterval(this.checking);
       }
@@ -128,19 +186,19 @@ export class AllocationexcelComponent implements OnInit {
   }
   entry(){
     this.section = 2;
+    this.fetch_field_list();
   }
 
 
   Bank_list_get() {
     this._api.client_list().subscribe(
       (response: any) => {
-        console.log(response);
         let list = response.Data.reverse();
         for (let i = 0; i < list.length; i++) {
           let obj = { "y": list[i].Clinet_name};
           this.Bank_list.push(obj);
         }
-        console.log(this.Bank_list);
+
       }
     );
   }
@@ -148,13 +206,13 @@ export class AllocationexcelComponent implements OnInit {
   product_list_get() {
     this._api.product_type_list().subscribe(
       (response: any) => {
-        console.log(response);
+
         let list = response.Data.reverse();
         for (let i = 0; i < list.length; i++) {
           let obj = { "y": list[i].product_type};
           this.product_list.push(obj);
         }
-        console.log(this.product_list);
+
       }
     );
   }
@@ -163,14 +221,35 @@ export class AllocationexcelComponent implements OnInit {
   portfolio_list_get() {
     this._api.portfolio_type_list().subscribe(
       (response: any) => {
-        console.log(response);
+
         let list = response.Data.reverse();
         for (let i = 0; i < list.length; i++) {
           let obj = { "y": list[i].portfolio_type};
           this.portfolio_list.push(obj);
         }
-        console.log(this.portfolio_list);
+
         this.booleans = true;
+      }
+    );
+  }
+
+
+  fetch_field_list() {
+    this.ngOnInit();
+    let a = {
+      bank : this.Bank_list_gets.y,
+      product : this.product_list_gets.y,
+      portfolio : this.portfolio_list_gets.y,
+    }
+    this._api.fields_mapping_fetch(a).subscribe(
+      (response: any) => {
+        if(response.Code === 404){
+          alert("No Data Found");
+          this.saved_Fields = [];
+        }else{
+          this.saved_Fields = response.Data[0].fields_details;
+          console.log(this.saved_Fields);
+        }
       }
     );
   }
