@@ -40,6 +40,7 @@ export class AllocationexcelComponent implements OnInit {
   checking: any;
   displayPosition: any;
   displayPosition1: any;
+  displayPosition2 :boolean = false;
 
   Bank_list_type : any;
   product_list_type : any;
@@ -179,6 +180,11 @@ export class AllocationexcelComponent implements OnInit {
   cancel() {
     this.router.navigateByUrl('/admin_panel/Clients')
   }
+
+  bulk_upload() {
+    this.displayPosition2 = true;
+  }
+  
   acc_list() {
     window.scrollTo(0,0);
     this.router.navigateByUrl('/admin_panel/uploaded_list');

@@ -47,6 +47,7 @@
             <button type="button" class="btn btn-primary" (click)="entry()">Excel Upload</button>
             <button type="button" class="btn btn-primary">Single Entry</button>
             <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
+            <button type="button" class="btn btn-primary" (click)="bulk_upload()">Allocation</button>
         </div>
     </div>
     <div class="row" style="padding: 0px 0px 23px 10px;" *ngIf="section >= 2">
@@ -281,6 +282,22 @@
                 <!-- <h5 class="form-lable text-center" style="font-size: 16px;color: #D32F2F !important;">Failed</h5> -->
 
             </div>
+        </div>
+    </div>
+</p-dialog>
+
+<p-dialog header="Allocation Excel" [(visible)]="displayPosition2" position="center" [modal]="true"
+    [style]="{width: '400px'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <div class="row" style="margin-left: 0px;margin-right: 0px;">
+        <div class="col-md-12">
+            <h5 class="form-lable">Select Unique value Column:</h5>
+            <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
+                [showClear]="true"></p-dropdown>
+            <h5 class="form-lable">Total No.of Cases : 0</h5>
+        </div>
+        <div class="col-md-12 mt-20">
+            <button type="button" class="btn btn-primary">Check Duplicates</button>
+            <button type="button" class="btn btn-primary">Group Customers</button>
         </div>
     </div>
 </p-dialog>
