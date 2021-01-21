@@ -93,6 +93,17 @@
     /* border-radius: 10px; */
     overflow: hidden;
     border: none !important;
+    border-radius: 5px !important;
+}
+:host::ng-deep .ui-table .ui-table-thead > tr > th {
+    border: none !important;
+}
+:host::ng-deep .ui-table .ui-table-tbody > tr > td {
+    border-bottom: 1px solid #c8c8c8 !important;
+}
+:host::ng-deep .ui-table .ui-sortable-column .ui-sortable-column-icon {
+    color:#fff !important;
+    font-size:12px;
 }
 :host::ng-deep .ui-table .ui-paginator-bottom {
     border-top: 1px solid #eee;
@@ -111,7 +122,8 @@
 :host::ng-deep  .ui-table .ui-table-thead > tr > th {
     padding: 8px 8px !important;
     color: #ffffff !important;
-    background-color: #20353f !important;
+    /* background-color: #20353f !important; */
+    background-color: #747f7f !important;
 text-transform: capitalize;
 }
 /* table */
@@ -239,7 +251,7 @@ textarea {
     margin-bottom: 0px;
 }
 :host::ng-deep  .mat-dialog-container {
-    height: 600px !important;
+    /* height: 600px !important; */
   }
 
   :host::ng-deep .ui-table-thead > tr > th {
@@ -312,7 +324,7 @@ input {
 .cdk-overlay-pane {
     top: 50px !important;
     left: 41px !important;
-    height: 80% !important;
+    height: 50% !important;
     background: none !important; 
     border-radius: 0px !important;
   

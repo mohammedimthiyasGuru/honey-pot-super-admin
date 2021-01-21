@@ -64,6 +64,7 @@ export class UsrContactrecordingComponent implements OnInit {
   assets:boolean = false;
   payment:boolean = false;
   displayPosition :boolean = false;
+  multipleAccountInformation = [];
   constructor(
     private router: Router,
     public dialog: MatDialog,
@@ -82,8 +83,13 @@ export class UsrContactrecordingComponent implements OnInit {
     { type: "Cat", name: "cat1" },
     { type: "Cat", name: "cat1" },
     { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" }]
+    { type: "Cat", name: "cat1" }];
 
+    this.multipleAccountInformation = [
+      { LoanNumber:"123456", Product: "Auto Loan", LoanAmount: "10,00000", OutstandingAmount: "50,0000", TotalOverdueAmount: "2000", NextInstallmentAmount: "20000", NextInstallmentDueDate: "20-10-2020", Bucket: "23", MinimumamountforBucketmovement: "5", UnitCode: "BC23", },
+      { LoanNumber:"789654", Product: "NA", LoanAmount: "NA", OutstandingAmount: "NA", TotalOverdueAmount: "NA", NextInstallmentAmount: "NA", NextInstallmentDueDate: "NA", Bucket: "NA", MinimumamountforBucketmovement: "NA", UnitCode: "NA", },
+      { LoanNumber:"786786", Product: "Auto Loan", LoanAmount: "15,00000", OutstandingAmount: "55,0000", TotalOverdueAmount: "4000", NextInstallmentAmount: "40000", NextInstallmentDueDate: "20-01-2021", Bucket: "32", MinimumamountforBucketmovement: "5", UnitCode: "BC23", },
+    ]
   }
   client_form() {
     this.router.navigateByUrl('/admin_panel/client-form')
@@ -98,7 +104,7 @@ export class UsrContactrecordingComponent implements OnInit {
 
   show1() {
     const dialogRef = this.dialog.open(UsrFollowuptakeComponent, {
-      height: '600px',
+      height: '350px',
       width:'90%',disableClose: true
     });
 
@@ -106,6 +112,8 @@ export class UsrContactrecordingComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
     this.show = 'show1';
+    // this.followuptake = true;
+    // this.selectedIndex = 21;
   }
 
 
@@ -118,6 +126,8 @@ export class UsrContactrecordingComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
     this.show = 'show2';
+    // this.workflow = true;
+    // this.selectedIndex = 22;
   }
   show3() {
     const dialogRef = this.dialog.open(UsrCollectionRecordingMainListComponent, {

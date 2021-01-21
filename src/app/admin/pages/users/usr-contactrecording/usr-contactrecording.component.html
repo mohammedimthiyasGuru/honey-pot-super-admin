@@ -1276,59 +1276,36 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
               <div class="row">
                 <div class="col-md-12" >
                   <div class="doc-table">
-                    <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false"
+                    <p-table [value]="multipleAccountInformation | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true"
                       [rows]="5" [rowHover]="true" selectionMode="single" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
                       currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                       [globalFilterFields]="['type']">
                       <ng-template pTemplate="header">
                         <tr style="text-align: center;">
-                          <th style="background: #747f7f !important;" pSortableColumn="Loan Number">Loan Number</th>
-                          <th style="background: #747f7f !important;" pSortableColumn="Product">Product</th>
-                          <th style="background: #747f7f !important;" pSortableColumn="Loan Amount">Loan Amount</th>
-                          <th style="background: #747f7f !important;" pSortableColumn="Outstanding Amount">Outstanding Amount</th>
-                          <th style="background: #747f7f !important;" pSortableColumn="Total Overdue Amount">Total Overdue Amount</th>
-                          <th style="background: #747f7f !important;" pSortableColumn="Next Installment Amount">Next Installment Amount</th>
-                          <th style="background: #747f7f !important;" pSortableColumn="Next Installment Due Date">Next Installment Due Date</th>
-                          <th style="background: #747f7f !important;" pSortableColumn="Bucket">Bucket</th>
-                          <th style="background: #747f7f !important;" pSortableColumn="Minimum amount for Bucket movement">Minimum amount for Bucket movement</th>
-                          <th style="background: #747f7f !important;" pSortableColumn="Unit Code">Unit Code</th>
+                          <th pSortableColumn="LoanNumber">Loan Number <p-sortIcon field="code"></p-sortIcon><p-columnFilter type="text" field="LoanNumber"></p-columnFilter></th>
+                          <th pSortableColumn="Product">Product <p-sortIcon field="code"></p-sortIcon><p-columnFilter type="text" field="Product"></p-columnFilter></th>
+                          <th pSortableColumn="LoanAmount">Loan Amount <p-sortIcon field="code"></p-sortIcon></th>
+                          <th pSortableColumn="OutstandingAmount">Outstanding Amount <p-sortIcon field="code"></p-sortIcon></th>
+                          <th pSortableColumn="Total Overdue Amount">Total Overdue Amount <p-sortIcon field="code"></p-sortIcon></th>
+                          <th pSortableColumn="Next Installment Amount">Next Installment Amount <p-sortIcon field="code"></p-sortIcon></th>
+                          <th pSortableColumn="Next Installment Due Date">Next Installment Due Date <p-sortIcon field="code"></p-sortIcon></th>
+                          <th pSortableColumn="Bucket">Bucket <p-sortIcon field="code"></p-sortIcon></th>
+                          <th pSortableColumn="Minimum amount for Bucket movement">Minimum amount for Bucket movement <p-sortIcon field="code"></p-sortIcon></th>
+                          <th pSortableColumn="Unit Code">Unit Code <p-sortIcon field="code"></p-sortIcon></th>
                         </tr>
-                      <!-- </ng-template>
-                      <ng-template pTemplate="body"> -->
-                        <tr style="text-align: center;">
-                          <!-- <td><input type="text" value="0123456789"></td>
-                          <td><input type="text" value="Auto Loan"></td>
-                          <td><input type="text" value="10,00000"></td>
-                          <td><input type="text" value="50,00000"></td>
-                          <td><input type="text" value="2000"></td>
-                          <td><input type="text" value="20000"></td>
-                          <td><input type="text" value="20-10-2020"></td>
-                          <td><input type="text" value="2"></td>
-                          <td><input type="text" value="2000000"></td>
-                          <td><input type="text" value="956847"></td> -->
-                          <td>0123456789</td>
-                          <td>Auto Loan</td>
-                          <td>10,00000</td>
-                          <td>50,00000</td>
-                          <td>2000</td>
-                          <td>20000</td>
-                          <td>20-10-2020</td>
-                          <td>2</td>
-                          <td>2000000</td>
-                          <td>956847</td>
-                        </tr>
-                        <tr style="text-align: center;">
-                          <td>123456</td>
-                          <td>Auto Loan</td>
-                          <td>20,00000</td>
-                          <td>40,00000</td>
-                          <td>1000</td>
-                          <td>60000</td>
-                          <td>20-10-2020</td>
-                          <td>2</td>
-                          <td>1000000</td>
-                          <td>786</td>
-                        </tr>
+                      </ng-template>
+                      <ng-template pTemplate="body" let-item>
+                        <tr [pSelectableRow]="item" style="text-align: center;">
+                          <td>{{item.LoanNumber}}</td>
+                          <td>{{item.Product}}</td>
+                          <td>{{item.LoanAmount}}</td>
+                          <td>{{item.OutstandingAmount}}</td>
+                          <td>{{item.TotalOverdueAmount}}</td>
+                          <td>{{item.NextInstallmentAmount}}</td>
+                          <td>{{item.NextInstallmentDueDate}}</td>
+                          <td>{{item.Bucket}}</td>
+                          <td>{{item.MinimumamountforBucketmovement}}</td>
+                          <td>{{item.UnitCode}}</td>
                       </ng-template>
                     </p-table>
                   </div>
@@ -2241,6 +2218,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
         <br>
 
       </mat-tab>
+
     </mat-tab-group>
   </div>
 </div>
