@@ -141,9 +141,24 @@ font-weight:500;
     box-shadow: 0px 0px 5px 0px #90a1b3;
     z-index:1;
 }
+/* .ui-overlaypanel */
+:host::ng-deep .ui-overlaypanel #addressDetails {
+  top:400px !important;
+  right:23px !important;
+  left:410px;
+}
+.overlay-contact {
+  position: fixed !important;
+  z-index: 1002 !important;
+  top: 460px !important;
+  left: 57.15px !important;
+  transform: translateY(0px);
+  opacity: 1;
+  right: 23px !important;
+}
 .follow .mat-icon {
   color:rgb(144 161 179);
-    padding: 6px 6px;
+    padding: 6px;
     width: auto;
     height: auto;
     font-size: 17px !important;
@@ -196,6 +211,7 @@ hr{
   font-size: 12px;
   font-weight:bold !important;
   max-width:140px;
+  border-right: 1px solid #dfdede;
 }
 
 

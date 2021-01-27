@@ -35,6 +35,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { ChartModule } from 'primeng/chart';
 import {CheckboxModule} from 'primeng/checkbox';
+import {OverlayPanelModule} from 'primeng/overlaypanel';
 import { HoneyPotClientDetailComponent } from './pages/honey-pot-client-detail/honey-pot-client-detail.component';
 import { HoneyPotClientDetailFormComponent } from './pages/honey-pot-client-detail/honey-pot-client-detail-form/honey-pot-client-detail-form.component';
 import { ClientProfileComponent } from './pages/honey-pot-client-detail/client-profile/client-profile.component';
@@ -308,6 +309,7 @@ import { CreateUserTypeComponent } from './pages/user-management/create-user-typ
     CarouselModule,
     SliderModule,
     CheckboxModule,
+    OverlayPanelModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
