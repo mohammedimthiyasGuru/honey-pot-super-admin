@@ -47,7 +47,7 @@
             <button type="button" class="btn btn-primary" (click)="entry()">Excel Upload</button>
             <button type="button" class="btn btn-primary">Single Entry</button>
             <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
-            <button type="button" class="btn btn-primary" (click)="bulk_upload()">Allocation</button>
+            <!-- <button type="button" class="btn btn-primary" >Allocation</button> -->
         </div>
     </div>
     <div class="row" style="padding: 0px 0px 23px 10px;" *ngIf="section >= 2">
@@ -146,6 +146,7 @@
 
                 </div>
                 <div class="col-md-6">
+                  <button (click)="bulk_upload()">Save</button>
                     <h4 class="title-f">Un Mapped Fields</h4>
                     <table style=" width: 100%;">
                         <tr>
@@ -160,13 +161,9 @@
                           <tr>
                             <td style="padding: 10px;">{{item.final_not_match}}</td>
                             <td style="padding: 10px;">
-                                <input type="text"> <i class="fa fa-plus-circle"
-                                    style="font-size: 20px !important; color: #20353f;float: right;margin-top: -4px;"
-                                    pTooltip="Add Fields" (click)="field_form()"></i>
-
                             </td>
                         </tr>
-
+                        <!-- (click)="field_form()"  -->
                         </ng-container>
 
                     </table>
@@ -286,18 +283,9 @@
     </div>
 </p-dialog>
 
-<p-dialog header="Allocation Excel" [(visible)]="displayPosition2" position="center" [modal]="true"
-    [style]="{width: '400px'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+<p-dialog header="Allocation Excel" [(visible)]="displayPosition2" *ngIf="displayPosition2" position="center" [modal]="true"
+    [style]="{width: '90%'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
     <div class="row" style="margin-left: 0px;margin-right: 0px;">
-        <div class="col-md-12">
-            <h5 class="form-lable">Select Unique value Column:</h5>
-            <p-dropdown [options]="types" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y"
-                [showClear]="true"></p-dropdown>
-            <h5 class="form-lable">Total No.of Cases : 0</h5>
-        </div>
-        <div class="col-md-12 mt-20">
-            <button type="button" class="btn btn-primary">Check Duplicates</button>
-            <button type="button" class="btn btn-primary">Group Customers</button>
-        </div>
+      <app-autoaddfileds></app-autoaddfileds>
     </div>
 </p-dialog>

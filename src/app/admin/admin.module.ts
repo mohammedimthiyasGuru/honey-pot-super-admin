@@ -158,6 +158,7 @@ import { CreateReportingToComponent } from './pages/create-reporting-to/create-r
 import { CreateStateComponent } from './pages/create-state/create-state.component';
 import { CreateDesignationComponent } from './pages/create-designation/create-designation.component';
 import { CreateUserTypeComponent } from './pages/user-management/create-user-type/create-user-type.component';
+import { AutoaddfiledsComponent } from './pages/userflow/autoaddfileds/autoaddfileds.component';
 @NgModule({
   declarations: [AdminHeaderComponent,
     AdminSidebarComponent,
@@ -275,7 +276,8 @@ import { CreateUserTypeComponent } from './pages/user-management/create-user-typ
     CreateReportingToComponent,
     CreateStateComponent,
     CreateDesignationComponent,
-    CreateUserTypeComponent
+    CreateUserTypeComponent,
+    AutoaddfiledsComponent
   ],
   imports: [
     CommonModule,

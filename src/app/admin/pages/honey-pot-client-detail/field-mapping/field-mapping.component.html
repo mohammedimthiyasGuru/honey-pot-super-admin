@@ -1,8 +1,15 @@
 <div style="margin-right: 32px;" >
-    <div>
+  <div class="row">
+    <div class="col-md-10">
         <h4 class="title" style="margin-top: 15px;">Table/Field Creation</h4>
     </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary" (click)="bulk_upload()">Create Fields</button>
+      <button class="btn btn-primary" (click)="refresh()">Refresh</button>
+    </div>
+  </div>
 </div>
+<br>
 <div class="card-box" style="margin: 2px;padding-bottom: 15px;" *ngIf ="booleans">
     <div class="row" style="padding: 0px 0px 23px 10px;">
 
@@ -139,3 +146,10 @@
         </div>
     </div>
 </div>
+
+<p-dialog header="Allocation Excel" [(visible)]="displayPosition2" position="center" [modal]="true"
+    [style]="{width: '90%'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <div class="row" style="margin-left: 0px;margin-right: 0px;">
+      <app-agency-field-add></app-agency-field-add>
+    </div>
+</p-dialog>

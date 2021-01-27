@@ -1,0 +1,43 @@
+
+<h4 class="title">Add Multiple Fields</h4>
+<div class="row">
+  <div class="col-md-12">
+   <button (click)="save_fields()">Save</button>
+    <table style=" width: 100%;">
+        <tr>
+            <th style="padding: 10px;">S.No</th>
+            <th style="padding: 10px;">Field Name</th>
+            <th style="padding: 10px;">Fields detail</th>
+            <th style="padding: 10px;">Data type</th>
+            <th style="padding: 10px;">Length</th>
+            <th style="padding: 10px;">Action</th>
+        </tr>
+        <ng-container *ngFor="let item of converted; let i = index">
+        <tr>
+          <td style="padding: 10px;">{{i+1}}</td>
+          <td style="padding: 10px;"><input type="text" pInputText disabled name="item.fields" [(ngModel)]="item.fields" placeholder="Enter Field Name"></td>
+          <td style="padding: 10px;"><input type="text" pInputText [(ngModel)]="item.fields_detail" name="item.fields_detail" placeholder="Enter Fields detail"></td>
+          <td style="padding: 10px;"><p-dropdown [options]="profolio_list" [(ngModel)]="item.data_type" name="item.data_type" placeholder="Select Data type"
+            optionLabel="y" [showClear]="true"></p-dropdown></td>
+          <td style="padding: 10px;"><input type="Number" pInputText [(ngModel)]="item.length" name="item.length" placeholder="Enter length"></td>
+        </tr>
+        </ng-container>
+        <!-- <ng-container *ngFor="let item of final_not_match; let i = index">
+          <tr>
+            <td style="padding: 10px;">{{item.final_not_match}}</td>
+            <td style="padding: 10px;">
+                <input type="text"><i class="fa fa-plus-circle"
+                    style="font-size: 20px !important; color: #20353f;float: right;margin-top: -4px;"
+                    pTooltip="Add Fields"  (click)="save_fields()"></i>
+            </td>
+        </tr>
+        </ng-container> -->
+    </table>
+</div>
+</div>
+
+
+
+
+
+

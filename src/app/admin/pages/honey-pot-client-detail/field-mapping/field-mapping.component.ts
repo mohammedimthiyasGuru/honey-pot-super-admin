@@ -21,6 +21,8 @@ export class FieldMappingComponent implements OnInit {
   selectedRows: any;
   selectedProducts: any[]= [];
 
+  displayPosition2 : any;
+
   submit_button = false;
 
   Bank_list_gets : any;
@@ -51,6 +53,12 @@ export class FieldMappingComponent implements OnInit {
     this.product_list_get();
     this.portfolio_list_get();
    }
+
+
+  refresh (){
+   this.ngOnInit();
+   }
+
 
   ngOnInit(): void {
     this._api.fields_list().subscribe(
@@ -186,6 +194,9 @@ export class FieldMappingComponent implements OnInit {
   }
 
 
+  bulk_upload() {
+    this.displayPosition2 = true;
+  }
 
   field_mapping_edits() {
     let a = {

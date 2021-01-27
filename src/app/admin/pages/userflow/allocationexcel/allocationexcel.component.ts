@@ -66,6 +66,7 @@ export class AllocationexcelComponent implements OnInit {
   constructor(
     private router: Router,
     private _api: ApiService,
+    @Inject(SESSION_STORAGE) private storage: StorageService
   ) {
     this.Bank_list_get();
     this.product_list_get();
@@ -183,8 +184,17 @@ export class AllocationexcelComponent implements OnInit {
 
   bulk_upload() {
     this.displayPosition2 = true;
+    this.saveInLocal("final_not_match", this.final_not_match);
   }
-  
+
+  saveInLocal(key, val): void {
+    this.storage.set(key, val);
+  }
+
+  getFromLocal(key): any {
+    return this.storage.get(key);
+  }
+
   acc_list() {
     window.scrollTo(0,0);
     this.router.navigateByUrl('/admin_panel/uploaded_list');
@@ -247,6 +257,7 @@ export class AllocationexcelComponent implements OnInit {
       product : this.product_list_gets.y,
       portfolio : this.portfolio_list_gets.y,
     }
+    this.saveInLocal("fields_mapping_fetch",a);
     this._api.fields_mapping_fetch(a).subscribe(
       (response: any) => {
         if(response.Code === 404){
