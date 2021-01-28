@@ -88,7 +88,7 @@ export class AllocationexcelComponent implements OnInit {
       const wsname: string = wb.SheetNames[0];
       const ws: XLSX.WorkSheet = wb.Sheets[wsname];
       this.data = <AOA>(XLSX.utils.sheet_to_json(ws, { header: 1 }));
-
+      console.log("excel data", this.data);
       this.Table_header = this.data[0];
 
       this.final_header_excel = [];
@@ -99,28 +99,28 @@ export class AllocationexcelComponent implements OnInit {
           if(this.Table_header[a] == this.saved_Fields[b].fields){
             check = 1;
           }
-        if(b == this.saved_Fields.length - 1){
-          if(check == 0){
-            let c = {
-              final_not_match : this.Table_header[a],
-              final_not_index : a,
-              saved_data : this.saved_Fields[b].fields,
-              saved_data_index : b
-            }
+          if(b == this.saved_Fields.length - 1){
+            if(check == 0){
+              let c = {
+                final_not_match : this.Table_header[a],
+                final_not_index : a,
+                saved_data : this.saved_Fields[b].fields,
+                saved_data_index : b
+              }
 
-            this.final_not_match.push(c) ;
-          }
-          else
-          {
-            let c = {
-              table_head : this.Table_header[a],
-              table_head_index : a,
-              saved_data : this.saved_Fields[b].fields,
-              saved_data_index : b
+              this.final_not_match.push(c) ;
             }
-            this.final_header_excel.push(c);
+            else
+            {
+              let c = {
+                table_head : this.Table_header[a],
+                table_head_index : a,
+                saved_data : this.saved_Fields[b].fields,
+                saved_data_index : b
+              }
+              this.final_header_excel.push(c);
+            }
           }
-        }
         }
         if(a == this.Table_header.length -1){
           console.log(this.final_not_match);
@@ -150,6 +150,10 @@ export class AllocationexcelComponent implements OnInit {
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
     /* save to file */
     XLSX.writeFile(wb, this.fileName);
+  }
+
+  goback() {
+    this.section = 1;
   }
   showPositionDialog() {
     this.displayPosition = true;

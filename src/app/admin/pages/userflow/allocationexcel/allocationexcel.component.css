@@ -115,6 +115,10 @@ font-weight:500;
   border: none;
 
 }
+.heading {
+  display:flex;
+  justify-content:space-between;
+}
 .follow{
   position: fixed;
     right: 0;

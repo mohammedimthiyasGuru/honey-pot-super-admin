@@ -3,8 +3,9 @@
 
 
 <div style="margin-right: 32px;">
-    <div>
+    <div class="heading">
         <h4 class="title" style="margin-top: 15px;">Excel Upload</h4>
+        <h4 class="title" style="margin-top: 15px;" *ngIf="section >= 2" (click)="goback()">goBack</h4>
     </div>
 </div>
 <!-- <div class="row" style="height:200px">
@@ -146,7 +147,8 @@
 
                 </div>
                 <div class="col-md-6">
-                  <button (click)="bulk_upload()">Save</button>
+                  <div style="text-align:right;"><button (click)="bulk_upload()">Save</button></div>
+                  <!-- <button (click)="bulk_upload()">Save</button> -->
                     <h4 class="title-f">Un Mapped Fields</h4>
                     <table style=" width: 100%;">
                         <tr>
