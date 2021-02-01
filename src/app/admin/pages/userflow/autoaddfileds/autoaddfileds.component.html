@@ -1,5 +1,10 @@
 
 <!-- <h4 class="title">Add Multiple Fields</h4> -->
+<div class="row" *ngIf="loading_show">
+  <p>Uploading Data Please Don't close the session</p>
+  <h4>{{timeLeft}}</h4>
+</div>
+
 <div class="row">
   <div class="col-md-12">
     <div class="heading">
@@ -37,7 +42,7 @@
             </td>
         </tr>
         </ng-container> -->
-    </table> 
+    </table>
     <!-- <div class="row">
       <div class="col-md-12" >
         <div class="doc-table">

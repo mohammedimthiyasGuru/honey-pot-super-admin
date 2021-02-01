@@ -26,6 +26,7 @@ export class AllocationexcelComponent implements OnInit {
   product_list_gets  : any;
   portfolio_list_gets  : any;
   saved_Fields = [];
+  missed_datas = [];
 
 
   ErrorShow: boolean = true;
@@ -94,11 +95,30 @@ export class AllocationexcelComponent implements OnInit {
 
       this.final_header_excel = [];
       this.final_save_fields = [];
+      console.log(this.Table_header);
+      console.log(this.saved_Fields);
       for(let a = 0 ; a < this.Table_header.length ; a ++){
-        var check = 0;
+       var check = 0;
+       if(this.saved_Fields.length == 0){
+        let c = {
+          final_not_match : this.Table_header[a],
+          final_not_index : a,
+          saved_data : this.Table_header[a],
+          saved_data_index : a
+        }
+        this.final_not_match.push(c) ;
+       } else {
         for(let b = 0 ; b < this.saved_Fields.length; b++){
           if(this.Table_header[a] == this.saved_Fields[b].fields){
             check = 1;
+            console.log("Check in");
+              let c = {
+                table_head : this.Table_header[a],
+                table_head_index : a,
+                saved_data : this.saved_Fields[b].fields,
+                saved_data_index : b
+              }
+              this.final_header_excel.push(c);
           }
           if(b == this.saved_Fields.length - 1){
             if(check == 0){
@@ -108,25 +128,20 @@ export class AllocationexcelComponent implements OnInit {
                 saved_data : this.saved_Fields[b].fields,
                 saved_data_index : b
               }
-
-              this.final_not_match.push(c) ;
-            }
-            else
-            {
-              let c = {
-                table_head : this.Table_header[a],
-                table_head_index : a,
-                saved_data : this.saved_Fields[b].fields,
-                saved_data_index : b
-              }
-              this.final_header_excel.push(c);
+              this.final_not_match.push(c);
             }
           }
         }
+      }
         if(a == this.Table_header.length -1){
           console.log(this.final_not_match);
           console.log(this.final_header_excel);
           console.log(this.final_save_fields);
+          var a1 = this.saved_Fields;
+          var a2 = this.final_header_excel;
+          const results = a1.filter(({ fields: id1 }) => !a2.some(({ table_head: id2 }) => id2 === id1));
+          console.log("Resulated adf",results);
+          this.missed_datas = results;
         }
       }
     };
@@ -159,6 +174,9 @@ export class AllocationexcelComponent implements OnInit {
   closeExcel() {
     this.fileControl.nativeElement.value = null;
     this.section = 2;
+     this.final_not_match = [];
+     this.final_header_excel = [];
+     this.final_save_fields = [];
   }
   showPositionDialog() {
     this.displayPosition = true;
@@ -210,7 +228,6 @@ export class AllocationexcelComponent implements OnInit {
 
   }
   entry(){
-    this.section = 2;
     this.fetch_field_list();
   }
 
@@ -261,24 +278,49 @@ export class AllocationexcelComponent implements OnInit {
 
   fetch_field_list() {
     this.ngOnInit();
-    let a = {
-      bank : this.Bank_list_gets.y,
-      product : this.product_list_gets.y,
-      portfolio : this.portfolio_list_gets.y,
-    }
-    this.saveInLocal("fields_mapping_fetch",a);
-    this._api.fields_mapping_fetch(a).subscribe(
-      (response: any) => {
-        if(response.Code === 404){
-          alert("No Data Found");
-          this.saved_Fields = [];
-        }else{
-          this.saved_Fields = response.Data[0].fields_details;
-          console.log(this.saved_Fields);
-        }
+    console.log(this.Bank_list_gets);
+    if(this.Bank_list_gets ==  undefined){
+      alert("Select Bank type");
+    }else if(this.product_list_gets ==  undefined){
+      alert("Select Product type");
+    }else if(this.portfolio_list_gets ==  undefined){
+      alert("Select Portfolio type");
+    } else {
+      this.section = 2;
+      let a = {
+        bank : this.Bank_list_gets.y,
+        product : this.product_list_gets.y,
+        portfolio : this.portfolio_list_gets.y,
       }
-    );
+      this.saveInLocal("fields_mapping_fetch",a);
+      this._api.fields_mapping_fetch(a).subscribe(
+        (response: any) => {
+          if(response.Code === 404){
+            alert("No Data Found");
+            this.saved_Fields = [];
+          }else{
+            this.saved_Fields = response.Data[0].fields_details;
+            console.log(this.saved_Fields);
+          }
+        }
+      );
+    }
+
+
+
+
+
+    // console.log(this.Bank_list_gets.y);
+    // console.log(this.product_list_gets.y);
+    // console.log(this.portfolio_list_gets.y);
+
+
+
+
   }
 
 
 }
+
+
+

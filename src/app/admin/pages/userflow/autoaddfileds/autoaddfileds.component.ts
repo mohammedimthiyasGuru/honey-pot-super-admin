@@ -23,6 +23,8 @@ export class AutoaddfiledsComponent implements OnInit {
 
   converted1 : any = [];
 
+  loading_show : boolean = false;
+
 
 
   rows: any;
@@ -173,18 +175,28 @@ export class AutoaddfiledsComponent implements OnInit {
   }
 
   before_save_fields() {
-    if (this.fields_detail == undefined || this.data_type == undefined || this.length == undefined ) {
-      alert("Please enter all fields")
-    } else {
-      this.save_fields();
+    var check_status = 0;
+    for(let a = 0 ; a < this.converted.length; a ++){
+      if(this.converted[a].fields_detail == '' || this.converted[a].length == 0){
+        check_status = 1;
+      }
+      if(a == this.converted.length - 1){
+           if(check_status == 1){
+            alert("Fields should not empty or length should not be 0");
+           }else{
+            this.save_fields();
+            // alert("all are ok");
+           }
+      }
     }
   }
   save_fields(){
    console.log(this.converted);
-
-   this.timeLeft = this.converted.length;;
+   this.loading_show = true;
+   this.timeLeft = this.converted.length;
    this.interval = setInterval(() => {
     if(this.timeLeft > 0) {
+
       this.timeLeft--;
       console.log(this.timeLeft);
       let a = {
@@ -203,25 +215,42 @@ export class AutoaddfiledsComponent implements OnInit {
             console.log(response.Message);
             let x = {
                "addedby":response.Data.addedby,
-               "check_status":response.Data.check_status,
+               "check_status":false,
                "createdAt":response.Data.createdAt,
                "data_type":response.Data.data_type,
                "fields":response.Data.fields,
-               "fields_detail":response.Data.addedby,
-               "index":response.Data.addedby,
-               "length":response.Data.addedby,
-               "updatedAt" : response.Data.addedby,
-               "__v" : response.Data.addedby,
-               "_id" : response.Data.addedby
+               "fields_detail":response.Data.fields_detail,
+               "index":0,
+               "length":response.Data.length,
+               "updatedAt" : response.Data.updatedAt,
+               "__v" : response.Data.__v,
+               "_id" : response.Data._id
             }
-            this.converted1.push(response.Data);
+            this.converted1.push(x);
           } else {
+            let x = {
+               "addedby":response.Data.addedby,
+               "check_status":false,
+               "createdAt":response.Data.createdAt,
+               "data_type":response.Data.data_type,
+               "fields":response.Data.fields,
+               "fields_detail":response.Data.fields_detail,
+               "index":0,
+               "length":response.Data.length,
+               "updatedAt" : response.Data.updatedAt,
+               "__v" : response.Data.__v,
+               "_id" : response.Data._id
+            }
+            this.converted1.push(x);
             console.log(response.Message);
           }
         }
       );
     } else {
       clearInterval(this.interval);
+      this.loading_show = false;
+      alert("uploaded Successfully");
+      console.log(this.converted1);
       this.save_fields1();
     }
   },2000)
@@ -230,39 +259,101 @@ export class AutoaddfiledsComponent implements OnInit {
 
 
   save_fields1(){
-    console.log(this.converted1);
 
-    this.interval = setInterval(() => {
-      if(this.timeLeft > 0) {
-        this.timeLeft--;
-        console.log(this.timeLeft);
-        let a = {
-          "fields": this.converted[this.timeLeft].fields,
-          "fields_detail" : this.converted[this.timeLeft].fields_detail,
-          "data_type" : this.converted[this.timeLeft].data_type.y,
-          "length" : this.converted[this.timeLeft].length,
-          "addedby": "Admin"
-        };
-        console.log(a);
-        this._api.fields_add(a).subscribe(
-          (response: any) => {
-            console.log(response);
-            if (response.Code === 200) {
-              // alert(response.Message);
-              console.log(response.Message);
-              this.converted1.push(response.Data);
-            } else {
-              console.log(response.Message);
+   console.log(this.fields_mapping_fetch);
+    this._api.fields_mapping_fetch(this.fields_mapping_fetch).subscribe(
+      (response: any) => {
+        console.log(response);
+        if (response.Code === 200) {
+          // alert(response.Message);
+          console.log(response.Message);
+          console.log(response.Data);
+          for(let v = 0 ; v < this.converted1.length; v ++){
+            response.Data[0].fields_details.push(this.converted1[v]);
+            if(v == this.converted1.length - 1){
+              this.update_fields(this.fields_mapping_fetch.bank,this.fields_mapping_fetch.product,this.fields_mapping_fetch.portfolio,this.converted1);
             }
           }
-        );
-      } else {
-        clearInterval(this.interval);
-        this.save_fields1();
+          // this.converted1.push(response.Data);
+        } else {
+          console.log(response.Message);
+          this.add_fields(this.fields_mapping_fetch.bank,this.fields_mapping_fetch.product,this.fields_mapping_fetch.portfolio,this.converted1);
+        }
       }
-    },2000)
+    );
+
+
+
+
+
+
+
+    // console.log(this.converted1);
+    // this.timeLeft = this.converted1.length;
+    // this.interval = setInterval(() => {
+    //   if(this.timeLeft > 0) {
+    //     this.timeLeft--;
+    //     console.log(this.timeLeft);
+    //     let a = {
+    //     "fields_details": this.converted1,
+    //     // "_id": "60018dd27d01261ddab1e5ee",
+    //     "bank": "Hari",
+    //     "product": "Business Vehicle",
+    //     "portfolio": "PreDue-Collections"
+    //     };
+    //     console.log(a);
+    //     this._api.fields_add(a).subscribe(
+    //       (response: any) => {
+    //         console.log(response);
+    //         if (response.Code === 200) {
+    //           // alert(response.Message);
+    //           console.log(response.Message);
+    //           this.converted1.push(response.Data);
+    //         } else {
+    //           console.log(response.Message);
+    //         }
+    //       }
+    //     );
+    //   } else {
+    //     clearInterval(this.interval);
+    //     // this.save_fields1();
+
+    //   }
+    // },2000)
   }
- 
+
+
+
+  update_fields(bank,product,portfolio,fields_details){
+    let a = {
+      bank : bank,
+      product : product,
+      portfolio : portfolio,
+      fields_details : fields_details
+    }
+    console.log(a);
+    this._api.fields_mapping_edit(a).subscribe(
+      (response: any) => {
+        alert("all datas's Update successfully");
+       }
+    );
+  }
+
+  add_fields(bank,product,portfolio,fields_details){
+      let a = {
+        bank : bank,
+        product : product,
+        portfolio : portfolio,
+        fields_details : fields_details
+      }
+      console.log(a);
+      this._api.fields_mapping_adds(a).subscribe(
+        (response: any) => {
+          alert("all datas's added successfully");
+        }
+        );
+  }
+
   openworklist(){
     Swal.fire({
       // title: 'Are you sure?',
@@ -272,7 +363,7 @@ export class AutoaddfiledsComponent implements OnInit {
       confirmButtonText: 'Yes',
       cancelButtonText: 'No'
     }).then((result) => {
-      
+
     })
 
   }

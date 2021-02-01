@@ -350,10 +350,10 @@ export class UserFormComponent implements OnInit {
     }
     console.log(obj)
     if (
-      this.Pro_Client != undefined && this.Pro_Client != '' && 
-      this.Pro_Product != undefined && this.Pro_Product != '' && 
-      this.Pro_Bucket != undefined && this.Pro_Bucket != '' && 
-      this.Pro_start_date != undefined && this.Pro_start_date != '' && 
+      this.Pro_Client != undefined && this.Pro_Client != '' &&
+      this.Pro_Product != undefined && this.Pro_Product != '' &&
+      this.Pro_Bucket != undefined && this.Pro_Bucket != '' &&
+      this.Pro_start_date != undefined && this.Pro_start_date != '' &&
       this.Pro_end_date != undefined && this.Pro_end_date != '') {
       let obj = {
         "Pro_Client": this.Pro_Client.y,
@@ -426,10 +426,10 @@ export class UserFormComponent implements OnInit {
     this.Pro_end_date = new Date(arr.Pro_end_date);
   }
   update_Pro() {
-    if (this.Pro_Client != undefined && this.Pro_Client != '' && 
-    this.Pro_Product != undefined && this.Pro_Product != '' && 
-    this.Pro_Bucket != undefined && this.Pro_Bucket != '' && 
-    this.Pro_start_date != undefined && this.Pro_start_date != '' && 
+    if (this.Pro_Client != undefined && this.Pro_Client != '' &&
+    this.Pro_Product != undefined && this.Pro_Product != '' &&
+    this.Pro_Bucket != undefined && this.Pro_Bucket != '' &&
+    this.Pro_start_date != undefined && this.Pro_start_date != '' &&
     this.Pro_end_date != undefined && this.Pro_end_date != '') {
     let obj = {
       "Pro_Client": this.Pro_Client.y,
@@ -642,6 +642,7 @@ export class UserFormComponent implements OnInit {
   addfiles() {
     const fd = new FormData();
     fd.append('sampleFile', this.selectedimgae, this.selectedimgae.name);
+    console.log(fd);
     this.http.post('http://52.25.163.13:3000/upload', fd)
       .subscribe((res: any) => {
         console.log(res);
@@ -1029,7 +1030,7 @@ export class UserFormComponent implements OnInit {
     }
   }
 
-  
+
   can() {
     this.form_act = true;
     this.ngOnInit();
