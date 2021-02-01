@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild, ElementRef } from '@angular/core';
 import * as XLSX from 'xlsx';
 import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 import Swal from 'sweetalert2';
@@ -14,6 +14,7 @@ type AOA = any[][];
 })
 export class AllocationexcelComponent implements OnInit {
 
+  @ViewChild('fileControl') fileControl: ElementRef;
   Table_header : any ;
 
   final_header_excel : any = [];
@@ -154,6 +155,10 @@ export class AllocationexcelComponent implements OnInit {
 
   goback() {
     this.section = 1;
+  }
+  closeExcel() {
+    this.fileControl.nativeElement.value = null;
+    this.section = 2;
   }
   showPositionDialog() {
     this.displayPosition = true;

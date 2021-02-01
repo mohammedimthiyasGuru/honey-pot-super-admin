@@ -56,7 +56,8 @@
             <h5 class="form-lable">Choose Excel file</h5>
             <div class="profile-form-edit">
                 <div class="upload-btn-wrapper mt-3">
-                    <input type="file" (change)="onFileChange($event)" multiple="false" accept=".xlsx" />
+                    <div style="width:25%; display:flex;"><input type="file" (change)="onFileChange($event)" #fileControl multiple="false" accept=".xlsx" />
+                    <i style="color:red;" class="fa fa-window-close" (click)="closeExcel()" aria-hidden="true"></i></div>
                     <a href="assets/Data OD (3).xlsx" download="" class="btn btn-primary"
                         style="margin: 10px;margin-left: 0px;float: right;margin-top: -27px;">Download Sample
                         Document</a>
@@ -286,8 +287,8 @@
 </p-dialog>
 
 <p-dialog header="Allocation Excel" [(visible)]="displayPosition2" *ngIf="displayPosition2" position="center" [modal]="true"
-    [style]="{width: '90%'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
-    <div class="row" style="margin-left: 0px;margin-right: 0px;">
+    [style]="{width: '60%'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <div class="row" style="margin-left: 0px;margin-right: 0px; height:400px; overflow-x: scroll;">
       <app-autoaddfileds></app-autoaddfileds>
     </div>
 </p-dialog>

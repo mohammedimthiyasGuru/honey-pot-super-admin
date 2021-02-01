@@ -202,6 +202,16 @@ hr{
   flex: 0 0 12.499%;
   max-width: 12.499%;
 }
+.labelspopup{
+  /* min-width: 125px; */
+  max-width:150px;
+  /* padding-right: 25px; */
+  /* font-weight: bold !important; */
+  color: #595555;
+  font-size: 12px;
+  padding-bottom: 5px;
+  /* padding-right: 5px; */
+}
 
 .col-md-6 {
   /* padding-left: 1px; */
@@ -218,6 +228,15 @@ hr{
   width: 12.499999995%;
   flex: 0 0 12.499%;
   max-width: 12.499%; 
+}
+.valuepopup {
+  padding-right: 0px;
+  font-weight: normal !important;
+  color: #555;
+  font-size: 12px;
+  font-weight:bold !important;
+  max-width:140px;
+  border-right: 1px solid #dfdede;
 }
 
 

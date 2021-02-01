@@ -4,6 +4,7 @@ import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../../../../api.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-autoaddfileds',
   templateUrl: './autoaddfileds.component.html',
@@ -56,7 +57,7 @@ export class AutoaddfiledsComponent implements OnInit {
     this.final_not_match = this.getFromLocal("final_not_match");
     this.fields_mapping_fetch = this.getFromLocal("fields_mapping_fetch");
     console.log("dfadsfasdfasdf",this.fields_mapping_fetch);
-    console.log("dfadsfasdfasdf",this.final_not_match);
+    console.log("final not match",this.final_not_match);
     this.converted = [];
     for(let a = 0 ; a < this.final_not_match.length; a++){
        let c = {
@@ -68,7 +69,7 @@ export class AutoaddfiledsComponent implements OnInit {
       }
       this.converted.push(c);
     }
-    console.log(this.converted);
+    console.log("converted data", this.converted);
   }
 
   saveInLocal(key, val): void {
@@ -171,6 +172,13 @@ export class AutoaddfiledsComponent implements OnInit {
     this.edit_f = false;
   }
 
+  before_save_fields() {
+    if (this.fields_detail == undefined || this.data_type == undefined || this.length == undefined ) {
+      alert("Please enter all fields")
+    } else {
+      this.save_fields();
+    }
+  }
   save_fields(){
    console.log(this.converted);
 
@@ -253,11 +261,21 @@ export class AutoaddfiledsComponent implements OnInit {
         this.save_fields1();
       }
     },2000)
-
-
+  }
+ 
+  openworklist(){
+    Swal.fire({
+      // title: 'Are you sure?',
+      text: 'Enter all the fields in the table',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No'
+    }).then((result) => {
+      
+    })
 
   }
-
 
 
 
