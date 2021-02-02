@@ -142,6 +142,18 @@ export class AllocationexcelComponent implements OnInit {
           const results = a1.filter(({ fields: id1 }) => !a2.some(({ table_head: id2 }) => id2 === id1));
           console.log("Resulated adf",results);
           this.missed_datas = results;
+          if(this.missed_datas.length) {
+            let datas =[];
+            this.missed_datas.forEach(element => {
+              datas.push(element.fields);
+            })
+            Swal.fire({
+              title: 'Missing fields',
+              text: datas.toString(),
+              icon: 'warning',
+              html: `<ul><li>${datas.toString()}</li></ul>`
+            })
+          }
         }
       }
     };
@@ -280,11 +292,11 @@ export class AllocationexcelComponent implements OnInit {
     this.ngOnInit();
     console.log(this.Bank_list_gets);
     if(this.Bank_list_gets ==  undefined){
-      alert("Select Bank type");
+      Swal.fire('Select Bank type');
     }else if(this.product_list_gets ==  undefined){
-      alert("Select Product type");
+      Swal.fire('Select Product type');
     }else if(this.portfolio_list_gets ==  undefined){
-      alert("Select Portfolio type");
+      Swal.fire('Select Portfolio type');
     } else {
       this.section = 2;
       let a = {
@@ -296,7 +308,7 @@ export class AllocationexcelComponent implements OnInit {
       this._api.fields_mapping_fetch(a).subscribe(
         (response: any) => {
           if(response.Code === 404){
-            alert("No Data Found");
+            Swal.fire('No Data Found');
             this.saved_Fields = [];
           }else{
             this.saved_Fields = response.Data[0].fields_details;

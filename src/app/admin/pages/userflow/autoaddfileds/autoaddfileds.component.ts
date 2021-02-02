@@ -182,7 +182,7 @@ export class AutoaddfiledsComponent implements OnInit {
       }
       if(a == this.converted.length - 1){
            if(check_status == 1){
-            alert("Fields should not empty or length should not be 0");
+             Swal.fire('Fields should not empty or length should not be 0');
            }else{
             this.save_fields();
             // alert("all are ok");
@@ -191,14 +191,50 @@ export class AutoaddfiledsComponent implements OnInit {
     }
   }
   save_fields(){
-   console.log(this.converted);
-   this.loading_show = true;
-   this.timeLeft = this.converted.length;
-   this.interval = setInterval(() => {
+    console.log(this.converted);
+    this.loading_show = true;
+    this.timeLeft = this.converted.length;
+    if(this.loading_show == true) {
+      let timerInterval;
+      Swal.fire({
+        // text: `Uploading Data Please Dont close the session + ${this.timeLeft}`,
+        title: 'Auto close alert!',
+        html: `Uploading Data Please Dont close the session for <b> </b> milliseconds`,
+        allowOutsideClick: false,
+        timer: 6000,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading()
+          timerInterval = setInterval(() => {
+            const content = Swal.getContent()
+            if (content) {
+              const b = content.querySelector('b')
+              if (b) {
+                b.textContent = Swal.getTimerLeft()
+              }
+            }
+          }, 100)
+        },
+        willClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        if (result.dismiss === Swal.DismissReason.timer) {
+          // console.log('I was closed by the timer')
+        }
+      })
+    }
+    this.interval = setInterval(() => {
     if(this.timeLeft > 0) {
-
       this.timeLeft--;
       console.log(this.timeLeft);
+      // if(this.loading_show == true) {
+      //   Swal.fire({
+      //     // text: `Uploading Data Please Dont close the session + ${this.timeLeft}`,
+      //     showLoaderOnConfirm: true,
+      //     allowOutsideClick: false,
+      //   });
+      //  }
       let a = {
         "fields": this.converted[this.timeLeft].fields,
         "fields_detail" : this.converted[this.timeLeft].fields_detail,
@@ -249,7 +285,7 @@ export class AutoaddfiledsComponent implements OnInit {
     } else {
       clearInterval(this.interval);
       this.loading_show = false;
-      alert("uploaded Successfully");
+      Swal.fire('uploaded Successfully');
       console.log(this.converted1);
       this.save_fields1();
     }
@@ -334,7 +370,7 @@ export class AutoaddfiledsComponent implements OnInit {
     console.log(a);
     this._api.fields_mapping_edit(a).subscribe(
       (response: any) => {
-        alert("all datas's Update successfully");
+        Swal.fire('All datas Update successfully');
        }
     );
   }
@@ -349,7 +385,7 @@ export class AutoaddfiledsComponent implements OnInit {
       console.log(a);
       this._api.fields_mapping_adds(a).subscribe(
         (response: any) => {
-          alert("all datas's added successfully");
+          Swal.fire('All datas added successfully');
         }
         );
   }
