@@ -32,7 +32,8 @@ export class AutoaddfiledsComponent implements OnInit {
   id: any;
   edit_f:boolean = false;
 
-  timeLeft: number = 60;
+  // timeLeft: number = 60;
+  timeLeft: number;
   interval;
 
   profolio_list: any = [
@@ -196,12 +197,13 @@ export class AutoaddfiledsComponent implements OnInit {
     this.timeLeft = this.converted.length;
     if(this.loading_show == true) {
       let timerInterval;
+      let timeSecond: number = `${this.timeLeft}000`;
       Swal.fire({
         // text: `Uploading Data Please Dont close the session + ${this.timeLeft}`,
         title: 'Auto close alert!',
-        html: `Uploading Data Please Dont close the session for <b> </b> milliseconds`,
+        html: `Uploading Data Please Dont close the session for <b> </b> seconds`,
         allowOutsideClick: false,
-        timer: 6000,
+        timer: timeSecond,
         timerProgressBar: true,
         didOpen: () => {
           Swal.showLoading()
@@ -210,7 +212,8 @@ export class AutoaddfiledsComponent implements OnInit {
             if (content) {
               const b = content.querySelector('b')
               if (b) {
-                b.textContent = Swal.getTimerLeft()
+                b.textContent = (Swal.getTimerLeft() / 1000)
+                .toFixed(0)      
               }
             }
           }, 100)
@@ -289,7 +292,7 @@ export class AutoaddfiledsComponent implements OnInit {
       console.log(this.converted1);
       this.save_fields1();
     }
-  },2000)
+    },1000)
   }
 
 
