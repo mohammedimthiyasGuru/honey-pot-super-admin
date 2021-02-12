@@ -41,6 +41,8 @@ export class UploadedListComponent implements OnInit {
 
 
 
+
+
     this.Excel_Datas = this.getFromLocal("excel_final");
     let fields_mapping_fetch = this.getFromLocal("fields_mapping_fetch");
     console.log(this.Excel_Datas);
@@ -58,6 +60,7 @@ export class UploadedListComponent implements OnInit {
           var d = new Date();
           var n = d.getTime();
           for(let b = 0 ;  b < this.Excel_Datas.length ; b ++){
+            this.Excel_Datas[b].push(false);
             var object = {};
             object["insert_id"] = n + b ;
           for(let a  = 0 ; a < this.saved_Fields.length ; a ++)
@@ -95,6 +98,18 @@ export class UploadedListComponent implements OnInit {
   profile() {
     // this.router.navigateByUrl('/admin_panel/Client_profile')
   }
+
+  onSelect(status,datas,index){
+   console.log(status,datas,index);
+
+
+
+
+
+
+  }
+
+
 
   showPositionDialog() {
     this.displayPosition = true;

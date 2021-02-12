@@ -110,39 +110,34 @@
             </div>
             <h4 class="title-f">New Accounts</h4>
 
-             <table>
-               <tr>
-                <ng-container *ngFor="let lesson of saved_Fields ; let i = index">
-                  <th>{{lesson.fields}}</th>
-                </ng-container>
-                </tr>
-                <ng-container *ngFor="let datas of Excel_Datas; let i = index">
-                  <tr>
-                    <td>{{i}}</td>
-                    <!-- <td>{{datas[i]}}</td> -->
 
-                  <ng-container *ngFor="let lesso of datas[i] ; let j = index">
-                    <td>{{lesso}}</td>
-                  </ng-container>
-                  </tr>
-                  </ng-container>
-             </table>
 
             <div class="card-box"> <p-table [value]="Finals_excel | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
                 [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
                 currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                 [globalFilterFields]="['type']">
                 <ng-template pTemplate="header">
-                    <tr style="text-align: center;" class="thhead">
-                      <th>Action</th>
-                      <th>S.No</th>
-
+                  <table>
+                    <tr>
+                     <th>Actions</th>
+                     <th>S.no</th>
+                     <ng-container *ngFor="let lesson of saved_Fields ; let i = index">
+                       <th>{{lesson.fields}}</th>
+                     </ng-container>
+                     <th>Mark Status</th>
+                     </tr>
+                     <tr *ngFor="let row of Excel_Datas ; let i = index">
+                       <td><input type="checkbox" [(ngModel)]="row[row.length - 1]" (change)='onSelect($event.target.checked,row,i)' ></td>
+                       <td>{{i+1}}</td>
+                       <td *ngFor="let val of row">
+                           {{val}}
+                       </td>
+                    </tr>
+                  </table>
                 </ng-template>
-
-
              </p-table>  </div>
             <h4 class="title-f">Re-Activated Accounts</h4>
-            <div class="card-box"> <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
+            <!-- <div class="card-box"> <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
                 [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
                 currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                 [globalFilterFields]="['type']">
@@ -170,9 +165,9 @@
                         <td>Lorem ipsum.</td>
                     </tr>
                 </ng-template>
-             </p-table>  </div>
+             </p-table>  </div> -->
             <h4 class="title-f">Existing Accounts</h4>
-            <div class="card-box"> <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
+            <!-- <div class="card-box"> <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
                 [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
                 currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                 [globalFilterFields]="['type']">
@@ -200,7 +195,7 @@
                         <td>Lorem ipsum.</td>
                     </tr>
                 </ng-template>
-             </p-table>  </div>
+             </p-table>  </div> -->
             </div>
             <div style="text-align: right;">
                 <button class="btn btn-primary" style="margin-top:15px;margin-bottom: 25px;"> Submit to Manager</button>
