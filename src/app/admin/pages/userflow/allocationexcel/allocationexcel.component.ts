@@ -15,6 +15,9 @@ type AOA = any[][];
 export class AllocationexcelComponent implements OnInit {
 
   @ViewChild('fileControl') fileControl: ElementRef;
+
+  excel_final : any = [];
+
   Table_header : any ;
 
   final_header_excel : any = [];
@@ -91,8 +94,20 @@ export class AllocationexcelComponent implements OnInit {
       const ws: XLSX.WorkSheet = wb.Sheets[wsname];
       this.data = <AOA>(XLSX.utils.sheet_to_json(ws, { header: 1 }));
       console.log("excel data", this.data);
-      this.Table_header = this.data[0];
 
+      this.excel_final = [];
+      for(let x = 1 ; x < this.data.length - 1 ; x ++){
+        //  console.log(this.data[x][1]);
+        if(this.data[x][1] !== undefined && this.data[x][2] !== undefined ){
+          this.excel_final.push(this.data[x]);
+        }
+        if(x == this.data.length - 2){
+          console.log(this.excel_final);
+          this.saveInLocal("excel_final",this.excel_final);
+        }
+      }
+      this.final_not_match = []
+      this.Table_header = this.data[0];
       this.final_header_excel = [];
       this.final_save_fields = [];
       console.log(this.Table_header);
@@ -245,16 +260,36 @@ export class AllocationexcelComponent implements OnInit {
 
 
   Bank_list_get() {
-    this._api.client_list().subscribe(
-      (response: any) => {
-        let list = response.Data.reverse();
-        for (let i = 0; i < list.length; i++) {
-          let obj = { "y": list[i].Clinet_name};
-          this.Bank_list.push(obj);
-        }
+    // this._api.client_list().subscribe(
+    //   (response: any) => {
+    //     let list = response.Data.reverse();
+    //     for (let i = 0; i < list.length; i++) {
+    //       let obj = { "y": list[i].Clinet_name};
+    //       this.Bank_list.push(obj);
+    //     }
 
+    //   }
+    // );
+
+
+    this._api.user_details_list().subscribe(
+      (response: any) => {
+        console.log(response);
+        this.Bank_list = [];
+       var hash = response.Data.reduce((p,c) => (p[c.bankname] ? p[c.bankname].push(c) : p[c.bankname] = [c],p) ,{});
+       var  newData = Object.keys(hash).map(k => ({color: k, car: hash[k]}));
+       console.log(newData);
+        for(let a = 0 ; a < newData.length; a ++){
+          let x =  { 'y': newData[a].color}
+          this.Bank_list.push(x);
+        }
+        // this.rows = response.Data.reverse();
+        // console.log(this.rows);
       }
     );
+
+
+
   }
 
   product_list_get() {
@@ -317,15 +352,120 @@ export class AllocationexcelComponent implements OnInit {
         }
       );
     }
-
-
-
-
-
     // console.log(this.Bank_list_gets.y);
     // console.log(this.product_list_gets.y);
     // console.log(this.portfolio_list_gets.y);
+  }
 
+
+  reloadsonce(){
+
+
+    console.log("excel data", this.data);
+
+    this.excel_final = [];
+    for(let x = 1 ; x < this.data.length - 1 ; x ++){
+      //  console.log(this.data[x][1]);
+      if(this.data[x][1] !== undefined && this.data[x][2] !== undefined ){
+        this.excel_final.push(this.data[x]);
+      }
+      if(x == this.data.length - 2){
+        console.log(this.excel_final);
+      }
+    }
+    this.final_not_match = []
+    this.Table_header = this.data[0];
+    this.final_header_excel = [];
+    this.final_save_fields = [];
+    console.log(this.Table_header);
+    console.log(this.saved_Fields);
+    for(let a = 0 ; a < this.Table_header.length ; a ++){
+     var check = 0;
+     if(this.saved_Fields.length == 0){
+      let c = {
+        final_not_match : this.Table_header[a],
+        final_not_index : a,
+        saved_data : this.Table_header[a],
+        saved_data_index : a
+      }
+      this.final_not_match.push(c) ;
+     } else {
+      for(let b = 0 ; b < this.saved_Fields.length; b++){
+        if(this.Table_header[a] == this.saved_Fields[b].fields){
+          check = 1;
+          console.log("Check in");
+            let c = {
+              table_head : this.Table_header[a],
+              table_head_index : a,
+              saved_data : this.saved_Fields[b].fields,
+              saved_data_index : b
+            }
+            this.final_header_excel.push(c);
+        }
+        if(b == this.saved_Fields.length - 1){
+          if(check == 0){
+            let c = {
+              final_not_match : this.Table_header[a],
+              final_not_index : a,
+              saved_data : this.saved_Fields[b].fields,
+              saved_data_index : b
+            }
+            this.final_not_match.push(c);
+          }
+        }
+      }
+    }
+      if(a == this.Table_header.length -1){
+        console.log(this.final_not_match);
+        console.log(this.final_header_excel);
+        console.log(this.final_save_fields);
+        var a1 = this.saved_Fields;
+        var a2 = this.final_header_excel;
+        const results = a1.filter(({ fields: id1 }) => !a2.some(({ table_head: id2 }) => id2 === id1));
+        console.log("Resulated adf",results);
+        this.missed_datas = results;
+        if(this.missed_datas.length) {
+          let datas =[];
+          this.missed_datas.forEach(element => {
+            datas.push(element.fields);
+          })
+          Swal.fire({
+            title: 'Missing fields',
+            text: datas.toString(),
+            icon: 'warning',
+            html: `<ul><li>${datas.toString()}</li></ul>`
+          })
+        }
+      }
+    }
+
+
+
+  }
+
+
+  Reloaddatas(){
+
+
+    let a = {
+      bank : this.Bank_list_gets.y,
+      product : this.product_list_gets.y,
+      portfolio : this.portfolio_list_gets.y,
+    }
+    this.saveInLocal("fields_mapping_fetch",a);
+    this._api.fields_mapping_fetch(a).subscribe(
+      (response: any) => {
+        if(response.Code === 404){
+          Swal.fire('No Data Found');
+          this.saved_Fields = [];
+          this.reloadsonce();
+        }else{
+          this.saved_Fields = response.Data[0].fields_details;
+          console.log(this.saved_Fields);
+          this.reloadsonce();
+        }
+      }
+    );
 
 
 

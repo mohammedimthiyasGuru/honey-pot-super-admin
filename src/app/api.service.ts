@@ -15,12 +15,7 @@ export class ApiService {
     return this.http.post<any>(this.apiUrl + 'activity/create',data);
   }
 
-  login(data){
-    return this.http.post(this.apiUrl + 'activity/login', data);
-  }
-  Forgot_password(data){
-    return this.http.post(this.apiUrl + 'activity/forgotpassword', data);
-  }
+
   entity_create(data) {
     return this.http.post(this.apiUrl + 'entity_user/create', data);
   }
@@ -280,6 +275,64 @@ export class ApiService {
   fields_mapping_fetch(data) {
     return this.http.post(this.apiUrl + 'fields_mapping/fetch_field_list', data);
   }
+
+
+
+
+  /////Comman Paeg API call/////
+
+  login(data){
+    return this.http.post(this.apiUrl + 'userdetails/login', data);
+  }
+  Forgot_password(data){
+    return this.http.post(this.apiUrl + 'activity/forgotpassword', data);
+  }
+
+
+
+
+  //////User Details//////
+
+  user_details_add(data) {
+    return this.http.post(this.apiUrl + 'userdetails/create', data);
+  }
+  user_details_edit(data) {
+    return this.http.post(this.apiUrl + 'userdetails/edit', data);
+  }
+  user_details_delete(data) {
+    return this.http.post(this.apiUrl + 'userdetails/delete', data);
+  }
+  user_details_list() {
+    return this.http.get<any>(this.apiUrl + 'userdetails/getlist' );
+  }
+
+  user_details_list_by_com(data) {
+    return this.http.post(this.apiUrl + 'userdetails/userlist_by_com', data);
+  }
+
+
+  ////////Create Merge Data /////
+
+  merge_details_add(data) {
+    return this.http.post(this.apiUrl + 'mergedetails/create', data);
+  }
+  merge_details_edit(data) {
+    return this.http.post(this.apiUrl + 'mergedetails/edit', data);
+  }
+  merge_details_delete(data) {
+    return this.http.post(this.apiUrl + 'mergedetails/delete', data);
+  }
+  merge_details_list() {
+    return this.http.get<any>(this.apiUrl + 'mergedetails/getlist' );
+  }
+
+  merge_details_list_by_com(data) {
+    return this.http.post(this.apiUrl + 'mergedetails/userlist_by_com', data);
+  }
+
+
+
+
 
 
 }

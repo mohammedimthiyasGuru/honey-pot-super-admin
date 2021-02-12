@@ -81,6 +81,10 @@
             <div>
                 <h4 class="title" style="margin-top: 15px;">Field Mapping</h4>
             </div>
+
+            <div >
+              <button (click)="Reloaddatas()">Reloaddatas</button>
+            </div>
         </div>
         <div class="card-box" style="margin: 2px;padding-bottom: 15px;">
             <div class="row">
@@ -105,7 +109,7 @@
                             <th style="padding: 10px;">No of Customers:</th>
                             <td style="padding: 10px;">20</td>
                             <th style="padding: 10px;">No of Accounts:</th>
-                            <td style="padding: 10px;">{{data.length - 1}}</td>
+                            <td style="padding: 10px;">{{excel_final.length}}</td>
                         </tr>
 
                     </table>

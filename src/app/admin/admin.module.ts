@@ -160,6 +160,8 @@ import { CreateStateComponent } from './pages/create-state/create-state.componen
 import { CreateDesignationComponent } from './pages/create-designation/create-designation.component';
 import { CreateUserTypeComponent } from './pages/user-management/create-user-type/create-user-type.component';
 import { AutoaddfiledsComponent } from './pages/userflow/autoaddfileds/autoaddfileds.component';
+import { AdminUserComponent } from './admin-user/admin-user.component';
+import { MegreinguserComponent } from './megreinguser/megreinguser.component';
 @NgModule({
   declarations: [AdminHeaderComponent,
     AdminSidebarComponent,
@@ -278,7 +280,9 @@ import { AutoaddfiledsComponent } from './pages/userflow/autoaddfileds/autoaddfi
     CreateStateComponent,
     CreateDesignationComponent,
     CreateUserTypeComponent,
-    AutoaddfiledsComponent
+    AutoaddfiledsComponent,
+    AdminUserComponent,
+    MegreinguserComponent
   ],
   imports: [
     CommonModule,

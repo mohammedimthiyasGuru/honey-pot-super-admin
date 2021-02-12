@@ -64,9 +64,9 @@ export class AutoaddfiledsComponent implements OnInit {
     for(let a = 0 ; a < this.final_not_match.length; a++){
        let c = {
         "fields": this.final_not_match[a].final_not_match,
-        "fields_detail" : '',
+        "fields_detail" : 'Test datas',
         "data_type" : { 'y': "Text" },
-        "length" : 0,
+        "length" : 1,
         "addedby": "Admin"
       }
       this.converted.push(c);
@@ -199,9 +199,9 @@ export class AutoaddfiledsComponent implements OnInit {
       Swal.fire({
         // text: `Uploading Data Please Dont close the session + ${this.timeLeft}`,
         title: 'Auto close alert!',
-        html: `Uploading Data Please Dont close the session for <b> </b> milliseconds`,
+        html: `Uploading Data Please Dont close the session for <b></b>seconds`,
         allowOutsideClick: false,
-        timer: 6000,
+        timer: this.timeLeft * 2000,
         timerProgressBar: true,
         didOpen: () => {
           Swal.showLoading()
@@ -210,7 +210,7 @@ export class AutoaddfiledsComponent implements OnInit {
             if (content) {
               const b = content.querySelector('b')
               if (b) {
-                b.textContent = Swal.getTimerLeft()
+                // b.textContent = Swal.getTimerLeft()
               }
             }
           }, 100)

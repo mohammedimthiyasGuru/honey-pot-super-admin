@@ -94,6 +94,8 @@ import { CreateReportingToComponent } from './pages/create-reporting-to/create-r
 import { CreateStateComponent } from './pages/create-state/create-state.component';
 import { CreateDesignationComponent } from './pages/create-designation/create-designation.component';
 import { CreateUserTypeComponent } from './pages/user-management/create-user-type/create-user-type.component';
+import { AdminUserComponent } from './admin-user/admin-user.component';
+import { MegreinguserComponent } from './megreinguser/megreinguser.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' ,pathMatch:'full'},
@@ -205,6 +207,15 @@ const routes: Routes = [
   { path: 'Create_Account_Type', component: CreateAccountTypeComponent },
   { path: 'Create_Designation', component: CreateDesignationComponent },
   { path: 'Create_State', component: CreateStateComponent },
+
+
+
+  ////// Admin create /////
+  { path: 'admin_create', component: AdminUserComponent},
+  { path: 'megreinguser', component: MegreinguserComponent},
+
+
+
 
 ];
 

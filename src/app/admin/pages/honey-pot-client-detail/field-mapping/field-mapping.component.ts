@@ -90,17 +90,38 @@ export class FieldMappingComponent implements OnInit {
   }
 
   Bank_list_get() {
-    this._api.client_list().subscribe(
+
+    // this._api.client_list().subscribe(
+    //   (response: any) => {
+    //     console.log(response);
+    //     let list = response.Data.reverse();
+    //     for (let i = 0; i < list.length; i++) {
+    //       let obj = { "y": list[i].Clinet_name};
+    //       this.Bank_list.push(obj);
+    //     }
+    //     console.log(this.Bank_list);
+    //   }
+    // );
+
+
+    this._api.user_details_list().subscribe(
       (response: any) => {
         console.log(response);
-        let list = response.Data.reverse();
-        for (let i = 0; i < list.length; i++) {
-          let obj = { "y": list[i].Clinet_name};
-          this.Bank_list.push(obj);
+        this.Bank_list = [];
+       var hash = response.Data.reduce((p,c) => (p[c.bankname] ? p[c.bankname].push(c) : p[c.bankname] = [c],p) ,{});
+       var  newData = Object.keys(hash).map(k => ({color: k, car: hash[k]}));
+       console.log(newData);
+        for(let a = 0 ; a < newData.length; a ++){
+          let x =  { 'y': newData[a].color}
+          this.Bank_list.push(x);
         }
-        console.log(this.Bank_list);
+        // this.rows = response.Data.reverse();
+        // console.log(this.rows);
       }
     );
+
+
+
   }
 
   product_list_get() {

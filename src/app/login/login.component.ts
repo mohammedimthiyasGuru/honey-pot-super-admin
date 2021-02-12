@@ -85,7 +85,7 @@ export class LoginComponent implements OnInit {
     this.passwordValidator();
   }
 
- 
+
   emailValidator1() {
     let reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     let emailcheck = reg.test(this.email);
@@ -118,7 +118,7 @@ export class LoginComponent implements OnInit {
     this.validator();
     if (this.validation) {
       let a = {
-        "username": this.email_id,
+        "email_id": this.email_id,
         "password": this.password
       }
       this._api.login(a).subscribe(
@@ -127,19 +127,24 @@ export class LoginComponent implements OnInit {
           if (response.Code == 200) {
             this.saveInLocal("login_detail", response.Data)
             alert('Logged in successfully');
-            if(response.Data.Clinet_name != undefined){
-              this.saveInLocal("login_type", "Organization")
-              this.router.navigateByUrl('/admin_panel');
-              let a = this.getFromLocal("login_type")
-              console.log(a)
-            }
-            else{
-              this.saveInLocal("login_type", "Super_Admin")
-              this.router.navigateByUrl('/Dashboard_Main');
-              let a = this.getFromLocal("login_type")
-              console.log(a)
-            }
-            
+            this.saveInLocal("login_Details", response.Data);
+            this.router.navigateByUrl('/admin_panel');
+
+
+
+            // if(response.Data.Clinet_name != undefined){
+            //   this.saveInLocal("login_type", "Organization")
+            //
+            //   let a = this.getFromLocal("login_type")
+            //   console.log(a)
+            // }
+            // else{
+            //   this.saveInLocal("login_type", "Super_Admin")
+            //   this.router.navigateByUrl('/Dashboard_Main');
+            //   let a = this.getFromLocal("login_type")
+            //   console.log(a)
+            // }
+
           }
           else {
             alert('Invalid Account');
