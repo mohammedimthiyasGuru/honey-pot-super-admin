@@ -322,12 +322,13 @@ input {
     font-size: 12px !important;
 }
 .cdk-overlay-pane {
-    top: 50px !important;
+    /* top: 50px !important;
     left: 41px !important;
-    height: 50% !important;
+    height: 50% !important; */
     background: none !important; 
     border-radius: 0px !important;
-  
+    left: 31px !important;
+
 }
 .mat-menu-panel {
     background:  none !important;
