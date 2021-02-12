@@ -196,6 +196,7 @@ export class AutoaddfiledsComponent implements OnInit {
     this.timeLeft = this.converted.length;
     if(this.loading_show == true) {
       let timerInterval;
+      let timeSecond: any = `${this.timeLeft}000`;
       Swal.fire({
         // text: `Uploading Data Please Dont close the session + ${this.timeLeft}`,
         title: 'Auto close alert!',
