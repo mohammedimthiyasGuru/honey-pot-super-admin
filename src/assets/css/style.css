@@ -325,9 +325,11 @@ input {
     /* top: 50px !important;
     left: 41px !important;
     height: 50% !important; */
+    position: absolute !important;
     background: none !important; 
     border-radius: 0px !important;
     left: 31px !important;
+    margin-top: -63px;
 
 }
 .mat-menu-panel {
