@@ -58,7 +58,7 @@
             <td>{{item.updatedAt}}</td>
             <td class="act">
                 <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true" pTooltip="Edit" (click)="show_edit(item)"></i>
-                <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete" (click)="delete(item._id)" *ngIf="item.designation_type !== 'Agent' || item.designation_type !== 'Branch Manager' || item.designation_type !== 'Team Leader' ||  item.designation_type !== 'Branch Admin' || item.designation_type !== 'Agency Admin'"></i>
+                <!-- <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete" (click)="delete(item._id)" *ngIf="item.designation_type !== 'Agent' || item.designation_type !== 'Branch Manager' || item.designation_type !== 'Team Leader' ||  item.designation_type !== 'Branch Admin' || item.designation_type !== 'Agency Admin'"></i> -->
             </td>
         </tr>
     </ng-template>

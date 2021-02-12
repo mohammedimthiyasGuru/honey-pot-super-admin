@@ -114,7 +114,7 @@
                 <th>Eamil Id</th>
                 <th>Password</th>
                 <th>Phone Number</th>
-                <th>Side Menu Access</th>
+                <!-- <th>Side Menu Access</th> -->
                 <th>Status</th>
                 <th>Create by</th>
                 <th>Create at</th>
@@ -132,11 +132,11 @@
             <td>{{item.email_id}}</td>
             <td>{{item.password}}</td>
             <td>{{item.phone_number}}</td>
-            <td>
+            <!-- <td>
               <ng-container *ngFor="let accessitem of item.access;">
               <div *ngIf="accessitem.Status">{{accessitem.title}},</div>
               </ng-container>
-            </td>
+            </td> -->
             <td>{{item.status}}</td>
             <td>{{item.created_by}}</td>
             <td>{{item.createdAt | date}}</td>
