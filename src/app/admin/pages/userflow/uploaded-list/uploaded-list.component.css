@@ -21,6 +21,17 @@ table, th, td {
   background-color: white;
   padding: 3px;
 }
+table{
+  width:100%;
+  table-layout: fixed;
+}
+th{
+  width: 110px;
+}
+td {
+  width: 50px;
+  word-wrap: break-word;
+}
 
 .add-icon{
     font-size: 12px;
