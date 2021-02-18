@@ -64,11 +64,16 @@
 }
 .thhead th{
     color: #ffffff !important;
-    background: linear-gradient(90deg, rgb(32 53 63) 0%, rgb(32 53 63) 100%);
+    /* background: linear-gradient(90deg, rgb(32 53 63) 0%, rgb(32 53 63) 100%); */
     padding: 2px 3px;
     text-transform: capitalize;
 
 }
+.ui-table .ui-table-tbody > tr > td {
+    border: none !important;
+    border-bottom: 1px solid #c8c8c8 !important;
+    font-size: 12px;
+} 
 .tdrow {
     display: table-row;
     background: #fff;
@@ -321,7 +326,7 @@ input {
 :host::ng-deep .ui-tooltip .ui-tooltip-text {
     font-size: 12px !important;
 }
-.cdk-overlay-pane {
+ .cdk-overlay-pane {
     /* top: 50px !important;
     left: 41px !important;
     height: 50% !important; */
@@ -330,6 +335,13 @@ input {
     border-radius: 0px !important;
     left: 31px !important;
     margin-top: -63px;
+
+}
+.cdk-global-overlay-wrapper .cdk-overlay-pane {
+    /* top: 50px !important;
+    left: 41px !important;
+    height: 50% !important; */
+    position: static !important;
 
 }
 .mat-menu-panel {
@@ -357,4 +369,7 @@ i:hover{
     height: 26px;
     font-size: 12px !important;
     /* margin-bottom: 0px; */
+  }
+  .mat-icon:hover {
+      cursor: pointer !important;
   }
