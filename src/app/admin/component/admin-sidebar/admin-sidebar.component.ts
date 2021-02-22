@@ -82,6 +82,7 @@ export class AdminSidebarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
    this.login_Details = this.getFromLocal("login_Details");
    console.log(this.login_Details)
 

@@ -163,6 +163,7 @@ import { AutoaddfiledsComponent } from './pages/userflow/autoaddfileds/autoaddfi
 import { AdminUserComponent } from './admin-user/admin-user.component';
 import { MegreinguserComponent } from './megreinguser/megreinguser.component';
 import { NewallocationComponent } from './pages/newallocation/newallocation.component';
+import { AgentDashboardComponent } from './dashboard/agent-dashboard/agent-dashboard.component';
 @NgModule({
   declarations: [AdminHeaderComponent,
     AdminSidebarComponent,
@@ -284,7 +285,8 @@ import { NewallocationComponent } from './pages/newallocation/newallocation.comp
     AutoaddfiledsComponent,
     AdminUserComponent,
     MegreinguserComponent,
-    NewallocationComponent
+    NewallocationComponent,
+    AgentDashboardComponent
   ],
   imports: [
     CommonModule,

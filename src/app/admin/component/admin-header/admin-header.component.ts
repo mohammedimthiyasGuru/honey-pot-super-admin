@@ -19,6 +19,7 @@ export class AdminHeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.login_detail = this.getFromLocal("login_detail")
   }
   saveInLocal(key, val): void {

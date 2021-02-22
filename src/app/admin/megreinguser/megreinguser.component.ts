@@ -52,6 +52,7 @@ export class MegreinguserComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
 
      this.company_name = '';
      this.report_to_design = '';

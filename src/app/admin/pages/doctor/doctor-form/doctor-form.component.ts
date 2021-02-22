@@ -33,6 +33,7 @@ export class DoctorFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     for (let i = 1980; i < 2020; i++) {
       this.years.push({ "y": i + 1 })
     }

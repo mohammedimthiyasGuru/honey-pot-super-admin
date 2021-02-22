@@ -25,6 +25,7 @@ export class UserGroupComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this._api.usergroup_list().subscribe(
       (response: any) => {
         console.log(response);

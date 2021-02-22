@@ -97,6 +97,7 @@ import { CreateUserTypeComponent } from './pages/user-management/create-user-typ
 import { AdminUserComponent } from './admin-user/admin-user.component';
 import { MegreinguserComponent } from './megreinguser/megreinguser.component';
 import { NewallocationComponent } from './pages/newallocation/newallocation.component';
+import { AgentDashboardComponent } from './dashboard/agent-dashboard/agent-dashboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' ,pathMatch:'full'},
@@ -216,6 +217,7 @@ const routes: Routes = [
   ////// Admin create /////
   { path: 'admin_create', component: AdminUserComponent},
   { path: 'megreinguser', component: MegreinguserComponent},
+  { path: 'Agent_Dashboard', component: AgentDashboardComponent},
 
 
 

@@ -373,3 +373,28 @@ i:hover{
   .mat-icon:hover {
       cursor: pointer !important;
   }
+  :host::ng-deep .ui-overlaypanel {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 0;
+    border: 1px solid #c8c8c8;
+    border-radius: 0;
+    width: 80%;
+    right: 14px !important;
+    left: 146.141px !important;
+  }
+  :host::ng-deep  .ui-overlaypanel .ui-overlaypanel-close .ui-overlaypanel-close-icon {
+    line-height: inherit;
+    font-size: 10px !important;
+  }
+  :host::ng-deep  .ui-overlaypanel:before {
+    display: none;
+}
+
+:host::ng-deep .ui-overlaypanel:after {
+    display: none;
+}
+
+:host::ng-deep .ui-overlaypanel.ui-overlaypanel-flipped:after {
+    display: none;
+}

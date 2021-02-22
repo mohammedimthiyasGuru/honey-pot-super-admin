@@ -175,6 +175,7 @@ export class UserFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.form_type = this.getFromLocal('Client_form')
     this.entity_data = this.getFromLocal('client_data');
     if (this.entity_data != undefined) {

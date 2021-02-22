@@ -27,6 +27,7 @@ export class AddPortfolioComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
   }
   cancel() {
     this.router.navigateByUrl('/admin_panel/Client_profile')

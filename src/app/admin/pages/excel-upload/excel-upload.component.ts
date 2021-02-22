@@ -23,6 +23,7 @@ export class ExcelUploadComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
   }
   onFileChange(evt: any) {
     console.log('this.data');

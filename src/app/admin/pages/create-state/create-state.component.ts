@@ -27,6 +27,7 @@ export class CreateStateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this._api.state_details_list().subscribe(
       (response: any) => {
         console.log(response);

@@ -14,6 +14,7 @@ export class AgencyManagementComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.rows = [{ type: "Dog", name: "dog1" },
     { type: "Cat", name: "cat1" },
     { type: "Cat", name: "cat1" },
