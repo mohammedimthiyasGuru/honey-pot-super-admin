@@ -162,6 +162,7 @@ import { CreateUserTypeComponent } from './pages/user-management/create-user-typ
 import { AutoaddfiledsComponent } from './pages/userflow/autoaddfileds/autoaddfileds.component';
 import { AdminUserComponent } from './admin-user/admin-user.component';
 import { MegreinguserComponent } from './megreinguser/megreinguser.component';
+import { NewallocationComponent } from './pages/newallocation/newallocation.component';
 import { AgentDashboardComponent } from './dashboard/agent-dashboard/agent-dashboard.component';
 @NgModule({
   declarations: [AdminHeaderComponent,
@@ -284,6 +285,7 @@ import { AgentDashboardComponent } from './dashboard/agent-dashboard/agent-dashb
     AutoaddfiledsComponent,
     AdminUserComponent,
     MegreinguserComponent,
+    NewallocationComponent,
     AgentDashboardComponent
   ],
   imports: [

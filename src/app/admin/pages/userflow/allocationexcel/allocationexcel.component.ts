@@ -296,13 +296,7 @@ export class AllocationexcelComponent implements OnInit {
   product_list_get() {
     this._api.product_type_list().subscribe(
       (response: any) => {
-
-        let list = response.Data.reverse();
-        for (let i = 0; i < list.length; i++) {
-          let obj = { "y": list[i].product_type};
-          this.product_list.push(obj);
-        }
-
+        this.product_list = response.Data;
       }
     );
   }
@@ -337,7 +331,7 @@ export class AllocationexcelComponent implements OnInit {
       this.section = 2;
       let a = {
         bank : this.Bank_list_gets.y,
-        product : this.product_list_gets.y,
+        product : this.product_list_gets,
         portfolio : this.portfolio_list_gets.y,
       }
       this.saveInLocal("fields_mapping_fetch",a);
@@ -450,7 +444,7 @@ export class AllocationexcelComponent implements OnInit {
 
     let a = {
       bank : this.Bank_list_gets.y,
-      product : this.product_list_gets.y,
+      product : this.product_list_gets,
       portfolio : this.portfolio_list_gets.y,
     }
     this.saveInLocal("fields_mapping_fetch",a);

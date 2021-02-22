@@ -25,14 +25,13 @@ import { ChartsModule } from 'ng2-charts';
 import { TooltipModule } from 'primeng/tooltip';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
     HomepageComponent,
     LoginComponent,
-    DashboardMainComponent
+    DashboardMainComponent,
    ],
   imports: [
     BrowserModule,

@@ -133,11 +133,6 @@ export class UploadedListComponent implements OnInit {
   onSelect(status,datas,index){
    console.log(status,datas,index);
 
-
-
-
-
-
   }
 
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { UsrCustomerdetailsComponent } from '../usr-customerdetails/usr-customerdetails.component';
@@ -47,6 +47,7 @@ import { UsrSkipTracingMainComponent } from './../usr-skip-tracing-main/usr-skip
 import { UsrFiledVisitMainComponent } from './../usr-filed-visit-main/usr-filed-visit-main.component';
 import Swal from 'sweetalert2';
 import { UsrCustomerExplosureComponent } from './../usr-customer-explosure/usr-customer-explosure.component';
+import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 
 @Component({
   selector: 'app-usr-contactrecording',
@@ -65,7 +66,12 @@ export class UsrContactrecordingComponent implements OnInit {
   payment:boolean = false;
   displayPosition :boolean = false;
   multipleAccountInformation = [];
+  loadedRecord: any;
+  row: any;
+  column: any;
+  dataList: any;
   constructor(
+    @Inject(SESSION_STORAGE) private storage: StorageService,
     private router: Router,
     public dialog: MatDialog,
     ) { }
@@ -91,6 +97,17 @@ export class UsrContactrecordingComponent implements OnInit {
       { LoanNumber:"789654", Product: "NA", LoanAmount: "NA", OutstandingAmount: "NA", TotalOverdueAmount: "NA", NextInstallmentAmount: "NA", NextInstallmentDueDate: "NA", Bucket: "NA", MinimumamountforBucketmovement: "NA", UnitCode: "NA", },
       { LoanNumber:"786786", Product: "Auto Loan", LoanAmount: "15,00000", OutstandingAmount: "55,0000", TotalOverdueAmount: "4000", NextInstallmentAmount: "40000", NextInstallmentDueDate: "20-01-2021", Bucket: "32", MinimumamountforBucketmovement: "5", UnitCode: "BC23", },
     ]
+
+
+    if (this.storage.get("_storedRecord")) {
+      this.loadedRecord = this.storage.get("_storedRecord")
+      console.log(this.loadedRecord);
+      this.dataList = this.loadedRecord.dataList;
+    } else {
+      this.loadedRecord = null;
+    }
+    
+    
   }
   client_form() {
     this.router.navigateByUrl('/admin_panel/client-form')
