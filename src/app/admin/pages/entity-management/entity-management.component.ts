@@ -21,6 +21,7 @@ export class EntityManagementComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.saveInLocal('Entity_data', undefined);
     this._api.entity_list().subscribe(
       (response: any) => {

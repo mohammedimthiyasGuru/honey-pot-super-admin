@@ -27,6 +27,7 @@ export class ClientStatusMarkingComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
   
   }
   User_form() {

@@ -64,6 +64,7 @@ export class UploadedListComponent implements OnInit {
 
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.company_details();
     this.rows = [{ type: "Dog", name: "dog1" },
     { type: "Cat", name: "cat1" },

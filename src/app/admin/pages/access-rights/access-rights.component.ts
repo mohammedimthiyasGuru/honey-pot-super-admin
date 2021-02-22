@@ -16,6 +16,7 @@ export class AccessRightsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.rows = [{ name: "Dashboard" },
     { name: "Client Master/Clients Management" },
     { name: "Client Master/Product Management" },

@@ -23,6 +23,7 @@ export class UserRoleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this._api.userrole_list().subscribe(
       (response: any) => {
         console.log(response);

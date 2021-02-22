@@ -23,6 +23,7 @@ export class CreateProductComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this._api.product_type_list().subscribe(
       (response: any) => {
         console.log(response);

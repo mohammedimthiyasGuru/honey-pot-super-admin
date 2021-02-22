@@ -33,6 +33,7 @@ export class LicenseFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
   }
   cancel() {
     this.router.navigateByUrl('/admin_panel/License')

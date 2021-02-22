@@ -30,6 +30,7 @@ export class BucketComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this._api.bucket_type_list().subscribe(
       (response: any) => {
         console.log(response);

@@ -17,6 +17,7 @@ export class UsrRpoComponent implements OnInit {
 
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
   
   }
   client_form() {

@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
     @Inject(SESSION_STORAGE) private storage: StorageService) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
   }
   login() {
     // if(this.name == 'salveo@gmail.com' && this.password == '123456'){

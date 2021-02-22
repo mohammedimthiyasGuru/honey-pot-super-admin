@@ -92,6 +92,7 @@ export class AdminUserComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
      this.company_types = '';
      this.bankname = '';
      this.designation = '';

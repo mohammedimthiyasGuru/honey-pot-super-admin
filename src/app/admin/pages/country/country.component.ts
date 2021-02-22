@@ -25,6 +25,7 @@ export class CountryComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this._api.currency_type_list().subscribe(
       (response: any) => {
         console.log(response);

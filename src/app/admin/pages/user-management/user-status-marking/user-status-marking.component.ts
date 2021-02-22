@@ -36,6 +36,7 @@ export class UserStatusMarkingComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.saveInLocal('client_data', undefined);
     this._api.useradd_list().subscribe(
       (response: any) => {

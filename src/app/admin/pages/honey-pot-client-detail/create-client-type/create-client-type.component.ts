@@ -23,6 +23,7 @@ export class CreateClientTypeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this._api.client_type_list().subscribe(
       (response: any) => {
         console.log(response);

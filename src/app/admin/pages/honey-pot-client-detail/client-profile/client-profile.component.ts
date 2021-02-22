@@ -42,6 +42,7 @@ export class ClientProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.client_data = this.getFromLocal('client_data');
     if (this.client_data != undefined) {
       this.Existing = this.client_data;
