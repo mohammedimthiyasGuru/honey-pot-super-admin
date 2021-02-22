@@ -34,8 +34,9 @@
     </div>
     <div class="col-md-4">
         <h5 class="form-lable">Choose Product:</h5>
-        <p-dropdown [options]="product_list" name='product_list_gets' [(ngModel)]="product_list_gets" placeholder="Select" optionLabel="y"
-            [showClear]="true"></p-dropdown>
+        <select [(ngModel)]="product_list_gets" class="form-control">
+            <option *ngFor="let item of product_list" [value]="item._id">{{item.product_type}}</option>
+        </select>
     </div>
     <div class="col-md-4">
         <h5 class="form-lable">Choose Portfolio:</h5>

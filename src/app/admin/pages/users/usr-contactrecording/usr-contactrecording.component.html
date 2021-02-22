@@ -154,178 +154,34 @@
                 </div> -->
               </div>
               <!-- <hr> -->
+  
               <div class="row">
-                <div class="col-md-2 labels">
-                  Account Type
+                
+                <div class="col-md-2" *ngFor="let item of dataList">
+                  <p style="text-align: justify;"> 
+                    <span class="labels" style="font-size: 12px;">
+                      {{item.column}}: 
+                    </span>
+                    <span class="values2" style="font-size: 12px;">
+                      {{item.row}}
+                    </span>
+                  </p>
                 </div>
-                <div class="col-md-2 values">
-                  : Account Type
-                </div>
-                <div class="col-md-2 labels">
-                  Bank Acc No
-                </div>
-                <div class="col-md-2 values">
-                  : 12345 12345 12345
-                </div>
-                <div class="col-md-2 labels">
-                  Loan Acc No
-                </div>
-                <div class="col-md-2 values">
-                  : 12345 12345 12345
-                </div>
-                <div class="col-md-2 labels">
-                  Last Payment Date
-                </div>
-                <div class="col-md-2 values">
-                  : 12/12/19
-                </div>
-                <div class="col-md-2 labels">
-                  POS No
-                </div>
-                <div class="col-md-2 values">
-                  : 123 123 123
-                </div>
-                <div class="col-md-2 labels">
-                  Credit Limit
-                </div>
-                <div class="col-md-2 values">
-                  : 100000
-                </div>
-                <div class="col-md-2 labels">
-                  CIF No
-                </div>
-                <div class="col-md-2 values">
-                  : 12345 12345 12345
-                </div>
-                <div class="col-md-2 labels">
-                  Credit Card No
-                </div>
-                <div class="col-md-2 values">
-                  : 12345 12345 12345
-                </div>
-                <div class="col-md-2 labels">
-                  Total Outstanding
-                </div>
-                <div class="col-md-2 values">
-                  : 3000000
-                </div>
-                <div class="col-md-2 labels">
-                  Priciple Outstanding
-                </div>
-                <div class="col-md-2 values">
-                  : 200000
-                </div>
-                <div class="col-md-2 labels">
-                  CID No
-                </div>
-                <div class="col-md-2 values">
-                  : 12345 12345 12345
-                </div>
-                <div class="col-md-2 labels">
-                  Status
-                </div>
-                <div class="col-md-2 values">
-                  : Confirmed
-                </div>
-              <!-- </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card-box" style="background: white;
-border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflow-y: scroll;">
-              <div class="row" style="background: #20353f;margin-top: -5px;">
-                <div class="col-md-12">
-                  <h4 class="title-f">Customer Information</h4>
-                </div>
-              </div>
-              <hr>
-              <div class="row" style="padding: 0px 0px 6px 10px;"> -->
-                <div class="col-md-2 labels">
-                  Customer Name:
-                </div>
-                <div class="col-md-2 values">
-                  : Vignesh V
-                </div>
-                <div class="col-md-2 labels">
-                  Customer ID
-                </div>
-                <div class="col-md-2 values">
-                  : 2345 12345 12345
-                </div>
-                <div class="col-md-2 labels">
-                  Customer Type
-                </div>
-                <div class="col-md-2 values">
-                  : Confirmed
-                </div>
-                <div class="col-md-2 labels">
-                  Cus-Representitive
-                </div>
-                <div class="col-md-2 values">
-                  : Type</div>
-                <div class="col-md-2 labels">
-                  Contact Person
-                </div>
-                <div class="col-md-2 values">
-                  : Atul Sunil
-                </div>
-                <div class="col-md-2 labels">
-                  Nationality
-                </div>
-                <div class="col-md-2 values">
-                  : India
-                </div>
-                <div class="col-md-2 labels">
-                  Passport No
-                </div>
-                <div class="col-md-2 values">
-                  : XZER3433</div>
-                <div class="col-md-2 labels">
-                  Branch:
-                </div>
-                <div class="col-md-2 values">
-                  : Mizher Mall
-                </div>
-                <div class="col-md-2 labels">
-                  Branch Code
-                </div>
-                <div class="col-md-2 values">
-                  : 1244
-                </div>
-                <div class="col-md-2 labels">
-                  Constitution
-                </div>
-                <div class="col-md-2 values">
-                  : NA
-                </div>
-                <div class="col-md-2 labels">
-                  Agreement ID
-                </div>
-                <div class="col-md-2 values">
-                  : 125987</div>
-                <div class="col-md-2 labels">
-                  PTP Status
-                </div>
-                <div class="col-md-2 values">
-                  : -
-                </div>
+
               </div>
             </div>
           </div>
           <!-- Financial -->
-          <div class="col-md-12">
+          <!-- <div class="col-md-12">
             <div class="col-md-12 card-box" style="background: white;
-     border-radius: 3px;  height: 280px;overflow-y: scroll;overflow-x: hidden;">
+                border-radius: 3px;  height: 280px;overflow-y: scroll;overflow-x: hidden;">
               <div class="row">
                 <div class="col-md-12">
                   <h2 class="title-f" style="color:#21a0f6 !important;font-size:18px; padding:5px 0px 12px 0px;">Financial Details</h2>
                 </div>
-                <!-- <div class="col-md-1">
-                  <span><i class="fa fa-plus-circle" style="font-size:11px !important;color:#ef6c00"
-                      (click)="showPositionDialog()"></i></span>
-                </div> -->
+          
               </div>
-              <!-- <hr> -->
+            
               <div class="row">
                 <div class="col-md-2 labels">
                   DPD </div>
@@ -385,7 +241,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                 <div class="col-md-2 values">
                   : NA
                 </div>
-                <!-- financial details row -->
+                
                 <div class="col-md-2 labels">
                   OS Amount
                 </div>
@@ -438,7 +294,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                 <div class="col-md-2 values">
                   : xxxxxx
                 </div>
-                <!-- loan/card details -->
+                
                 <div class="col-md-2 labels">
                   Financier
                 </div>
@@ -603,7 +459,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- Contact -->
           <!-- <div class="col-md-12">
             <div class="col-md-12 card-box" style="background: white;
@@ -1842,12 +1698,11 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                 </div>
               </div>
               <hr>
-              <div class="title-f" style="background:#fff; color:#21a0f6 !important;font-size:18px; padding:5px 0px 12px 0px;">
-                <span style="background:#fff; color:#21a0f6 !important;font-size:18px; padding:5px 0px 12px 10px;">Delinquency String</span> <span
-                style="color: #ef6c00;font-size: 12px;text-decoration: underline;cursor: pointer;"
-                (click)="del = !del">view
-                Detail</span></div>
-            <div class="doc-table" *ngIf="del">
+            <!-- <div class="title-f" style="background:#fff; color:#21a0f6 !important;font-size:18px; padding:5px 0px 12px 0px;">
+                <span style="background:#fff; color:#21a0f6 !important;font-size:18px; padding:5px 0px 12px 10px;"> Delinquency String </span>
+                <span style="color: #ef6c00;font-size: 12px;text-decoration: underline;cursor: pointer;" (click)="del = !del">view Detail </span>
+            </div> -->
+            <!-- <div class="doc-table" *ngIf="del">
               <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="false"
                 [rows]="5" [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
                 currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
@@ -1909,7 +1764,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
                   </tr>
                 </ng-template>
               </p-table>
-            </div>
+            </div> -->
             </div>
           </div>
         </div>
@@ -2355,8 +2210,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
   <ng-template pTemplate>
     <!-- <div class="overlay-contact"> -->
       <div class="col-md-12" style="padding:0px !important;">
-        <div class="col-md-12" style="background: white;
-  border-radius: 3px;  height: 200px;overflow-y: scroll;overflow-x: hidden;padding:0px !important;">
+        <div class="col-md-12" style="background: white; border-radius: 3px;  height: 200px;overflow-y: scroll;overflow-x: hidden;padding:0px !important;">
           <div class="row">
             <div class="col-md-12">
               <h2 class="title-f" style="color:#21a0f6 !important;font-size:18px; padding:5px 0px 12px 0px;">Contact Details</h2>
@@ -2424,8 +2278,7 @@ border-radius: 1px;  height: 250px;overflow-y: scroll;overflow-x: hidden;overflo
   <ng-template pTemplate>
     <!-- <div class="overlay-contact"> -->
       <div class="col-md-12" style="padding:0px !important;">
-        <div class="col-md-12" style="background: white;
-  border-radius: 3px; overflow-y: scroll;overflow-x: hidden; padding:0px !important;">
+        <div class="col-md-12" style="background: white; border-radius: 3px; overflow-y: scroll;overflow-x: hidden; padding:0px !important;">
           <div class="row">
             <div class="col-md-12">
               <h2 class="title-f" style="color:#21a0f6 !important;font-size:18px; padding:5px 0px 12px 0px;">Address Details</h2>

@@ -342,6 +342,14 @@ export class ApiService {
     return this.http.post(this.apiUrl + 'allocationdata/getlist_id', data);
   }
 
+  newallocation_data(data){
+    return this.http.post(this.apiUrl+'allocateto_tl/create',data);
+  }
+
+  newallocation_getlist_id(data){
+    return this.http.post(this.apiUrl+'allocateto_tl/getlist_id',data);
+  }
+
 
 
 

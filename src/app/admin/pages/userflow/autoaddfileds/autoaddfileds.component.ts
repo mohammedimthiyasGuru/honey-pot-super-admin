@@ -200,7 +200,7 @@ export class AutoaddfiledsComponent implements OnInit {
       Swal.fire({
         // text: `Uploading Data Please Dont close the session + ${this.timeLeft}`,
         title: 'Auto close alert!',
-        html: `Uploading Data Please Dont close the session for <b></b>seconds`,
+        html: `Uploading Data Please Dont close the session for <b> ${timeSecond} </b>seconds`,
         allowOutsideClick: false,
         timer: this.timeLeft * 2000,
         timerProgressBar: true,

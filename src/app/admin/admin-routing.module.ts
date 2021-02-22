@@ -96,6 +96,7 @@ import { CreateDesignationComponent } from './pages/create-designation/create-de
 import { CreateUserTypeComponent } from './pages/user-management/create-user-type/create-user-type.component';
 import { AdminUserComponent } from './admin-user/admin-user.component';
 import { MegreinguserComponent } from './megreinguser/megreinguser.component';
+import { NewallocationComponent } from './pages/newallocation/newallocation.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' ,pathMatch:'full'},
@@ -180,6 +181,8 @@ const routes: Routes = [
   { path: 'userflow/withdrawexcel', component: WithdrawexcelComponent },
   { path: 'userflow/withdrawsingle', component: WithdrawsingleComponent },
   { path: 'userflow/Dual_Temporary_allocation', component: DualTemporaryAllocationComponent },
+
+  { path: 'userflow/newallocation', component: NewallocationComponent},
 
 
   { path: 'Configuration', component: ConfigurationComponent },

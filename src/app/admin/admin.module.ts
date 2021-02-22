@@ -162,6 +162,7 @@ import { CreateUserTypeComponent } from './pages/user-management/create-user-typ
 import { AutoaddfiledsComponent } from './pages/userflow/autoaddfileds/autoaddfileds.component';
 import { AdminUserComponent } from './admin-user/admin-user.component';
 import { MegreinguserComponent } from './megreinguser/megreinguser.component';
+import { NewallocationComponent } from './pages/newallocation/newallocation.component';
 @NgModule({
   declarations: [AdminHeaderComponent,
     AdminSidebarComponent,
@@ -282,7 +283,8 @@ import { MegreinguserComponent } from './megreinguser/megreinguser.component';
     CreateUserTypeComponent,
     AutoaddfiledsComponent,
     AdminUserComponent,
-    MegreinguserComponent
+    MegreinguserComponent,
+    NewallocationComponent
   ],
   imports: [
     CommonModule,
