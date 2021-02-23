@@ -157,16 +157,21 @@
   
               <div class="row">
                 
-                <div class="col-md-2" *ngFor="let item of dataList">
-                  <p style="text-align: justify;"> 
+                <ng-container *ngFor="let item of dataList">
+                  <div class="col-md-2 labels">
+                    {{item.column}}:
+                  </div>
+                  <div class="col-md-2 values">
+                    {{item.row}}</div>
+                  <!-- <p style="text-align: justify;"> 
                     <span class="labels" style="font-size: 12px;">
-                      {{item.column}}: 
+                      
                     </span>
                     <span class="values2" style="font-size: 12px;">
-                      {{item.row}}
+                      
                     </span>
-                  </p>
-                </div>
+                  </p> -->
+                </ng-container>
 
               </div>
             </div>
@@ -518,7 +523,7 @@
                 <div class="col-md-2 values">
                   : 9865432104 <i class="fa fa-phone" (click)="openworklist1()" style="font-size:60px;color: green;"></i>
                 </div>
-                <!-- email 
+                email 
                 <div class="col-md-2 labels">
                   Email 1
                 </div>
