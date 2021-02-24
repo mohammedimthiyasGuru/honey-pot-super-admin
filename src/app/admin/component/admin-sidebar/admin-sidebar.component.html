@@ -831,7 +831,7 @@
     </mat-drawer>
     <mat-drawer-content style="margin-left: 30px !important;">
         <section style="padding:15px;background:#f2efefd1;">
-            <router-outlet></router-outlet>
+            <router-outlet (activate)="onActivate($event)"></router-outlet>
         </section>
 
     </mat-drawer-content>

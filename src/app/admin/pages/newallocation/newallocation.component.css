@@ -7,18 +7,28 @@
 overflow-x: scroll;
 }
 
-
+ th {
+  padding: 8px 8px !important;
+  color: #ffffff !important;
+  /* background-color: #20353f !important; */
+  background-color: #747f7f !important;
+text-transform: capitalize;
+}
+:host::ng-deep .ui-table .ui-table-tbody > tr > td {
+  border:none !important;
+  border-bottom: 1px solid #c8c8c8 !important;
+  font-size: 12px;
+}
 .table_wrapper{
   display: block;
   overflow-x: auto;
   white-space: nowrap;
-  /* overflow-x: hidden; */
 }
 
 table, th, td {
-  border: 1px solid #c8c8c8;
+  /* border: 1px solid #c8c8c8; */
   border-collapse: collapse;
-  background-color: white;
+  /* background-color: white; */
   padding: 3px;
 }
 

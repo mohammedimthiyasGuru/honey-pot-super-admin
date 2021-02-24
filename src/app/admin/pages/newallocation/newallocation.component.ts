@@ -190,8 +190,9 @@ export class NewallocationComponent implements OnInit {
     
   }
 
-  getselectedTable(index){
+  getselectedTable(index,ite){
     this.selectedIndex = index;
+    console.log(ite)
   }
 
   goto(page,column, row){
