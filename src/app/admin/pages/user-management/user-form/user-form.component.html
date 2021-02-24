@@ -171,38 +171,45 @@
                 <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
             </div>
             <div class="col-md-12 mt-20">
-                <table class="spec-table" style="width: 100%;overflow-x: scroll;">
 
-                    <thead>
-                        <th>S.No</th>
-                        <th>Document Type</th>
-                        <th>Document Name</th>
-                        <th>Attachment</th>
-                        <th>Start date</th>
-                        <th>End date</th>
-                        <th>Action</th>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let arr of Documents_array ; let i= index;">
+                <p-table [value]="Documents_array" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="5"
+                    [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                    [globalFilterFields]="['type']">
+
+                    <ng-template pTemplate="header">
+                        <tr class="thhead">
+                            <th>S.No</th>
+                            <th>Document Type</th>
+                            <th>Document Name</th>
+                            <th>Attachment</th>
+                            <th>Start date</th>
+                            <th>End date</th>
+                            <th>Action</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-item let-i="rowIndex">
+                        <tr class="tdrow">
                             <td>{{i+1}}</td>
-                            <td>{{arr.Document_Type}}</td>
-                            <td>{{arr.Document_Name}}</td>
+                            <td>{{item.Document_Type}}</td>
+                            <td>{{item.Document_Name}}</td>
                             <td>
-                                <i (click)="goToLink1(arr.Document_link)" class="fa fa-file-text"
+                                <i (click)="goToLink1(item.Document_link)" class="fa fa-file-text"
                                     style="background-color: #fff;color: #fd2c3a;" aria-hidden="true"></i>
 
                             </td>
-                            <td>{{arr.Start_date}}</td>
-                            <td>{{arr.End_date}}</td>
+                            <td>{{item.Start_date}}</td>
+                            <td>{{item.End_date}}</td>
                             <td>
                                 <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true"
-                                    pTooltip="Edit" (click)="edit_Doc(arr,i)"></i>
+                                    pTooltip="Edit" (click)="edit_Doc(item,i)"></i>
 
                                 <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"
-                                    (click)="remove_doc(i)"></i></td>
+                                    (click)="remove_doc(i)"></i>
+                            </td>
                         </tr>
-                    </tbody>
-                </table>
+                    </ng-template>
+                </p-table>
             </div>
         </div>
 
@@ -272,34 +279,41 @@
                             <!-- <button type="button" class="btn btn-primary btn-bg-blue" (click)="cancel()">Cancel</button> -->
                         </div>
                         <div class="col-md-12 mt-20">
-                            <table class="spec-table" style="width: 100%;overflow-x: scroll;">
+                            <p-table [value]="Documents_array1" styleClass="ui-table-customers" #tt [paginator]="true"
+                                [rows]="5" [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]"
+                                [showCurrentPageReport]="true"
+                                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                                [globalFilterFields]="['type']">
 
-                                <thead>
-                                    <th>S.No</th>
-                                    <th>Document Type</th>
-                                    <th>Document Name</th>
-                                    <th>Attachment</th>
-                                    <th>Action</th>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let arr of Documents_array1 ; let i= index;">
+                                <ng-template pTemplate="header">
+                                    <tr class="thhead">
+                                        <th>S.No</th>
+                                        <th>Document Type</th>
+                                        <th>Document Name</th>
+                                        <th>Attachment</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-item let-i="rowIndex">
+                                    <tr class="tdrow">
                                         <td>{{i+1}}</td>
-                                        <td>{{arr.Document_Type1}}</td>
-                                        <td>{{arr.Document_Name1}}</td>
+                                        <td>{{item.Document_Type1}}</td>
+                                        <td>{{item.Document_Name1}}</td>
                                         <td>
-                                            <i (click)="goToLink1(arr.Document_link)" class="fa fa-file-text"
+                                            <i (click)="goToLink1(item.Document_link)" class="fa fa-file-text"
                                                 style="background-color: #fff;color: #fd2c3a;" aria-hidden="true"></i>
 
                                         </td>
                                         <td>
                                             <!-- <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true"
-                                                pTooltip="Edit" (click)="edit_Doc(arr,i)"></i> -->
+                                        pTooltip="Edit" (click)="edit_Doc(item,i)"></i> -->
 
                                             <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true"
-                                                pTooltip="Delete" (click)="remove_doc1(i)"></i></td>
+                                                pTooltip="Delete" (click)="remove_doc1(i)"></i>
+                                        </td>
                                     </tr>
-                                </tbody>
-                            </table>
+                                </ng-template>
+                            </p-table>
                         </div>
                     </div>
 
@@ -314,43 +328,50 @@
             <div class="col-md-12">
 
                 <div class="col-md-12 mt-20">
-                    <table class="spec-table" style="width: 100%;overflow-x: scroll;">
-                    
-                        <thead>
-                            <th>S.No</th>
-                            <th>Staff ID</th>
-                            <th>Staff name</th>
-                            <th>Role</th>
-                            <th>Employee type</th>
-                            <th>Start date</th>
-                            <th>End date</th>
-                            <th>Documents</th>
-                          
-                            <th>Action</th>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let arr of HR_reporting_persons_array ; let i= index;">
+                    <p-table [value]="HR_reporting_persons_array" styleClass="ui-table-customers" #tt [paginator]="true"
+                        [rows]="5" [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+                        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                        [globalFilterFields]="['type']">
+
+                        <ng-template pTemplate="header">
+                            <tr class="thhead">
+                                <th>S.No</th>
+                                <th>Staff ID</th>
+                                <th>Staff name</th>
+                                <th>Role</th>
+                                <th>Employee type</th>
+                                <th>Start date</th>
+                                <th>End date</th>
+                                <th>Documents</th>
+
+                                <th>Action</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-item let-i="rowIndex">
+                            <tr class="tdrow">
                                 <td>{{i+1}}</td>
-                                <td>{{arr.HR_staff_id}}</td>
-                                <td>{{arr.HR_staff_name}}</td>
-                                <td>{{arr.HR_staff_role}}</td>
-                                <td>{{arr.HR_staff_type}}</td>
-                                <td>{{arr.HR_start_date}}</td>
-                                <td>{{arr.HR_end_date}}</td>
+                                <td>{{item.HR_staff_id}}</td>
+                                <td>{{item.HR_staff_name}}</td>
+                                <td>{{item.HR_staff_role}}</td>
+                                <td>{{item.HR_staff_type}}</td>
+                                <td>{{item.HR_start_date}}</td>
+                                <td>{{item.HR_end_date}}</td>
                                 <td>
-                                    <ng-container *ngFor="let govt_id_pic of arr.HR_doct">
+                                    <ng-container *ngFor="let govt_id_pic of item.HR_doct">
                                         <i (click)="goToLink1(govt_id_pic.Document_link1)" class="fa fa-file-text"
                                             style="background-color: #fff;color: #fd2c3a;" aria-hidden="true"></i>
                                     </ng-container>
                                 </td>
                                 <td>
-                                    <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true" pTooltip="Edit" (click)="edit_ref(arr,i)"></i>
+                                    <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true"
+                                        pTooltip="Edit" (click)="edit_ref(item,i)"></i>
 
-                                    <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true"
-                                        pTooltip="Delete" (click)="remove_hr_reporting(i)"></i></td>
+                                    <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"
+                                        (click)="remove_hr_reporting(i)"></i>
+                                </td>
                             </tr>
-                        </tbody>
-                    </table>
+                        </ng-template>
+                    </p-table>
                 </div>
             </div>
 
@@ -393,34 +414,42 @@
             <div class="col-md-12">
 
                 <div class="col-md-12 mt-20">
-                    <table class="spec-table" style="width: 100%;overflow-x: scroll;">
-                    
-                        <thead>
-                            <th>S.No</th>
-                            <th>Client</th>
-                            <th>Product</th>
-                            <th>Bucket</th>
-                            <th>Start date</th>
-                            <th>End date</th>
-                          
-                            <th>Action</th>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let arr of product_reporting_array ; let i= index;">
-                                <td>{{i+1}}</td>
-                                <td>{{arr.Pro_Client}}</td>
-                                <td>{{arr.Pro_Product}}</td>
-                                <td>{{arr.Pro_Bucket}}</td>
-                                <td>{{arr.Pro_start_date}}</td>
-                                <td>{{arr.Pro_end_date}}</td>
-                                <td>
-                                    <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true" pTooltip="Edit" (click)="edit_Pro(arr,i)"></i>
 
-                                    <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true"
-                                        pTooltip="Delete" (click)="remove_Pro(i)"></i></td>
+                    <p-table [value]="product_reporting_array" styleClass="ui-table-customers" #tt [paginator]="true"
+                        [rows]="5" [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+                        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                        [globalFilterFields]="['type']">
+
+                        <ng-template pTemplate="header">
+                            <tr class="thhead">
+                                <th>S.No</th>
+                                <th>Client</th>
+                                <th>Product</th>
+                                <th>Bucket</th>
+                                <th>Start date</th>
+                                <th>End date</th>
+    
+                                <th>Action</th>
                             </tr>
-                        </tbody>
-                    </table>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-item let-i="rowIndex">
+                            <tr class="tdrow">
+                                <td>{{i+1}}</td>
+                                <td>{{item.Pro_Client}}</td>
+                                <td>{{item.Pro_Product}}</td>
+                                <td>{{item.Pro_Bucket}}</td>
+                                <td>{{item.Pro_start_date}}</td>
+                                <td>{{item.Pro_end_date}}</td>
+                                <td>
+                                    <i style="color: #2196f3;" class="fa fa-pencil-square-o" aria-hidden="true"
+                                        pTooltip="Edit" (click)="edit_Pro(item,i)"></i>
+
+                                    <i style="color: #fd2c3a;" class="fa fa-trash" aria-hidden="true" pTooltip="Delete"
+                                        (click)="remove_Pro(i)"></i>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
                 </div>
             </div>
         </div>

@@ -71,7 +71,7 @@ td {
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: left;
-    background-color: #20353f;
+    background-color: #747f7f;
     color: white;
 font-weight:500;
   }
@@ -220,7 +220,7 @@ i {
   color: #fff;
   padding: 4px 10px;
   margin-right: 10px;
-  background-color: #20353f;
+  background-color: #747f7f;
   font-weight: 400;
   font-size: 12px;
   cursor: pointer;
@@ -303,7 +303,7 @@ overflow-x: scroll;
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: left;
-    background-color: #20353f;
+    background-color: #747f7f;
     color: white;
 font-weight:500;
   }

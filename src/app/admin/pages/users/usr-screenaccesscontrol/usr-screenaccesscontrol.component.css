@@ -43,7 +43,7 @@ table, th, td {
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: left;
-    background-color: #20353f;
+    background-color: #747f7f;
     color: white;
 font-weight:500;
   }
@@ -59,7 +59,7 @@ font-weight:500;
     font-size: 12px;
 }
 .th-b th{
-    background-color: #20353f;
+    background-color: #747f7f;
     color: #fff;
     font-weight: 500;
 }

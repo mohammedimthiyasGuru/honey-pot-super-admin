@@ -6,19 +6,19 @@
                 <div class="row" style="padding: 0px 0px 23px 10px;">
                     <div class="col-md-4">
                         <h5 class="form-lable">Existing or New:</h5>
-                       
+
                     </div>
                     <div class="col-md-4">
                         <h5 class="form-lable">Account Type:</h5>
-                        
+
                     </div>
                     <div class="col-md-4">
                         <h5 class="form-lable">Set Primary:</h5>
-                       
+
                     </div>
                     <div class="col-md-4">
                         <h5 class="form-lable">Primary Account:</h5>
-                     
+
                     </div>
                 </div>
             </div>
@@ -27,17 +27,16 @@
                 <div class="row" style="padding: 0px 0px 23px 10px;">
                     <div class="col-md-4">
                         <h5 class="form-lable">No.of License:</h5>
-                        <input type="text" pInputText [(ngModel)]="License"
-                            placeholder="No.of License">
+                        <input type="text" pInputText [(ngModel)]="License" placeholder="No.of License">
                     </div>
                     <div class="col-md-4">
                         <h5 class="form-lable">Client Type:</h5>
-                        
+
 
                     </div>
                     <div class="col-md-4">
                         <h5 class="form-lable">Country:</h5>
-                        
+
 
                     </div>
                     <div class="col-md-4">
@@ -58,8 +57,8 @@
                     </div>
                     <div class="col-md-4">
                         <h5 class="form-lable">Common email id:</h5>
-                        <input type="text"  [ngModelOptions]="{standalone: true}"
-                            [(ngModel)]="email_id" pInputText placeholder="Common email id" style="width:80%">
+                        <input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="email_id" pInputText
+                            placeholder="Common email id" style="width:80%">
 
                     </div>
                     <!-- <div class="col-md-4">
@@ -68,7 +67,7 @@
                     </div> -->
                     <div class="col-md-4">
                         <h5 class="form-lable">Logo:</h5>
-                      <img *ngIf="logo != undefined" src="{{logo}}" alt=""
+                        <img *ngIf="logo != undefined" src="{{logo}}" alt=""
                             style="width: 40px;height: 40px;float: right;margin-top: -37px;" />
 
                     </div>
@@ -101,39 +100,49 @@
                     <h5>Client Representative / Contact Persons:</h5>
 
                 </div>
-                <div class="card-box">
-                    <div class="col-md-12 mt-20">
-                        <table class="spec-table">
-                            <thead>
-                                <th>S.No</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone No</th>
-                                <th>WhatsApp No</th>
-                                <th>Landline</th>
-                                <th>Extension</th>
-                                <th>Staff no</th>
-                                <th>Internal ID card no</th>
-                                <th>Designation</th>
-                                <th>Reporting to</th>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let arr of ref_persons_array ; let i= index;">
-                                    <td>{{i+1}}</td>
-                                    <td>{{arr.ref_name}}</td>
-                                    <td>{{arr.ref_email}}</td>
-                                    <td>{{arr.ref_pone}}</td>
-                                    <td>{{arr.ref_whats_pone}}</td>
-                                    <td>{{arr.ref_lanline}}</td>
-                                    <td>{{arr.ref_extension}}</td>
-                                    <td>{{arr.ref_Staff_no}}</td>
-                                    <td>{{arr.ref_Internal_ID}}</td>
-                                    <td>{{arr.ref_Designation}}</td>
-                                    <td>{{arr.ref_Reporting_to.y}}</td>
+                <div class="col-md-12 mt-20">
+
+                    <div class="card-box">
+                        <p-table [value]="ref_persons_array" styleClass="ui-table-customers" #tt [paginator]="true"
+                            [rows]="5" [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]"
+                            [showCurrentPageReport]="true"
+                            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                            [globalFilterFields]="['type']">
+
+                            <ng-template pTemplate="header">
+                                <tr class="thhead">
+                                    <th>S.No</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone No</th>
+                                    <th>WhatsApp No</th>
+                                    <th>Landline</th>
+                                    <th>Extension</th>
+                                    <th>Staff no</th>
+                                    <th>Internal ID card no</th>
+                                    <th>Designation</th>
+                                    <th>Reporting to</th>
                                 </tr>
-                            </tbody>
-                        </table>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-item let-i="rowIndex">
+                                <tr class="tdrow">
+                                    <td>{{i+1}}</td>
+                                    <td>{{item.ref_name}}</td>
+                                    <td>{{item.ref_email}}</td>
+                                    <td>{{item.ref_pone}}</td>
+                                    <td>{{item.ref_whats_pone}}</td>
+                                    <td>{{item.ref_lanline}}</td>
+                                    <td>{{item.ref_extension}}</td>
+                                    <td>{{item.ref_Staff_no}}</td>
+                                    <td>{{item.ref_Internal_ID}}</td>
+                                    <td>{{item.ref_Designation}}</td>
+                                    <td>{{item.ref_Reporting_to.y}}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
                     </div>
+
+
                 </div>
             </div>
 
@@ -144,33 +153,42 @@
                     <h5>Documents</h5>
 
                 </div>
-                <div class="card-box">
-                    <div class="col-md-12 mt-20">
-                        <table class="spec-table">
-                            <thead>
-                                <th>S.No</th>
-                                <th>Document Type</th>
-                                <th>Document Name</th>
-                                <th>Attachment</th>
-                                <th>Start date</th>
-                                <th>End date</th>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let arr of Documents_array ; let i= index;">
+                <div class="col-md-12 mt-20">
+
+                    <div class="card-box">
+                        <p-table [value]="Documents_array" styleClass="ui-table-customers" #tt [paginator]="true"
+                            [rows]="5" [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]"
+                            [showCurrentPageReport]="true"
+                            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                            [globalFilterFields]="['type']">
+
+                            <ng-template pTemplate="header">
+                                <tr class="thhead">
+                                    <th>S.No</th>
+                                    <th>Document Type</th>
+                                    <th>Document Name</th>
+                                    <th>Attachment</th>
+                                    <th>Start date</th>
+                                    <th>End date</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-item let-i="rowIndex">
+                                <tr class="tdrow">
                                     <td>{{i+1}}</td>
-                                    <td>{{arr.Document_Type}}</td>
-                                    <td>{{arr.Document_Name}}</td>
+                                    <td>{{item.Document_Type}}</td>
+                                    <td>{{item.Document_Name}}</td>
                                     <td>
-                                        <i (click)="goToLink1(arr.Document_link)" class="fa fa-file-text"
+                                        <i (click)="goToLink1(item.Document_link)" class="fa fa-file-text"
                                             style="background-color: #fff;color: #fd2c3a;" aria-hidden="true"></i>
 
                                     </td>
-                                    <td>{{arr.Start_date}}</td>
-                                    <td>{{arr.End_date}}</td>
+                                    <td>{{item.Start_date}}</td>
+                                    <td>{{item.End_date}}</td>
                                 </tr>
-                            </tbody>
-                        </table>
+                            </ng-template>
+                        </p-table>
                     </div>
+
                 </div>
             </div>
 
@@ -182,36 +200,42 @@
 
                 </div>
                 <div class="card-box">
-                    <table class="spec-table">
-                        <thead>
-                            <th>S.No</th>
-                            <th>Account No</th>
-                            <th>IFSC Code</th>
-                            <th>IBAN No</th>
-                            <th>Bank Name</th>
-                            <th>Branch</th>
-                            <th>Address of the bank</th>
-                            <th>Country</th>
-                            <th>Currency</th>
-                            <th>Swift Code</th>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let arr of Account_array ; let i= index;">
-                                <td>{{i+1}}</td>
-                                <td>{{arr.Account_No}}</td>
-                                <td>{{arr.IFSC}}</td>
-                                <td>{{arr.IBAN}}</td>
-                                <td>{{arr.Bank_Name}}</td>
-                                <td>{{arr.Branch}}</td>
-                                <td>{{arr.Bank_address}}</td>
-                                <td>{{arr.Bnak_Country}}</td>
-                                <td>{{arr.Bank_Currency}}</td>
-                                <td>{{arr.Swift_Code}}</td>
+                    <p-table [value]="Account_array" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="5"
+                        [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
+                        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                        [globalFilterFields]="['type']">
 
+                        <ng-template pTemplate="header">
+                            <tr class="thhead">
+                                <th>S.No</th>
+                                <th>Account No</th>
+                                <th>IFSC Code</th>
+                                <th>IBAN No</th>
+                                <th>Bank Name</th>
+                                <th>Branch</th>
+                                <th>Address of the bank</th>
+                                <th>Country</th>
+                                <th>Currency</th>
+                                <th>Swift Code</th>
                             </tr>
-                        </tbody>
-                    </table>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-item let-i="rowIndex">
+                            <tr class="tdrow">
+                                <td>{{i+1}}</td>
+                                <td>{{item.Account_No}}</td>
+                                <td>{{item.IFSC}}</td>
+                                <td>{{item.IBAN}}</td>
+                                <td>{{item.Bank_Name}}</td>
+                                <td>{{item.Branch}}</td>
+                                <td>{{item.Bank_address}}</td>
+                                <td>{{item.Bnak_Country}}</td>
+                                <td>{{item.Bank_Currency}}</td>
+                                <td>{{item.Swift_Code}}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
                 </div>
+
             </div>
 
         </div>

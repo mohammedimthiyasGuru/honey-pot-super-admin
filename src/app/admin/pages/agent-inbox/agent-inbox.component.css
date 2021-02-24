@@ -15,12 +15,7 @@ overflow-x: scroll;
   /* overflow-x: hidden; */
 }
 
-table, th, td {
-  border: 1px solid #c8c8c8;
-  border-collapse: collapse;
-  background-color: white;
-  padding: 3px;
-}
+
 
 table{
   width:100%;
@@ -28,12 +23,24 @@ table{
 }
 th{
   width: 110px;
+  font-size: 12px !important;
 }
 td {
   width: 50px;
   word-wrap: break-word;
 }
-
+th {
+  padding: 8px 8px !important;
+  color: #ffffff !important;
+  /* background-color: #20353f !important; */
+  background-color: #747f7f !important;
+text-transform: capitalize;
+}
+td {
+  border:none !important;
+  border-bottom: 1px solid #c8c8c8 !important;
+  font-size: 12px;
+}
 .add-icon{
     font-size: 12px;
     color: #ffffff;
@@ -55,16 +62,8 @@ td {
 
   /* .spec-table tr:nth-child(even){background-color: #f2f2f2;}
 
-  .spec-table tr:hover {background-color: #ddd;} */
+  .spec table tr:hover {background-color: #ddd;} */
 
-  .spec-table th {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: left;
-    background-color: #20353f;
-    color: white;
-font-weight:500;
-  }
   input {
     overflow: visible;
     width: 90%;
@@ -210,7 +209,7 @@ i {
   color: #fff;
   padding: 4px 10px;
   margin-right: 10px;
-  background-color: #20353f;
+  background-color: #747f7f;
   font-weight: 400;
   font-size: 12px;
   cursor: pointer;
@@ -293,7 +292,7 @@ overflow-x: scroll;
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: left;
-    background-color: #20353f;
+    background-color: #747f7f;
     color: white;
 font-weight:500;
   }
