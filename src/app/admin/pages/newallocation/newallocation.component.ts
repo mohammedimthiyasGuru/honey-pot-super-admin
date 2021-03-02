@@ -49,7 +49,7 @@ export class NewallocationComponent implements OnInit {
   designationof: any;
   userFilter: any = { designation: '', bankname:'' };
   accountList: string;
-
+  displayBasic: boolean;
   constructor(private _api:ApiService, @Inject(SESSION_STORAGE) private storage: StorageService, private router:Router) { }
 
   ngOnInit(): void {
@@ -218,17 +218,22 @@ export class NewallocationComponent implements OnInit {
   }
 
   rellocate(){
-    const selectedNodes = this.agGrid2.api.getSelectedNodes();
-    const selectedData = selectedNodes.map(node => node.data );
-    console.log(selectedData);
+    // const selectedNodes = this.agGrid2.api.getSelectedNodes();
+    // const selectedData = selectedNodes.map(node => node.data );
+    // console.log(selectedData);
     
-    if (selectedData.length >= 1) {
-      $('#exampleModal').modal('show')
-    }else{
+    // if (selectedData.length >= 1) {
+    //   $('#exampleModal').modal('show')
+    // }else{
 
-    }
+    // }
+      this.displayBasic = true;
+  
   }
-
+  cancel(){
+      this.displayBasic = false;
+  
+  }
   assignto(){
 
     const selectedNodes = this.agGrid.api.getSelectedNodes();
