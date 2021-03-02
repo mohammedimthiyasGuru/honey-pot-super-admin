@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AgGridAngular } from 'ag-grid-angular';
 import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 import { ApiService } from 'src/app/api.service';
+declare var $:any;
 
 @Component({
   selector: 'app-newallocation',
@@ -222,7 +223,7 @@ export class NewallocationComponent implements OnInit {
     console.log(selectedData);
     
     if (selectedData.length >= 1) {
-
+      $('#exampleModal').modal('show')
     }else{
 
     }

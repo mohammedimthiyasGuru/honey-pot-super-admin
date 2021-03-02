@@ -351,6 +351,10 @@ export class ApiService {
     return this.http.get(this.apiUrl + 'allocationdata/getassignedto?to='+id);
   }
 
+  allocation_details_getassignedto_id(id,pid){
+    return this.http.get(this.apiUrl + 'allocationdata/getassignedlist?to='+id+'&portfolio_id='+pid);
+  }
+
   newallocation_data(data){
     return this.http.post(this.apiUrl+'allocateto_tl/create',data);
   }
