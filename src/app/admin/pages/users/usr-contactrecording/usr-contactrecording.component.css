@@ -228,6 +228,21 @@ hr{
   width: 12.499999995%;
   flex: 0 0 12.499%;
   max-width: 12.499%; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+[data-title]:hover::before {
+	content: attr(data-title);
+	position: absolute;
+	bottom: -46px;
+	padding: 10px;
+	background: #000;
+	color: #fff;
+	font-size: 14px;
+	white-space: nowrap;
 }
 
 .values2 {

@@ -98,6 +98,7 @@ import { AdminUserComponent } from './admin-user/admin-user.component';
 import { MegreinguserComponent } from './megreinguser/megreinguser.component';
 import { NewallocationComponent } from './pages/newallocation/newallocation.component';
 import { AgentDashboardComponent } from './dashboard/agent-dashboard/agent-dashboard.component';
+import { NewreallocationComponent } from './pages/newreallocation/newreallocation.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' ,pathMatch:'full'},
@@ -174,6 +175,8 @@ const routes: Routes = [
 
 
   { path: 'userflow/allocationexcel', component:  AllocationexcelComponent},
+  { path: 'userflow/newallocation', component:  NewallocationComponent},
+  { path: 'userflow/newreallocation', component:  NewreallocationComponent},
   { path: 'userflow/allocationsingle', component: AllocationsingleComponent },
   { path: 'userflow/dedupe', component: DedupeComponent },
   { path: 'userflow/linkdeliknk', component: LinkdelinkComponent },

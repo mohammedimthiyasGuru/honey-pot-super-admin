@@ -1,69 +1,57 @@
 <div class="row">
+      
+      <div class="col-md-4">
+        <label for="designation">Select Designation</label>
+        <select id="designation" [(ngModel)]="designationof" class="form-control" (change)="getdesignationType($event)">
+            <option value="">Choose</option>
+            <option *ngFor="let item of designationList" [value]="item.designation_type">{{item.designation_type}}</option>
+        </select>
+      </div>
+
     <div class="col-md-4">
-        <label for="assingedto">Select</label>
+        <label for="assingedto">Select Agent</label>
         <select id="assingedto" [(ngModel)]="assingedto" (change)="getassignedto($event)" class="form-control">
-            <option *ngFor="let item of userList" [value]="item.email_id">{{item.name}}</option>
+            <option value="">Choose</option>
+            <option *ngFor="let item of userList | filterBy: userFilter" [value]="item.email_id">{{item.name}}</option>
         </select>
     </div>
-    <div class="col-md-4">
-
-    </div>
-    <div class="col-md-4">
-
-    </div>
+    
 </div>
 <div class="row">
     <div class="col-md-6">
         <div style="text-align: center;">
-            <h4 class="title-f">Your Allocation List</h4>
+            <h4 class="title-f">Allocation List</h4>
         </div>
-        <div class="row">
+        <div class="row" *ngIf="!dataLoaded">
+            <div>
+                <p class="animate"></p>
+            </div>
+        </div>
+        <div class="row" *ngIf="dataLoaded">
             <div class="col-md-4">
                 <div class="search-hero">
-                    <input class="form-control" type="text" name="search2" style="font-family: FontAwesome;"
-                        [(ngModel)]="searchQR" autocomplete="off" placeholder="&#xf002; Search...">
+                    <input class="form-control" type="text" name="search2" style="font-family: FontAwesome;" [(ngModel)]="searchQR" autocomplete="off" placeholder="&#xf002; Search...">
                 </div>
             </div>
         </div>
-        <div class="card-box">
-            <p-table [value]="Finals_excel | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true"
-                [rows]="50" [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
-                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-                [globalFilterFields]="['type']">
-                <ng-template pTemplate="header">
-                    <div style="overflow-x: scroll;">
-                        <table>
-                            <tr>
-                                <th>Actions</th>
-                                <th>S.no</th>
-                                <ng-container *ngFor="let lesson of saved_Fields ; let i = index">
-                                    <th>{{lesson.fields}}</th>
-                                </ng-container>
-                                <th>Mark Status</th>
-                                <th>OPTIONS</th>
-                            </tr>
-                            <tr *ngFor="let row of Excel_Datas ; let i = index">
-                                <td><input type="checkbox" (change)='onSelect(row,$event,i)'></td>
-                                <td>{{i+1}}</td>
-                                <td *ngFor="let val of row">
-                                    {{val}}
-                                </td>
-                                <td>
-                                    <button class="btn btn-sm btn-success"
-                                        (click)="goto('admin_panel/user/createuser', saved_Fields, row)">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </ng-template>
-            </p-table>
+        <div class="d-flex justify-content-end" *ngIf="dataLoaded">
+            <button class="btn btn-sm btn-primary mb-2" (click)="assignto()"> Assign </button>
+            <button class="btn btn-sm btn-success mb-2" (click)="goto('admin_panel/user/createuser')">View in Customer 360</button>
+        </div>
+        <div class="card-box" *ngIf="dataLoaded">
+            <ag-grid-angular #agGrid 
+                style="width: auto; height: 500px;"
+                class="ag-theme-alpine"
+                [rowData]="myrowData"
+                [rowSelection]="'multiple'"
+                [columnDefs]="columnDefs"
+                [pagination]="true">
+            </ag-grid-angular>
         </div>
     </div>
     <div class="col-md-6">
         <div style="text-align: center;">
-            <h4 class="title-f">Transfered Allocations</h4>
+            <h4 class="title-f">Allocated List</h4>
             <div class="d-flex justify-content-center" *ngIf="!Agentselected">
                 Select an Agent
             </div>
@@ -76,46 +64,20 @@
                 </div>
             </div>
             <div class="card-box" *ngIf="noData"> No data Found </div>
-            <div class="card-box" *ngIf="Agentselected">
-                <div *ngFor="let item of tableData; let i = index">
-                    <div class="d-flex justify-content-between" (click)="getselectedTable(i,item)">
-                        <span style="color: red;">{{item.createdAt | date}}</span> <span style="color: green;">View
-                            more</span>
-                    </div>
-                    
-                    <ng-container *ngIf="selectedIndex == i">
-                        <p-table [value]="item.datas" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="5" [rowHover]="true"
-                            [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
-                            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-                            [globalFilterFields]="['type']">
-
-                            <ng-template pTemplate="header">
-                                <tr class="thhead">
-
-                                    <th *ngFor="let item of item.headers">{{item.fields}}</th>
-
-                                </tr>
-                            </ng-template>
-                            <ng-template pTemplate="body" let-ite let-i="rowIndex">
-                                <tr  class="tdrow" >
-                                    <td *ngFor="let colData of ite">{{colData}}</td>
-                                </tr>
-                            </ng-template>
-                        </p-table>
-                    </ng-container>
-                    <hr>
-                </div>
-
-
-
-
-
+            <div class="d-flex justify-content-end" *ngIf="dataLoaded2">
+                <button class="btn btn-sm btn-primary mb-2" (click)="rellocate()"> Reallocate </button>
+            </div>
+            <div class="card-box" *ngIf="dataLoaded2">
+                <ag-grid-angular #agGrid2 
+                    style="width: auto; height: 500px;"
+                    class="ag-theme-alpine"
+                    [rowData]="myrowData2"
+                    [rowSelection]="'multiple'"
+                    [columnDefs]="columnDefs2"
+                    [pagination]="true">
+                </ag-grid-angular>
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-end">
-        <div>
-            <button class="btn btn-sm btn-primary" (click)="assignto()"> Assign </button>
-        </div>
-    </div>
+
 </div>

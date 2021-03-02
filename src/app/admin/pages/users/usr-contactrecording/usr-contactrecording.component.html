@@ -13,9 +13,9 @@
           <div class="ht-t">
             <h2
               style="font-size: 16px;margin-bottom: 0px;line-height: 20px;margin-top: 6px;font-weight: 900;color: #df3e3e;">
-              John Doe
+              {{CustomerData.Customer_Name}}
             </h2>
-            <p style="font-size: 12px;margin-bottom: 6px;color: #fff;">Male, 30 Years old, Indian.</p>
+            <p style="font-size: 12px;margin-bottom: 6px;color: #fff;">{{CustomerData.Gender}}, {{CustomerData.DOB}}, {{CustomerData.Nationality}}.</p>
           </div>
         </div>
         <select style="width: 100%;background-color: #ef6c00;;border-radius: 2px;height: 28px;border:none;color:#fff">
@@ -73,11 +73,11 @@
               PRODUCT</th>
           </tr>
           <tr style="font-size: 12px; line-height:14px;">
-            <td style="padding: 10px;font-size:12px !important;font-weight:bold;color:#595555 !important; background: none !important;">985458012582825965</td>
-            <td style="padding: 10px;font-size:12px !important;font-weight:bold;color:#595555 !important; background: none !important;">885856958558585</td>
-            <td style="padding: 10px;font-size:12px !important;font-weight:bold;color:#595555 !important; background: none !important;">985458012582825965</td>
-            <td style="padding: 10px;font-size:12px !important;font-weight:bold;color:#595555 !important; background: none !important;">QWERTYUIOP</td>
-            <td style="padding: 10px;font-size:12px !important;font-weight:bold;color:#595555 !important; background: none !important;">3</td>
+            <td style="padding: 10px;font-size:12px !important;font-weight:bold;color:#595555 !important; background: none !important;">{{CustomerData.CID}}</td>
+            <td style="padding: 10px;font-size:12px !important;font-weight:bold;color:#595555 !important; background: none !important;">{{CustomerData.account_number}}</td>
+            <td style="padding: 10px;font-size:12px !important;font-weight:bold;color:#595555 !important; background: none !important;">{{CustomerData.CID}}</td>
+            <td style="padding: 10px;font-size:12px !important;font-weight:bold;color:#595555 !important; background: none !important;">{{CustomerData.aggrement_id}}</td>
+            <td style="padding: 10px;font-size:12px !important;font-weight:bold;color:#595555 !important; background: none !important;">{{CustomerData.Count}}</td>
             <td style="padding: 10px;font-size:12px !important;font-weight:bold;color:#595555 !important; background: none !important;border-right: none !important;">Auto Loan</td>
           </tr>
           <tr style="line-height:11px;">
@@ -104,13 +104,13 @@
 
           </tr>
           <tr style="line-height:14px;">
-            <td style="padding: 0px 10px 10px 10px !important;font-size:12px !important;font-weight:bold;color:#595555 !important;background: none !important;">5,000.00</td>
+            <td style="padding: 0px 10px 10px 10px !important;font-size:12px !important;font-weight:bold;color:#595555 !important;background: none !important;">{{CustomerData.principal_amount}}</td>
 
-            <td style="padding: 0px 10px 10px 10px !important;font-size:12px !important;font-weight:bold;color:#595555 !important;background: none !important;">5,00,000.00</td>
-            <td style="padding: 0px 10px 10px 10px !important;font-size:12px !important;font-weight:bold;color:#595555 !important;background: none !important;">20,000.00</td>
-            <td style="padding: 0px 10px 10px 10px !important;font-size:12px !important;font-weight:bold;color:#595555 !important;background: none !important;">15,000.00</td>
-            <td style="padding: 0px 10px 10px 10px !important;font-size:12px !important;font-weight:bold;color:#595555 !important;background: none !important;">1,00,000.00</td>
-            <td style="padding: 0px 10px 10px 10px !important;font-size:12px !important;font-weight:bold;color:#595555 !important;background: none !important;border-right: none !important;">NA</td>
+            <td style="padding: 0px 10px 10px 10px !important;font-size:12px !important;font-weight:bold;color:#595555 !important;background: none !important;">{{CustomerData.os_Amount}}</td>
+            <td style="padding: 0px 10px 10px 10px !important;font-size:12px !important;font-weight:bold;color:#595555 !important;background: none !important;">{{CustomerData.Total_Due}}</td>
+            <td style="padding: 0px 10px 10px 10px !important;font-size:12px !important;font-weight:bold;color:#595555 !important;background: none !important;">{{CustomerData.principal_amount}}</td>
+            <td style="padding: 0px 10px 10px 10px !important;font-size:12px !important;font-weight:bold;color:#595555 !important;background: none !important;">{{CustomerData.principal_amount}}</td>
+            <td style="padding: 0px 10px 10px 10px !important;font-size:12px !important;font-weight:bold;color:#595555 !important;background: none !important;border-right: none !important;">{{CustomerData.legal_status}}</td>
 
           </tr>
         </table>
@@ -142,8 +142,7 @@
             </h4>
           </div>
           <div class="col-md-12">
-            <div class="col-md-12 card-box" style="background: white;
-     border-radius: 3px;  height: 260px;overflow-y: scroll;overflow-x: hidden;">
+            <div class="col-md-12 card-box" style="background: white; border-radius: 3px;  height: 260px;overflow-y: scroll;overflow-x: hidden;">
               <div class="row">
                 <div class="col-md-12">
                   <h2 class="title-f" style="color:#21a0f6 !important;font-size:18px; padding:5px 0px 12px 0px;">Account Information</h2>
@@ -158,19 +157,13 @@
               <div class="row">
                 
                 <ng-container *ngFor="let item of dataList">
-                  <div class="col-md-2 labels">
+                  <div class="col-md-2 col-sm-2 col-lg-2">
+                   <span class="labels">
                     {{item.column}}
+                   </span> 
                   </div>
-                  <div class="col-md-2 values">
-                    : {{item.row}}</div>
-                  <!-- <p style="text-align: justify;"> 
-                    <span class="labels" style="font-size: 12px;">
-                      
-                    </span>
-                    <span class="values2" style="font-size: 12px;">
-                      
-                    </span>
-                  </p> -->
+                  <div  class="col-md-2 col-sm-2 col-lg-2 values">
+                    <span data-title="{{item.row}}">: {{item.row}}</span></div>
                 </ng-container>
 
               </div>

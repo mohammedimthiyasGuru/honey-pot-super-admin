@@ -4,6 +4,8 @@ import { ApiService } from '../../../api.service';
 // import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 import Swal from 'sweetalert2';
 import { Router, RouterModule } from '@angular/router';
+import { AgGridAngular, } from 'ag-grid-angular';
+import {GridOptions} from "ag-grid-community";
 
 
 @Component({
@@ -12,131 +14,108 @@ import { Router, RouterModule } from '@angular/router';
   styleUrls: ['./agent-inbox.component.css']
 })
 export class AgentInboxComponent implements OnInit {
-  rows = [];
-  searchQR: any;
-  value1: any;
-  Name: any;
-  con_name: any;
-  con_role: any;
-  con_pone: any;
-  cli_type: any;
-  contactarray: any = [];
-  address: any;
-
-  Excel_Datas : any;
-  Finals_excel : any;
-
-
-  types: any = [
-    { "y": "Banks" },
-    { "y": "Finance companies" },
-    { "y": "Real Estate" },
-    { "y": "Telecom" },
-    { "y": "Others" },
+  @ViewChild('agGrid',{static:false}) agGrid: AgGridAngular;
+  AllocationcolumnDefs = [
+    {headerName: 'ID', field: '_id', width: 150, checkboxSelection: true,headerCheckboxSelection: true,sortable: true, filter: true},
+    {headerName: 'Bank Name', field: 'bankname', resizable: true, sortable: true, filter: true},
+    {headerName: 'Portfolio Name', field: 'portfoliotype', resizable: true, sortable: true, filter: true},
+    {headerName: 'Total No.of accounts Allocated', field: 'datas', width: 120,cellRenderer: function(params) {
+      return params.value.length;
+    }},
+    {headerName: 'Date of Allocation', field: 'Date', sortable: true, filter: true},
+    {headerName: 'Total Outstanding', field: 'OST', sortable: true, filter: true},
+    {headerName: 'Tagert', field: 'target', sortable: true, filter: true},
+    
   ];
-  type: any = [
-    { "y": "Direct" },
-    { "y": "Transferred" },
-    { "y": "Temporary" },
-  ];
-  typ: any = [
-    { "y": "New" },
-    { "y": "updated" },
-    { "y": "re-activated" },
-  ];
-
-  saved_Fields : any;
-
+  portfolioTypeList: any;
+  bankTypeList: any;
+  bankname:any;
+  portfolio_type:any;
+  allocation_type:any;
+  login_Details: any;
+  Excel_Datas: any[];
+  saved_Fields: any[];
+  rowData: any;
+  keyValues: any;
+  myHeaders: any;
+  tempDefs: any[];
+  columnDefs: any;
+  dataLoaded: boolean;
+  result: {};
+  myrowData: any;
+  dataList: any;
   constructor(
     private router: Router,
     @Inject(SESSION_STORAGE) private storage: StorageService,
-    private _api: ApiService,
-    // private router: Router
+    private _api: ApiService
   ) { }
 
   ngOnInit(): void {
-    window.scrollTo(0, 0);
-    this.rows = [{ type: "Dog", name: "dog1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" }]
+    this.bankname = "";
+    this.portfolio_type = "";
+    this.allocation_type = "";
+    this.login_Details = this.getFromLocal("login_Details");
+    this._api.portfolio_type_list().subscribe(data=>{
+      if (data['Code'] == 200) {
+        this.portfolioTypeList = data['Data'];
+      } else {
+        this.portfolioTypeList = [];
+      }
+    });
 
-    var login_Details = this.getFromLocal("login_Details");
+    this._api.user_details_list().subscribe((data:any) =>{
+      if (data['Code'] == 200) {
+        this.bankTypeList = [];
+        var hash = data.Data.reduce((p,c) => (p[c.bankname] ? p[c.bankname].push(c) : p[c.bankname] = [c],p) ,{});
+        var  newData = Object.keys(hash).map(k => ({color: k, car: hash[k]}));
+        console.log(newData);
+          for(let a = 0 ; a < newData.length; a ++){
+            let x =  { 'y': newData[a].color}
+            this.bankTypeList.push(x);
+          }
+
+      } else {
+        this.bankTypeList = [];
+      }
+    });
 
     let req = {
-      "user_email" : login_Details.email_id,
+      "to" : this.login_Details.email_id,
     }
     console.log(req);
-    this._api.allocation_details_list(req).subscribe(
+    this._api.allocation_details_getassignedto(this.login_Details.email_id).subscribe(
       (response: any) => {
         console.log(response);
-        if( response.Data.length == 0){
-    this.Excel_Datas = [];
-    this.saved_Fields = [];
-         alert("no data found");
-        }else{
-          this.Excel_Datas = [];
-          if(response.Data[0].user_email == login_Details.email_id){
-            let Excel_Datas_test = response.Data[0].datas;
-            this.saved_Fields = response.Data[0].headers;
-            for(let a = 0 ; a < Excel_Datas_test.length; a ++){
-               let c = Excel_Datas_test[a][this.saved_Fields.length];
-               console.log(c);
-               if(c == true){
-                this.Excel_Datas.push(Excel_Datas_test[a]);
-               }
-            }
-          }else {
-            alert("no data found");
-          }
-        }
+        this.dataList = response.Data;
       }
     );
-    console.log(this.Excel_Datas);
-          // this.saved_Fields = response.Data[0].fields_details;
-          // console.log(this.saved_Fields);
-          this.saved_Fields = this.saved_Fields.reverse();
-          var datas = [];
-          var d = new Date();
-          var n = d.getTime();
-          for(let b = 0 ;  b < this.Excel_Datas.length ; b ++){
-            this.Excel_Datas[b].push(false);
-            var object = {};
-            object["insert_id"] = n + b ;
-          for(let a  = 0 ; a < this.saved_Fields.length ; a ++)
-          {
-            object[this.saved_Fields[a].fields] = this.Excel_Datas[b][a];
-            if(a == this.saved_Fields.length - 1){
-              datas.push(object);
-            }
-          }
-            if(b == this.Excel_Datas.length - 1){
-               console.log(datas);
-               this.Finals_excel = datas;
-          }
-          }
   }
-  acc_list() {
-    this.router.navigateByUrl('/admin_panel/Agent_acc_list')
-  }
-
-  saveInLocal(key, val): void {
-    this.storage.set(key, val);
-  }
+  
 
   getFromLocal(key): any {
     return this.storage.get(key);
   }
 
-  profile() {
-    this.router.navigateByUrl('/admin_panel/Client_profile')
+  goto(){
+    const selectedNodes = this.agGrid.api.getSelectedNodes();
+    const selectedData:any = selectedNodes.map(node => node.data );
+    if (selectedData.length >= 1) {
+      localStorage.setItem("account_List", selectedData[0]._id);
+      this.router.navigateByUrl('admin_panel/userflow/newallocation');
+    }else {
+      alert("Select atleast one Portfolio type");
+    }
   }
+
+  goto2(){
+    const selectedNodes = this.agGrid.api.getSelectedNodes();
+    const selectedData:any = selectedNodes.map(node => node.data );
+    if (selectedData.length >= 1) {
+      localStorage.setItem("reallocation_account_List", selectedData[0]._id);
+      this.router.navigateByUrl('admin_panel/userflow/newreallocation');
+    } else {
+      alert("Select atleast one Portfolio type to reallocate");
+    }
+  }
+  
 }

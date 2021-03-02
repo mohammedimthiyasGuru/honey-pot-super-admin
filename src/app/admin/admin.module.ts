@@ -19,7 +19,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { DatePipe } from '@angular/common';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogModule } from 'primeng/dialog';
 import { RadioButtonModule } from 'primeng/radiobutton';
@@ -164,6 +164,10 @@ import { AdminUserComponent } from './admin-user/admin-user.component';
 import { MegreinguserComponent } from './megreinguser/megreinguser.component';
 import { NewallocationComponent } from './pages/newallocation/newallocation.component';
 import { AgentDashboardComponent } from './dashboard/agent-dashboard/agent-dashboard.component';
+import { AgGridModule } from 'ag-grid-angular';
+import { FilterPipeModule } from 'ngx-filter-pipe';
+import { NewreallocationComponent } from './pages/newreallocation/newreallocation.component';
+
 @NgModule({
   declarations: [AdminHeaderComponent,
     AdminSidebarComponent,
@@ -286,7 +290,8 @@ import { AgentDashboardComponent } from './dashboard/agent-dashboard/agent-dashb
     AdminUserComponent,
     MegreinguserComponent,
     NewallocationComponent,
-    AgentDashboardComponent
+    AgentDashboardComponent,
+    NewreallocationComponent
   ],
   imports: [
     CommonModule,
@@ -300,6 +305,7 @@ import { AgentDashboardComponent } from './dashboard/agent-dashboard/agent-dashb
     MatListModule,
     MatMenuModule,
     FormsModule,
+    ReactiveFormsModule,
     MatDialogModule,
     DialogModule,
     RadioButtonModule,
@@ -320,6 +326,8 @@ import { AgentDashboardComponent } from './dashboard/agent-dashboard/agent-dashb
     SliderModule,
     CheckboxModule,
     OverlayPanelModule,
+    AgGridModule.withComponents([]),
+    FilterPipeModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,

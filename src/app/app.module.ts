@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { MatButtonModule } from '@angular/material/button';
 import {RadioButtonModule} from 'primeng/radiobutton';
@@ -23,6 +23,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { ChartsModule } from 'ng2-charts';
 import { TooltipModule } from 'primeng/tooltip';
+import { AgGridModule } from 'ag-grid-angular';
+import { FilterPipeModule } from 'ngx-filter-pipe';
 
 
 @NgModule({
@@ -42,13 +44,17 @@ import { TooltipModule } from 'primeng/tooltip';
     AdminModule,
     HomepageModule,
     FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
     RadioButtonModule,
     ToolbarModule,
     MegaMenuModule,
     MatMenuModule,
     MatIconModule,
-    TooltipModule],
+    TooltipModule,
+    AgGridModule.withComponents([]),
+    FilterPipeModule
+  ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],

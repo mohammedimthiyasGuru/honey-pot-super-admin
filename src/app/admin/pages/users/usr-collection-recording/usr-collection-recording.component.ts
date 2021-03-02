@@ -3,6 +3,9 @@ import { Router, RouterModule } from '@angular/router';
 import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog';
 import { MatDialogRef} from '@angular/material/dialog';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { ApiService } from 'src/app/api.service';
 @Component({
   selector: 'app-usr-collection-recording',
   templateUrl: './usr-collection-recording.component.html',
@@ -13,30 +16,41 @@ export class UsrCollectionRecordingComponent implements OnInit {
   rows = [];
   searchQR: any;
   value1: any;
+  CollectioninfoForm: FormGroup;
+  CollectionInfoList: any;
+
   constructor(
+    private _api:ApiService,
+    private formBuilder:FormBuilder,
     private router: Router,
     public dialog: MatDialog,
     public dialogRef: MatDialogRef<UsrCollectionRecordingComponent>
-  ) { }
+  ) { 
+    this.CollectioninfoForm = this.formBuilder.group({
+      payment_type_collection_info:  ['',Validators.required],
+      bookcode_collection_info : ['',Validators.required],
+      payment_date_collection_info : ['',Validators.required],
+      reciept_no_collection_info : ['',Validators.required],
+      remarks_collection_info : ['',Validators.required],
+      total_amount_collection_info : ['',Validators.required]
+    })
+   }
 
 
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
-    this.rows = [{ type: "Dog", name: "dog1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" },
-    { type: "Cat", name: "cat1" }]
-
+    this.rows = [];
+    this._api.list_CollectionInfo_getlist().subscribe(data=>{
+      if (data['Code']==200) {
+        this.CollectionInfoList = data['Data'];
+      } else {
+        this.CollectionInfoList = []
+      }
+    });
   }
+
+  
   client_form() {
     this.router.navigateByUrl('/admin_panel/client-form')
   }

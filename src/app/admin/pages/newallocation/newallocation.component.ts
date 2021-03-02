@@ -1,5 +1,6 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { AgGridAngular } from 'ag-grid-angular';
 import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 import { ApiService } from 'src/app/api.service';
 
@@ -9,10 +10,12 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./newallocation.component.css']
 })
 export class NewallocationComponent implements OnInit {
+  @ViewChild('agGrid',{static:false}) agGrid: AgGridAngular;
+  @ViewChild('agGrid2',{static:false}) agGrid2: AgGridAngular;
   assingedto : any;
   userList : any;
-  Excel_Datas: any[];
-  saved_Fields: any[];
+  Excel_Datas = [];
+  saved_Fields = [];
   Finals_excel: any[];
   login_Details: any;
   searchQR:any;
@@ -24,10 +27,38 @@ export class NewallocationComponent implements OnInit {
   assignee: any;
   tableData: any;
   selectedIndex: any;
+  rowData = [];
+  myHeaders = [];
+  tempDefs = [];
+  columnDefs = [];
+  dataLoaded: boolean;
+  result: {};
+  myrowData=[];
+  selectedData = [];
+  rowData2 = [];
+  myHeaders2 = [];
+  tempDefs2 = [];
+  columnDefs2 = [];
+  dataLoaded2: boolean;
+  result2: {};
+  myrowData2 = [];
+  transferData: any[];
+  keyValues = [];
+  designationList: any[];
+  designationof: any;
+  userFilter: any = { designation: '', bankname:'' };
+  accountList: string;
 
   constructor(private _api:ApiService, @Inject(SESSION_STORAGE) private storage: StorageService, private router:Router) { }
 
   ngOnInit(): void {
+    this.login_Details = this.getFromLocal("login_Details");
+    this.accountList = localStorage.getItem('account_List');
+    console.log(this.accountList);
+    
+    this.designationof = "";
+    this.assingedto = "";
+
     this._api.user_details_list().subscribe(data=>{
       if (data['Code']==200) {
         this.userList = data['Data'];
@@ -36,76 +67,93 @@ export class NewallocationComponent implements OnInit {
       }
     });
 
-    this.Agentselected = false;
+    this._api.designation_type_list().subscribe( data => {
+        if (data['Code']==200) {
+          this.designationList = data['Data'];
+        } else {
+          this.designationList = [];
+        }
+      }
+    );
 
-    this.login_Details = this.getFromLocal("login_Details");
+    this.Agentselected = false;
    
     let req = {
-      "user_email" : this.login_Details.email_id,
+      "to" : this.login_Details.email_id,
     }
     console.log(req);
-    this._api.allocation_details_list(req).subscribe(
+    this._api.allocation_details_id(this.accountList).subscribe(
       (response: any) => {
         console.log(response);
+        // this.tableData = response.Data;
         if( response.Data.length == 0){
           this.Excel_Datas = [];
           this.saved_Fields = [];
           alert("no data found");
         }else{
-          this.Excel_Datas = [];
-          if(response.Data[0].user_email == this.login_Details.email_id){
-            let Excel_Datas_test = response.Data[0].datas;
-            this.saved_Fields = response.Data[0].headers;
-            for(let a = 0 ; a < Excel_Datas_test.length; a ++){
-               let c = Excel_Datas_test[a][this.saved_Fields.length];
-               console.log(c);
-               if(c == true){
-                this.Excel_Datas.push(Excel_Datas_test[a]);
-               }
+           this.saved_Fields = response.Data[0].headers;
+           this.rowData = response.Data[0].datas;
+           this.keyValues = response.Data[0].datasKeyval;  
+            for (let i = 0; i < this.saved_Fields.length; i++) {
+              this.myHeaders[i] = this.saved_Fields[i].fields;
             }
-          }else {
-            alert("no data found");
+           for (let i = 0; i < this.rowData.length; i++) {
+             this.subArray(this.myHeaders,this.rowData[i]);
+           }
+           this.tempDefs = [];
+          for (let i = 0; i < this.saved_Fields.length; i++) {
+            console.log(this.saved_Fields[i].fields);
+            if (i == 0) {
+              this.tempDefs.push({headerName: this.saved_Fields[i].fields, field:this.saved_Fields[i].fields, filter:true, sortable:true , checkboxSelection:true, resizable: false});
+            } else {
+              this.tempDefs.push({headerName: this.saved_Fields[i].fields, field:this.saved_Fields[i].fields, filter:true, sortable:true , checkboxSelection:false, resizable: true});
+            }
+            
+          }
+          this.columnDefs = this.tempDefs;
+          console.log(this.columnDefs);
+          if (this.columnDefs.length != 0) {
+            this.dataLoaded = true;
+          } else {
+            this.dataLoaded = false;
           }
         }
       }
     );
-    console.log(this.Excel_Datas);
-          // this.saved_Fields = response.Data[0].fields_details;
-          // console.log(this.saved_Fields);
-          this.saved_Fields = this.saved_Fields.reverse();
-          var datas = [];
-          var d = new Date();
-          var n = d.getTime();
-          for(let b = 0 ;  b < this.Excel_Datas.length ; b ++){
-            this.Excel_Datas[b].push(false);
-            var object = {};
-            object["insert_id"] = n + b ;
-          for(let a  = 0 ; a < this.saved_Fields.length ; a ++)
-          {
-            object[this.saved_Fields[a].fields] = this.Excel_Datas[b][a];
-            if(a == this.saved_Fields.length - 1){
-              datas.push(object);
-            }
-          }
-            if(b == this.Excel_Datas.length - 1){
-               console.log(datas);
-               this.Finals_excel = datas;
-          }
-          }
+  }
+  subArray(cols,rows){
+
+    this.result = {};
+    console.log(cols);
+    console.log(rows);
+    
+    for (var i = 0; i < cols.length; i++) {
+            this.result[cols[i]] = rows[i];
+    }
+    this.mainArray(this.result);
   }
 
+  mainArray(data){
+    this.myrowData.push(data);
+    console.log(this.myrowData);
+    this.dataLoaded = true;
+  }
+
+  
   getFromLocal(key): any {
     return this.storage.get(key);
   }
 
   getassignedto(event){
+    this.myrowData2 = [];
     this.Agentselected = true;
+    this.dataLoaded2 = false;
     this.assignee = event.target.value;
     let req = {
       "to" : this.assignee,
     }
     console.log(req);
-    this._api.newallocation_getlist_id(req).subscribe(
+    this._api.allocation_details_getassignedto(this.assignee).subscribe(
       (response: any) => {
         console.log(response);
         this.tableData = response.Data;
@@ -114,69 +162,114 @@ export class NewallocationComponent implements OnInit {
           this.saved_Fields2 = [];
           alert("no data found");
         }else{
-          this.Excel_Datas2 = [];
-          if(response.Data[0].user_email == this.login_Details.email_id){
-            let Excel_Datas_test = response.Data[0].datas;
-            this.saved_Fields2 = response.Data[0].headers;
-            for(let a = 0 ; a < Excel_Datas_test.length; a ++){
-               let c = Excel_Datas_test[a][this.saved_Fields2.length];
-               console.log(c);
-               if(c == true){
-                this.Excel_Datas2.push(Excel_Datas_test[a]);
-               }
+                this.saved_Fields2 = response.Data[0].headers;
+                this.rowData2 = response.Data[0].datas; 
+              for (let i = 0; i < this.saved_Fields2.length; i++) {
+                this.myHeaders2[i] = this.saved_Fields2[i].fields;
+              }
+              for (let i = 0; i < this.rowData2.length; i++) {
+                this.subArray2(this.myHeaders2,this.rowData2[i]);
+              }
+            this.tempDefs2 = [];
+            for (let i = 0; i < this.saved_Fields2.length; i++) {
+              console.log(this.saved_Fields2[i].fields);
+              if (i == 0) {
+                this.tempDefs2.push({headerName: this.saved_Fields2[i].fields, field:this.saved_Fields2[i].fields, filter:true, sortable:true , checkboxSelection:true, resizable: false});
+              } else {
+                this.tempDefs2.push({headerName: this.saved_Fields2[i].fields, field:this.saved_Fields2[i].fields, filter:true, sortable:true , checkboxSelection:false, resizable: true});
+              }
+              
             }
-          }else {
-            alert("no data found");
-          }
-        }
+            this.columnDefs2 = this.tempDefs2;
+            console.log(this.columnDefs2);
+            if (this.columnDefs2.length != 0) {
+              // this.dataLoaded2 = true;
+            } else {
+              this.dataLoaded2 = false;
+            }
+            }
       }
-    );
-    console.log(this.Excel_Datas2);
-          // this.saved_Fields = response.Data[0].fields_details;
-          // console.log(this.saved_Fields);
-          this.saved_Fields2 = this.saved_Fields2;
-          var datas = [];
-          var d = new Date();
-          var n = d.getTime();
-          for(let b = 0 ;  b < this.Excel_Datas2.length ; b ++){
-            this.Excel_Datas2[b].push(false);
-            var object = {};
-            object["insert_id"] = n + b ;
-          for(let a  = 0 ; a < this.saved_Fields2.length ; a ++)
-          {
-            object[this.saved_Fields2[a].fields] = this.Excel_Datas2[b][a];
-            if(a == this.saved_Fields2.length - 1){
-              datas.push(object);
-            }
-          }
-            if(b == this.Excel_Datas2.length - 1){
-               console.log(datas);
-               this.Finals_excel2 = datas;
-          }
-          }
+    );        
+  }
 
-          
+
+  subArray2(cols,rows){
+
+    this.result2 = {};
+    console.log(cols);
+    console.log(rows);
+    
+    for (var i = 0; i < cols.length; i++) {
+            this.result2[cols[i]] = rows[i];
+    }
+    this.mainArray2(this.result2);
+  }
+
+  mainArray2(data){
+    this.myrowData2.push(data);
+    console.log(this.myrowData2);
+    this.dataLoaded2 = true;
+  }
+
+  getdesignationType(event){
+    this.userFilter.designation = event.target.value;
+    this.userFilter.bankname = this.login_Details.bankname;
+  }
+
+  rellocate(){
+    const selectedNodes = this.agGrid2.api.getSelectedNodes();
+    const selectedData = selectedNodes.map(node => node.data );
+    console.log(selectedData);
+    
+    if (selectedData.length >= 1) {
+
+    }else{
+
+    }
   }
 
   assignto(){
 
-    let req = {
-      "user_email" : this.login_Details.email_id,
-      "user_id" : this.login_Details.user_id,
-      "Date" : ""+new Date(),
-      "headers" : this.saved_Fields2,
-      "datas" : this.Excel_Datas2,
-      "Date_and_Time" : ""+new Date(),
-      "assigner_id":this.login_Details.email_id,
-      "assignee_id":this.assignee
-    }
-    console.log(req);
-    this._api.newallocation_data(req).subscribe(
-      (response: any) => {
-        console.log(response);
-        alert("Successfully Allocated");
+    const selectedNodes = this.agGrid.api.getSelectedNodes();
+    const selectedData = selectedNodes.map(node => node.data );
+    
+    if (selectedData.length >= 1) {
+      this.selectedData = [];
+      for (let i = 0; i < selectedData.length; i++) {
+        var obj = selectedData[i];
+        delete obj.insert_id;
+        var result = Object.values(obj);
+        console.log(result);
+        this.selectedData.push(result);
       }
-    );
+
+      let req = {
+        "user_email" : this.login_Details.email_id,
+        "user_id" : this.login_Details.user_id,
+        "Date" : ""+new Date(),
+        "headers" : this.saved_Fields,
+        "datas" : this.selectedData,
+        "Date_and_Time" : ""+new Date(),
+        "assigner_id":this.login_Details.email_id,
+        "assignee_id":this.assignee
+      }
+      console.log(req);
+      this._api.allocation_details_add(req).subscribe(
+        (response: any) => {
+          console.log(response);
+          if (response['Code'] = 200) {
+            alert("Successfully Allocated");
+          } else {
+            alert(response['Message']);
+          }
+        }
+      );
+
+    }else {
+      alert("Select atleast one Record");
+    }
+
+    
   }
 
   onSelect(data,event, index){
@@ -195,14 +288,46 @@ export class NewallocationComponent implements OnInit {
     console.log(ite)
   }
 
-  goto(page,column, row){
-    this.router.navigateByUrl(page);
-    let dataList = [];
-    for (let i = 0; i < column.length; i++) {
-      dataList.push({column:column[i].fields,row:row[i]});
-    }
-    this.storage.set("_storedRecord",{dataList});
+
+
+  goto(page){
+    const selectedNodes = this.agGrid.api.getSelectedNodes();
+    const selectedData = selectedNodes.map(node => node.data );
+    console.log(selectedData);
     
+    this.transferData = [];
+      for (let i = 0; i < selectedData.length; i++) {
+        var obj = selectedData[i];
+        delete obj.insert_id;
+        var result = Object.values(obj);
+        console.log(result);
+        this.transferData.push(result);
+    }
+
+    if (selectedData.length == 1) {
+      this.router.navigateByUrl(page);
+      let dataList = [];
+
+      var myrow = [];
+      for (let i = 0; i < result.length; i++) {
+        myrow.push(result[i])
+      }
+      for (let i = 0; i < selectedData.length; i++) {
+        for (let i = 0; i < this.saved_Fields.length; i++) {
+          dataList.push({column:this.saved_Fields[i].fields,row:myrow[i]});
+        }
+      }
+      
+      this.storage.set("_storedRecord",{dataList,"keyvalue":selectedData[0]});
+    } else {
+      alert("Select Only One Record");
+    }
+    
+    
+  }
+
+  onPagereload(){
+
   }
 
 

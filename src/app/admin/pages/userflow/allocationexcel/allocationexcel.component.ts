@@ -4,6 +4,7 @@ import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 import Swal from 'sweetalert2';
 import { Router, RouterModule } from '@angular/router';
 import { ApiService } from '../../../../api.service';
+import { AgGridAngular } from 'ag-grid-angular';
 
 
 type AOA = any[][];
@@ -15,6 +16,7 @@ type AOA = any[][];
 export class AllocationexcelComponent implements OnInit {
 
   @ViewChild('fileControl') fileControl: ElementRef;
+
 
   excel_final : any = [];
 

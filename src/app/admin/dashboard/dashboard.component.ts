@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,7 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  rows:any = [{ type: "Dog", name: "dog1" },
+  client_name: any;
+  business_divi: any;
+  product_name: any;
+  profolio: any;
+  type: any;
+;
+  searchQR: any;
+  id: any;
+  edit_f: boolean = false;
+  client_list: any = [];
+  product_list: any = [];
+  profolio_list: any = [];
+
+    rows:any = [{ type: "Dog", name: "dog1" },
     { type: "Cat", name: "cat1" },
     { type: "Cat", name: "cat1" },
     { type: "Cat", name: "cat1" },
@@ -73,10 +87,22 @@ export class DashboardComponent implements OnInit {
               ]
           }]    
       };
-  constructor() { }
+  constructor(private _api:ApiService) { }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
+    this._api.portfolio_type_list().subscribe(
+        (response: any) => {
+          console.log(response);
+          let list = response.Data.reverse();
+          for (let i = 0; i < list.length; i++) {
+            let obj = { 'y': list[i].portfolio_type };
+            this.profolio_list.push(obj);
+          }
+  
+          console.log(this.profolio_list);
+        }
+      );
   }
 
 }

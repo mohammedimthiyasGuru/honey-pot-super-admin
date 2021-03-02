@@ -4,6 +4,7 @@ import { ApiService } from '../../../../api.service';
 // import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 import Swal from 'sweetalert2';
 import { Router, RouterModule } from '@angular/router';
+import { AgGridAngular } from 'ag-grid-angular';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { Router, RouterModule } from '@angular/router';
   styleUrls: ['./uploaded-list.component.css']
 })
 export class UploadedListComponent implements OnInit {
+  @ViewChild('agGrid',{static:false}) agGrid: AgGridAngular;
   displayPosition: boolean;
   rows = [];
   searchQR: any;
@@ -49,9 +51,16 @@ export class UploadedListComponent implements OnInit {
   report_to_design : any;
 
   Designation_details1 : any;
-
-
-
+  MyuploadList = [];
+  tempDefs = [];
+  columnDefs = [];
+  dataLoaded: boolean;
+  selectedData = [];
+  login_Details: any;
+  bankName: any;
+  bankame: any;
+  portfolio: any;
+  product: any;
 
 
   constructor(
@@ -66,6 +75,7 @@ export class UploadedListComponent implements OnInit {
   ngOnInit(): void {
     window.scrollTo(0, 0);
     this.company_details();
+    this.login_Details = this.getFromLocal("login_Details");
     this.rows = [{ type: "Dog", name: "dog1" },
     { type: "Cat", name: "cat1" },
     { type: "Cat", name: "cat1" },
@@ -75,7 +85,9 @@ export class UploadedListComponent implements OnInit {
     this.Excel_Datas = this.getFromLocal("excel_final");
     let fields_mapping_fetch = this.getFromLocal("fields_mapping_fetch");
     console.log(this.Excel_Datas);
-
+    this.bankName = fields_mapping_fetch.bank;
+    this.portfolio = fields_mapping_fetch.portfolio;
+    this.product = fields_mapping_fetch.product;
     this._api.fields_mapping_fetch(fields_mapping_fetch).subscribe(
       (response: any) => {
         if(response.Code === 404){
@@ -83,8 +95,27 @@ export class UploadedListComponent implements OnInit {
           this.saved_Fields = [];
         }else{
           this.saved_Fields = response.Data[0].fields_details;
-          // console.log(this.saved_Fields);
           this.saved_Fields = this.saved_Fields.reverse();
+
+          this.tempDefs = [];
+          for (let i = 0; i < this.saved_Fields.length; i++) {
+            console.log(this.saved_Fields[i].fields);
+            if (i == 0) {
+              this.tempDefs.push({headerName: "RecordID", field:"insert_id", filter:true, sortable:true , checkboxSelection:true, resizable: false, headerCheckboxSelection: true});
+              this.tempDefs.push({headerName: this.saved_Fields[i].fields, field:this.saved_Fields[i].fields, filter:true, sortable:true , checkboxSelection:false, resizable: false});
+            } else {
+              this.tempDefs.push({headerName: this.saved_Fields[i].fields, field:this.saved_Fields[i].fields, filter:true, sortable:true , checkboxSelection:false, resizable: true});
+            }
+            
+          }
+          this.columnDefs = this.tempDefs;
+          console.log(this.columnDefs);
+          if (this.columnDefs.length != 0) {
+            this.dataLoaded = true;
+          } else {
+            this.dataLoaded = false;
+          }
+          
           var datas = [];
           var d = new Date();
           var n = d.getTime();
@@ -130,9 +161,16 @@ export class UploadedListComponent implements OnInit {
     // this.router.navigateByUrl('/admin_panel/Client_profile')
   }
 
-  onSelect(status,datas,index){
-   console.log(status,datas,index);
 
+
+  onSelect(data,event, index){
+    if (event.target.checked) {
+      this.MyuploadList.push(data)
+    } else {
+      this.MyuploadList = [];
+      var pushData = this.MyuploadList.splice(index,1);
+      this.MyuploadList = pushData;
+    }
   }
 
 
@@ -217,31 +255,53 @@ export class UploadedListComponent implements OnInit {
 
 
   submit_allocation(){
-    let req = {
-      "user_email" : this.report_to.y,
-      "user_id" : this.report_to.y,
-      "Date" : ""+new Date(),
-      "headers" : this.saved_Fields,
-      "datas" : this.Excel_Datas,
-      "Date_and_Time" : ""+new Date(),
-    }
-    console.log(req);
-    this._api.allocation_details_add(req).subscribe(
-      (response: any) => {
-        console.log(response);
-        alert("allocation Done");
+    const selectedNodes = this.agGrid.api.getSelectedNodes();
+    const selectedData = selectedNodes.map(node => node.data );
+    console.log(selectedData);
+    
+    if (selectedData.length >= 1) {
+      this.selectedData = [];
+      for (let i = 0; i < selectedData.length; i++) {
+        var obj = selectedData[i];
+        delete obj.insert_id;
+        var result = Object.values(obj);
+        console.log(result);
+        this.selectedData.push(result);
       }
-    );
+
+      let req = {
+        "user_email" : this.login_Details.email_id,
+        "user_id" : this.login_Details.email_id,
+        "Date" : ""+new Date(),
+        "headers" : this.saved_Fields,
+        "datas" : this.selectedData,
+        "Date_and_Time" : ""+new Date(),
+        "assigner_id":this.login_Details.email_id,
+        "assignee_id":this.report_to.y,
+        "bankname":this.bankName,
+        "product":this.product,
+        "portfoliotype":this.portfolio,
+      }
+      console.log(req);
+      this._api.allocation_details_add(req).subscribe(
+        (response: any) => {
+          console.log(response);
+          alert("allocation Done");
+        }
+      );
+    } else {
+        alert("Select atleat one record");
+    }
+    
+    
   }
-
-
-
 
 
   showPositionDialog() {
     this.displayPosition = true;
-}
-cus360(){
-  // this.router.navigateByUrl('/admin_panel/user/createuser')
-}
+  }
+
+  cus360(){
+    // this.router.navigateByUrl('/admin_panel/user/createuser')
+  }
 }

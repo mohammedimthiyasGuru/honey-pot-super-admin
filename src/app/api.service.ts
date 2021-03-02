@@ -331,7 +331,9 @@ export class ApiService {
   }
 
 
-
+  allocation_details_id(id){
+    return this.http.get(this.apiUrl + 'allocationdata/getdetails?id='+id);
+  }
 
   allocation_details_add(data) {
     return this.http.post(this.apiUrl + 'allocationdata/create', data);
@@ -340,6 +342,13 @@ export class ApiService {
   allocation_details_list(data) {
     console.log(data);
     return this.http.post(this.apiUrl + 'allocationdata/getlist_id', data);
+  }
+  allocation_details_getassignedfrom(id){
+    return this.http.get(this.apiUrl + 'allocationdata/getassignedfrom?from='+id);
+  }
+
+  allocation_details_getassignedto(id){
+    return this.http.get(this.apiUrl + 'allocationdata/getassignedto?to='+id);
   }
 
   newallocation_data(data){
@@ -351,6 +360,137 @@ export class ApiService {
   }
 
 
+  // FOLLOWUP API //
+  add_FollowUp_create(data){
+    return this.http.post(this.apiUrl + 'followup/create', data);
+  }
+
+  edit_FollowUp_update(data){
+    return this.http.post(this.apiUrl + 'followup/update', data);
+  }
+
+  list_FollowUp_getlist(id){
+    return this.http.get(this.apiUrl + 'followup/getlist?id='+id);
+  }
+
+  view_FollowUp_get_id(id){
+    return this.http.get(this.apiUrl + 'followup/get_id?id='+id);
+  }
+
+  delete_FollowUP_delete(id){
+    return this.http.delete(this.apiUrl + 'followup/delete?id='+id);
+  }
+
+
+
+  // WORKFLOW API //
+  add_WorkFlow_create(data){
+    return this.http.post(this.apiUrl + 'workflow/create', data);
+  }
+
+  edit_WorkFlow_update(data){
+    return this.http.post(this.apiUrl + 'workflow/update', data);
+  }
+
+  list_WorkFlow_getlist(id){
+    return this.http.get(this.apiUrl + 'workflow/getlist?id='+id);
+  }
+
+  view_WorkFlow_get_id(id){
+    return this.http.get(this.apiUrl + 'workflow/get_id?id='+id);
+  }
+
+  delete_WorkFlow_delete(id){
+    return this.http.delete(this.apiUrl + 'workflow/delete?id='+id);
+  }
+
+
+  // COLLECTION DETAILS API //
+  add_CollectionDetails_create(data){
+    return this.http.post(this.apiUrl + 'collection/create', data);
+  }
+
+  edit_CollectionDetails_update(data){
+    return this.http.post(this.apiUrl + 'collection/update', data);
+  }
+
+  list_CollectionDetails_getlist(){
+    return this.http.get(this.apiUrl + 'collection/getlist');
+  }
+
+  view_CollectionDetails_get_id(id){
+    return this.http.get(this.apiUrl + 'collection/get_id?id='+id);
+  }
+
+  delete_CollectionDetails_delete(id){
+    return this.http.delete(this.apiUrl + 'collection/delete?id='+id);
+  }
+
+
+  // COLLECTION INFO API //
+  add_CollectionInfo_create(data){
+    return this.http.post(this.apiUrl + 'collection_info/create', data);
+  }
+
+  edit_CollectionInfo_update(data){
+    return this.http.post(this.apiUrl + 'collection_info/update', data);
+  }
+
+  list_CollectionInfo_getlist(){
+    return this.http.get(this.apiUrl + 'collection_info/getlist');
+  }
+
+  view_CollectionInfo_get_id(id){
+    return this.http.get(this.apiUrl + 'collection_info/get_id?id='+id);
+  }
+
+  delete_CollectionInfo_delete(id){
+    return this.http.delete(this.apiUrl + 'collection_info/delete?id='+id);
+  }
+
+
+  // SETTLEMENT DETAILS API //
+  add_Settlement_create(data){
+    return this.http.post(this.apiUrl + 'settlement/create', data);
+  }
+
+  edit_Settlement_update(data){
+    return this.http.post(this.apiUrl + 'settlement/update', data);
+  }
+
+  list_Settlement_getlist(){
+    return this.http.get(this.apiUrl + 'settlement/getlist');
+  }
+
+  view_Settlement_get_id(id){
+    return this.http.get(this.apiUrl + 'settlement/get_id?id='+id);
+  }
+
+  delete_Settlement_delete(id){
+    return this.http.delete(this.apiUrl + 'settlement/delete?id='+id);
+  }
+
+
+  // CASE FILLING DETAILS API //
+  add_CaseFilling_create(data){
+    return this.http.post(this.apiUrl + 'casefilling/create', data);
+  }
+
+  edit_CaseFilling_update(data){
+    return this.http.post(this.apiUrl + 'casefilling/update', data);
+  }
+
+  list_CaseFilling_getlist(){
+    return this.http.get(this.apiUrl + 'casefilling/getlist');
+  }
+
+  view_CaseFilling_get_id(id){
+    return this.http.get(this.apiUrl + 'casefilling/get_id?id='+id);
+  }
+
+  delete_CaseFilling_delete(id){
+    return this.http.delete(this.apiUrl + 'casefilling/delete?id='+id);
+  }
 
 
 }

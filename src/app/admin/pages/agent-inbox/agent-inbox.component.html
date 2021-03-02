@@ -1,134 +1,48 @@
-<h4 class="title">Inbox Portfolio List</h4>
-<div class="row" style="margin-bottom: 10px;">
-    <div class="col-md-3">
-        <div class="search-hero" style="margin-top: 15px;">
-            <input class="form-control" type="text" name="search2" style="font-family: FontAwesome;"
-                [(ngModel)]="searchQR" autocomplete="off" placeholder="&#xf002; Search...">
+<!-- <app-newallocation> </app-newallocation> -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 col-sm-12 col-lg-3">
+            <label for="bankList"> Select Bank Name</label>
+            <select [(ngModel)]="bankname" class="form-control">
+                <option value="">Choose</option>
+                <option *ngFor="let item of bankTypeList" [value]="item.y">{{item.y}}</option>
+            </select>
+        </div>
+        <div class="col-md-4 col-sm-12 col-lg-3">
+            <label for="bankList"> Select Portfolio type</label>
+            <select [(ngModel)]="portfolio_type" class="form-control">
+                <option value="">Choose</option>
+                <option *ngFor="let item of portfolioTypeList" [value]="item.portfolio_type">{{item.portfolio_type}}</option>
+            </select>
+        </div>
+        <div class="col-md-4 col-sm-12 col-lg-3">
+            <label for="bankList"> Select Allocation type</label>
+            <select [(ngModel)]="allocation_type" class="form-control">
+                <option value="">Choose</option>
+                <option value="new_allocation">New Allocation</option>
+                <option value="re_allocation">Re Allocation</option>
+                <option value="temp_allocation">Temporary Allocation</option>
+            </select>
         </div>
     </div>
-    <div class="col-md-2">
-        <h5 class="form-lable">Bank Name:</h5>
-        <p-dropdown [options]="type" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y" [showClear]="true">
-        </p-dropdown>
-    </div>
-    <div class="col-md-2">
-        <h5 class="form-lable">Portfolio Type:</h5>
-        <p-dropdown [options]="type" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y" [showClear]="true">
-        </p-dropdown>
-    </div>
-    <div class="col-md-2">
-        <h5 class="form-lable">Type of allocation:</h5>
-        <p-dropdown [options]="type" [(ngModel)]="cli_type" placeholder="Select" optionLabel="y" [showClear]="true">
-        </p-dropdown>
-    </div>
-
-    <div class="col-md-3 text-right">
-        <button type="button" style="margin-top: 22px;" class="btn btn-primary btn-bg-blue">Export to Excel</button>
-    </div>
-</div>
-<!-- <div class="card-box">
-    <div class="row" style="padding: 0px 0px 23px 10px;">
-        <div class="col-md-3">
-            <h5 class="form-lable">User Group:</h5>
-            <input type="text" pInputText [(ngModel)]="Name" placeholder="User group">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-sm btn-success mb-4" (click)="goto()">View Account List</button>
+                <button class="btn btn-sm btn-success mb-4" (click)="goto2()">Reallocate</button>
+            </div>
         </div>
-
-        <div class="col-md-6 mt-20">
-            <button type="button" class="btn btn-primary">Add</button>
-            <button type="button" class="btn btn-primary btn-bg-blue">Export to Excel</button>
-        </div>
-
     </div>
-</div> -->
-<!-- <div class="row">
-
-    <div class="col-md-8 text-right">
-    </div>
-</div>
-<div class="doc-table">
-    <div class="card-box"> <p-table [value]="rows | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="5"
-        [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
-        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="['type']">
-
-        <ng-template pTemplate="header">
-            <tr class="thhead">
-                <th class="th-1">
-                    S.No
-                </th>
-                <th>
-                    Bank Name
-                </th>
-                <th>
-                    Portfolio name
-                </th>
-                <th>
-                    No of accounts allocated </th>
-                <th>
-                    Date of allocation </th>
-                <th>
-                    Total outstanding
-                </th>
-                <th>
-                    target </th>
-                <th>
-                    ff
-                </th>
-                <th style="width: 110px;text-align:center">
-                    Action
-                </th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-item let-i="rowIndex">
-            <tr class="tdrow" >
-                <td>{{i+1}}</td>
-                <td>Type-1</td>
-                <td>Type-1</td>
-                <td>Type-1</td>
-                <td>Type-1</td>
-                <td>Type-1</td>
-                <td>Type-1</td>
-                <td>Type-1</td>
-                <td class="act">
-                    <i style="color: #2196f3;" class="fa fa-list-alt" aria-hidden="true" (click)="acc_list()"
-                        pTooltip="View Account List"></i>
-                    <i style="color: #a4a729;" class="fa fa-exchange" aria-hidden="true"
-                        pTooltip="Transfer portfolio"></i>
-                </td>
-            </tr>
-        </ng-template>
-     </p-table>  </div>
-
-</div> -->
-
-
-<h4 class="title-f">New Accounts</h4>
-<div class="row">
-<div class="card-box"> 
-<p-table [value]="Finals_excel | filter:searchQR" styleClass="ui-table-customers" #tt [paginator]="true" [rows]="50"
-    [rowHover]="true" [rowsPerPageOptions]="[5,10,25,50]" [showCurrentPageReport]="true"
-    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-    [globalFilterFields]="['type']">
-    <ng-template pTemplate="header">
-        <div style="overflow-x: scroll;">
-            <table>
-                <tr>
-                 <!-- <th>Actions</th> -->
-                 <th>S.no</th>
-                 <ng-container *ngFor="let lesson of saved_Fields ; let i = index">
-                   <th>{{lesson.fields}}</th>
-                 </ng-container>
-                 <th>Mark Status</th>
-                 </tr>
-                 <tr *ngFor="let row of Excel_Datas ; let i = index">
-                   <!-- <td><input type="checkbox" [(ngModel)]="row[row.length - 1]"></td> -->
-                   <td>{{i+1}}</td>
-                   <td *ngFor="let val of row">
-                       {{val}}
-                   </td>
-                </tr>
-              </table>
+    <div class="row">
+        <div class="col-12">
+            <ag-grid-angular #agGrid 
+                style="width: auto; height: 500px;"
+                class="ag-theme-alpine"
+                [rowData]="dataList"
+                [rowSelection]="'multiple'"
+                [columnDefs]="AllocationcolumnDefs"
+                [pagination]="true">
+            </ag-grid-angular>
         </div>
-    </ng-template>
-</p-table>  
-</div>
+    </div>
 </div>
