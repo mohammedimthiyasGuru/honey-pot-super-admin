@@ -13,7 +13,7 @@ import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 export class UsrWorkflowComponent implements OnInit {
   table_v: boolean = false;
   types: any = [
-    { "y": "Action1" },
+    { "y": "Promise to Pay" },
     { "y": "Action2" },
     { "y": "Action3" },
     { "y": "Action4" },

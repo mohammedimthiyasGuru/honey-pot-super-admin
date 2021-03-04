@@ -339,6 +339,10 @@ export class ApiService {
     return this.http.post(this.apiUrl + 'allocationdata/create', data);
   }
 
+  reallocation_details_add(data){
+    return this.http.post(this.apiUrl + 'allocationdata/reallocate', data);
+  }
+
   allocation_details_list(data) {
     console.log(data);
     return this.http.post(this.apiUrl + 'allocationdata/getlist_id', data);

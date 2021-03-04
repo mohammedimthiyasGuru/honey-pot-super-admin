@@ -48,8 +48,12 @@ export class NewallocationComponent implements OnInit {
   designationList: any[];
   designationof: any;
   userFilter: any = { designation: '', bankname:'' };
+  userFilter2: any = { designation: '', bankname:'' };
   accountList: string;
   displayBasic: boolean;
+  myrowData3 = [];
+  reallocateto: any;
+  rdesignationof: any;
   constructor(private _api:ApiService, @Inject(SESSION_STORAGE) private storage: StorageService, private router:Router) { }
 
   ngOnInit(): void {
@@ -217,18 +221,62 @@ export class NewallocationComponent implements OnInit {
     this.userFilter.bankname = this.login_Details.bankname;
   }
 
-  rellocate(){
-    // const selectedNodes = this.agGrid2.api.getSelectedNodes();
-    // const selectedData = selectedNodes.map(node => node.data );
-    // console.log(selectedData);
-    
-    // if (selectedData.length >= 1) {
-    //   $('#exampleModal').modal('show')
-    // }else{
+  getRdesignationType(event){
+    this.userFilter2.designation = event.target.value;
+    this.userFilter2.bankname = this.login_Details.bankname;
+  }
 
-    // }
+  onRowClick(event:any){
+
+  }
+
+
+  rellocate(){
+    const selectedNodes = this.agGrid2.api.getSelectedNodes();
+    const selectedData = selectedNodes.map(node => node.data );
+    console.log(selectedData);
+    
+    if (selectedData.length >= 1) {
+      for (let i = 0; i < selectedData.length; i++) {
+        for (let j = 0; j < this.rowData2.length; j++) {
+          console.log(this.rowData2[j][1]);
+          
+          if ( selectedData[i].CID === this.rowData2[j][0]) { 
+            this.rowData2.splice(j, 1); 
+          }
+        }
+      }
+      console.log(this.rowData2);
+      
       this.displayBasic = true;
+      this.myrowData3 = selectedData;
   
+    }else{
+      alert("Select aleast one record to reallocate");
+    }
+      
+  
+  }
+
+  allocatetodata(){
+    let req = {
+      "_id":this.accountList,
+      "user_email" : this.login_Details.email_id,
+      "user_id" : this.login_Details.user_id,
+      "Date" : ""+new Date(),
+      "headers" : this.saved_Fields2,
+      "datas" : this.myrowData3,
+      "Date_and_Time" : ""+new Date(),
+      "assigner_id":this.login_Details.email_id,
+      "assignee_id":this.reallocateto
+    }
+    this._api.reallocation_details_add(req).subscribe(data => {
+      if (data['Code']==200) {
+        alert(data['Message']);
+      } else {
+        alert(data['Message']);
+      }
+    })
   }
   cancel(){
       this.displayBasic = false;

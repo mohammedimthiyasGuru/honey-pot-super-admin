@@ -67,31 +67,44 @@
             </div>
             <div class="card-box" *ngIf="dataLoaded2">
                 <ag-grid-angular #agGrid2 style="width: auto; height: 500px;" class="ag-theme-alpine"
-                    [rowData]="myrowData2" [rowSelection]="'multiple'" [columnDefs]="columnDefs2" [pagination]="true">
+                    [rowData]="myrowData2" [rowSelection]="'multiple'" [columnDefs]="columnDefs2" [pagination]="true" (rowClicked)="onRowClick($event)">
                 </ag-grid-angular>
             </div>
         </div>
     </div>
 
 </div>
-<p-dialog header="Reallocate To" [(visible)]="displayBasic" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+
+<p-dialog header="Reallocate To" [(visible)]="displayBasic" [modal]="true" [style]="{width: '80vw'}" [baseZIndex]="10000"
     [draggable]="false" [resizable]="false">
 
-    <div class="card-box" style="margin-top: 15px;">
+    <div class="card-box" style="margin-top: 10px;">
         <div class="row" style="padding: 0px 0px 23px 10px;">
-
-            <div class="col-md-12">
-                <label for="assingedto">Select Agent</label>
-                <select id="assingedto" [(ngModel)]="assingedto" class="form-control">
+            <div class="col-md-6">
+                <label for="designation">Select Designation</label>
+                <select id="designation" [(ngModel)]="rdesignationof" class="form-control" (change)="getRdesignationType($event)">
                     <option value="">Choose</option>
-                    <option *ngFor="let item of userList | filterBy: userFilter" [value]="item.email_id">{{item.name}}
+                    <option *ngFor="let item of designationList" [value]="item.designation_type">{{item.designation_type}}
                     </option>
                 </select>
+            </div>
+            <div class="col-md-6">
+                <label for="assingedto">Select Agent</label>
+                <select id="assingedto" [(ngModel)]="reallocateto" class="form-control">
+                    <option value="">Choose</option>
+                    <option *ngFor="let item of userList | filterBy: userFilter2" [value]="item.email_id">{{item.name}}
+                    </option>
+                </select>
+            </div>
+            <div class="col-12">
+                <ag-grid-angular #agGrid2 style="width: auto; height: 500px;" class="ag-theme-alpine"
+                    [rowData]="myrowData3" [columnDefs]="columnDefs2" [pagination]="true">
+                </ag-grid-angular>
             </div>
             <div class="col-12" style="margin-top: 15px;">
                 <div class="d-flex justify-content-end">
                     <button class="btn btn-sm btn-success mb-4" (click)="cancel()" style="border: none !important;margin-right: 10px; background-color: rgb(247, 19, 19);">Cancel</button>
-                    <button class="btn btn-sm btn-success mb-4">Reallocate</button>
+                    <button class="btn btn-sm btn-success mb-4" (click)="allocatetodata()" >Reallocate</button>
                 </div>
             </div>
 
