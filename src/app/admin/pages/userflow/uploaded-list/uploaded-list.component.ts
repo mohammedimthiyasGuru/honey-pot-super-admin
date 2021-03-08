@@ -270,6 +270,7 @@ export class UploadedListComponent implements OnInit {
       }
 
       let req = {
+        "bucket_id": new Date().getTime(),
         "user_email" : this.login_Details.email_id,
         "user_id" : this.login_Details.email_id,
         "Date" : ""+new Date(),

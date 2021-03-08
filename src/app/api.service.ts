@@ -339,6 +339,10 @@ export class ApiService {
     return this.http.post(this.apiUrl + 'allocationdata/create', data);
   }
 
+  allocation_details_update(data) {
+    return this.http.post(this.apiUrl + 'allocationdata/update', data);
+  }
+
   reallocation_details_add(data){
     return this.http.post(this.apiUrl + 'allocationdata/reallocate', data);
   }
@@ -498,6 +502,119 @@ export class ApiService {
 
   delete_CaseFilling_delete(id){
     return this.http.delete(this.apiUrl + 'casefilling/delete?id='+id);
+  }
+
+
+  //create Bank CODE//
+
+  create_bank_code(data){
+    return this.http.post(this.apiUrl + 'bankcode/create', data);
+  }
+
+  update_bank_code(data){
+    return this.http.post(this.apiUrl + 'bankcode/update', data);
+  }
+
+  getlist_bank_code(){
+    return this.http.get(this.apiUrl + 'bankcode/getlist');
+  }
+
+  delete_bank_code(id){
+    return this.http.delete(this.apiUrl+ 'bankcode/delete?id='+id);
+  }
+
+
+  //create AREA CODE//
+
+  create_area_code(data){
+    return this.http.post(this.apiUrl + 'areacode/create', data);
+  }
+
+  update_area_code(data){
+    return this.http.post(this.apiUrl + 'areacode/update', data);
+  }
+
+  getlist_area_code(){
+    return this.http.get(this.apiUrl + 'areacode/getlist');
+  }
+
+  delete_area_code(id){
+    return this.http.delete(this.apiUrl+ 'areacode/delete?id='+id);
+  }
+
+
+  //create AREA CODE//
+
+  create_fieldvisit_code(data){
+    return this.http.post(this.apiUrl + 'fieldvisitcode/create', data);
+  }
+
+  update_fieldvisit_code(data){
+    return this.http.post(this.apiUrl + 'fieldvisitcode/update', data);
+  }
+
+  getlist_fieldvisit_code(){
+    return this.http.get(this.apiUrl + 'fieldvisitcode/getlist');
+  }
+
+  delete_fieldvisit_code(id){
+    return this.http.delete(this.apiUrl+ 'fieldvisitcode/delete?id='+id);
+  }
+
+
+  //create Main Status CODE//
+
+  create_mainStatus_code(data){
+    return this.http.post(this.apiUrl + 'mainstatus/create', data);
+  }
+
+  update_mainStatus_code(data){
+    return this.http.post(this.apiUrl + 'mainstatus/update', data);
+  }
+
+  getlist_mainStatus_code(){
+    return this.http.get(this.apiUrl + 'mainstatus/getlist');
+  }
+
+  delete_mainStatus_code(id){
+    return this.http.delete(this.apiUrl+ 'mainstatus/delete?id='+id);
+  }
+
+  //create Main Status CODE//
+
+  create_subStatus_code(data){
+    return this.http.post(this.apiUrl + 'substatus/create', data);
+  }
+
+  update_subStatus_code(data){
+    return this.http.post(this.apiUrl + 'substatus/update', data);
+  }
+
+  getlist_subStatus_code(){
+    return this.http.get(this.apiUrl + 'substatus/getlist');
+  }
+
+  delete_subStatus_code(id){
+    return this.http.delete(this.apiUrl+ 'substatus/delete?id='+id);
+  }
+
+
+  //create Followup CODE//
+
+  create_FollowUp(data){
+    return this.http.post(this.apiUrl + 'followup/create', data);
+  }
+
+  update_FollowUp(data){
+    return this.http.post(this.apiUrl + 'followup/update', data);
+  }
+
+  getlist_FollowUp(){
+    return this.http.get(this.apiUrl + 'followup/getlist');
+  }
+
+  delete_FollowUp(id){
+    return this.http.delete(this.apiUrl+ 'followup/delete?id='+id);
   }
 
 

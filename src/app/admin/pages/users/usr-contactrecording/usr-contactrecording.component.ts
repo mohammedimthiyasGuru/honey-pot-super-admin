@@ -48,6 +48,7 @@ import { UsrFiledVisitMainComponent } from './../usr-filed-visit-main/usr-filed-
 import Swal from 'sweetalert2';
 import { UsrCustomerExplosureComponent } from './../usr-customer-explosure/usr-customer-explosure.component';
 import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
+import { UsrNewFollowupComponent } from '../usr-new-followup/usr-new-followup.component';
 
 @Component({
   selector: 'app-usr-contactrecording',
@@ -125,8 +126,8 @@ export class UsrContactrecordingComponent implements OnInit {
 }
 
   show1() {
-    const dialogRef = this.dialog.open(UsrFollowuptakeComponent, {
-      height: '350px',
+    const dialogRef = this.dialog.open(UsrNewFollowupComponent, {
+      height: '550px',
       width:'90%',disableClose: true
     });
 

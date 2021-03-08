@@ -54,6 +54,30 @@ export class NewallocationComponent implements OnInit {
   myrowData3 = [];
   reallocateto: any;
   rdesignationof: any;
+  removeBucket_id: any;
+  bankname: any;
+  product: any;
+  portfoliotype: any;
+  bankName: any;
+  portfolio: any;
+  productname: any;
+  removedbucket_email_id: any;
+  myrowData4 = [];
+  ReallocationTable: boolean;
+  result3: any;
+  dataLoaded3: boolean;
+  assignee2: any;
+  tableData2: any;
+  addedBucket_id: any;
+  addedBucket_email_id: any;
+  Excel_Datas3 = [];
+  saved_Fields3 = [];
+  rowData3 = [];
+  myHeaders3 = [];
+  tempDefs3 = [];
+  columnDefs3 = [];
+  selectedData2: any[];
+  selectedData3: any;
   constructor(private _api:ApiService, @Inject(SESSION_STORAGE) private storage: StorageService, private router:Router) { }
 
   ngOnInit(): void {
@@ -89,8 +113,11 @@ export class NewallocationComponent implements OnInit {
     console.log(req);
     this._api.allocation_details_id(this.accountList).subscribe(
       (response: any) => {
-        console.log(response);
         // this.tableData = response.Data;
+        this.bankname = response.Data[0].bankname;
+        this.productname = response.Data[0].productname;
+        this.portfoliotype = response.Data[0].portfoliotype;
+
         if( response.Data.length == 0){
           this.Excel_Datas = [];
           this.saved_Fields = [];
@@ -107,7 +134,7 @@ export class NewallocationComponent implements OnInit {
            }
            this.tempDefs = [];
           for (let i = 0; i < this.saved_Fields.length; i++) {
-            console.log(this.saved_Fields[i].fields);
+         
             if (i == 0) {
               this.tempDefs.push({headerName: this.saved_Fields[i].fields, field:this.saved_Fields[i].fields, filter:true, sortable:true , checkboxSelection:true, resizable: false});
             } else {
@@ -116,7 +143,6 @@ export class NewallocationComponent implements OnInit {
             
           }
           this.columnDefs = this.tempDefs;
-          console.log(this.columnDefs);
           if (this.columnDefs.length != 0) {
             this.dataLoaded = true;
           } else {
@@ -127,11 +153,7 @@ export class NewallocationComponent implements OnInit {
     );
   }
   subArray(cols,rows){
-
     this.result = {};
-    console.log(cols);
-    console.log(rows);
-    
     for (var i = 0; i < cols.length; i++) {
             this.result[cols[i]] = rows[i];
     }
@@ -140,7 +162,6 @@ export class NewallocationComponent implements OnInit {
 
   mainArray(data){
     this.myrowData.push(data);
-    console.log(this.myrowData);
     this.dataLoaded = true;
   }
 
@@ -160,8 +181,12 @@ export class NewallocationComponent implements OnInit {
     console.log(req);
     this._api.allocation_details_getassignedto(this.assignee).subscribe(
       (response: any) => {
-        console.log(response);
+
         this.tableData = response.Data;
+        this.removeBucket_id = response.Data[0]._id;
+        this.removedbucket_email_id = response.Data[0].user_email
+        console.log(this.removedbucket_email_id);
+        
         if( response.Data.length == 0){
           this.Excel_Datas2 = [];
           this.saved_Fields2 = [];
@@ -177,7 +202,6 @@ export class NewallocationComponent implements OnInit {
               }
             this.tempDefs2 = [];
             for (let i = 0; i < this.saved_Fields2.length; i++) {
-              console.log(this.saved_Fields2[i].fields);
               if (i == 0) {
                 this.tempDefs2.push({headerName: this.saved_Fields2[i].fields, field:this.saved_Fields2[i].fields, filter:true, sortable:true , checkboxSelection:true, resizable: false});
               } else {
@@ -186,7 +210,6 @@ export class NewallocationComponent implements OnInit {
               
             }
             this.columnDefs2 = this.tempDefs2;
-            console.log(this.columnDefs2);
             if (this.columnDefs2.length != 0) {
               // this.dataLoaded2 = true;
             } else {
@@ -199,11 +222,7 @@ export class NewallocationComponent implements OnInit {
 
 
   subArray2(cols,rows){
-
-    this.result2 = {};
-    console.log(cols);
-    console.log(rows);
-    
+    this.result2 = {};  
     for (var i = 0; i < cols.length; i++) {
             this.result2[cols[i]] = rows[i];
     }
@@ -212,7 +231,6 @@ export class NewallocationComponent implements OnInit {
 
   mainArray2(data){
     this.myrowData2.push(data);
-    console.log(this.myrowData2);
     this.dataLoaded2 = true;
   }
 
@@ -226,6 +244,70 @@ export class NewallocationComponent implements OnInit {
     this.userFilter2.bankname = this.login_Details.bankname;
   }
 
+  getReallocatedto(event){
+
+    this.Agentselected = true;
+    this.dataLoaded3 = false;
+    this.assignee2 = event.target.value;
+    let req = {
+      "to" : this.assignee,
+    }
+    console.log(req);
+    this._api.allocation_details_getassignedto(this.assignee2).subscribe(
+      (response: any) => {
+
+        this.tableData2 = response.Data;
+        this.addedBucket_id = response.Data[0]._id;
+        this.addedBucket_email_id = response.Data[0].user_email
+        //console.log(this.removedbucket_email_id);
+        
+        if( response.Data.length == 0){
+          this.Excel_Datas3 = [];
+          this.saved_Fields3 = [];
+          alert("no data found");
+        }else{
+                this.saved_Fields3 = response.Data[0].headers;
+                this.rowData3 = response.Data[0].datas; 
+              for (let i = 0; i < this.saved_Fields3.length; i++) {
+                this.myHeaders3[i] = this.saved_Fields3[i].fields;
+              }
+              for (let i = 0; i < this.rowData3.length; i++) {
+                this.subArray3(this.myHeaders3,this.rowData3[i]);
+              }
+            this.tempDefs3 = [];
+            for (let i = 0; i < this.saved_Fields3.length; i++) {
+              if (i == 0) {
+                this.tempDefs3.push({headerName: this.saved_Fields3[i].fields, field:this.saved_Fields3[i].fields, filter:true, sortable:true , checkboxSelection:true, resizable: false});
+              } else {
+                this.tempDefs3.push({headerName: this.saved_Fields3[i].fields, field:this.saved_Fields3[i].fields, filter:true, sortable:true , checkboxSelection:false, resizable: true});
+              }
+              
+            }
+            this.columnDefs3 = this.tempDefs3;
+            if (this.columnDefs3.length != 0) {
+               this.dataLoaded3 = true;
+            } else {
+              this.dataLoaded3 = false;
+            }
+            }
+      }
+    );        
+  }
+
+
+  subArray3(cols,rows){
+    this.result3 = {};  
+    for (var i = 0; i < cols.length; i++) {
+            this.result3[cols[i]] = rows[i];
+    }
+    this.mainArray3(this.result3);
+  }
+
+  mainArray3(data){
+    this.myrowData4.push(data);
+    this.ReallocationTable = true;
+  }
+
   onRowClick(event:any){
 
   }
@@ -234,22 +316,23 @@ export class NewallocationComponent implements OnInit {
   rellocate(){
     const selectedNodes = this.agGrid2.api.getSelectedNodes();
     const selectedData = selectedNodes.map(node => node.data );
-    console.log(selectedData);
     
     if (selectedData.length >= 1) {
       for (let i = 0; i < selectedData.length; i++) {
         for (let j = 0; j < this.rowData2.length; j++) {
-          console.log(this.rowData2[j][1]);
-          
+
           if ( selectedData[i].CID === this.rowData2[j][0]) { 
             this.rowData2.splice(j, 1); 
           }
         }
       }
-      console.log(this.rowData2);
-      
+      for (let i = 0; i < selectedData.length; i++) {
+        this.myrowData4.push(selectedData[i]);
+      }
+
       this.displayBasic = true;
-      this.myrowData3 = selectedData;
+      
+      
   
     }else{
       alert("Select aleast one record to reallocate");
@@ -259,25 +342,11 @@ export class NewallocationComponent implements OnInit {
   }
 
   allocatetodata(){
-    let req = {
-      "_id":this.accountList,
-      "user_email" : this.login_Details.email_id,
-      "user_id" : this.login_Details.user_id,
-      "Date" : ""+new Date(),
-      "headers" : this.saved_Fields2,
-      "datas" : this.myrowData3,
-      "Date_and_Time" : ""+new Date(),
-      "assigner_id":this.login_Details.email_id,
-      "assignee_id":this.reallocateto
-    }
-    this._api.reallocation_details_add(req).subscribe(data => {
-      if (data['Code']==200) {
-        alert(data['Message']);
-      } else {
-        alert(data['Message']);
-      }
-    })
+    this.removedBucket();
+    this.addedBucket();
   }
+
+
   cancel(){
       this.displayBasic = false;
   
@@ -298,14 +367,20 @@ export class NewallocationComponent implements OnInit {
       }
 
       let req = {
+        "bucket_id": new Date().getTime(),
         "user_email" : this.login_Details.email_id,
-        "user_id" : this.login_Details.user_id,
+        "user_id" : this.login_Details.email_id,
         "Date" : ""+new Date(),
         "headers" : this.saved_Fields,
         "datas" : this.selectedData,
         "Date_and_Time" : ""+new Date(),
         "assigner_id":this.login_Details.email_id,
-        "assignee_id":this.assignee
+        "assignee_id":this.assignee,
+        "bankname":this.bankName,
+        "product":this.product,
+        "portfoliotype":this.portfolio,
+        "allocationType":"New Allocation"
+
       }
       console.log(req);
       this._api.allocation_details_add(req).subscribe(
@@ -375,13 +450,82 @@ export class NewallocationComponent implements OnInit {
       this.storage.set("_storedRecord",{dataList,"keyvalue":selectedData[0]});
     } else {
       alert("Select Only One Record");
-    }
-    
-    
+    }  
   }
 
   onPagereload(){
 
+  }
+
+
+  removedBucket(){
+
+      this.selectedData2 = [];
+      for (let i = 0; i < this.rowData2.length; i++) {
+        var obj = this.rowData2[i];
+        delete obj.insert_id;
+        var result = Object.values(obj);
+        console.log(result);
+        this.selectedData2.push(result);
+      }
+    let req = {
+      "_id": this.removeBucket_id,
+      "user_email" : this.removedbucket_email_id,
+      "user_id" : this.removedbucket_email_id,
+      "Date" : ""+new Date(),
+      "headers" : this.saved_Fields2,
+      "datas" : this.selectedData2,
+      "Date_and_Time" : ""+new Date(),
+      "assigner_id":this.login_Details.email_id,
+      "assignee_id":this.assignee,
+      "bankname":this.bankname,
+      "product":this.productname,
+      "portfoliotype":this.portfoliotype,
+      "allocationType":"New Allocation",
+    }
+    console.log(req);
+    
+    this._api.allocation_details_update(req).subscribe(data=>{
+      if (data['Code']==200) {
+        alert(data['Message']);
+      } else {
+        alert(data['Message']);
+      }
+    });
+  }
+
+
+  addedBucket(){
+    this.selectedData3 = [];
+      for (let i = 0; i < this.myrowData4.length; i++) {
+        var obj = this.myrowData4[i];
+        delete obj.insert_id;
+        var result = Object.values(obj);
+        console.log(result);
+        this.selectedData3.push(result);
+      }
+    let req = {
+      "_id": this.addedBucket_id,
+      "user_email" : this.addedBucket_email_id,
+      "user_id" : this.addedBucket_email_id,
+      "Date" : ""+new Date(),
+      "headers" : this.saved_Fields,
+      "datas" : this.selectedData3,
+      "Date_and_Time" : ""+new Date(),
+      "assigner_id":this.login_Details.email_id,
+      "assignee_id":this.assignee2,
+      "bankname":this.bankname,
+      "product":this.productname,
+      "portfoliotype":this.portfoliotype,
+      "allocationType":"Reallocation"
+    }
+    this._api.allocation_details_update(req).subscribe(data=>{
+      if (data['Code']==200) {
+        alert(data['Message']);
+      } else {
+        alert(data['Message']);
+      }
+    });
   }
 
 

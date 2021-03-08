@@ -434,6 +434,39 @@
                                 <h5 class="lead">Client Type</h5>
                             </div>
                         </mat-list-item>
+
+                        <mat-list-item *ngIf="clienttype_show" routerLink="create/status"
+                            routerLinkActive="active">
+
+                            <div class="sidenav-item">
+                                <h5 class="lead">Status / Sub Status</h5>
+                            </div>
+                        </mat-list-item>
+
+                        <mat-list-item *ngIf="clienttype_show" routerLink="create/bankcode"
+                            routerLinkActive="active">
+
+                            <div class="sidenav-item">
+                                <h5 class="lead">Bank Code</h5>
+                            </div>
+                        </mat-list-item>
+
+                        <mat-list-item *ngIf="clienttype_show" routerLink="create/fvcode"
+                            routerLinkActive="active">
+
+                            <div class="sidenav-item">
+                                <h5 class="lead">Field Visit Code</h5>
+                            </div>
+                        </mat-list-item>
+
+                        <mat-list-item *ngIf="clienttype_show" routerLink="create/areacode"
+                            routerLinkActive="active">
+
+                            <div class="sidenav-item">
+                                <h5 class="lead">Area Code</h5>
+                            </div>
+                        </mat-list-item>
+
                         <mat-list-item *ngIf="portfolio_show"  routerLink="client/Create_portfolio"
                             routerLinkActive="active">
 

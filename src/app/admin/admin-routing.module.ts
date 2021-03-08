@@ -99,6 +99,10 @@ import { MegreinguserComponent } from './megreinguser/megreinguser.component';
 import { NewallocationComponent } from './pages/newallocation/newallocation.component';
 import { AgentDashboardComponent } from './dashboard/agent-dashboard/agent-dashboard.component';
 import { NewreallocationComponent } from './pages/newreallocation/newreallocation.component';
+import { CreatestatusComponent } from './pages/createstatus/createstatus.component';
+import { CreatefieldvisitcodeComponent } from './pages/createfieldvisitcode/createfieldvisitcode.component';
+import { CreatebankcodeComponent } from './pages/createbankcode/createbankcode.component';
+import { CreateareacodeComponent } from './pages/createareacode/createareacode.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' ,pathMatch:'full'},
@@ -199,6 +203,10 @@ const routes: Routes = [
   { path: 'client/product', component: AddProductComponent },
   { path: 'Document', component: DocumentManagementComponent },
   { path: 'client/Bucket', component: BucketComponent },
+  { path: 'create/status', component: CreatestatusComponent },
+  { path: 'create/fvcode', component: CreatefieldvisitcodeComponent },
+  { path: 'create/bankcode', component: CreatebankcodeComponent },
+  { path: 'create/areacode', component: CreateareacodeComponent },
   { path: 'user/user_status_marking', component: UserStatusMarkingComponent },
   { path: 'client/client_status_marking', component: ClientStatusMarkingComponent },
   { path: 'client/Create_portfolio', component: CreatePortfolioComponent },

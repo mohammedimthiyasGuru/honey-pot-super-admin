@@ -90,15 +90,18 @@
             </div>
             <div class="col-md-6">
                 <label for="assingedto">Select Agent</label>
-                <select id="assingedto" [(ngModel)]="reallocateto" class="form-control">
+                <select id="assingedto" [(ngModel)]="reallocateto" class="form-control" (change)="getReallocatedto($event)">
                     <option value="">Choose</option>
                     <option *ngFor="let item of userList | filterBy: userFilter2" [value]="item.email_id">{{item.name}}
                     </option>
                 </select>
             </div>
-            <div class="col-12">
-                <ag-grid-angular #agGrid2 style="width: auto; height: 500px;" class="ag-theme-alpine"
-                    [rowData]="myrowData3" [columnDefs]="columnDefs2" [pagination]="true">
+            <div class="col-12" *ngIf="!dataLoaded3">
+                <p>Please select an agent to Reallocate</p>
+            </div>
+            <div class="col-12" *ngIf="dataLoaded3">
+                <ag-grid-angular #agGrid2 style="width: auto; height: 400px;" class="ag-theme-alpine"
+                    [rowData]="myrowData4" [columnDefs]="columnDefs3" [pagination]="true">
                 </ag-grid-angular>
             </div>
             <div class="col-12" style="margin-top: 15px;">

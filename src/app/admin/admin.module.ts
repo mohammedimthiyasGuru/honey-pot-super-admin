@@ -167,6 +167,11 @@ import { AgentDashboardComponent } from './dashboard/agent-dashboard/agent-dashb
 import { AgGridModule } from 'ag-grid-angular';
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import { NewreallocationComponent } from './pages/newreallocation/newreallocation.component';
+import { UsrNewFollowupComponent } from './pages/users/usr-new-followup/usr-new-followup.component';
+import { CreatestatusComponent } from './pages/createstatus/createstatus.component';
+import { CreatebankcodeComponent } from './pages/createbankcode/createbankcode.component';
+import { CreatefieldvisitcodeComponent } from './pages/createfieldvisitcode/createfieldvisitcode.component';
+import { CreateareacodeComponent } from './pages/createareacode/createareacode.component';
 
 @NgModule({
   declarations: [AdminHeaderComponent,
@@ -291,7 +296,12 @@ import { NewreallocationComponent } from './pages/newreallocation/newreallocatio
     MegreinguserComponent,
     NewallocationComponent,
     AgentDashboardComponent,
-    NewreallocationComponent
+    NewreallocationComponent,
+    UsrNewFollowupComponent,
+    CreatestatusComponent,
+    CreatebankcodeComponent,
+    CreatefieldvisitcodeComponent,
+    CreateareacodeComponent
   ],
   imports: [
     CommonModule,
