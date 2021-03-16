@@ -443,6 +443,31 @@
                             </div>
                         </mat-list-item>
 
+                        <mat-list-item *ngIf="clienttype_show" routerLink="create/actiontaken"
+                            routerLinkActive="active">
+
+                            <div class="sidenav-item">
+                                <h5 class="lead">Actions Taken</h5>
+                            </div>
+                        </mat-list-item>
+
+
+                        <mat-list-item *ngIf="clienttype_show" routerLink="create/tracingtools"
+                            routerLinkActive="active">
+
+                            <div class="sidenav-item">
+                                <h5 class="lead">Tracing Tools</h5>
+                            </div>
+                        </mat-list-item>
+
+                        <mat-list-item *ngIf="clienttype_show" routerLink="create/approval_status"
+                            routerLinkActive="active">
+
+                            <div class="sidenav-item">
+                                <h5 class="lead">Approval Status</h5>
+                            </div>
+                        </mat-list-item>
+
                         <mat-list-item *ngIf="clienttype_show" routerLink="create/bankcode"
                             routerLinkActive="active">
 

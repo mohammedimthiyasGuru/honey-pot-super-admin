@@ -618,4 +618,79 @@ export class ApiService {
   }
 
 
+    //create Followup CODE//
+
+    create_new_FollowUp(data){
+      return this.http.post(this.apiUrl + 'followup/create', data);
+    }
+  
+    update_new_FollowUp(data){
+      return this.http.post(this.apiUrl + 'followup/update', data);
+    }
+  
+    getlist_new_FollowUp(){
+      return this.http.get(this.apiUrl + 'followup/getlist');
+    }
+  
+    delete_new_FollowUp(id){
+      return this.http.delete(this.apiUrl+ 'followup/delete?id='+id);
+    }
+
+
+//create Actions Taken CODE//
+
+  create_actionstaken(data){
+    return this.http.post(this.apiUrl + 'actiontaken/create', data);
+  }
+
+  update_actionstaken(data){
+    return this.http.post(this.apiUrl + 'actiontaken/update', data);
+  }
+
+  getlist_actionstaken(){
+    return this.http.get(this.apiUrl + 'actiontaken/getlist');
+  }
+
+  delete_actionstaken(id){
+    return this.http.delete(this.apiUrl+ 'actiontaken/delete?id='+id);
+  }
+
+
+//create Tracing Tools CODE//
+
+create_tracingtools(data){
+  return this.http.post(this.apiUrl + 'tracingtools/create', data);
+}
+
+update_tracingtools(data){
+  return this.http.post(this.apiUrl + 'tracingtools/update', data);
+}
+
+getlist_tracingtools(){
+  return this.http.get(this.apiUrl + 'tracingtools/getlist');
+}
+
+delete_tracingtools(id){
+  return this.http.delete(this.apiUrl+ 'tracingtools/delete?id='+id);
+}
+
+
+//create Approval Status CODE//
+
+create_approvalstatus(data){
+  return this.http.post(this.apiUrl + 'approval_status/create', data);
+}
+
+update_approvalstatus(data){
+  return this.http.post(this.apiUrl + 'approval_status/update', data);
+}
+
+getlist_approvalstatus(){
+  return this.http.get(this.apiUrl + 'approval_status/getlist');
+}
+
+delete_approvalstatus(id){
+  return this.http.delete(this.apiUrl+ 'approval_status/delete?id='+id);
+}
+
 }

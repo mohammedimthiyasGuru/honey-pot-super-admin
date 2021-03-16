@@ -172,6 +172,9 @@ import { CreatestatusComponent } from './pages/createstatus/createstatus.compone
 import { CreatebankcodeComponent } from './pages/createbankcode/createbankcode.component';
 import { CreatefieldvisitcodeComponent } from './pages/createfieldvisitcode/createfieldvisitcode.component';
 import { CreateareacodeComponent } from './pages/createareacode/createareacode.component';
+import { CreateactiontakenComponent } from './pages/createactiontaken/createactiontaken.component';
+import { CreatetracingtoolsComponent } from './pages/createtracingtools/createtracingtools.component';
+import { CreateapprovalComponent } from './pages/createapproval/createapproval.component';
 
 @NgModule({
   declarations: [AdminHeaderComponent,
@@ -301,7 +304,10 @@ import { CreateareacodeComponent } from './pages/createareacode/createareacode.c
     CreatestatusComponent,
     CreatebankcodeComponent,
     CreatefieldvisitcodeComponent,
-    CreateareacodeComponent
+    CreateareacodeComponent,
+    CreateactiontakenComponent,
+    CreatetracingtoolsComponent,
+    CreateapprovalComponent
   ],
   imports: [
     CommonModule,

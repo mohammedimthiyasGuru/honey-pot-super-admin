@@ -35,12 +35,14 @@
                     <div class="form-group col-md-4">
                         <label for="">Territory</label>
                         <select class="form-control" formControlName="territory">
+                            <option value="">Choose</option>
                             <option *ngFor="let item of areaCodeList" [value]="item._id">{{item.areacode}}</option>
                         </select>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="">Field Visit Area</label>
                         <select class="form-control" formControlName="fvarea">
+                            <option value="">Choose</option>
                             <option *ngFor="let item of fieldvisitCodeList" [value]="item._id">{{item.fvcode}}</option>
                         </select>
                     </div>
@@ -51,12 +53,14 @@
                     <div class="form-group col-md-4">
                         <label for="">Main Status</label>
                         <select class="form-control" formControlName="mstatus">
+                            <option value="">Choose</option>
                             <option *ngFor="let item of mStatusList" [value]="item._id">{{item.mstatus_name}}</option>
                         </select>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="">Sub Status</label>
                         <select class="form-control" formControlName="substatus">
+                            <option value="">Choose</option>
                             <option *ngFor="let item of sStatusList" [value]="item._id">{{item.sstatus_name}}</option>
                         </select>
                     </div>
@@ -67,19 +71,22 @@
                     <div class="form-group col-md-4">
                         <label for="">Bank CODE</label>
                         <select class="form-control" formControlName="bcode">
+                            <option value="">Choose</option>
                             <option *ngFor="let item of bankCodeList" [value]="item._id">{{item.bcode}}</option>
                         </select>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="">Action Taken</label>
-                        <input type="text" placeholder="Action to Take" class="form-control" formControlName="actiontotake">
+                        <select class="form-control" formControlName="actiontotake">
+                            <option value="">Choose</option>
+                            <option *ngFor="let item of actionstakenList" [value]="item._id">{{item.actiontaken_name}}</option>
+                        </select>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="">Tracing Tool</label>
+                        <label for="">Tracing Tools</label>
                         <select class="form-control" formControlName="tracingtool">
-                            <option value="Facebook">Facebook</option>
-                            <option value="LinkedIn">LinkedIn</option>
-                            <option value="Instagram">Instagram</option>
+                            <option value="">Choose</option>
+                            <option *ngFor="let item of TracingToolsList" [value]="item._id">{{item.tracking_name}}</option>
                         </select>
                     </div>
                 </div>

@@ -103,6 +103,9 @@ import { CreatestatusComponent } from './pages/createstatus/createstatus.compone
 import { CreatefieldvisitcodeComponent } from './pages/createfieldvisitcode/createfieldvisitcode.component';
 import { CreatebankcodeComponent } from './pages/createbankcode/createbankcode.component';
 import { CreateareacodeComponent } from './pages/createareacode/createareacode.component';
+import { CreateactiontakenComponent } from './pages/createactiontaken/createactiontaken.component';
+import { CreatetracingtoolsComponent } from './pages/createtracingtools/createtracingtools.component';
+import { CreateapprovalComponent } from './pages/createapproval/createapproval.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' ,pathMatch:'full'},
@@ -207,6 +210,9 @@ const routes: Routes = [
   { path: 'create/fvcode', component: CreatefieldvisitcodeComponent },
   { path: 'create/bankcode', component: CreatebankcodeComponent },
   { path: 'create/areacode', component: CreateareacodeComponent },
+  { path: 'create/actiontaken', component: CreateactiontakenComponent },
+  { path: 'create/tracingtools', component: CreatetracingtoolsComponent },
+  { path: 'create/approval_status', component: CreateapprovalComponent },
   { path: 'user/user_status_marking', component: UserStatusMarkingComponent },
   { path: 'client/client_status_marking', component: ClientStatusMarkingComponent },
   { path: 'client/Create_portfolio', component: CreatePortfolioComponent },

@@ -43,6 +43,8 @@ export class UsrNewFollowupComponent implements OnInit {
   sStatusList: any;
   FollowUpList = [];
   login_Details: any;
+  TracingToolsList: any;
+  actionstakenList: any;
   constructor(private formBuilder:FormBuilder, private _api:ApiService, @Inject(SESSION_STORAGE) private storage: StorageService,) { 
     this.FollowUpForm = this.formBuilder.group({
       _id:['',Validators.required],
@@ -100,6 +102,22 @@ export class UsrNewFollowupComponent implements OnInit {
         this.sStatusList = data['Data'];
       } else {
         this.sStatusList = [];
+      }
+    });
+
+    this._api.getlist_tracingtools().subscribe(data=>{
+      if (data['Code'] == 200) {
+        this.TracingToolsList = data['Data'];
+      } else {
+        this.TracingToolsList = [];
+      }
+    });
+
+    this._api.getlist_actionstaken().subscribe(data=>{
+      if (data['Code'] == 200) {
+        this.actionstakenList = data['Data'];
+      } else {
+        this.actionstakenList = [];
       }
     });
 
