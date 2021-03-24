@@ -175,6 +175,8 @@ import { CreateareacodeComponent } from './pages/createareacode/createareacode.c
 import { CreateactiontakenComponent } from './pages/createactiontaken/createactiontaken.component';
 import { CreatetracingtoolsComponent } from './pages/createtracingtools/createtracingtools.component';
 import { CreateapprovalComponent } from './pages/createapproval/createapproval.component';
+import { UserNewSettlementComponent } from './pages/users/user-new-settlement/user-new-settlement.component';
+import { UserNewPaymentComponent } from './pages/users/user-new-payment/user-new-payment.component';
 
 @NgModule({
   declarations: [AdminHeaderComponent,
@@ -307,7 +309,9 @@ import { CreateapprovalComponent } from './pages/createapproval/createapproval.c
     CreateareacodeComponent,
     CreateactiontakenComponent,
     CreatetracingtoolsComponent,
-    CreateapprovalComponent
+    CreateapprovalComponent,
+    UserNewSettlementComponent,
+    UserNewPaymentComponent
   ],
   imports: [
     CommonModule,

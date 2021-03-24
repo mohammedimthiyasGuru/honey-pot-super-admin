@@ -15,6 +15,7 @@ export class CreateareacodeComponent implements OnInit {
     {headerName: 'ID', field: '_id', width: 250, checkboxSelection: true,headerCheckboxSelection: true,sortable: true, filter: true},
     {headerName: 'Bank ID', field: 'bank_id', resizable: true, sortable: true, filter: true},
     {headerName: 'Area CODE', field: 'areacode', resizable: true, sortable: true, filter: true},
+    {headerName: 'Field Visit Territary', field: 'fvterritary', resizable: true, sortable: true, filter: true},
     {headerName: 'Created At', field: 'createdAt', resizable: true, sortable: true, filter: true},
     {headerName: 'Update At', field: 'updatedAt', resizable: true, sortable: true, filter: true},
     {headerName: 'Status', field: 'status', sortable: true, filter: true},
@@ -28,12 +29,14 @@ export class CreateareacodeComponent implements OnInit {
   addmode: boolean;
   editmode: boolean;
   areaCodeList: any;
+  fieldvisitCodeList: any;
 
   constructor(private formBuilder:FormBuilder, private _api:ApiService) { 
     this.areacodeForm = this.formBuilder.group({
       _id:[''],
       bank_id:['',Validators.required],
       areacode:['',Validators.required],
+      fvterritary:['',Validators.required],
       status:['',Validators.required]
     });
   }
@@ -48,6 +51,14 @@ export class CreateareacodeComponent implements OnInit {
         this.areaCodeList = data['Data'];
       } else {
         this.areaCodeList = [];
+      }
+    });
+
+    this._api.getlist_fieldvisit_code().subscribe(data=>{
+      if (data['Code'] == 200) {
+        this.fieldvisitCodeList = data['Data'];
+      } else {
+        this.fieldvisitCodeList = [];
       }
     });
 

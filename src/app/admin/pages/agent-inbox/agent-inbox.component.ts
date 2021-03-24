@@ -24,7 +24,7 @@ export class AgentInboxComponent implements OnInit {
     }},
     {headerName: 'Date of Allocation', field: 'Date', sortable: true, filter: true},
     {headerName: 'Total Outstanding', field: 'OST', sortable: true, filter: true},
-    {headerName: 'Tagert', field: 'target', sortable: true, filter: true},
+    {headerName: 'Target', field: 'target', sortable: true, filter: true},
     
   ];
   portfolioTypeList: any;

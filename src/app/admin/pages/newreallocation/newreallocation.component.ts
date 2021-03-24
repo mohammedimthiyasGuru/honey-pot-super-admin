@@ -27,14 +27,14 @@ export class NewreallocationComponent implements OnInit {
   product: any;
   userList: any;
   designationList: any;
-  myrowData2: any[];
+  myrowData2 = [];
   Agentselected: boolean;
   dataLoaded2: boolean;
   assignee: any;
   tableData: any;
   Excel_Datas2: any[];
   saved_Fields2: any[];
-  rowData2: any;
+  rowData2 = [];
   myHeaders2: any;
   tempDefs2: any[];
   columnDefs2: any;
@@ -136,7 +136,8 @@ export class NewreallocationComponent implements OnInit {
 
 
   getassignedto(event){
-    this.myrowData2 = [];
+    this.myrowData2 = null;
+    this.rowData2 = null;
     this.Agentselected = true;
     this.dataLoaded2 = false;
     this.assignee = event.target.value;
@@ -158,6 +159,7 @@ export class NewreallocationComponent implements OnInit {
               for (let i = 0; i < this.saved_Fields2.length; i++) {
                 this.myHeaders2[i] = this.saved_Fields2[i].fields;
               }
+              
               for (let i = 0; i < this.rowData2.length; i++) {
                 this.subArray2(this.myHeaders2,this.rowData2[i]);
               }

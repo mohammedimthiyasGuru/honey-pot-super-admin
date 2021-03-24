@@ -621,19 +621,19 @@ export class ApiService {
     //create Followup CODE//
 
     create_new_FollowUp(data){
-      return this.http.post(this.apiUrl + 'followup/create', data);
+      return this.http.post(this.apiUrl + 'newfollowup/create', data);
     }
   
     update_new_FollowUp(data){
-      return this.http.post(this.apiUrl + 'followup/update', data);
+      return this.http.post(this.apiUrl + 'newfollowup/update', data);
     }
   
-    getlist_new_FollowUp(){
-      return this.http.get(this.apiUrl + 'followup/getlist');
+    getlist_new_FollowUp(id){
+      return this.http.get(this.apiUrl + 'newfollowup/getlist?id='+id);
     }
   
     delete_new_FollowUp(id){
-      return this.http.delete(this.apiUrl+ 'followup/delete?id='+id);
+      return this.http.delete(this.apiUrl+ 'newfollowup/delete?id='+id);
     }
 
 
@@ -691,6 +691,45 @@ getlist_approvalstatus(){
 
 delete_approvalstatus(id){
   return this.http.delete(this.apiUrl+ 'approval_status/delete?id='+id);
+}
+
+
+//create Payment CODE//
+
+create_new_payment(data){
+  return this.http.post(this.apiUrl + 'newpayments/create', data);
+}
+
+update_new_payment(data){
+  return this.http.post(this.apiUrl + 'newpayments/update', data);
+}
+
+getlist_new_payment(id){
+  return this.http.get(this.apiUrl + 'newpayments/getlist?id='+id);
+}
+
+delete_new_payment(id){
+  return this.http.delete(this.apiUrl+ 'newpayments/delete?id='+id);
+}
+
+
+
+//create Settlement CODE//
+
+create_new_settlement(data){
+  return this.http.post(this.apiUrl + 'newsettlements/create', data);
+}
+
+update_new_settlement(data){
+  return this.http.post(this.apiUrl + 'newsettlements/update', data);
+}
+
+getlist_new_settlement(id){
+  return this.http.get(this.apiUrl + 'newsettlements/getlist?id='+id);
+}
+
+delete_new_settlement(id){
+  return this.http.delete(this.apiUrl+ 'newsettlements/delete?id='+id);
 }
 
 }
