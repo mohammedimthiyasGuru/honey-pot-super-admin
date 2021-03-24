@@ -2,7 +2,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a>Client</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Bank CODE</li>
+          <li class="breadcrumb-item active" aria-current="page">Area CODE</li>
         </ol>
     </nav>
     <div class="row">
@@ -13,6 +13,13 @@
                         <div class="form-group col-md-4">
                             <label for="">Area Code</label>
                             <input type="text" class="form-control" formControlName="areacode">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">Field Visit Territary</label>
+                            <select class="form-control" formControlName="fvterritary">
+                                <option value="">Choose</option>
+                                <option *ngFor="let item of fieldvisitCodeList" [value]="item.fvcode">{{item.fvcode}}</option>
+                            </select>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="">Bank Name</label>

@@ -1,8 +1,12 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { AgGridAngular } from 'ag-grid-angular';
 import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 import { ApiService } from 'src/app/api.service';
+import { UserNewPaymentComponent } from '../user-new-payment/user-new-payment.component';
+import { UserNewSettlementComponent } from '../user-new-settlement/user-new-settlement.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-usr-new-followup',
@@ -22,9 +26,12 @@ export class UsrNewFollowupComponent implements OnInit {
     {headerName: 'Field Visit', field: 'fvarea', resizable: true, sortable: true, filter: true},
     {headerName: 'Main Status', field: 'mstatus', resizable: true, sortable: true, filter: true},
     {headerName: 'Sub Status', field: 'substatus', resizable: true, sortable: true, filter: true},
+    {headerName: 'PTP Amount', field: 'ptp_amount', resizable: true, sortable: true, filter: true},
+    {headerName: 'PTP Status', field: 'ptp_status', resizable: true, sortable: true, filter: true},
     {headerName: 'Bank Code', field: 'bcode', resizable: true, sortable: true, filter: true},
     {headerName: 'Action To Taken', field: 'actiontotake', resizable: true, sortable: true, filter: true},
     {headerName: 'Tracing Tools', field: 'tracingtool', resizable: true, sortable: true, filter: true},
+    {headerName: 'Tracing Link', field: 'tracinglink', resizable: true, sortable: true, filter: true},
     {headerName: 'Created By', field: 'createdby', resizable: true, sortable: true, filter: true},
     {headerName: 'Creator Name', field: 'creator_name', resizable: true, sortable: true, filter: true},
     {headerName: 'Customer ID', field: 'customer_id', resizable: true, sortable: true, filter: true},
@@ -45,7 +52,9 @@ export class UsrNewFollowupComponent implements OnInit {
   login_Details: any;
   TracingToolsList: any;
   actionstakenList: any;
-  constructor(private formBuilder:FormBuilder, private _api:ApiService, @Inject(SESSION_STORAGE) private storage: StorageService,) { 
+  userFilter: any = { mstatus_id: '' };
+  userFilter2: any = { fvterritary: '' };
+  constructor(public dialog: MatDialog, private formBuilder:FormBuilder, private _api:ApiService, @Inject(SESSION_STORAGE) private storage: StorageService,) { 
     this.FollowUpForm = this.formBuilder.group({
       _id:['',Validators.required],
       log_date:['',Validators.required],
@@ -59,8 +68,11 @@ export class UsrNewFollowupComponent implements OnInit {
       substatus:['',Validators.required],
       fdate:['',Validators.required],
       bcode:['',Validators.required],
+      ptp_amount:['',Validators.required],
+      ptp_status:['',Validators.required],
       actiontotake:['',Validators.required],
       tracingtool:['',Validators.required],
+      tracinglink:['',Validators.required],
       createdby:['',Validators.required],
       creator_name:['',Validators.required],
       customer_id:['',Validators.required]
@@ -121,13 +133,15 @@ export class UsrNewFollowupComponent implements OnInit {
       }
     });
 
+    
+
     this.login_Details = this.getFromLocal("login_Details");
     this.FollowUpForm.patchValue({
       createdby: this.login_Details.email_id,
       creator_name: this.login_Details.name,
       customer_id: localStorage.getItem("Customer_ID"),
     })
-    this._api.list_FollowUp_getlist(localStorage.getItem("Customer_ID")).subscribe(data=>{
+    this._api.getlist_new_FollowUp(localStorage.getItem("Customer_ID")).subscribe(data=>{
       if (data['Code']==200) {
         this.FollowUpList = data['Data'];
       } else {
@@ -136,8 +150,39 @@ export class UsrNewFollowupComponent implements OnInit {
     });
   }
 
+  onMstatus(event){
+    this.userFilter.mstatus_id = event.tagert.value;
+  }
+
+  onterritory(event){
+    this.userFilter2.fvterritary = event.tagert.value;
+  }
+
   getFromLocal(key): any {
     return this.storage.get(key);
+  }
+
+  ShowPaymentsRecord(){
+    const dialogRef = this.dialog.open(UserNewPaymentComponent, {
+      height: '550px',
+      width:'90%',disableClose: true
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+
+  ShowSettlementsRecord(){
+    const dialogRef = this.dialog.open(UserNewSettlementComponent, {
+      height: '550px',
+      width:'90%',disableClose: true
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   addNewFollowUp(){
@@ -146,7 +191,7 @@ export class UsrNewFollowupComponent implements OnInit {
       log_date:new Date()
     })
     if (this.FollowUpForm.valid) {
-      this._api.create_FollowUp(this.FollowUpForm.value).subscribe(data=>{
+      this._api.create_new_FollowUp(this.FollowUpForm.value).subscribe(data=>{
         if (data['Code'] == 200) {
           this.onPagereload();
           alert(data['Message']);
@@ -162,13 +207,30 @@ export class UsrNewFollowupComponent implements OnInit {
   }
 
   onPagereload(){
-      this._api.list_FollowUp_getlist(localStorage.getItem("Customer_ID")).subscribe(data=>{
+      this._api.getlist_new_FollowUp(localStorage.getItem("Customer_ID")).subscribe(data=>{
         if (data['Code']==200) {
           this.FollowUpList = data['Data'];
         } else {
           this.FollowUpList = null;
         }
       });
+  }
+
+  close(){
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You want to close it!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if (result.value) {
+        this.dialog.closeAll();
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+      }
+    })
+    
   }
 
 }

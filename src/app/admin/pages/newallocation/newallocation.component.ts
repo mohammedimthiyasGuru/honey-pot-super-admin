@@ -245,7 +245,8 @@ export class NewallocationComponent implements OnInit {
   }
 
   getReallocatedto(event){
-
+    console.log(this.myrowData4);
+    
     this.Agentselected = true;
     this.dataLoaded3 = false;
     this.assignee2 = event.target.value;
@@ -255,7 +256,6 @@ export class NewallocationComponent implements OnInit {
     console.log(req);
     this._api.allocation_details_getassignedto(this.assignee2).subscribe(
       (response: any) => {
-
         this.tableData2 = response.Data;
         this.addedBucket_id = response.Data[0]._id;
         this.addedBucket_email_id = response.Data[0].user_email
@@ -266,6 +266,7 @@ export class NewallocationComponent implements OnInit {
           this.saved_Fields3 = [];
           alert("no data found");
         }else{
+                this.rowData3 = [];
                 this.saved_Fields3 = response.Data[0].headers;
                 this.rowData3 = response.Data[0].datas; 
               for (let i = 0; i < this.saved_Fields3.length; i++) {
@@ -326,6 +327,7 @@ export class NewallocationComponent implements OnInit {
           }
         }
       }
+      
       for (let i = 0; i < selectedData.length; i++) {
         this.myrowData4.push(selectedData[i]);
       }
