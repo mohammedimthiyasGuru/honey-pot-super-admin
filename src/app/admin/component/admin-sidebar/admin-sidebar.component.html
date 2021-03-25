@@ -640,6 +640,10 @@
 
 
 
+
+
+
+
             <mat-list-item *ngIf="Mennu4_show"   routerLinkActive="active" [matMenuTriggerFor]="menu1" pTooltip="User Master" (click)="act2()" [ngClass]="{'active' : !expand2}">
                 <mat-icon style="color: #fff !important;" mat-list-icon>
                     <i class="fa fa-user" aria-hidden="true"
@@ -871,6 +875,45 @@
                     </div>
                 </mat-nav-list>
             </mat-menu>
+
+
+            <mat-list-item *ngIf="this.login_Details.designation == 'Super Admin'"   routerLinkActive="active" [matMenuTriggerFor]="menu9"
+            pTooltip="Reports" (click)="act8()" [ngClass]="{'active' : !expand9}">
+            <mat-icon style="color: #fff !important;" mat-list-icon>
+                <i class="fa fa-university" aria-hidden="true"
+                    style="position: absolute;color: #fff !important;font-size: 15px;"></i></mat-icon>
+            <div fxFlex="10"></div>
+            <div class="sidenav-item">
+                <h5 class="lead">Reports</h5>
+            </div>
+
+        </mat-list-item>
+        <mat-menu #menu9="matMenu">
+            <mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;">
+                <div class="sub-menu">
+
+                    <mat-list-item   routerLinkActive="active">
+                        <div class="sidenav-item">
+                            <h5 class="lead">Settlement Tracker</h5>
+                        </div>
+                    </mat-list-item>
+
+
+                    <mat-list-item  routerLinkActive="active">
+                        <div class="sidenav-item">
+                            <h5 class="lead">PTP Report</h5>
+                        </div>
+                    </mat-list-item>
+
+                    <mat-list-item routerLinkActive="active">
+                      <div class="sidenav-item">
+                          <h5 class="lead">Status Report</h5>
+                      </div>
+                  </mat-list-item>
+
+                </div>
+            </mat-nav-list>
+        </mat-menu>
 
 
 

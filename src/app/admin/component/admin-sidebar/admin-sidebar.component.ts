@@ -21,6 +21,8 @@ export class AdminSidebarComponent implements OnInit {
   expand6: boolean = true;
   expand7: boolean = true;
   expand8: boolean = true;
+  expand9 : boolean = true;
+
   menu_slider: boolean = true;
 
 
