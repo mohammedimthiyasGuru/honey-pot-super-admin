@@ -623,15 +623,16 @@ export class ApiService {
     create_new_FollowUp(data){
       return this.http.post(this.apiUrl + 'newfollowup/create', data);
     }
-  
+
     update_new_FollowUp(data){
       return this.http.post(this.apiUrl + 'newfollowup/update', data);
     }
   
+
     getlist_new_FollowUp(id){
       return this.http.get(this.apiUrl + 'newfollowup/getlist?id='+id);
     }
-  
+
     delete_new_FollowUp(id){
       return this.http.delete(this.apiUrl+ 'newfollowup/delete?id='+id);
     }
@@ -731,5 +732,29 @@ getlist_new_settlement(id){
 delete_new_settlement(id){
   return this.http.delete(this.apiUrl+ 'newsettlements/delete?id='+id);
 }
+
+
+
+  /////Imthiyas/////
+
+  create_bank_details(data){
+    return this.http.post(this.apiUrl + 'bank_detail/create', data);
+  }
+
+  update_bank_details(data){
+    return this.http.post(this.apiUrl + 'bank_detail/edit', data);
+  }
+
+  delete_bank_details(id){
+    return this.http.get(this.apiUrl + 'bank_detail/delete');
+  }
+
+  getlist_bank_details(data){
+    return this.http.post(this.apiUrl+ 'bank_detail/getlist_id',data);
+  }
+
+
+
+
 
 }

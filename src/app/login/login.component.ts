@@ -130,9 +130,8 @@ export class LoginComponent implements OnInit {
             alert('Logged in successfully');
             this.saveInLocal("login_Details", response.Data);
             this.router.navigateByUrl('/admin_panel');
-
-
-
+            this.saveInLocal("client_id", '1');
+            this.saveInLocal("client_name", 'Mohammed Client');
             // if(response.Data.Clinet_name != undefined){
             //   this.saveInLocal("login_type", "Organization")
             //

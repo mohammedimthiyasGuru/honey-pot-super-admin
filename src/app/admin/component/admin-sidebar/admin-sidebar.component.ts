@@ -21,6 +21,8 @@ export class AdminSidebarComponent implements OnInit {
   expand6: boolean = true;
   expand7: boolean = true;
   expand8: boolean = true;
+  expand9 : boolean = true;
+
   menu_slider: boolean = true;
 
 
@@ -312,6 +314,6 @@ export class AdminSidebarComponent implements OnInit {
     window.scroll(0,0);
     //or document.body.scrollTop = 0;
     //or document.querySelector('body').scrollTo(0,0)
-    
+
 }
 }

@@ -106,6 +106,11 @@ import { CreateareacodeComponent } from './pages/createareacode/createareacode.c
 import { CreateactiontakenComponent } from './pages/createactiontaken/createactiontaken.component';
 import { CreatetracingtoolsComponent } from './pages/createtracingtools/createtracingtools.component';
 import { CreateapprovalComponent } from './pages/createapproval/createapproval.component';
+import { BankdetailsComponent } from './pages/bankdetails/bankdetails.component';
+import { UserDetailsComponent } from './pages/user-details/user-details.component';
+import { SettlementtrackerComponent } from './pages/report/settlementtracker/settlementtracker.component';
+import { PtpreportComponent } from './pages/report/ptpreport/ptpreport.component';
+import { StatusreportComponent } from './pages/report/statusreport/statusreport.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' ,pathMatch:'full'},
@@ -118,6 +123,14 @@ const routes: Routes = [
   { path: 'License', component: LicenseComponent },
   { path: 'License_Form', component: LicenseFormComponent },
   { path: 'Excel_Upload', component: ExcelUploadComponent },
+
+  { path: 'bank_details', component: BankdetailsComponent },
+  { path: 'user_details', component: UserDetailsComponent },
+
+
+  { path: 'settlement_report', component: SettlementtrackerComponent },
+  { path: 'ptpreport', component: PtpreportComponent },
+  { path: 'statusreport', component: StatusreportComponent },
 
   //////Accounts//////
   { path: 'accounts/accounts', component: AccAccountlistComponent },

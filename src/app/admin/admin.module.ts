@@ -177,6 +177,11 @@ import { CreatetracingtoolsComponent } from './pages/createtracingtools/createtr
 import { CreateapprovalComponent } from './pages/createapproval/createapproval.component';
 import { UserNewSettlementComponent } from './pages/users/user-new-settlement/user-new-settlement.component';
 import { UserNewPaymentComponent } from './pages/users/user-new-payment/user-new-payment.component';
+import { BankdetailsComponent } from './pages/bankdetails/bankdetails.component';
+import { UserDetailsComponent } from './pages/user-details/user-details.component';
+import { SettlementtrackerComponent } from './pages/report/settlementtracker/settlementtracker.component';
+import { PtpreportComponent } from './pages/report/ptpreport/ptpreport.component';
+import { StatusreportComponent } from './pages/report/statusreport/statusreport.component';
 
 @NgModule({
   declarations: [AdminHeaderComponent,
@@ -311,7 +316,12 @@ import { UserNewPaymentComponent } from './pages/users/user-new-payment/user-new
     CreatetracingtoolsComponent,
     CreateapprovalComponent,
     UserNewSettlementComponent,
-    UserNewPaymentComponent
+    UserNewPaymentComponent,
+    BankdetailsComponent,
+    UserDetailsComponent,
+    SettlementtrackerComponent,
+    PtpreportComponent,
+    StatusreportComponent
   ],
   imports: [
     CommonModule,
