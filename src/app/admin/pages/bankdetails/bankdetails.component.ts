@@ -5,14 +5,38 @@ import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../../../api.service';
-
-
 @Component({
-  selector: 'app-create-designation',
-  templateUrl: './create-designation.component.html',
-  styleUrls: ['./create-designation.component.css']
+  selector: 'app-bankdetails',
+  templateUrl: './bankdetails.component.html',
+  styleUrls: ['./bankdetails.component.css']
 })
-export class CreateDesignationComponent implements OnInit {
+export class BankdetailsComponent implements OnInit {
+
+
+    company_type: any = [
+  { 'y': "New Company"},
+  { 'y': "Exists Company"}];
+
+
+  company_name: any = [
+    { 'y': "Triton IT Solutions"},
+    { 'y': "Triton IT Solutions1"},
+    { 'y': "Triton IT Solutions2"},
+    { 'y': "Triton IT Solutions3"},
+    { 'y': "Triton IT Solutions4"},
+    { 'y': "Triton IT Solutions5"},
+    { 'y': "Triton IT Solutions6"},
+    { 'y': "Triton IT Solutions7"},
+    { 'y': "Triton IT Solutions8"}
+  ];
+
+
+  company_types : string;
+  bankname : string;
+  company_title : boolean;
+
+
+
   type: any;
   rows: any;
   searchQR: any;
@@ -27,24 +51,47 @@ export class CreateDesignationComponent implements OnInit {
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
-    this._api.designation_type_list().subscribe(
+    this.company_types = '';
+    this.bankname = '';
+
+
+    let a = {
+      client_id:this.getFromLocal('client_id'),
+    }
+    this._api.getlist_bank_details(a).subscribe(
       (response: any) => {
         console.log(response);
-        this.rows = response.Data.reverse();
+        this.rows =  response.Data;
         console.log(this.rows);
       }
     );
+
+
+
   }
+
+
+  company_type_select(data){
+    console.log(data);
+    if(data.y == 'New Company'){
+      this.company_title = true;
+    } else {
+      this.company_title = false;
+    }
+  }
+
+
   add() {
-    if (this.type == undefined || this.type == '') {
+    if (this.bankname == undefined || this.bankname == '') {
       alert("Please enter valid inputs")
     } else {
       let a = {
-        "designation_type": this.type,
-        "addedby": "Admin"
+        "client_id": this.getFromLocal('client_id'),
+        "bank_name": this.bankname,
+        "addedby" : this.getFromLocal('client_name')
       };
       console.log(a);
-      this._api.designation_type_add(a).subscribe(
+      this._api.create_bank_details(a).subscribe(
         (response: any) => {
           console.log(response);
           if (response.Code === 200) {
@@ -61,19 +108,19 @@ export class CreateDesignationComponent implements OnInit {
   show_edit(item) {
     this.id = item._id;
     this.edit_f = true;
-    this.type = item.designation_type
+    this.bankname = item.bank_name;
   }
   edit() {
-    if (this.type == undefined || this.type == '') {
+    if (this.bankname == undefined || this.bankname == '') {
       alert("Please enter valid input")
     } else {
       let a = {
         "_id": this.id,
-        "designation_type": this.type,
-        "addedby": "Admin"
+        "bank_name": this.bankname,
+        "addedby": this.getFromLocal('client_name')
       };
       console.log(a);
-      this._api.designation_type_edit(a).subscribe(
+      this._api.update_bank_details(a).subscribe(
         (response: any) => {
           console.log(response);
           if (response.Code === 200) {
@@ -90,9 +137,10 @@ export class CreateDesignationComponent implements OnInit {
   }
   delete(id) {
     let a = {
-      "_id": id
+      "_id": id,
+      "delete_status": true,
     }
-    this._api.designation_type_delete(a).subscribe(
+    this._api.update_bank_details(a).subscribe(
       (response: any) => {
         console.log(response);
         if (response.Code === 200) {
@@ -105,8 +153,17 @@ export class CreateDesignationComponent implements OnInit {
     );
   }
   cancel(){
-    this.type = undefined;
+    // this.type = undefined;
     this.edit_f = false;
+    this.bankname = ''
+  }
+
+  saveInLocal(key, val): void {
+    this.storage.set(key, val);
+  }
+
+  getFromLocal(key): any {
+    return this.storage.get(key);
   }
 }
 

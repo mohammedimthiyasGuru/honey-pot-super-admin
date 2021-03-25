@@ -427,6 +427,24 @@
             <mat-menu #menu2="matMenu">
                 <mat-nav-list style="background: rgb(32 53 63);padding-left: 5px;">
                     <div class="sub-menu">
+                      <mat-list-item  routerLink="bank_details" routerLinkActive="active">
+                        <div class="sidenav-item">
+                            <h5 class="lead">Company / Client</h5>
+                        </div>
+                     </mat-list-item>
+
+                     <mat-list-item  routerLink="Create_Designation" routerLinkActive="active">
+                      <div class="sidenav-item">
+                          <h5 class="lead">Designations</h5>
+                      </div>
+                   </mat-list-item>
+
+                     <mat-list-item  routerLink="user_details" routerLinkActive="active">
+                      <div class="sidenav-item">
+                          <h5 class="lead">User Managements</h5>
+                      </div>
+                   </mat-list-item>
+
                         <mat-list-item *ngIf="clienttype_show" routerLink="client/Create_client_type"
                             routerLinkActive="active">
 
@@ -747,7 +765,7 @@
                                 <h5 class="lead">New Allocation</h5>
                             </div>
                         </mat-list-item> -->
-                        
+
                     </div>
                 </mat-nav-list>
             </mat-menu>
@@ -838,27 +856,17 @@
                     <div class="sub-menu">
 
                         <mat-list-item  routerLink="admin_create" routerLinkActive="active">
-
                             <div class="sidenav-item">
                                 <h5 class="lead">Admin User Create</h5>
                             </div>
                         </mat-list-item>
 
-                        <mat-list-item routerLink="megreinguser" routerLinkActive="active">
 
+                        <mat-list-item routerLink="megreinguser" routerLinkActive="active">
                             <div class="sidenav-item">
                                 <h5 class="lead">Merge Candidate</h5>
                             </div>
                         </mat-list-item>
-
-
-                        <mat-list-item  routerLink="Create_Designation" routerLinkActive="active">
-
-                          <div class="sidenav-item">
-                              <h5 class="lead">Create Designation</h5>
-                          </div>
-                      </mat-list-item>
-
 
                     </div>
                 </mat-nav-list>
