@@ -49,6 +49,8 @@ import Swal from 'sweetalert2';
 import { UsrCustomerExplosureComponent } from './../usr-customer-explosure/usr-customer-explosure.component';
 import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 import { UsrNewFollowupComponent } from '../usr-new-followup/usr-new-followup.component';
+import { ApiService } from 'src/app/api.service';
+import { NewFieldVisitComponent } from '../new-field-visit/new-field-visit.component';
 
 @Component({
   selector: 'app-usr-contactrecording',
@@ -72,10 +74,12 @@ export class UsrContactrecordingComponent implements OnInit {
   column: any;
   dataList: any;
   CustomerData: any;
+  FollowUpList = [];
   constructor(
     @Inject(SESSION_STORAGE) private storage: StorageService,
     private router: Router,
     public dialog: MatDialog,
+    private _api:ApiService
     ) { }
 
 
@@ -108,6 +112,14 @@ export class UsrContactrecordingComponent implements OnInit {
       this.CustomerData = this.loadedRecord.keyvalue;
 
       localStorage.setItem("Customer_ID",this.CustomerData.Passport_Number);
+      this._api.getlist_new_FollowUp(localStorage.getItem("Customer_ID")).subscribe(data=>{
+        if (data['Code']==200) {
+          const len = data['Data'].length - 1;
+          this.FollowUpList = data['Data'];
+        } else {
+          this.FollowUpList = null;
+        }
+      });
     } else {
       this.loadedRecord = null;
     }
@@ -214,7 +226,7 @@ export class UsrContactrecordingComponent implements OnInit {
     this.show = 'show8';
   }
   show9() {
-    const dialogRef = this.dialog.open(UsrFiledVisitMainComponent, {
+    const dialogRef = this.dialog.open(NewFieldVisitComponent, {
       height: '600px',disableClose: true
     });
 

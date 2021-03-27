@@ -735,6 +735,7 @@ delete_new_settlement(id){
 
 
 
+
   /////Imthiyas/////
 
   create_bank_details(data){
@@ -755,6 +756,79 @@ delete_new_settlement(id){
 
 
 
+  //create LogType CODE//
 
+create_new_logtype(data){
+  return this.http.post(this.apiUrl + 'logtype/create', data);
+}
+
+update_new_logtype(data){
+  return this.http.post(this.apiUrl + 'logtype/update', data);
+}
+
+getlist_new_logtype(){
+  return this.http.get(this.apiUrl + 'logtype/getlist');
+}
+
+delete_new_logtype(id){
+  return this.http.delete(this.apiUrl+ 'logtype/delete?id='+id);
+}
+
+
+  //create Field Visit CODE//
+
+  create_new_fieldvisit(data){
+    return this.http.post(this.apiUrl + 'addfieldvisit/create', data);
+  }
+  
+  update_new_fieldvisit(data){
+    return this.http.post(this.apiUrl + 'addfieldvisit/update', data);
+  }
+  
+  getlist_new_fieldvisit(id){
+    return this.http.get(this.apiUrl + 'addfieldvisit/getlist?id='+id);
+  }
+  
+  delete_new_fieldvisit(id){
+    return this.http.delete(this.apiUrl+ 'addfieldvisit/delete?id='+id);
+  }
+
+
+
+    //create Teams//
+
+    create_new_team(data){
+      return this.http.post(this.apiUrl + 'addteam/create', data);
+    }
+    
+    update_new_team(data){
+      return this.http.post(this.apiUrl + 'addteam/update', data);
+    }
+    
+    getlist_new_team(){
+      return this.http.get(this.apiUrl + 'addteam/getlist');
+    }
+    
+    delete_new_team(id){
+      return this.http.delete(this.apiUrl+ 'addteam/delete?id='+id);
+    }
+
+//create Team Members//
+
+create_new_teammembers(data){
+  return this.http.post(this.apiUrl + 'addmembers/create', data);
+}
+
+update_new_teammembers(data){
+  return this.http.post(this.apiUrl + 'addmembers/update', data);
+}
+
+getlist_new_teammembers(){
+  return this.http.get(this.apiUrl + 'addmembers/getlist');
+}
+
+delete_new_teammembers(id){
+  return this.http.delete(this.apiUrl+ 'addmembers/delete?id='+id);
+}
 
 }

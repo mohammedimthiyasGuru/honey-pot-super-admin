@@ -15,11 +15,15 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="">Settlement Type</label>
-                        <input type="text" placeholder="Settlement Type" class="form-control" formControlName="settlement_type">
+                        <select formControlName="settlement_type" class="form-control">
+                            <option value="">Choose</option>
+                            <option value="OTS">One Time Settlement</option>
+                            <option value="MTS">Multi Time Settlement</option>
+                        </select>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="">Account</label>
-                        <input type="text" placeholder="Account" class="form-control" formControlName="account_id">
+                        <label for="">Account ID</label>
+                        <input disabled type="text" placeholder="Account" class="form-control" formControlName="account_id">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="">Current total</label>
@@ -44,7 +48,14 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="">Approval Status</label>
-                        <input type="text" placeholder="Approval Status" class="form-control" formControlName="approval_status">
+                        <select formControlName="approval_status" class="form-control">
+                            <option value="">Choose</option>
+                            <option value="proposed">Proposed</option>
+                            <option value="pending">Pending</option>
+                            <option value="approval">Approval</option>
+                            <option value="decline">Decline</option>
+                            <option value="void">Void</option>
+                        </select>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="">Details</label>

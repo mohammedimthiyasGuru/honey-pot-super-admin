@@ -182,6 +182,10 @@ import { UserDetailsComponent } from './pages/user-details/user-details.componen
 import { SettlementtrackerComponent } from './pages/report/settlementtracker/settlementtracker.component';
 import { PtpreportComponent } from './pages/report/ptpreport/ptpreport.component';
 import { StatusreportComponent } from './pages/report/statusreport/statusreport.component';
+import { CreateLogTypeComponent } from './pages/create-log-type/create-log-type.component';
+import { NewFieldVisitComponent } from './pages/users/new-field-visit/new-field-visit.component';
+import { CreateTeamComponent } from './pages/users/create-team/create-team.component';
+import { CreateMembersComponent } from './pages/users/create-members/create-members.component';
 
 @NgModule({
   declarations: [AdminHeaderComponent,
@@ -321,7 +325,11 @@ import { StatusreportComponent } from './pages/report/statusreport/statusreport.
     UserDetailsComponent,
     SettlementtrackerComponent,
     PtpreportComponent,
-    StatusreportComponent
+    StatusreportComponent,
+    CreateLogTypeComponent,
+    NewFieldVisitComponent,
+    CreateTeamComponent,
+    CreateMembersComponent
   ],
   imports: [
     CommonModule,

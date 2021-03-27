@@ -230,7 +230,7 @@ export class UploadedListComponent implements OnInit {
     console.log(this.report_to_design);
 
     let req = {
-      "bankname" : this.company_name.y,
+      "bankname" : "",
       "designation" : this.report_to_design.y
     }
     console.log(req);
