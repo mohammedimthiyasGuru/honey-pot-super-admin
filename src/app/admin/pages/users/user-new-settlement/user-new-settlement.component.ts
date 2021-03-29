@@ -114,6 +114,7 @@ export class UserNewSettlementComponent implements OnInit {
       createdby: this.login_Details.email_id,
       creator_name: this.login_Details.name,
       customer_id: localStorage.getItem("Customer_ID"),
+      account_id:localStorage.getItem("Customer_ID")
     })
     this._api.getlist_new_settlement(localStorage.getItem("Customer_ID")).subscribe(data=>{
       if (data['Code']==200) {

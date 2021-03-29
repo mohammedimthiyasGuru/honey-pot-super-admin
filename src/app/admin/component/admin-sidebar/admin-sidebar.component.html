@@ -461,6 +461,15 @@
                             </div>
                         </mat-list-item>
 
+                        <mat-list-item *ngIf="clienttype_show" routerLink="user/create-team"
+                            routerLinkActive="active">
+
+                            <div class="sidenav-item">
+                                <h5 class="lead">Teams & Members</h5>
+                            </div>
+                        </mat-list-item>
+
+
                         <mat-list-item *ngIf="clienttype_show" routerLink="create/actiontaken"
                             routerLinkActive="active">
 
@@ -483,6 +492,14 @@
 
                             <div class="sidenav-item">
                                 <h5 class="lead">Approval Status</h5>
+                            </div>
+                        </mat-list-item>
+
+                        <mat-list-item *ngIf="clienttype_show" routerLink="create/logtype"
+                            routerLinkActive="active">
+
+                            <div class="sidenav-item">
+                                <h5 class="lead">Log Type</h5>
                             </div>
                         </mat-list-item>
 

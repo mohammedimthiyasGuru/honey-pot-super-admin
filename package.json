@@ -27,6 +27,7 @@
         "bootstrap": "^4.5.3",
         "chart.js": "^2.9.4",
         "jquery": "^3.5.1",
+        "moment": "^2.29.1",
         "ng-angular8-datatable": "^0.9.11",
         "ng-image-slider": "^2.5.0",
         "ng-tabs": "0.0.2",

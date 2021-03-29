@@ -111,6 +111,9 @@ import { UserDetailsComponent } from './pages/user-details/user-details.componen
 import { SettlementtrackerComponent } from './pages/report/settlementtracker/settlementtracker.component';
 import { PtpreportComponent } from './pages/report/ptpreport/ptpreport.component';
 import { StatusreportComponent } from './pages/report/statusreport/statusreport.component';
+import { CreateLogTypeComponent } from './pages/create-log-type/create-log-type.component';
+import { CreateTeamComponent } from './pages/users/create-team/create-team.component';
+import { CreateMembersComponent } from './pages/users/create-members/create-members.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard' ,pathMatch:'full'},
@@ -139,6 +142,9 @@ const routes: Routes = [
   { path: 'accounts/view_authorization', component: AccAuthorViewComponent },
 
   /////user//////
+  { path: 'user/createuser', component: UsrContactrecordingComponent },
+  { path: 'user/create-team', component: CreateTeamComponent },
+  { path: 'user/create-members', component: CreateMembersComponent },
   { path: 'user/createuser', component: UsrContactrecordingComponent },
   { path: 'user/actioncode', component: UsrActioncodeComponent },
   { path: 'user/addnewaddres', component: UsrAddnewaddressComponent },
@@ -226,6 +232,7 @@ const routes: Routes = [
   { path: 'create/actiontaken', component: CreateactiontakenComponent },
   { path: 'create/tracingtools', component: CreatetracingtoolsComponent },
   { path: 'create/approval_status', component: CreateapprovalComponent },
+  { path: 'create/logtype', component: CreateLogTypeComponent },
   { path: 'user/user_status_marking', component: UserStatusMarkingComponent },
   { path: 'client/client_status_marking', component: ClientStatusMarkingComponent },
   { path: 'client/Create_portfolio', component: CreatePortfolioComponent },

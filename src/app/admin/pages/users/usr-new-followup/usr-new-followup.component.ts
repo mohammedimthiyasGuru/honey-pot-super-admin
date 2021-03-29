@@ -7,6 +7,7 @@ import { ApiService } from 'src/app/api.service';
 import { UserNewPaymentComponent } from '../user-new-payment/user-new-payment.component';
 import { UserNewSettlementComponent } from '../user-new-settlement/user-new-settlement.component';
 import Swal from 'sweetalert2';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-usr-new-followup',
@@ -17,7 +18,9 @@ export class UsrNewFollowupComponent implements OnInit {
   @ViewChild('agGrid',{static:false}) agGrid: AgGridAngular;
   FollowUpcolumnDefs = [
     {headerName: 'ID', field: '_id', width: 250, checkboxSelection: true,headerCheckboxSelection: true,sortable: true, filter: true},
-    {headerName: 'Log Date', field: 'log_date', resizable: true, sortable: true, filter: true},
+    {headerName: 'Log Date', field: 'log_date', resizable: true, sortable: true, filter: true, cellRenderer: (data) => {
+      return moment(data.value).format('LLLL');
+    }},
     {headerName: 'Log Type', field: 'log_type', resizable: true, sortable: true, filter: true},
     {headerName: 'FollowUp Date', field: 'fdate', resizable: true, sortable: true, filter: true},
     {headerName: 'No of Mapped Accounts', field: 'no_mapped_account', resizable: true, sortable: true, filter: true},
@@ -35,8 +38,12 @@ export class UsrNewFollowupComponent implements OnInit {
     {headerName: 'Created By', field: 'createdby', resizable: true, sortable: true, filter: true},
     {headerName: 'Creator Name', field: 'creator_name', resizable: true, sortable: true, filter: true},
     {headerName: 'Customer ID', field: 'customer_id', resizable: true, sortable: true, filter: true},
-    {headerName: 'Created At', field: 'createdAt', resizable: true, sortable: true, filter: true},
-    {headerName: 'Update At', field: 'updatedAt', resizable: true, sortable: true, filter: true},
+    {headerName: 'Created At', field: 'createdAt', resizable: true, sortable: true, filter: true, cellRenderer: (data) => {
+      return moment(data.value).format('LLLL');
+    }},
+    {headerName: 'Update At', field: 'updatedAt', resizable: true, sortable: true, filter: true, cellRenderer: (data) => {
+      return moment(data.value).format('LLLL');
+    }},
     {headerName: 'Options', width: 120,cellRenderer: function(params) {
       return "";
     }},
@@ -54,25 +61,27 @@ export class UsrNewFollowupComponent implements OnInit {
   actionstakenList: any;
   userFilter: any = { mstatus_id: '' };
   userFilter2: any = { fvterritary: '' };
+  LogTypeList: any[];
   constructor(public dialog: MatDialog, private formBuilder:FormBuilder, private _api:ApiService, @Inject(SESSION_STORAGE) private storage: StorageService,) { 
     this.FollowUpForm = this.formBuilder.group({
       _id:['',Validators.required],
       log_date:['',Validators.required],
-      log_type:['',Validators.required],
-      no_mapped_account:['',Validators.required],
-      request_type:['',Validators.required],
-      territory:['',Validators.required],
-      fvarea:['',Validators.required],
+      log_type:[''],
+      no_mapped_account:[''],
+      request_type:[''],
+      territory:[''],
+      fvarea:[''],
       remarks:['',Validators.required],
       mstatus:['',Validators.required],
       substatus:['',Validators.required],
-      fdate:['',Validators.required],
+      fdate:[''],
       bcode:['',Validators.required],
-      ptp_amount:['',Validators.required],
-      ptp_status:['',Validators.required],
-      actiontotake:['',Validators.required],
-      tracingtool:['',Validators.required],
-      tracinglink:['',Validators.required],
+      ptp_amount:[''],
+      ptp_status:[''],
+      actiontotake:[''],
+      actiontaken:[''],
+      tracingtool:[''],
+      tracinglink:[''],
       createdby:['',Validators.required],
       creator_name:['',Validators.required],
       customer_id:['',Validators.required]
@@ -130,6 +139,14 @@ export class UsrNewFollowupComponent implements OnInit {
         this.actionstakenList = data['Data'];
       } else {
         this.actionstakenList = [];
+      }
+    });
+
+    this._api.getlist_new_logtype().subscribe(data=>{
+      if (data['Code'] == 200) {
+        this.LogTypeList = data['Data'];
+      } else {
+        this.LogTypeList = [];
       }
     });
 

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserNewSettlementComponent } from './user-new-settlement.component';
+import { CreateLogTypeComponent } from './create-log-type.component';
 
-describe('UserNewSettlementComponent', () => {
-  let component: UserNewSettlementComponent;
-  let fixture: ComponentFixture<UserNewSettlementComponent>;
+describe('CreateLogTypeComponent', () => {
+  let component: CreateLogTypeComponent;
+  let fixture: ComponentFixture<CreateLogTypeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserNewSettlementComponent ]
+      declarations: [ CreateLogTypeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserNewSettlementComponent);
+    fixture = TestBed.createComponent(CreateLogTypeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

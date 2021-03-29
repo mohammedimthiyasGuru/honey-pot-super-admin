@@ -134,15 +134,15 @@
           <div class="col-md-12" style="background:#fff; padding:10px 10px;margin:10px 0px;">
             <h4 class="title" style="margin-top: 0px !important;">Customer 360&#176; Overview
             </h4>
-            <h4 class="title" style="margin-top: 15px; text-align: right;margin-top: -29px !important;">
+            <!-- <h4 class="title" style="margin-top: 15px; text-align: right;margin-top: -29px !important;">
               <span class="inner-a"><a (click)="openworklist()">Go to your Worklist</a></span>
               <span class="inner-a"><a (click)="show13()">Customer Level Exposure</a></span>
               <span class="inner-a"><a (click)="openworklist()">Currency Convertor</a></span>
               <span class="inner-a"><a (click)="openworklist()">Active Workflow Status</a></span>
-            </h4>
+            </h4> -->
           </div>
           <div class="col-md-12">
-            <div class="col-md-12 card-box" style="background: white; border-radius: 3px;  height: 260px;overflow-y: scroll;overflow-x: hidden;">
+            <div class="col-md-12 card-box" style="background: white; border-radius: 3px;  height: 400px;overflow-y: scroll;overflow-x: hidden;">
               <div class="row">
                 <div class="col-md-12">
                   <h2 class="title-f" style="color:#21a0f6 !important;font-size:18px; padding:5px 0px 12px 0px;">Account Information</h2>
@@ -555,111 +555,107 @@
                 </div>
               </div>
               <!-- <hr> -->
-              <div class="row" >
+              <div class="row" *ngFor="let item of FollowUpList | slice:3">
+                
                 <div class="col-md-2 labels">
-                  Total Contacts
+                  Action to Take
                 </div>
                 <div class="col-md-2 values">
-                  : 10 </div>
+                  : {{item.actiontotake}} </div>
                 <div class="col-md-2 labels">
-                  Account Status
+                  Bank Code
                 </div>
                 <div class="col-md-2 values">
-                  : Live </div>
+                  : {{item.bcode}} </div>
                 <div class="col-md-2 labels">
-                  Broken Promise Counter
+                  Customer ID
                 </div>
                 <div class="col-md-2 values">
-                  : -
+                  : {{item.customer_id}}
                 </div>
                 <div class="col-md-2 labels">
-                  Last Payment Amount
+                  Field Visit Date
                 </div>
                 <div class="col-md-2 values">
-                  : 10-0-2020
+                  : {{item.fdate | date}}
                 </div>
                 <div class="col-md-2 labels">
-                  Last Payment Amount
+                  Field Visit Territory
                 </div>
                 <div class="col-md-2 values">
-                  : 20,000
+                  : {{item.territory}}
                 </div>
                 <div class="col-md-2 labels">
-                  Last Action Date
+                  Status
                 </div>
                 <div class="col-md-2 values">
-                  : 20-10-2020
+                  : {{item.mstatus}}
                 </div>
                 <div class="col-md-2 labels">
-                  Last Action Code
+                  Sub Status
                 </div>
                 <div class="col-md-2 values">
-                  : ABC
+                  : {{item.substatus}}
                 </div>
                 <div class="col-md-2 labels">
-                  Foreclosure
+                  Tracing Tool
                 </div>
                 <div class="col-md-2 values">
-                  : -
+                  : {{item.tracingtool}}
                 </div>
                 <div class="col-md-2 labels">
-                  Risk Segment
+                  Tracing Link
                 </div>
                 <div class="col-md-2 values">
-                  : -
+                  : {{item.tracinglink}}
                 </div>
                 <div class="col-md-2 labels">
-                  Best Number to call
+                  Created by
                 </div>
                 <div class="col-md-2 values">
-                  : 987654321
+                  : {{item.createdby}}
                 </div>
                 <div class="col-md-2 labels">
-                  Best Time to call
+                  Creator Name
                 </div>
                 <div class="col-md-2 values">
-                  : 10:23 AM - 12:00 PM
+                  : {{item.creator_name}}
+                </div>
+                <div class="col-md-2 labels">
+                  Log Date
+                </div>
+                <div class="col-md-2 values">
+                  : {{item.log_date | date}}
                 </div>
                 <!-- promised details -->
                 <div class="col-md-2 labels">
-                  Taken On
+                  Log Type
                 </div>
                 <div class="col-md-2 values">
-                  : xxxxxxx </div>
-                <div class="col-md-2 labels">
-                  Taken By
-                </div>
-                <div class="col-md-2 values">
-                  : xxxx </div>
-                <div class="col-md-2 labels">
-                  Promise Date
-                </div>
-                <div class="col-md-2 values">
-                  : xxxxx
+                  : {{item.log_type}}
                 </div>
                 <div class="col-md-2 labels">
-                  Payment Date
+                  PTP Amount
                 </div>
                 <div class="col-md-2 values">
-                  : xxxxxx
+                  : {{item.ptp_amount}} </div>
+                <div class="col-md-2 labels">
+                  PTP Status
+                </div>
+                <div class="col-md-2 values">
+                  : {{item.ptp_status}}
                 </div>
                 <div class="col-md-2 labels">
-                  Payment Amount
+                  Remarks
                 </div>
                 <div class="col-md-2 values">
-                  : xxxxxx
-                </div>
-                <div class="col-md-2 labels">
-                  Broken Promise Indicator
-                </div>
-                <div class="col-md-2 values">
-                  : -
+                  : {{item.remarks}}
                 </div>
               </div>
             </div>
           </div>
           <!-- Guranteer Details -->
-          <div class="col-md-12">
+          <!-- <div class="col-md-12">
             <div class="col-md-12 card-box" style="background: white;
      border-radius: 3px;  height: 150px;overflow-y: scroll;overflow-x: hidden;">
               <div class="row">
@@ -667,7 +663,7 @@
                   <h2 class="title-f" style="color:#21a0f6 !important;font-size:18px; padding:5px 0px 12px 0px;">Guarantor Details</h2>
                 </div>
               </div>
-              <!-- <hr> -->
+
               <div class="row">
                 <div class="col-md-2 labels">
                   Guarantor A/C no.
@@ -709,7 +705,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <!--  -->
 
 
@@ -1116,7 +1112,7 @@
             </div>
           </div> -->
 
-          <div class="col-md-12">
+          <!-- <div class="col-md-12">
             <div class="card-box" style="background: white;
             border-radius: 1px;overflow: hidden;">
               <div class="row">
@@ -1168,7 +1164,7 @@
               </div>
 
             </div>
-          </div>
+          </div> -->
 
           <!-- <div class="col-md-3">
             <div class="col-md-12 card-box" style="background: white;
@@ -1253,7 +1249,7 @@
           </div> -->
 
 
-          <div class="col-md-12">
+          <!-- <div class="col-md-12">
             <div class="col-md-12 card-box" style="background: white;
     border-radius: 3px; height: 150px;overflow-y: scroll;overflow-x: hidden;">
               <div class="row">
@@ -1262,7 +1258,7 @@
                   </div>
                 </div>
               </div>
-              <!-- <hr> -->
+     
               <div class="row">
                 <div class="col-md-2 labels">
                   Allocation Type
@@ -1298,7 +1294,7 @@
                   (click)="show14()">viewAllocation history</span>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- <div class="col-md-3">
             <div class="col-md-12 card-box" style="background: white;
@@ -1769,13 +1765,13 @@
 
 
       </mat-tab>
-      <mat-tab>
+      <!-- <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon pTooltip="Customer Info">account_circle</mat-icon>
         </ng-template>
         <br>
         <app-usr-customerdetails></app-usr-customerdetails>
-      </mat-tab>
+      </mat-tab> -->
       <!-- <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon pTooltip="Guarantor / Reference Datails">collections_bookmark</mat-icon>
@@ -1783,7 +1779,7 @@
         <br>
         <app-usr-gurantordetails></app-usr-gurantordetails>
       </mat-tab> -->
-      <mat-tab>
+      <!-- <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon pTooltip="Asset Details">extension</mat-icon>
         </ng-template>
@@ -1839,7 +1835,7 @@
         </ng-template>
         <br>
         <app-usr-foreclosure></app-usr-foreclosure>
-      </mat-tab>
+      </mat-tab> -->
       <!-- <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon pTooltip="Allocation history reports">history</mat-icon>
@@ -1847,7 +1843,7 @@
         <br>
         <app-usr-allocationhistory></app-usr-allocationhistory>
       </mat-tab> -->
-      <mat-tab>
+      <!-- <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon pTooltip="Customer Available Accounts">link</mat-icon>
         </ng-template>
@@ -1881,7 +1877,7 @@
         </ng-template>
         <br>
         <app-usr-loandetails></app-usr-loandetails>
-      </mat-tab>
+      </mat-tab> -->
       <!-- <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon pTooltip="Allocation Details">ballot</mat-icon>
@@ -1903,13 +1899,13 @@
         <br>
         <app-usr-overduedetailsone></app-usr-overduedetailsone>
       </mat-tab> -->
-      <mat-tab>
+      <!-- <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon pTooltip="RPO/Auction/PLA information">info</mat-icon>
         </ng-template>
         <br>
         <app-usr-rpo></app-usr-rpo>
-      </mat-tab>
+      </mat-tab> -->
       <!-- <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon pTooltip="Account Summary">event_note</mat-icon>
@@ -1917,7 +1913,7 @@
         <br>
         <app-usr-accountsummery></app-usr-accountsummery>
       </mat-tab> -->
-      <mat-tab>
+      <!-- <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon pTooltip="Phone Details">contact_phone</mat-icon>
         </ng-template>
@@ -1930,8 +1926,8 @@
         </ng-template>
         <br>
         <app-usr-documnetretrieval></app-usr-documnetretrieval>
-      </mat-tab>
-      <mat-tab>
+      </mat-tab> -->
+      <!-- <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon pTooltip="Field Visit Status"> directions_bike</mat-icon>
         </ng-template>
@@ -2071,43 +2067,40 @@
         </div>
         <br>
 
-      </mat-tab>
+      </mat-tab> -->
 
     </mat-tab-group>
   </div>
 </div>
 <div class="follow">
-  <div [ngClass]="{'active-i': show === 'show1'}">
+  <!-- <div [ngClass]="{'active-i': show === 'show1'}">
     <mat-icon pTooltip="Follow up" (click)="show1()">swap_horiz</mat-icon>
-  </div>
-  <div [ngClass]="{'active-i': show === 'show2'}">
+  </div> -->
+  <!-- <div [ngClass]="{'active-i': show === 'show2'}">
     <mat-icon pTooltip="Initiate Workflow" (click)="show2()">timeline</mat-icon>
-  </div>
-  <div [ngClass]="{'active-i': show === 'show3'}">
+  </div> -->
+  <!-- <div [ngClass]="{'active-i': show === 'show3'}">
     <i class="fa fa-list-alt" aria-hidden="true" pTooltip=" Collection Details" style="padding:6px !important;" (click)="show3()"></i>
-    <!-- <mat-icon pTooltip=" Collection Details" (click)="show3()">extension</mat-icon> -->
-  </div>
-  <div [ngClass]="{'active-i': show === 'show4'}">
+  </div> -->
+  <!-- <div [ngClass]="{'active-i': show === 'show4'}">
     <i class="fa fa-file-text-o" aria-hidden="true" pTooltip=" Settlement Recording" style="padding:6px !important;" (click)="show4()"></i>
-    <!-- <mat-icon pTooltip=" Settlement Recording" (click)="show4()">extension</mat-icon> -->
-  </div>
-  <div [ngClass]="{'active-i': show === 'show5'}">
+  </div> -->
+  <!-- <div [ngClass]="{'active-i': show === 'show5'}">
     <i class="fa fa-taxi" aria-hidden="true" pTooltip="Police Case Filing" style="padding:6px !important;" (click)="show5()"></i>
-    <!-- <mat-icon pTooltip="Police Case Filing"  (click)="show5()">swap_horiz</mat-icon> -->
-  </div>
-  <div [ngClass]="{'active-i': show === 'show6'}">
+  </div> -->
+  <!-- <div [ngClass]="{'active-i': show === 'show6'}">
     <mat-icon pTooltip="Repo">file_copy</mat-icon>
   </div>
   <div [ngClass]="{'active-i': show === 'show7'}">
     <mat-icon pTooltip="Civil">contact_phone</mat-icon>
-  </div>
+  </div> -->
 
-  <div [ngClass]="{'active-i': show === 'show8'}">
+  <!-- <div [ngClass]="{'active-i': show === 'show8'}">
     <mat-icon pTooltip="Skip Tracing" (click)="show8()">skip_next</mat-icon>
-  </div>
-  <div [ngClass]="{'active-i': show === 'show9'}">
+  </div> -->
+  <!-- <div [ngClass]="{'active-i': show === 'show9'}">
     <mat-icon pTooltip="Field Visit" (click)="show9()">person_pin_circle</mat-icon>
-  </div>
+  </div> -->
 
 </div>
 
@@ -2275,18 +2268,26 @@
 </p-overlayPanel>
 
 <div class="follow follow-1">
-  <div style="padding: 6px 9px !important;color: #fff;">
+  <div [ngClass]="{'active-i': show === 'show1'}">
+    <mat-icon pTooltip="Follow up" (click)="show1()">swap_horiz</mat-icon>
+  </div>
+
+  <div [ngClass]="{'active-i': show === 'show9'}">
+    <mat-icon pTooltip="Field Visit" (click)="show9()">person_pin_circle</mat-icon>
+  </div>
+  
+  <!-- <div style="padding: 6px 9px !important;color: #fff;">
     <i class="fa fa-filter" aria-hidden="true" aria-hidden="true" pTooltip=" Filter"></i>
-    <!-- <mat-icon pTooltip=" Collection Details" >extension</mat-icon> -->
+    
   </div>
   <div style="padding: 6px 9px !important;color: #fff;">
     <i class="fa fa fa-binoculars" aria-hidden="true" pTooltip=""></i>
-    <!-- <mat-icon pTooltip=" Settlement Recording" >extension</mat-icon> -->
-  </div>
+    
+  </div> -->
   <div style="padding: 6px 9px !important;color: #fff;">
     <i class="fa fa-envelope" aria-hidden="true" pTooltip="" (click)="mailDetails.toggle($event)"></i>
     
-    <!-- <mat-icon pTooltip=""  >swap_horiz</mat-icon> -->
+    
   </div>
   <div style="padding: 6px 9px !important;color: #fff;" (click)="contactDetails.toggle($event)">
     <i class="fa fa-phone" aria-hidden="true" pTooltip=""></i>
@@ -2294,16 +2295,16 @@
   <div style="padding: 6px 9px !important;color: #fff;" (click)="addressDetails.toggle($event)">
     <i class="fa fa-address-card" aria-hidden="true" pTooltip=""></i>
   </div>
-  <div style="padding: 6px 9px !important;color: #fff;">
+  <!-- <div style="padding: 6px 9px !important;color: #fff;">
     <i class="fa fa-calendar" aria-hidden="true" pTooltip=""></i>
-    <!-- <mat-icon pTooltip=""  >swap_horiz</mat-icon> -->
+    
   </div>
   <div style="padding: 6px 9px !important;color: #fff;">
     <i class="fa fa-file-text-o" aria-hidden="true" pTooltip=""></i>
-    <!-- <mat-icon pTooltip=""  >swap_horiz</mat-icon> -->
+    
   </div>
   <div style="padding: 6px 9px !important;color: #fff;">
     <i class="fa fa-globe" aria-hidden="true" pTooltip=""></i>
-    <!-- <mat-icon pTooltip=""  >swap_horiz</mat-icon> -->
-  </div>
+    
+  </div> -->
 </div>

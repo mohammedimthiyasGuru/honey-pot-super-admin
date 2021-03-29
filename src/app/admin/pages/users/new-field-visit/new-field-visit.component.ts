@@ -5,53 +5,49 @@ import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
-  selector: 'app-user-new-payment',
-  templateUrl: './user-new-payment.component.html',
-  styleUrls: ['./user-new-payment.component.css']
+  selector: 'app-new-field-visit',
+  templateUrl: './new-field-visit.component.html',
+  styleUrls: ['./new-field-visit.component.css']
 })
-export class UserNewPaymentComponent implements OnInit {
+export class NewFieldVisitComponent implements OnInit {
   @ViewChild('agGrid',{static:false}) agGrid: AgGridAngular;
-  PaymentscolumnDefs = [
+  FieldVisitcolumnDefs = [
     {headerName: 'ID', field: '_id', width: 250, checkboxSelection: true,headerCheckboxSelection: true,sortable: true, filter: true},
     {headerName: 'Account ID', field: 'account_id', resizable: true, sortable: true, filter: true},
-    {headerName: 'Payment Date', field: 'payment_date', resizable: true, sortable: true, filter: true},
-    {headerName: 'Payment Amount', field: 'payment_amount', resizable: true, sortable: true, filter: true},
-    {headerName: 'Due amount', field: 'due_amount', resizable: true, sortable: true, filter: true},
-    {headerName: 'Paid Date', field: 'paid_date', resizable: true, sortable: true, filter: true},
-    {headerName: 'Total Installment', field: 'total_installments', resizable: true, sortable: true, filter: true},
-    {headerName: 'Current Installment', field: 'current_installment', resizable: true, sortable: true, filter: true},
-    {headerName: 'Last Payment Date', field: 'last_paid_amount', resizable: true, sortable: true, filter: true},
-    {headerName: 'Next Payment Date', field: 'next_payment_date', resizable: true, sortable: true, filter: true},
+    {headerName: 'Territory Name', field: 'fieldvisitterritory', resizable: true, sortable: true, filter: true},
+    {headerName: 'Area Name', field: 'fieldvisitarea', resizable: true, sortable: true, filter: true},
+    {headerName: 'First Address', field: 'firstaddress', resizable: true, sortable: true, filter: true},
+    {headerName: 'Second Address', field: 'secondaddress', resizable: true, sortable: true, filter: true},
+    {headerName: 'Requested Date', field: 'fvrqdate', resizable: true, sortable: true, filter: true},
+    {headerName: 'Remarks', field: 'remarks', resizable: true, sortable: true, filter: true},
     {headerName: 'Created By', field: 'createdby', resizable: true, sortable: true, filter: true},
     {headerName: 'Creator Name', field: 'creator_name', resizable: true, sortable: true, filter: true},
     {headerName: 'Customer ID', field: 'customer_id', resizable: true, sortable: true, filter: true},
   ];
   
-  PaymentsForm: FormGroup;
+  FieldVisitForm: FormGroup;
   areaCodeList: any;
   bankCodeList: any;
   fieldvisitCodeList: any;
   mStatusList: any;
   sStatusList: any;
-  PaymentsList = [];
+  FieldVisitList = [];
   login_Details: any;
   TracingToolsList: any;
   actionstakenList: any;
   constructor(private formBuilder:FormBuilder, private _api:ApiService, @Inject(SESSION_STORAGE) private storage: StorageService,) { 
-    this.PaymentsForm = this.formBuilder.group({
+    this.FieldVisitForm = this.formBuilder.group({
       _id:['',Validators.required],
       account_id:['',Validators.required],
-      payment_date:['',Validators.required],
-      payment_amount:['',Validators.required],
-      due_amount:['',Validators.required],
-      paid_date:['',Validators.required],
-      total_installments:['',Validators.required],
-      current_installment:['',Validators.required],
-      last_paid_amount:['',Validators.required],
-      next_payment_date:['',Validators.required],
+      fieldvisitterritory:['',Validators.required],
+      fieldvisitarea:['',Validators.required],
+      firstaddress:['',Validators.required],
+      secondaddress:['',Validators.required],
+      fvrqdate:['',Validators.required],
+      remarks:['',Validators.required],
       createdby:['',Validators.required],
       creator_name:['',Validators.required],
-      customer_id:['',Validators.required]
+      customer_id: ['',Validators.required],          
     })
   }
 
@@ -110,17 +106,17 @@ export class UserNewPaymentComponent implements OnInit {
     });
 
     this.login_Details = this.getFromLocal("login_Details");
-    this.PaymentsForm.patchValue({
+    this.FieldVisitForm.patchValue({
       createdby: this.login_Details.email_id,
       creator_name: this.login_Details.name,
       customer_id: localStorage.getItem("Customer_ID"),
       account_id:localStorage.getItem("Customer_ID")
     })
-    this._api.getlist_new_payment(localStorage.getItem("Customer_ID")).subscribe(data=>{
+    this._api.getlist_new_fieldvisit(localStorage.getItem("Customer_ID")).subscribe(data=>{
       if (data['Code']==200) {
-        this.PaymentsList = data['Data'];
+        this.FieldVisitList = data['Data'];
       } else {
-        this.PaymentsList = null;
+        this.FieldVisitList = null;
       }
     });
   }
@@ -129,13 +125,13 @@ export class UserNewPaymentComponent implements OnInit {
     return this.storage.get(key);
   }
 
-  addNewPayments(){
-    this.PaymentsForm.patchValue({
+  addNewFieldVisit(){
+    this.FieldVisitForm.patchValue({
       _id:new Date().getTime(),
       log_date:new Date()
     })
-    if (this.PaymentsForm.valid) {
-      this._api.create_new_payment(this.PaymentsForm.value).subscribe(data=>{
+    if (this.FieldVisitForm.valid) {
+      this._api.create_new_fieldvisit(this.FieldVisitForm.value).subscribe(data=>{
         if (data['Code'] == 200) {
           this.onPagereload();
           alert(data['Message']);
@@ -144,18 +140,18 @@ export class UserNewPaymentComponent implements OnInit {
         }
       });
     } else {
-      console.log(this.PaymentsForm.value);
+      console.log(this.FieldVisitForm.value);
       
       alert('Form No Valid');
     }
   }
 
   onPagereload(){
-      this._api.getlist_new_payment(localStorage.getItem("Customer_ID")).subscribe(data=>{
+      this._api.getlist_new_fieldvisit(localStorage.getItem("Customer_ID")).subscribe(data=>{
         if (data['Code']==200) {
-          this.PaymentsList = data['Data'];
+          this.FieldVisitList = data['Data'];
         } else {
-          this.PaymentsList = null;
+          this.FieldVisitList = null;
         }
       });
   }

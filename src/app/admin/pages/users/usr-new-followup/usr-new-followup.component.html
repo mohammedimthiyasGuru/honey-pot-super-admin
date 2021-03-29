@@ -23,12 +23,15 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="">Log Type</label>
-                        <input type="text" placeholder="Log Type ID" class="form-control" formControlName="log_type">
+                        <select class="form-control" formControlName="log_type">
+                            <option value=""> Choose</option>
+                            <option *ngFor="let item of LogTypeList" [value]="item.logtype">{{item.logtype}}</option>
+                        </select>
                     </div>
-                    <div class="form-group col-md-4">
+                    <!-- <div class="form-group col-md-4">
                         <label for="">No of Mapped Account</label>
                         <input type="text" placeholder="No of Mapped Account" class="form-control" formControlName="no_mapped_account">
-                    </div>
+                    </div> -->
                     <div class="form-group col-md-4">
                         <label for="">Request Type</label>
                         <input type="text" placeholder="Request" class="form-control" formControlName="request_type">
@@ -87,6 +90,10 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="">Action Taken</label>
+                        <input type="text" formControlName="actiontaken" class="form-control">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="">Next Action</label>
                         <select class="form-control" formControlName="actiontotake">
                             <option value="">Choose</option>
                             <option *ngFor="let item of actionstakenList" [value]="item.actiontaken_name">{{item.actiontaken_name}}</option>
