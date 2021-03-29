@@ -59,6 +59,11 @@ export class AllocationexcelComponent implements OnInit {
   product_list :  any = [];
   portfolio_list :  any = [];
 
+  requered_fields : any = ['passport_no','acc_no','cif','agreement_id','total_out_standing'];
+
+  requered_status : Boolean =  false;
+
+  requered_missing_text = '';
 
 
   types: any = [
@@ -85,6 +90,9 @@ export class AllocationexcelComponent implements OnInit {
   }
   onFileChange(evt: any) {
 
+    this.requered_status = false;
+    this.requered_fields = ['passport_no','acc_no','cif','agreement_id','total_out_standing'];
+    var req_field_length  = this.requered_fields.length;
     const target: DataTransfer = <DataTransfer>(evt.target);
     if (target.files.length !== 1) throw new Error('Cannot use multiple files');
     const reader: FileReader = new FileReader();
@@ -115,8 +123,27 @@ export class AllocationexcelComponent implements OnInit {
       this.final_save_fields = [];
       console.log(this.Table_header);
       console.log(this.saved_Fields);
+
+
       for(let a = 0 ; a < this.Table_header.length ; a ++){
        var check = 0;
+        console.log(req_field_length);
+         for(let y = 0 ;y < req_field_length; y++){
+          let  test1 = true;
+          console.log(this.Table_header[a],this.requered_fields[y]);
+          if(this.Table_header[a] == this.requered_fields[y]){
+            test1 = false;
+            console.log("Having");
+            this.requered_fields.splice(y, 1);
+           }
+         if(y == req_field_length - 1){
+             if(test1 == true){
+              this.requered_status = true;
+              console.log("Not Having");
+             }
+         }
+
+         }
        if(this.saved_Fields.length == 0){
         let c = {
           final_not_match : this.Table_header[a],
@@ -152,6 +179,14 @@ export class AllocationexcelComponent implements OnInit {
         }
       }
         if(a == this.Table_header.length -1){
+          if(this.requered_status == true && this.requered_fields.length !== 0){
+            Swal.fire({
+              title: 'Missing fields',
+              text: this.requered_fields.toString(),
+              icon: 'warning',
+              html: `<ul><li>${this.requered_fields.toString()}</li></ul>`
+            })
+          }
           console.log(this.final_not_match);
           console.log(this.final_header_excel);
           console.log(this.final_save_fields);
@@ -180,6 +215,9 @@ export class AllocationexcelComponent implements OnInit {
     }
     reader.readAsBinaryString(target.files[0]);
     this.section = 3;
+
+
+
   }
 
 
